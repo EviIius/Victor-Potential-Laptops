@@ -639,13 +639,13 @@
   const RUNNERS = { 'github-actions': 'GitHub Actions', local: 'a computer (run by hand)', 'browser (seed)': 'first collection, in a web browser' };
   const runnerLabel = (r) => RUNNERS[r] || r || '—';
   const pricesAsOf = () => DATA.prices_as_of || DATA.generated_at;
-  function lastRunFailed() { const sc = DATA.scrape || {}; return sc.mode === 'live' && !sc.ok && !!sc.failed; }
+  function lastRunFailed() { const sc = DATA.scrape || {}; return sc.mode === 'live' && (sc.failed || 0) > (sc.ok || 0); }
   function renderFreshness() {
     const sc = DATA.scrape || {}; const iso = pricesAsOf(); const hours = (Date.now() - new Date(iso).getTime()) / 36e5;
     const failed = lastRunFailed();
     const el = $('#freshness'); el.classList.remove('is-fresh', 'is-aging', 'is-stale');
     el.classList.add(failed ? (hours < 96 ? 'is-aging' : 'is-stale') : hours < 36 ? 'is-fresh' : hours < 96 ? 'is-aging' : 'is-stale');
-    $('#freshness-text').textContent = `Prices ${ago(iso)} · ${L.length} laptops${failed ? ' · last refresh failed' : sc.failed ? ` · ${sc.failed} not refreshed` : ''}`;
+    $('#freshness-text').textContent = `Prices ${ago(iso)} · ${L.length} laptops${failed ? ' · last refresh mostly failed' : sc.failed ? ` · ${sc.failed} not refreshed` : ''}`;
     el.title = `Prices confirmed ${fmtDate(iso)}. Last scrape attempt ${fmtDate(DATA.generated_at)} on ${runnerLabel(sc.runner)}.`;
     sizeHeader();
   }
@@ -722,7 +722,7 @@
       if (d.generated_at !== before) {
         DATA = d; boot(true); const s = $$('.status-step.run').pop();
         const sc = d.scrape || {};
-        if (lastRunFailed()) { if (s) s.className = 'status-step fail'; step('fail', `The scraper ran but couldn't read any prices (the store may be refusing automated requests). Prices from ${esc(fmtDate(pricesAsOf()))} stay up. See the README for fixes.`); return; }
+        if (lastRunFailed()) { if (s) s.className = 'status-step fail'; step('fail', `The scraper ran but couldn't read most prices (the store may be refusing automated requests). Prices from ${esc(fmtDate(pricesAsOf()))} stay up. See the README for fixes.`); return; }
         if (s) s.className = 'status-step done';
         step('done', `New prices loaded: ${sc.ok} refreshed${sc.failed ? `, ${sc.failed} couldn't be read (last known price kept)` : ''}.`);
         return;

@@ -145,6 +145,7 @@ class PoliteFetcher:
         self.last_hit: dict[str, float] = {}
         self.failures: dict[str, int] = {}
         self.robots: dict[str, Robots | None] = {}
+        self.robots_error: dict[str, str] = {}
 
     def _robots(self, url: str) -> Robots | None:
         u = urlparse(url)
@@ -153,8 +154,14 @@ class PoliteFetcher:
                 status, text, _ = http_get(self.opener, f"{u.scheme}://{u.netloc}/robots.txt", self.headers, self.timeout)
                 # RFC 9309: a missing robots.txt (4xx) allows everything; a server error means "assume disallowed".
                 self.robots[u.netloc] = Robots(text) if status == 200 else (Robots("") if 400 <= status < 500 else None)
-            except Exception:
+                if self.robots[u.netloc] is None:
+                    self.robots_error[u.netloc] = f"HTTP {status}"
+            except Exception as e:
                 self.robots[u.netloc] = None
+                reason = getattr(e, "reason", None) or e
+                self.robots_error[u.netloc] = f"{reason.__class__.__name__}: {str(reason)[:140]}"
+                if "CERTIFICATE_VERIFY_FAILED" in str(reason) and sys.platform == "darwin":
+                    self.robots_error[u.netloc] += " (on a Mac, run 'Install Certificates.command' in your Python folder under Applications)"
         return self.robots[u.netloc]
 
     def host_blocked(self, url: str) -> bool:
@@ -165,7 +172,7 @@ class PoliteFetcher:
         rules = self._robots(url)
         if rules is None:
             self.failures[host] = self.max_host_failures
-            raise PermissionError("robots.txt unreachable, so the site is skipped this run")
+            raise PermissionError(f"robots.txt unreachable ({self.robots_error.get(host, 'no response')}), so the site is skipped this run")
         if not rules.allowed(url):
             raise PermissionError("robots.txt disallows this page")
         low, high = self.delay
@@ -417,8 +424,13 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
             "history": history,
         })
     # When prices were last actually confirmed: the newest successful check this run, else whatever the previous file said.
-    fresh = [o["checked_at"] for l in laptops for o in l["offers"] if not o.get("stale") and not o.get("manual") and o.get("checked_at")]
-    prices_as_of = max(fresh) if fresh else ((previous or {}).get("prices_as_of") or (previous or {}).get("generated_at") or run_meta["finished"])
+    # How old the prices on the site are: the oldest confirmation among the prices actually shown (hand-tracked ones aside).
+    shown = []
+    for l in laptops:
+        priced = [o for o in l["offers"] if o.get("price") and not o.get("manual") and o.get("checked_at")]
+        if priced:
+            shown.append(min(priced, key=lambda o: o["price"])["checked_at"])
+    prices_as_of = min(shown) if shown else ((previous or {}).get("prices_as_of") or (previous or {}).get("generated_at") or run_meta["finished"])
     for l in laptops:
         for o in l["offers"]:
             o.pop("_fresh", None)
@@ -484,6 +496,11 @@ def run_live(catalog: dict, limit: int | None, only: str | None) -> tuple[list[d
     for o in observations:
         d = per.setdefault(o["retailer"], {"ok": 0, "failed": 0})
         d["ok" if o.get("ok") else "failed"] += 1
+    names = {o["retailer"]: urlparse(o["url"]).netloc for l in catalog["laptops"] for o in l["offers"] if o.get("url")}
+    for r, d in per.items():
+        if d["failed"] and not d["ok"]:
+            notes.append(f"{names.get(r, r)} didn't answer this machine at all, most likely because it blocks automated traffic "
+                         "from cloud servers. Last known prices kept. Fix: run the scrape from a home connection (see README).")
     return observations, {"by_retailer": per, "notes": notes}, market
 
 

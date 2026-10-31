@@ -43,11 +43,12 @@ Without a key, the dialog still shows when prices were last confirmed, and the r
 
 ### If the daily run gets blocked
 
-Big retailers sometimes refuse automated requests from cloud servers like GitHub's, and that hasn't been tested from GitHub yet: the starting prices were collected from a normal browser session. If the Actions log shows every Best Buy page failing (HTTP 403 or timeouts), any of these fixes it:
+Best Buy doesn't answer requests from GitHub's servers (first live run, Oct 31, 2026: no response at all, not even robots.txt), so the scrape needs to come from a home connection. Razer.com works from GitHub. Options:
 
-1. **Run the scrape on your own computer as a GitHub runner:** a home internet connection is far less likely to be refused. Settings → Actions → Runners → **New self-hosted runner**, follow the commands it shows (and its "run as a service" step so it survives restarts), then change the scrape job's `runs-on: ubuntu-latest` to `runs-on: self-hosted`. Everything else, including the Re-scrape button, keeps working. Since the repo is public, also set Settings → Actions → General → fork pull request approval to **Require approval for all external contributors**, so strangers' pull requests can't run code on your machine.
-2. **Run it by hand:** `python3 scraper/scrape.py`, then commit and push `site/data/laptops.json`.
-3. **Best Buy API key:** if you can get one from [developer.bestbuy.com](https://developer.bestbuy.com/) (Best Buy has historically refused keys for free email addresses like Gmail), add it as a repo secret named `BESTBUY_API_KEY` (Settings → Secrets and variables → Actions). The scraper then uses Best Buy's official Products API for prices and also refreshes the Market scan page.
+1. **Test from your own computer first:** `python3 scraper/scrape.py --only bestbuy --limit 3 --dry-run`. If those three print prices, a home connection works.
+2. **Make that computer the scraper (recommended):** Settings → Actions → Runners → **New self-hosted runner**, run the commands it shows on the computer, then its `./svc.sh install && ./svc.sh start` step so it keeps running after restarts. Then add a repository variable (Settings → Secrets and variables → Actions → **Variables**) named `SCRAPER_RUNNER` with the value `self-hosted`. Only the scrape moves to your computer; building and publishing the site stays on GitHub. The computer has to be on and awake at scrape time. Since the repo is public, also set Settings → Actions → General → fork pull request approval to **Require approval for all external contributors**, so strangers' pull requests can't run code on your machine.
+3. **Run it by hand:** `python3 scraper/scrape.py`, then commit and push `site/data/laptops.json`.
+4. **Best Buy API key:** if you can get one from [developer.bestbuy.com](https://developer.bestbuy.com/) (Best Buy has historically refused keys for free email addresses like Gmail), add it as a repo secret named `BESTBUY_API_KEY` (Settings → Secrets and variables → Actions). The scraper then uses Best Buy's official Products API for prices and also refreshes the Market scan page.
 
 The Market scan page only refreshes with the API key; otherwise it shows the scan from the date at the top of that page.
 

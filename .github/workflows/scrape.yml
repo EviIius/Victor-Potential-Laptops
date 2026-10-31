@@ -6,6 +6,11 @@ on:
     # Off the hour on purpose: GitHub delays runs scheduled at :00.
     - cron: "17 11 * * *"
   workflow_dispatch: # the site's Re-scrape button and the "Run workflow" button on GitHub
+    inputs:
+      probe:
+        description: "Only test which stores answer the scraper (writes scraper/probe-results.json)"
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -23,30 +28,29 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Fetch live prices and commit them. Skipped on code pushes.
+  # Runs on GitHub's servers unless the repo variable SCRAPER_RUNNER is set
+  # (Settings -> Secrets and variables -> Actions -> Variables), e.g. to "self-hosted"
+  # so the scrape comes from your own internet connection.
   scrape:
-    runs-on: ubuntu-latest
+    if: github.event_name != 'push' && !inputs.probe
+    runs-on: ${{ vars.SCRAPER_RUNNER || 'ubuntu-latest' }}
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
 
       - name: Check the scraper
-        run: python3 scraper/test_parse.py
+        run: python3 -B scraper/test_parse.py
 
-      # Scheduled runs and the Re-scrape button fetch live prices.
       # If the store refuses, the last known prices stay up and the site says the refresh failed.
       - name: Scrape prices
-        if: github.event_name != 'push'
         continue-on-error: true
         env:
           BESTBUY_API_KEY: ${{ secrets.BESTBUY_API_KEY }}
+          PYTHONDONTWRITEBYTECODE: "1"
         run: python3 scraper/scrape.py
 
-      # Code or catalog pushes just rebuild the data from the catalog (fast, no scraping).
-      - name: Rebuild data from the catalog
-        if: github.event_name == 'push'
-        run: python3 scraper/scrape.py --offline
-
-      - name: Commit updated data
+      - name: Commit new prices
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -62,6 +66,45 @@ jobs:
           done
           exit 1
 
+  # One-off check of which stores answer a polite script (Run workflow -> tick "probe").
+  probe:
+    if: github.event_name == 'workflow_dispatch' && inputs.probe
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Probe stores
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: python3 scraper/probe.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scraper/probe-results.json
+          git diff --cached --quiet || { git commit -m "Store probe results" && git pull --rebase origin main && git push; }
+
+  # Build the site from the latest main (including any prices just committed) on GitHub's servers.
+  publish:
+    needs: scrape
+    if: ${{ !cancelled() && needs.scrape.result != 'failure' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      # Code or catalog pushes rebuild the data from the catalog (fast, no scraping).
+      - name: Rebuild data from the catalog
+        if: github.event_name == 'push'
+        run: |
+          python3 -B scraper/test_parse.py
+          python3 -B scraper/scrape.py --offline
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/laptops.json
+          git diff --cached --quiet || { git commit -m "Rebuild data from catalog" && git push; }
+
       - uses: actions/configure-pages@v6
 
       - uses: actions/upload-pages-artifact@v5
@@ -69,7 +112,8 @@ jobs:
           path: site
 
   deploy:
-    needs: scrape
+    needs: publish
+    if: ${{ !cancelled() && needs.publish.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

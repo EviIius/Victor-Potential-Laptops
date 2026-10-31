@@ -84,5 +84,8 @@ part = [{"laptop_id": "f-1", "retailer": "bb", "ok": True, "price": 950.0, "in_s
 d3 = merge(CAT, d1, part, REF, meta("2026-11-02T10:05:00Z"), None)
 ok &= check(d3["laptops"][0]["price"] == 950.0 and d3["laptops"][0]["history"][-1] == ["2026-11-02", 950.0], "merge: refreshed price lands in history")
 ok &= check(d3["laptops"][1]["price_status"] == "live" and len(d3["laptops"][1]["history"]) == 1, "merge: untouched offer carried over, no fake history point")
-ok &= check(d3["prices_as_of"] == "2026-11-02T10:00:00Z" and "_fresh" not in d3["laptops"][0]["offers"][0], "merge: prices_as_of advances, internals stripped")
+ok &= check(d3["prices_as_of"] == "2026-10-31T10:00:00Z" and "_fresh" not in d3["laptops"][0]["offers"][0], "merge: prices_as_of is the oldest price shown, internals stripped")
+full = [{"laptop_id": f"f-{i}", "retailer": "bb", "ok": True, "price": 900.0, "in_stock": True, "checked_at": "2026-11-03T10:00:00Z"} for i in (1, 2)]
+d4 = merge(CAT, d3, full, REF, meta("2026-11-03T10:05:00Z"), None)
+ok &= check(d4["prices_as_of"] == "2026-11-03T10:00:00Z", "merge: prices_as_of advances when everything refreshes")
 sys.exit(0 if ok else 1)
