@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-10-31T18:18:19Z",
+ "checked_at": "2026-10-31T18:23:30Z",
  "results": [
   {
    "store": "walmart",
@@ -8,7 +8,7 @@
      "url": "https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
      "final_url": "https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
      "status": 200,
-     "seconds": 0.6,
+     "seconds": 0.5,
      "kb": 360,
      "jsonld_products": 0,
      "name": null,
@@ -16,6 +16,8 @@
      "next_data": true,
      "bot_check": [],
      "title": null,
+     "parsed": "ValueError: no price data found on page (layout may have changed)",
+     "next_data_keys": [],
      "laptop_links": [
       "https://www.walmart.com/cp/tax-exemption-program/8480422"
      ]
@@ -24,7 +26,7 @@
      "url": "https://www.walmart.com/ip/17849219077",
      "final_url": "https://www.walmart.com/ip/ASUS-ROG-Strix-G16-Gaming-Laptop-NVIDIA-GeForce-RTX-5070-Ti-AMD-Ryzen-9-8940HX-32GB-DDR5-RAM-1TB-SSD-16-inch-165Hz-300-nits-Wi-Fi-6E-Backlit-KB-Windo/17849219077",
      "status": 200,
-     "seconds": 1.4,
+     "seconds": 2.8,
      "kb": 537,
      "jsonld_products": 0,
      "name": null,
@@ -32,6 +34,14 @@
      "next_data": true,
      "bot_check": [],
      "title": "ASUS ROG Strix G16 Gaming Laptop, NVIDIA GeForce RTX 5070 Ti, AMD Ryzen 9 8940HX, 32GB DDR5 RAM, 1TB SSD, 16 inch 165Hz 300 nits, Wi-Fi 6E, Backlit KB, Windows 11 Pro - Walmart.com",
+     "parsed": "ValueError: no price data found on page (layout may have changed)",
+     "next_data_keys": [
+      "contentLayout",
+      "seoItemMetaData",
+      "product",
+      "idml",
+      "reviews"
+     ],
      "laptop_links": [
       "https://www.walmart.com/ip/ASUS-ROG-Strix-G16-Gaming-Laptop-NVIDIA-GeForce-RTX-5070-Ti-AMD-Ryzen-9-8940HX-32GB-DDR5-RAM-1TB-SSD-16-inch-165Hz-300-nits-Wi-Fi-6E-Backlit-KB-Windo/17849219077",
       "https://www.walmart.com/cp/tax-exemption-program/8480422"
@@ -41,7 +51,7 @@
      "url": "https://www.walmart.com/ip/17967461396",
      "final_url": "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-32GB-DDR5-RAM-1TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17967461396",
      "status": 200,
-     "seconds": 1.4,
+     "seconds": 1.2,
      "kb": 582,
      "jsonld_products": 0,
      "name": null,
@@ -49,6 +59,14 @@
      "next_data": true,
      "bot_check": [],
      "title": "Lenovo Legion Pro 5i Gen 10 Gaming Laptop, Intel Ultra 9 275HX, RTX 5070 Ti GPU 12GB GDDR7, 32GB DDR5 RAM, 1TB SSD, 16&quot; WQXGA (2560 x 1600), 24 Zone RGB Backlit, Wi-Fi 7, Win 11pro - Walmart.com",
+     "parsed": "ValueError: no price data found on page (layout may have changed)",
+     "next_data_keys": [
+      "contentLayout",
+      "seoItemMetaData",
+      "product",
+      "idml",
+      "reviews"
+     ],
      "laptop_links": [
       "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-32GB-DDR5-RAM-1TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17967461396",
       "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-64GB-DDR5-RAM-4TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17969970324",
@@ -60,7 +78,7 @@
      "url": "https://www.walmart.com/ip/ASUS-ROG-Strix-G16-Gaming-Laptop-NVIDIA-GeForce-RTX-5070-Ti-AMD-Ryzen-9-8940HX-32GB-DDR5-RAM-1TB-SSD-16-inch-165Hz-300-nits-Wi-Fi-6E-Backlit-KB-Windo/17849219077",
      "final_url": "https://www.walmart.com/ip/ASUS-ROG-Strix-G16-Gaming-Laptop-NVIDIA-GeForce-RTX-5070-Ti-AMD-Ryzen-9-8940HX-32GB-DDR5-RAM-1TB-SSD-16-inch-165Hz-300-nits-Wi-Fi-6E-Backlit-KB-Windo/17849219077",
      "status": 200,
-     "seconds": 1.0,
+     "seconds": 0.8,
      "kb": 537,
      "jsonld_products": 0,
      "name": null,
@@ -68,13 +86,21 @@
      "next_data": true,
      "bot_check": [],
      "title": "ASUS ROG Strix G16 Gaming Laptop, NVIDIA GeForce RTX 5070 Ti, AMD Ryzen 9 8940HX, 32GB DDR5 RAM, 1TB SSD, 16 inch 165Hz 300 nits, Wi-Fi 6E, Backlit KB, Windows 11 Pro - Walmart.com",
+     "parsed": "ValueError: no price data found on page (layout may have changed)",
+     "next_data_keys": [
+      "contentLayout",
+      "seoItemMetaData",
+      "product",
+      "idml",
+      "reviews"
+     ],
      "from_listing": true
     },
     {
      "url": "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-32GB-DDR5-RAM-1TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17967461396",
      "final_url": "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-32GB-DDR5-RAM-1TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17967461396",
      "status": 200,
-     "seconds": 0.9,
+     "seconds": 0.8,
      "kb": 582,
      "jsonld_products": 0,
      "name": null,
@@ -82,6 +108,14 @@
      "next_data": true,
      "bot_check": [],
      "title": "Lenovo Legion Pro 5i Gen 10 Gaming Laptop, Intel Ultra 9 275HX, RTX 5070 Ti GPU 12GB GDDR7, 32GB DDR5 RAM, 1TB SSD, 16&quot; WQXGA (2560 x 1600), 24 Zone RGB Backlit, Wi-Fi 7, Win 11pro - Walmart.com",
+     "parsed": "ValueError: no price data found on page (layout may have changed)",
+     "next_data_keys": [
+      "contentLayout",
+      "seoItemMetaData",
+      "product",
+      "idml",
+      "reviews"
+     ],
      "from_listing": true
     }
    ]
@@ -90,31 +124,130 @@
    "store": "lenovo",
    "pages": [
     {
-     "url": "https://www.lenovo.com/us/en/c/laptops/legion-laptops/",
-     "final_url": "https://www.lenovo.com/us/en/legion/?visibleDatas=1014%253ALaptops#dlp_anchor",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+     "final_url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
      "status": 200,
-     "seconds": 0.4,
-     "kb": 740,
-     "jsonld_products": 0,
-     "name": null,
-     "offers": [],
+     "seconds": 0.2,
+     "kb": 786,
+     "jsonld_products": 1,
+     "name": "Legion Pro 5i Gen 10 (16\u2033 Intel) Gaming Laptop",
+     "offers": [
+      {
+       "price": 1777.99,
+       "lowPrice": null,
+       "availability": "http://schema.org/InStock",
+       "seller": null
+      }
+     ],
      "next_data": false,
      "bot_check": [],
-     "title": "Lenovo Legion | Reach Your Impossible | Lenovo US",
+     "title": "Legion Pro 5i Gen 10 (16\u201d Intel) | 16-inch esports gaming laptop powered by Intel\u00ae | Lenovo US",
+     "parsed": {
+      "price": 1777.99,
+      "in_stock": true
+     },
      "laptop_links": [
-      "https://www.lenovo.com/us/en/legion/",
-      "https://www.lenovo.com/jp/ja/legion/",
-      "https://www.lenovo.com/pe/es/legion/",
-      "https://www.lenovo.com/cl/es/legion/",
-      "https://www.lenovo.com/co/es/legion/",
-      "https://www.lenovo.com/nl/nl/legion/",
-      "https://www.lenovo.com/ie/en/legion/",
-      "https://www.lenovo.com/be/fr/legion/",
-      "https://www.lenovo.com/ch/fr/legion/",
-      "https://www.lenovo.com/at/de/legion/",
-      "https://www.lenovo.com/mx/es/legion/",
-      "https://www.lenovo.com/se/sv/legion/"
+      "https://www.lenovo.com/co/es/p/portatiles/legion-laptops/legion-serie-pro/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/fr/fr/p/laptops/legion-laptops/legion-5-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/hk/zh/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/hk/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/au/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/sg/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/my/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/ar/es/p/notebooks/legion-laptops/legion-serie-pro/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/ca/fr/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/ca/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/at/de/p/laptops/legion-laptops/legion-5-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+      "https://www.lenovo.com/it/it/p/laptops/legion-laptops/legion-5-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040"
      ]
+    },
+    {
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+     "final_url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042?irgwc=1&afsrc=1&PID=2434544&acid=ww:affiliate:bv0as6&cid=us:affiliate:cxsaam&clickid=W7cz4kVlnxyZTG93dE0k22jYUkr3c4WUETMHWY0",
+     "status": 200,
+     "seconds": 0.5,
+     "kb": 776,
+     "jsonld_products": 1,
+     "name": "Legion 5i Gen 10 (15\u2033 Intel) Gaming Laptop",
+     "offers": [
+      {
+       "price": 1499.99,
+       "lowPrice": null,
+       "availability": "http://schema.org/InStock",
+       "seller": null
+      }
+     ],
+     "next_data": false,
+     "bot_check": [],
+     "title": "Lenovo Legion 5i Gen 10 (15\u2033 Intel) | AI Gaming Laptop | Lenovo US",
+     "parsed": {
+      "price": 1499.99,
+      "in_stock": true
+     },
+     "laptop_links": [
+      "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/it/it/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/pt/pt/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/ch/de/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/ch/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/ch/fr/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/se/sv/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/nz/en/p/laptops/legion-laptops/legion-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/be/fr/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/be/nl/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/kr/ko/p/laptops/legion-laptops/legion-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042"
+     ]
+    },
+    {
+     "url": "https://www.lenovo.com/co/es/p/portatiles/legion-laptops/legion-serie-pro/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+     "final_url": "https://www.lenovo.com/co/es/p/portatiles/legion-laptops/legion-serie-pro/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+     "status": 200,
+     "seconds": 0.8,
+     "kb": 675,
+     "jsonld_products": 1,
+     "name": "Lenovo Legion Pro 5i 10ma Gen (16\u201d Intel)",
+     "offers": [
+      {
+       "price": 10891110,
+       "lowPrice": null,
+       "availability": "http://schema.org/InStock",
+       "seller": null
+      }
+     ],
+     "next_data": false,
+     "bot_check": [],
+     "title": "Lenovo Legion Pro 5i Gen 10 - Potencia hasta OLED y RTX 50 | Lenovo Colombia",
+     "parsed": {
+      "price": 10891110.0,
+      "in_stock": true
+     },
+     "from_listing": true
+    },
+    {
+     "url": "https://www.lenovo.com/fr/fr/p/laptops/legion-laptops/legion-5-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+     "final_url": "https://www.lenovo.com/fr/fr/p/laptops/legion-laptops/legion-5-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+     "status": 200,
+     "seconds": 1.3,
+     "kb": 1165,
+     "jsonld_products": 1,
+     "name": "Legion Pro 5i Gen 10 (16\" Intel)",
+     "offers": [
+      {
+       "price": 2339.44,
+       "lowPrice": null,
+       "availability": "http://schema.org/InStock",
+       "seller": null
+      }
+     ],
+     "next_data": false,
+     "bot_check": [],
+     "title": "Legion Pro 5i Gen 10 (16 &#34; Intel) | Ordinateur portable de gaming esports 16 &#34; \u00e9quip\u00e9 d&#39;un processeur Intel\u00ae | Lenovo France",
+     "parsed": {
+      "price": 2339.44,
+      "in_stock": true
+     },
+     "from_listing": true
     }
    ]
   },
@@ -125,14 +258,15 @@
      "url": "https://www.costco.com/gaming-laptops.html",
      "final_url": "https://www.costco.com/gaming-laptops.html",
      "status": 200,
-     "seconds": 0.5,
-     "kb": 2430,
+     "seconds": 0.1,
+     "kb": 2431,
      "jsonld_products": 0,
      "name": null,
      "offers": [],
      "next_data": false,
      "bot_check": [],
      "title": "Gaming Laptops",
+     "parsed": "ValueError: no price data found on page (layout may have changed)",
      "laptop_links": []
     }
    ]
@@ -141,41 +275,10 @@
    "store": "asus",
    "pages": [
     {
-     "url": "https://shop.asus.com/us/",
-     "final_url": "https://www.asus.com/us/store/",
-     "status": 200,
-     "seconds": 0.4,
-     "kb": 982,
-     "jsonld_products": 0,
-     "name": null,
-     "offers": [],
-     "next_data": false,
-     "bot_check": [],
-     "title": "Shop Laptops, Gaming PCs, Desktops, Mobile &amp; Motherboards | ASUS Store USA",
-     "laptop_links": [
-      "https://shop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html",
-      "https://shop.asus.com/us/rog/rog-zephyrus-g16-g14-2026.html?config=90NR0PC1-M006M0"
-     ]
-    },
-    {
-     "url": "https://shop.asus.com/us/laptops.html",
-     "final_url": "https://www.asus.com/us/pageerror/",
-     "status": 404,
-     "seconds": 0.9,
-     "kb": 230,
-     "jsonld_products": 0,
-     "name": null,
-     "offers": [],
-     "next_data": false,
-     "bot_check": [],
-     "title": "officialsite",
-     "laptop_links": []
-    },
-    {
      "url": "https://shop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html",
      "final_url": "https://eshop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html",
      "status": 200,
-     "seconds": 0.1,
+     "seconds": 1.8,
      "kb": 336,
      "jsonld_products": 1,
      "name": "ROG Strix Scar 18 (2026) Gaming Laptop",
@@ -190,7 +293,36 @@
      "next_data": false,
      "bot_check": [],
      "title": "ROG Strix Scar 18 (2026) Gaming Laptop",
-     "from_listing": true
+     "parsed": {
+      "price": 4299.99,
+      "in_stock": true
+     },
+     "laptop_links": []
+    },
+    {
+     "url": "https://shop.asus.com/us/rog/rog-zephyrus-g16-g14-2026.html?config=90NR0PC1-M006M0",
+     "final_url": "https://eshop.asus.com/us/rog/rog-zephyrus-g16-g14-2026.html?config=90NR0PC1-M006M0",
+     "status": 200,
+     "seconds": 2.5,
+     "kb": 360,
+     "jsonld_products": 1,
+     "name": "ROG Zephyrus G16/G14 (2026)",
+     "offers": [
+      {
+       "price": 3599.99,
+       "lowPrice": null,
+       "availability": "https://schema.org/InStock",
+       "seller": null
+      }
+     ],
+     "next_data": false,
+     "bot_check": [],
+     "title": "ROG Zephyrus G16/G14 (2026)",
+     "parsed": {
+      "price": 3599.99,
+      "in_stock": true
+     },
+     "laptop_links": []
     }
    ]
   },
@@ -201,8 +333,8 @@
      "url": "https://www.razer.com/gaming-laptops/razer-blade-16",
      "final_url": "https://www.razer.com/gaming-laptops/razer-blade-16",
      "status": 200,
-     "seconds": 0.2,
-     "kb": 1717,
+     "seconds": 0.1,
+     "kb": 1709,
      "jsonld_products": 1,
      "name": "Thinnest RTX 5090 Gaming Laptop - Razer Blade 16 | Razer United States",
      "offers": [
@@ -216,6 +348,10 @@
      "next_data": false,
      "bot_check": [],
      "title": "Thinnest RTX 5090 Gaming Laptop - Razer Blade 16 | Razer United States",
+     "parsed": {
+      "price": 2399.99,
+      "in_stock": true
+     },
      "laptop_links": [
       "https://www.razer.com/gaming-laptops/favicon.png",
       "https://www.razer.com/gaming-laptops/styles-BVLSDV3Q.css",
