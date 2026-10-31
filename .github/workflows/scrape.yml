@@ -1,0 +1,79 @@
+name: Scrape prices and publish site
+
+on:
+  schedule:
+    # 11:17 UTC = 6:17 AM Eastern in winter, 7:17 AM in summer.
+    # Off the hour on purpose: GitHub delays runs scheduled at :00.
+    - cron: "17 11 * * *"
+  workflow_dispatch: # the site's Re-scrape button and the "Run workflow" button on GitHub
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "scraper/**"
+      - ".github/workflows/scrape.yml"
+
+permissions:
+  contents: write # commit refreshed prices
+  pages: write # publish the site
+  id-token: write # required by deploy-pages
+
+concurrency:
+  group: scrape-and-publish
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check the scraper
+        run: python3 scraper/test_parse.py
+
+      # Scheduled runs and the Re-scrape button fetch live prices.
+      # If the store refuses, the last known prices stay up and the site says the refresh failed.
+      - name: Scrape prices
+        if: github.event_name != 'push'
+        continue-on-error: true
+        env:
+          BESTBUY_API_KEY: ${{ secrets.BESTBUY_API_KEY }}
+        run: python3 scraper/scrape.py
+
+      # Code or catalog pushes just rebuild the data from the catalog (fast, no scraping).
+      - name: Rebuild data from the catalog
+        if: github.event_name == 'push'
+        run: python3 scraper/scrape.py --offline
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/laptops.json
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git commit -m "Prices: $(date -u +'%Y-%m-%d %H:%M') UTC"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+  deploy:
+    needs: scrape
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

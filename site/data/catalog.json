@@ -1,0 +1,4042 @@
+{
+ "version": 1,
+ "updated": "2026-10-31",
+ "_about": "Curated laptops tracked by the scraper. Specs are a baseline captured from retailer product pages; the scraper refreshes prices and availability. Edit 'families' for model-level notes and 'laptops' to add or remove configurations.",
+ "retailers": {
+  "bestbuy": {
+   "name": "Best Buy",
+   "home": "https://www.bestbuy.com"
+  },
+  "razer": {
+   "name": "Razer.com",
+   "home": "https://www.razer.com"
+  },
+  "framework": {
+   "name": "Framework",
+   "home": "https://frame.work"
+  }
+ },
+ "families": {
+  "hp-victus-15": {
+   "brand": "HP",
+   "name": "Victus 15",
+   "year": 2025,
+   "form": "Mainstream 15\"",
+   "battery_wh": 70,
+   "tgp": {
+    "RTX 4050": 75,
+    "RTX 3050": 75
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Cheapest way into a real dedicated GPU",
+    "Two SO-DIMM slots for cheap RAM upgrades later",
+    "Quiet, understated design"
+   ],
+   "cons": [
+    "1080p 144Hz panel is dim (300 nits)",
+    "RTX 4050/3050 are near the bottom of the stack",
+    "No Thunderbolt or USB4"
+   ]
+  },
+  "acer-nitro-v16": {
+   "brand": "Acer",
+   "name": "Nitro V 16",
+   "year": 2026,
+   "form": "Mainstream 16\"",
+   "battery_wh": 59,
+   "tgp": {
+    "RTX 5050": 95,
+    "RTX 5060": 100
+   },
+   "ram_slots": 2,
+   "pros": [
+    "16:10 1200p 165Hz screen at 400 nits",
+    "Thunderbolt port, Ethernet and two M.2 slots",
+    "Light for a budget 16\" (4.6 lb)"
+   ],
+   "cons": [
+    "Core 7 240H is a modest CPU for heavy work",
+    "Wi-Fi 6 only",
+    "Plasticky build, average speakers"
+   ],
+   "awards": [
+    {
+     "label": "Best gaming laptop under $1,000",
+     "source": "PCWorld (Sep 2026)",
+     "url": "https://www.pcworld.com/article/3232986/best-gaming-laptops.html"
+    }
+   ]
+  },
+  "alienware-15": {
+   "brand": "Alienware",
+   "name": "Alienware 15 (15.3\")",
+   "year": 2026,
+   "form": "Mainstream 15\"",
+   "battery_wh": null,
+   "tgp": {
+    "RTX 4050": 100,
+    "RTX 5050": 100,
+    "RTX 5060": 100
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Alienware build quality at an entry price",
+    "Expandable to 32GB with two SO-DIMM slots"
+   ],
+   "cons": [
+    "300-nit 1200p panel despite the \"2K\" marketing",
+    "New model with few in-depth reviews so far",
+    "Under 5 lb but thick at 0.9\""
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "gigabyte-gaming-a16": {
+   "brand": "Gigabyte",
+   "name": "Gaming A16",
+   "year": 2025,
+   "form": "Mainstream 16\"",
+   "battery_wh": 76,
+   "tgp": {
+    "RTX 4050": 95,
+    "RTX 5060": 105
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Very good price for RTX 5060 + 32GB + 1TB",
+    "16:10 165Hz screen",
+    "Slim (0.76\") for the price"
+   ],
+   "cons": [
+    "Core i7-13620H is a 2023 H-series chip",
+    "Brightness and color are only average",
+    "No Thunderbolt/USB4"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "gigabyte-aero-x16": {
+   "brand": "Gigabyte",
+   "name": "Aero X16",
+   "year": 2025,
+   "form": "Thin & light 16\"",
+   "battery_wh": 76,
+   "tgp": {
+    "RTX 5060": 85,
+    "RTX 5070": 85
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Thin (0.65\") and light (4.2 lb) with a 2560x1600 165Hz screen",
+    "32GB RAM standard and a USB4 port",
+    "Strong battery life for work (Copilot+ Ryzen AI 7 350)"
+   ],
+   "cons": [
+    "GPU limited to 85W, so a 5070 here performs like a full-power 5060",
+    "8-core CPU trails HX chips in heavy rendering"
+   ]
+  },
+  "msi-cyborg-15-max": {
+   "brand": "MSI",
+   "name": "Cyborg 15 Max",
+   "year": 2026,
+   "form": "Mainstream 15\"",
+   "battery_wh": 53.5,
+   "tgp": {
+    "RTX 5070": 100
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Cheapest RTX 5070 in the list",
+    "Wi-Fi 6E, light at 4.4 lb"
+   ],
+   "cons": [
+    "Older i7-13620H and DDR4 memory",
+    "1080p 144Hz screen",
+    "Small battery"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "lenovo-loq-essential-15": {
+   "brand": "Lenovo",
+   "name": "LOQ Essential 15 (Arc B390)",
+   "year": 2026,
+   "form": "Work-first 15\"",
+   "battery_wh": null,
+   "tgp": {
+    "Arc B390": 40
+   },
+   "ram_slots": 0,
+   "pros": [
+    "No dedicated GPU means long battery life and low heat",
+    "Panther Lake CPU is fast and efficient for work",
+    "Thunderbolt port"
+   ],
+   "cons": [
+    "Integrated Arc B390 is far behind any RTX card for gaming",
+    "16GB LPDDR5X is soldered (no upgrades)",
+    "Priced like an RTX 5060 laptop"
+   ]
+  },
+  "asus-tuf-f16": {
+   "brand": "ASUS",
+   "name": "TUF Gaming F16",
+   "year": 2025,
+   "form": "Mainstream 16\"",
+   "battery_wh": 56,
+   "tgp": {
+    "RTX 5060": 115
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Full-power RTX 5060 with a 16-core i7-14650HX",
+    "Rugged, serviceable chassis with two SO-DIMM slots",
+    "Wi-Fi 6E"
+   ],
+   "cons": [
+    "1200p 144Hz panel at 300 nits",
+    "Thick (1.07\")",
+    "Battery is small for a 16\" machine"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "asus-tuf-a16": {
+   "brand": "ASUS",
+   "name": "TUF Gaming A16",
+   "year": 2025,
+   "form": "Mainstream 16\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5070": 115
+   },
+   "ram_slots": 2,
+   "pros": [
+    "16-core Ryzen 9 8940HX + RTX 5070 for under $1,600",
+    "Big 90Wh battery",
+    "400-nit 165Hz 16:10 screen"
+   ],
+   "cons": [
+    "Only 16GB RAM and 512GB SSD in this config",
+    "No OLED/high-res option at this price"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "msi-crosshair-a16-hx": {
+   "brand": "MSI",
+   "name": "Crosshair A16 HX",
+   "year": 2025,
+   "form": "Mainstream 16\"",
+   "battery_wh": 75,
+   "tgp": {
+    "RTX 5060": 115
+   },
+   "ram_slots": 2,
+   "pros": [
+    "2560x1600 240Hz screen at this price",
+    "16-core Ryzen 9 8940HX",
+    "Expandable to 96GB"
+   ],
+   "cons": [
+    "Heavier than rivals (5.5 lb)",
+    "RTX 5060 is the weak link for a 240Hz QHD panel"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "hp-omen-16": {
+   "brand": "HP",
+   "name": "OMEN 16",
+   "year": 2026,
+   "form": "Mainstream 16\"",
+   "battery_wh": 70,
+   "tgp": {
+    "RTX 5060": 115,
+    "RTX 5070": 115
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Bright 2560x1600 OLED option (1,100 nits HDR)",
+    "Wi-Fi 7",
+    "Two SO-DIMM slots"
+   ],
+   "cons": [
+    "Pricier than TUF/LOQ for the same GPU",
+    "Heavy at 5.5 lb",
+    "Retailer lists an odd 1.8\" height (it's ~1\" thick)"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "alienware-16x-aurora": {
+   "brand": "Alienware",
+   "name": "16X Aurora",
+   "year": 2026,
+   "form": "Performance 16\"",
+   "battery_wh": 96,
+   "tgp": {
+    "RTX 5060": 115,
+    "RTX 5070": 115
+   },
+   "ram_slots": 2,
+   "pros": [
+    "240Hz 2560x1600 OLED",
+    "Strong HX CPUs (Core Ultra 7/9)",
+    "Thunderbolt 5, Wi-Fi 7, 96Wh battery"
+   ],
+   "cons": [
+    "Heavy at 5.9 lb",
+    "8GB GPUs only (5060/5070)",
+    "Hot air exhausts out the sides"
+   ],
+   "awards": [
+    {
+     "label": "Best gaming laptop overall",
+     "source": "PCWorld (Sep 2026)",
+     "url": "https://www.pcworld.com/article/3232986/best-gaming-laptops.html"
+    },
+    {
+     "label": "Best for 1440p gaming",
+     "source": "TechRadar (Oct 2026)",
+     "url": "https://www.techradar.com/news/mobile-computing/laptops/best-gaming-laptops-top-5-gaming-notebooks-reviewed-1258471"
+    }
+   ]
+  },
+  "hp-omen-transcend-14": {
+   "brand": "HP",
+   "name": "OMEN Transcend 14",
+   "year": 2025,
+   "form": "Thin & light 14\"",
+   "battery_wh": 71,
+   "tgp": {
+    "RTX 5060": 70,
+    "RTX 5070": 70
+   },
+   "ram_slots": 0,
+   "pros": [
+    "3.6 lb, 0.71\" thin with a 2880x1800 120Hz OLED",
+    "Long battery life for a gaming laptop",
+    "Good for school or work by day"
+   ],
+   "cons": [
+    "Low GPU power limit, so it games well below thicker laptops",
+    "RAM is soldered",
+    "Expensive per frame"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "lenovo-loq-15": {
+   "brand": "Lenovo",
+   "name": "LOQ 15",
+   "year": 2026,
+   "form": "Mainstream 15\"",
+   "battery_wh": 60,
+   "tgp": {
+    "RTX 4050": 95,
+    "RTX 5050": 100,
+    "RTX 5060": 115
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Full-power GPUs (115W RTX 5060)",
+    "Easy RAM/SSD upgrades",
+    "Reliable, no-frills build"
+   ],
+   "cons": [
+    "1080p 144Hz 300-nit panel",
+    "Heavy (5.1 lb) and thick",
+    "Best Buy's regular price is far above its usual sale price"
+   ]
+  },
+  "lenovo-legion-5i-15": {
+   "brand": "Lenovo",
+   "name": "Legion 5i 15.3\"",
+   "year": 2026,
+   "form": "Performance 15\"",
+   "battery_wh": 80,
+   "tgp": {
+    "RTX 5060": 115
+   },
+   "ram_slots": 2,
+   "pros": [
+    "1,000-nit 2560x1600 OLED in a 4.25 lb body",
+    "Full-power RTX 5060",
+    "Wi-Fi 7, Thunderbolt, expandable to 64GB"
+   ],
+   "cons": [
+    "Only 16GB RAM and 512GB in this config",
+    "Core 7 245HX is a refreshed older-gen chip"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "acer-predator-triton-14": {
+   "brand": "Acer",
+   "name": "Predator Triton 14 AI",
+   "year": 2025,
+   "form": "Thin & light 14\"",
+   "battery_wh": 76,
+   "tgp": {
+    "RTX 5070": 85
+   },
+   "ram_slots": 0,
+   "pros": [
+    "3.5 lb with a 2880x1800 OLED touch screen",
+    "32GB RAM and two Thunderbolt ports",
+    "Lunar Lake CPU sips power on battery"
+   ],
+   "cons": [
+    "8-core Lunar Lake CPU is weak for heavy multitasking or rendering",
+    "Soldered RAM",
+    "RTX 5070 runs at reduced power"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "asus-rog-flow-z13": {
+   "brand": "ASUS",
+   "name": "ROG Flow Z13",
+   "year": 2025,
+   "form": "2-in-1 tablet 13\"",
+   "battery_wh": 70,
+   "tgp": {
+    "Radeon 8060S": 120
+   },
+   "ram_slots": 0,
+   "pros": [
+    "A 2.65 lb tablet that games like an RTX 4060 laptop",
+    "16-core Ryzen AI Max+ 395 is a workstation-class CPU",
+    "Unified memory: 32GB or 64GB shared with the GPU"
+   ],
+   "cons": [
+    "13.4\" screen and detachable keyboard aren't for long gaming sessions",
+    "Everything is soldered",
+    "Expensive for the gaming performance"
+   ]
+  },
+  "acer-predator-neo-16": {
+   "brand": "Acer",
+   "name": "Predator Helios Neo 16S AI",
+   "year": 2026,
+   "form": "Performance 16\"",
+   "battery_wh": 76,
+   "tgp": {
+    "RTX 5060": 115,
+    "RTX 5070 Ti": 140
+   },
+   "ram_slots": 2,
+   "pros": [
+    "240Hz 2560x1600 OLED",
+    "Core Ultra 9 290HX Plus is one of the fastest laptop CPUs",
+    "Expandable to 64GB"
+   ],
+   "cons": [
+    "Wi-Fi 6E rather than 7",
+    "RTX 5060 version is overpriced for its GPU"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "asus-zephyrus-g16-2025": {
+   "brand": "ASUS",
+   "name": "ROG Zephyrus G16 (2025)",
+   "year": 2025,
+   "form": "Thin & light 16\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5070": 105,
+    "RTX 5070 Ti": 115,
+    "RTX 5080": 120,
+    "RTX 5090": 120
+   },
+   "ram_slots": 0,
+   "pros": [
+    "0.59\" aluminum chassis, 4.1-4.3 lb",
+    "240Hz 2560x1600 OLED",
+    "Great all-rounder for work and travel"
+   ],
+   "cons": [
+    "GPU power capped around 120W, well below thick 175W laptops",
+    "Soldered LPDDR5X RAM",
+    "High price for the GPU tier"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "asus-zephyrus-g16-2026": {
+   "brand": "ASUS",
+   "name": "ROG Zephyrus G16 (2026)",
+   "year": 2026,
+   "form": "Thin & light 16\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5070 Ti": 135,
+    "RTX 5080": 135
+   },
+   "ram_slots": 0,
+   "pros": [
+    "Panther Lake Core Ultra 9 386H: fast and efficient",
+    "1,100-nit 240Hz OLED",
+    "Thin, premium build"
+   ],
+   "cons": [
+    "Very expensive: an RTX 5070 Ti costs $3,400+ here",
+    "Soldered RAM (16GB on some configs)"
+   ]
+  },
+  "lenovo-legion-pro-5i": {
+   "brand": "Lenovo",
+   "name": "Legion Pro 5i",
+   "year": 2026,
+   "form": "Performance 16\"",
+   "battery_wh": 80,
+   "tgp": {
+    "RTX 5070": 115,
+    "RTX 5070 Ti": 140
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Full-power GPUs with excellent cooling",
+    "240Hz 2560x1600 OLED options",
+    "Two SO-DIMM + two M.2 slots"
+   ],
+   "cons": [
+    "5.3 lb and 1\" thick",
+    "Short battery life when gaming",
+    "Some configs pair a slow price with an 8GB RTX 5070"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "lenovo-legion-pro-5-amd": {
+   "brand": "Lenovo",
+   "name": "Legion Pro 5 (AMD)",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "battery_wh": 80,
+   "tgp": {
+    "RTX 5060": 115
+   },
+   "ram_slots": 2,
+   "pros": [
+    "16-core Ryzen 9 8945HX",
+    "2560x1600 240Hz 500-nit screen",
+    "Wi-Fi 7"
+   ],
+   "cons": [
+    "Best Buy's own price is high for an RTX 5060 (marketplace sellers are cheaper)",
+    "Heavy"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "asus-tuf-a14-max": {
+   "brand": "ASUS",
+   "name": "TUF A14 (Ryzen AI Max+)",
+   "year": 2026,
+   "form": "Thin & light 14\"",
+   "battery_wh": 73,
+   "tgp": {
+    "Radeon 8060S": 100
+   },
+   "ram_slots": 0,
+   "pros": [
+    "3.3 lb with RTX 4060-class integrated graphics",
+    "12-core Ryzen AI Max+ 392 is great for work",
+    "USB4, long battery life"
+   ],
+   "cons": [
+    "Soldered 32GB (shared with graphics)",
+    "IPS panel at 400 nits",
+    "Integrated GPU still trails a real RTX 5060"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "asus-rog-strix-g16": {
+   "brand": "ASUS",
+   "name": "ROG Strix G16 (2025)",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5060": 115,
+    "RTX 5070 Ti": 140
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Cheapest RTX 5070 Ti here with a 16-core CPU",
+    "USB4 ports, two SO-DIMM slots",
+    "Good cooling"
+   ],
+   "cons": [
+    "1200p 165Hz 300-nit screen undersells the 5070 Ti",
+    "5.5 lb"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "asus-zephyrus-g14-2025": {
+   "brand": "ASUS",
+   "name": "ROG Zephyrus G14 (2025)",
+   "year": 2025,
+   "form": "Thin & light 14\"",
+   "battery_wh": 73,
+   "tgp": {
+    "RTX 5060": 105,
+    "RTX 5070": 110,
+    "RTX 5080": 120
+   },
+   "ram_slots": 0,
+   "pros": [
+    "3.3-3.5 lb aluminum 14\" with a 3K 120Hz OLED",
+    "USB4, Wi-Fi 7",
+    "Great work-and-travel machine that still games"
+   ],
+   "cons": [
+    "Pricey; RTX 5060 config is weak value",
+    "Soldered RAM",
+    "Reduced GPU power vs 16\" laptops"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "asus-zephyrus-g14-2026": {
+   "brand": "ASUS",
+   "name": "ROG Zephyrus G14 (2026)",
+   "year": 2026,
+   "form": "Thin & light 14\"",
+   "battery_wh": 73,
+   "tgp": {
+    "RTX 5070 Ti": 115
+   },
+   "ram_slots": 0,
+   "pros": [
+    "#1 in Notebookcheck's gaming laptop ranking (89.9%)",
+    "Panther Lake Core Ultra 9 386H + RTX 5070 Ti in 3.5 lb",
+    "1,100-nit 3K OLED"
+   ],
+   "cons": [
+    "16GB soldered RAM on the Best Buy config",
+    "Expensive",
+    "14\" screen for long sessions"
+   ],
+   "awards": [
+    {
+     "label": "#1 in ranking (89.9%)",
+     "source": "Notebookcheck (Aug 2026)",
+     "url": "https://www.notebookcheck.net/Notebookcheck-s-Top-10-Gaming-Notebooks.98628.0.html"
+    }
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "msi-stealth-16": {
+   "brand": "MSI",
+   "name": "Stealth 16 AI / AI+",
+   "year": 2026,
+   "form": "Thin & light 16\"",
+   "battery_wh": 99.9,
+   "tgp": {
+    "RTX 5060": 105,
+    "RTX 5070": 105,
+    "RTX 5080": 130
+   },
+   "ram_slots": 2,
+   "pros": [
+    "99.9Wh battery (the legal max)",
+    "240Hz 2560x1600 OLED",
+    "Thin but still has SO-DIMM slots (up to 128GB)"
+   ],
+   "cons": [
+    "Price is high for the RTX 5060 config",
+    "Fans get loud under load"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "lenovo-legion-7a-16": {
+   "brand": "Lenovo",
+   "name": "Legion 7a 16\"",
+   "year": 2026,
+   "form": "Thin & light 16\"",
+   "battery_wh": 84,
+   "tgp": {
+    "RTX 5060": 100,
+    "RTX 5070": 100
+   },
+   "ram_slots": 0,
+   "pros": [
+    "4 lb, 0.67\" thin with a 240Hz OLED",
+    "RTX 5070 with 12GB VRAM (2026 variant)",
+    "Long battery life, USB4"
+   ],
+   "cons": [
+    "No Thunderbolt or Ethernet",
+    "Soldered RAM",
+    "RTX 5060 config is badly overpriced"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "lenovo-legion-7a-15": {
+   "brand": "Lenovo",
+   "name": "Legion 7a 15.3\" (Ryzen AI Max+)",
+   "year": 2026,
+   "form": "Thin & light 15\"",
+   "battery_wh": 84,
+   "tgp": {
+    "Radeon 8060S": 100
+   },
+   "ram_slots": 0,
+   "pros": [
+    "3.6 lb with RTX 4060-class integrated graphics",
+    "1,000-nit OLED, USB4",
+    "Great battery life and quiet for work"
+   ],
+   "cons": [
+    "No dedicated GPU",
+    "Soldered memory",
+    "Expensive for its gaming level"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "hp-omen-max-16": {
+   "brand": "HP",
+   "name": "OMEN MAX 16",
+   "year": 2026,
+   "form": "Desktop replacement 16\"",
+   "battery_wh": 83,
+   "tgp": {
+    "RTX 5070 Ti": 140,
+    "RTX 5080": 175
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Full-power GPUs and big cooling",
+    "1,100-nit 240Hz OLED",
+    "RAM and storage are user-replaceable"
+   ],
+   "cons": [
+    "Heavy (6.1-6.6 lb)",
+    "Expensive",
+    "Battery life is short when gaming"
+   ]
+  },
+  "msi-raider-16-hx": {
+   "brand": "MSI",
+   "name": "Raider 16 HX",
+   "year": 2025,
+   "form": "Desktop replacement 16\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5070 Ti": 140
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Full-power RTX 5070 Ti",
+    "Two Thunderbolt ports, Wi-Fi 7",
+    "240Hz 2560x1600"
+   ],
+   "cons": [
+    "Pricey for a 5070 Ti",
+    "Loud under load"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "asus-rog-strix-g18": {
+   "brand": "ASUS",
+   "name": "ROG Strix G18 (2025)",
+   "year": 2025,
+   "form": "Desktop replacement 18\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5050": 100,
+    "RTX 5080": 175
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Big 18\" 2560x1600 240Hz screen",
+    "Full-power RTX 5080",
+    "USB4 x2"
+   ],
+   "cons": [
+    "7.5 lb",
+    "Not a travel laptop"
+   ]
+  },
+  "asus-rog-strix-18-2026": {
+   "brand": "ASUS",
+   "name": "ROG Strix 18 / SCAR 18 (2026)",
+   "year": 2026,
+   "form": "Desktop replacement 18\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5070 Ti": 140,
+    "RTX 5080": 175,
+    "RTX 5090": 175
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Core Ultra 9 290HX Plus + full-power GPUs",
+    "300Hz (Strix) or 4K Mini-LED (SCAR) displays",
+    "Excellent cooling"
+   ],
+   "cons": [
+    "8.2 lb",
+    "Very expensive at the top end"
+   ],
+   "awards": [
+    {
+     "label": "Top 10 (SCAR 18, 87.4%)",
+     "source": "Notebookcheck (Aug 2026)",
+     "url": "https://www.notebookcheck.net/Notebookcheck-s-Top-10-Gaming-Notebooks.98628.0.html"
+    }
+   ]
+  },
+  "asus-rog-strix-scar-18-2025": {
+   "brand": "ASUS",
+   "name": "ROG Strix SCAR 18 (2025)",
+   "year": 2025,
+   "form": "Desktop replacement 18\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5090": 175
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Full-power RTX 5090 + Core Ultra 9 275HX",
+    "1,100-nit Mini-LED 240Hz"
+   ],
+   "cons": [
+    "$4,500 and 7.7 lb",
+    "Mixed customer reviews (3.8/5 at Best Buy)"
+   ]
+  },
+  "acer-predator-helios-18": {
+   "brand": "Acer",
+   "name": "Predator Helios 18 AI",
+   "year": 2026,
+   "form": "Desktop replacement 18\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5080": 175,
+    "RTX 5090": 175
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Mini-LED 18\" (250Hz 2.5K or 4K)",
+    "Core Ultra 9 290HX Plus, expandable to 128GB",
+    "Three M.2 slots"
+   ],
+   "cons": [
+    "7.7 lb",
+    "Slow DDR5-4400 on the RTX 5080 config"
+   ]
+  },
+  "alienware-area-51": {
+   "brand": "Alienware",
+   "name": "Area-51 (16\"/18\")",
+   "year": 2025,
+   "form": "Desktop replacement",
+   "battery_wh": 96,
+   "tgp": {
+    "RTX 5070 Ti": 140,
+    "RTX 5090": 175
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Sturdy premium build with great cooling",
+    "Two Thunderbolt 5 ports",
+    "Optional mechanical keyboard"
+   ],
+   "cons": [
+    "Heavy: 7.5 lb (16\") to 9.6 lb (18\")",
+    "Very expensive for an RTX 5070 Ti",
+    "Short battery life"
+   ],
+   "awards": [
+    {
+     "label": "Best high-end gaming laptop",
+     "source": "PCWorld (Sep 2026)",
+     "url": "https://www.pcworld.com/article/3232986/best-gaming-laptops.html"
+    },
+    {
+     "label": "Best premium gaming laptop",
+     "source": "TechRadar (Oct 2026)",
+     "url": "https://www.techradar.com/news/mobile-computing/laptops/best-gaming-laptops-top-5-gaming-notebooks-reviewed-1258471"
+    }
+   ]
+  },
+  "asus-zephyrus-duo": {
+   "brand": "ASUS",
+   "name": "ROG Zephyrus Duo (dual-screen)",
+   "year": 2026,
+   "form": "Dual-screen 16\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5070 Ti": 115,
+    "RTX 5090": 135
+   },
+   "ram_slots": 0,
+   "pros": [
+    "Two 16\" 2880x1800 OLED touch screens: amazing for work",
+    "#2 in Notebookcheck's ranking"
+   ],
+   "cons": [
+    "$4,500+",
+    "6.2 lb",
+    "Niche: you pay a lot for the second screen"
+   ],
+   "awards": [
+    {
+     "label": "#2 in ranking (89.3%)",
+     "source": "Notebookcheck (Aug 2026)",
+     "url": "https://www.notebookcheck.net/Notebookcheck-s-Top-10-Gaming-Notebooks.98628.0.html"
+    }
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "gigabyte-aorus-master-16": {
+   "brand": "Gigabyte",
+   "name": "Aorus Master 16",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "battery_wh": 99,
+   "tgp": {
+    "RTX 5070 Ti": 140
+   },
+   "ram_slots": 2,
+   "pros": [
+    "240Hz 2560x1600 OLED",
+    "Two Thunderbolt/USB4 ports"
+   ],
+   "cons": [
+    "Weak Best Buy reviews (2/5, small sample)",
+    "Price climbed above rivals"
+   ],
+   "estimates": [
+    "battery_wh"
+   ]
+  },
+  "lg-gram-pro-max-17": {
+   "brand": "LG",
+   "name": "gram Pro Max 17",
+   "year": 2026,
+   "form": "Work-first 17\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5050": 60
+   },
+   "ram_slots": 0,
+   "pros": [
+    "Only 3.8 lb for a 17\" laptop",
+    "Huge battery life claim (32.5 h video)",
+    "Fast Panther Lake CPU, Thunderbolt"
+   ],
+   "cons": [
+    "RTX 5050 at low power: light gaming only",
+    "$3,000 for entry-level graphics"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "asus-v16": {
+   "brand": "ASUS",
+   "name": "V16",
+   "year": 2026,
+   "form": "Budget 16\"",
+   "battery_wh": 63,
+   "tgp": {
+    "RTX 3050": 65,
+    "RTX 5050": 80
+   },
+   "ram_slots": 1,
+   "pros": [
+    "Light and quiet for a 16\" laptop",
+    "Good keyboard"
+   ],
+   "cons": [
+    "Ships with only 8GB RAM",
+    "Dim 300-nit 144Hz panel",
+    "Best Buy's RTX 5050 price ($1,300) is poor value"
+   ],
+   "awards": [
+    {
+     "label": "Best budget gaming laptop (RTX 4050 config)",
+     "source": "TechRadar (Aug 2026)",
+     "url": "https://techradar.com/best/best-cheap-gaming-laptops-2020-the-5-top-affordable-gaming-laptops"
+    }
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "razer-blade-16-2026": {
+   "brand": "Razer",
+   "name": "Blade 16 (2026)",
+   "year": 2026,
+   "form": "Premium thin 16\"",
+   "battery_wh": 90,
+   "tgp": {
+    "RTX 5070 Ti": 140,
+    "RTX 5080": 165,
+    "RTX 5090": 175
+   },
+   "ram_slots": 0,
+   "pros": [
+    "0.59\" CNC aluminum chassis at ~4.6 lb",
+    "1,100-nit HDR 240Hz OLED",
+    "Full-power GPUs in a thin laptop, Thunderbolt 5"
+   ],
+   "cons": [
+    "Most expensive way to get each GPU tier",
+    "Soldered LPDDR5X",
+    "Runs hot and loud"
+   ],
+   "awards": [
+    {
+     "label": "Best gaming laptop overall",
+     "source": "TechRadar (Oct 2026)",
+     "url": "https://www.techradar.com/news/mobile-computing/laptops/best-gaming-laptops-top-5-gaming-notebooks-reviewed-1258471"
+    }
+   ]
+  },
+  "framework-16": {
+   "brand": "Framework",
+   "name": "Laptop 16",
+   "year": 2025,
+   "form": "Modular 16\"",
+   "battery_wh": 85,
+   "tgp": {
+    "RTX 5070": 100
+   },
+   "ram_slots": 2,
+   "pros": [
+    "Swap the GPU module, ports, keyboard and mainboard later",
+    "Two SO-DIMM + two M.2 slots",
+    "Great Linux support"
+   ],
+   "cons": [
+    "Clear price premium over equivalent RTX 5070 laptops",
+    "Price depends on the configurator (tracked manually)",
+    "~5.3 lb with the GPU module"
+   ]
+  }
+ },
+ "laptops": [
+  {
+   "id": "hp-victus-15-6623881",
+   "family": "hp-victus-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6623881",
+     "url": "https://www.bestbuy.com/product/hp-victus-15-6-144hz-full-hd-gaming-laptop-amd-ryzen-7-7445hs-2023-16gb-memory-nvidia-geforce-rtx-4050-512gb-ssd-mica-silver/JJGH2L8JVV"
+    }
+   ],
+   "specs": {
+    "model": "15-fb3093dx/BM4X8UA#ABA",
+    "year": 2023,
+    "cpu": "AMD Ryzen 7 7000 Series 7445HS",
+    "vram_gb": 6,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 512,
+    "size": 15.6,
+    "w": 1920,
+    "h": 1080,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 5.06,
+    "thickness_in": 0.93,
+    "tb": 0,
+    "usb": "2 x USB-A 3.0, 1 x USB-C 3.0",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6",
+    "battery_claim_h": 12.0,
+    "numpad": true,
+    "cpu_key": "Ryzen 7 7445HS",
+    "gpu_key": "RTX 4050"
+   }
+  },
+  {
+   "id": "hp-victus-15-6672944",
+   "family": "hp-victus-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672944",
+     "url": "https://www.bestbuy.com/product/hp-victus-15-6-full-hd-gaming-laptop-amd-ryzen-5-7535hs-2023-8gb-ddr5-memory-nvidia-geforce-rtx-3050-512gb-ssd-mica-silver/J3YH84TCPC"
+    }
+   ],
+   "specs": {
+    "model": "15-fb3113dx/D83XBUA#ABA",
+    "year": 2026,
+    "cpu": "AMD Ryzen 5 7000 Series 7535HS",
+    "vram_gb": 6,
+    "ram_gb": 8,
+    "ram_type": "DDR5",
+    "ram_speed": 4800,
+    "storage_gb": 512,
+    "size": 15.6,
+    "w": 1920,
+    "h": 1080,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 5.06,
+    "thickness_in": 0.93,
+    "usb": "1 x USB-C 3.0, 2 x USB-A 3.0",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6",
+    "battery_claim_h": 9.25,
+    "numpad": true,
+    "cpu_key": "Ryzen 5 7535HS",
+    "gpu_key": "RTX 3050"
+   }
+  },
+  {
+   "id": "asus-v16-6683981",
+   "family": "asus-v16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6683981",
+     "url": "https://www.bestbuy.com/product/asus-v16-16-2k-gaming-laptop-intel-core-5-processor-210h-with-nvidia-geforce-rtx-3050-8gb-memory-512gb-ssd-black/JJGHGS624Z"
+    }
+   ],
+   "specs": {
+    "model": "V3607VJ-VS/V16_55",
+    "year": 2026,
+    "cpu": "Intel Core 5 Series 2 210H",
+    "vram_gb": 6,
+    "ram_gb": 8,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 64,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 4.3,
+    "thickness_in": 0.77,
+    "usb": "1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 6",
+    "m2": 1,
+    "cpu_key": "Core 5 210H",
+    "gpu_key": "RTX 3050"
+   }
+  },
+  {
+   "id": "acer-nitro-v16-6675841",
+   "family": "acer-nitro-v16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6675841",
+     "url": "https://www.bestbuy.com/product/acer-nitro-v-16-wuxga-165hz-gaming-laptop-intel-core-7-240h-2024-nvidia-geforce-rtx-5050-16gb-memory-512gb-storage-obsidian-black/JJ8V8HYVHP"
+    }
+   ],
+   "specs": {
+    "model": "ANV16-I31-76N7",
+    "year": 2026,
+    "cpu": "Intel Core 7 Series 2 240H",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_max_gb": 32,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false,
+    "weight_lb": 4.63,
+    "thickness_in": 0.78,
+    "tb": 1,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6",
+    "m2": 2,
+    "numpad": true,
+    "cpu_key": "Core 7 240H",
+    "gpu_key": "RTX 5050"
+   }
+  },
+  {
+   "id": "alienware-15-6678996",
+   "family": "alienware-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6678996",
+     "url": "https://www.bestbuy.com/product/alienware-15-3-2k-gaming-laptop-intel-core-7-series-2-240h-2026-16gb-memory-nvidia-geforce-rtx-4050-6gb-512gb-storage-black/J3K4L6QK9F"
+    }
+   ],
+   "specs": {
+    "model": "LDA15260-7823BLK-PUS",
+    "year": 2026,
+    "cpu": "Intel Core 7 Series 2 240H",
+    "vram_gb": 6,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 512,
+    "size": 15.3,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 4.96,
+    "thickness_in": 0.9,
+    "usb": "2 x USB-A 3.2, 2 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6",
+    "numpad": true,
+    "cpu_key": "Core 7 240H",
+    "gpu_key": "RTX 4050"
+   }
+  },
+  {
+   "id": "gigabyte-gaming-a16-6632144",
+   "family": "gigabyte-gaming-a16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6632144",
+     "url": "https://www.bestbuy.com/product/gigabyte-gaming-a16-16-165hz-1920x1200-wuxga-intel-core-i7-13620h-512gb-ssd-16gb-ddr5-ram-geforce-rtx-4050-black-steel/J3GWPQCCVJ"
+    }
+   ],
+   "specs": {
+    "model": "GAMING A16 CMHI2US893SH",
+    "year": 2025,
+    "cpu": "Intel 13th Generation Core i7 13620H",
+    "vram_gb": 6,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 0.76,
+    "usb": "1 x USB-C 3.2, 2 x USB-A 3.2, 1 x USB-A 2.0",
+    "hdmi": 1,
+    "cpu_key": "Core i7-13620H",
+    "gpu_key": "RTX 4050"
+   }
+  },
+  {
+   "id": "alienware-15-6674559",
+   "family": "alienware-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6674559",
+     "url": "https://www.bestbuy.com/product/alienware-15-3-2k-gaming-laptop-amd-ryzen-200-series-r7-260-2026-16gb-memory-nvidia-geforce-rtx-5050-8gb-1tb-storage-black/J3K4L6QR6V"
+    }
+   ],
+   "specs": {
+    "model": "LDA15265-7724BLK-PUS",
+    "year": 2026,
+    "cpu": "AMD Ryzen 200 Series 260",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 15.3,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 4.96,
+    "thickness_in": 0.9,
+    "usb": "2 x USB-A 3.2, 2 x USB-C 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 6",
+    "numpad": true,
+    "cpu_key": "Ryzen 7 260",
+    "gpu_key": "RTX 5050"
+   }
+  },
+  {
+   "id": "lenovo-loq-15-6673554",
+   "family": "lenovo-loq-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673554",
+     "url": "https://www.bestbuy.com/product/lenovo-loq-15-6-2k-gaming-laptop-amd-ryzen-7-170-2025-16gb-memory-nvidia-geforce-rtx-4050-512gb-storage-luna-grey/JJGH3Q67WX"
+    }
+   ],
+   "specs": {
+    "model": "83S0007FUS",
+    "year": 2026,
+    "cpu": "AMD Ryzen 100 Series Ryzen 7 170",
+    "vram_gb": 6,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 4800,
+    "storage_gb": 512,
+    "size": 15.6,
+    "w": 1920,
+    "h": 1080,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 3.96,
+    "thickness_in": 0.9,
+    "usb": "2 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6",
+    "battery_claim_h": 6.0,
+    "numpad": true,
+    "cpu_key": "Ryzen 7 170",
+    "gpu_key": "RTX 4050"
+   }
+  },
+  {
+   "id": "gigabyte-gaming-a16-6632143",
+   "family": "gigabyte-gaming-a16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6632143",
+     "url": "https://www.bestbuy.com/product/gigabyte-gaming-a16-16-165hz-1920x1200-wuxga-intel-core-i7-13620h-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5060-black-steel/J3GWPQC2TJ"
+    }
+   ],
+   "specs": {
+    "model": "GAMING A16 CVHI3US864SH",
+    "year": 2025,
+    "cpu": "Intel 13th Generation Core i7 13620H",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 0.76,
+    "usb": "1 x USB-C 3.2, 2 x USB-A 3.2, 1 x USB-A 2.0",
+    "hdmi": 1,
+    "cpu_key": "Core i7-13620H",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "gigabyte-aero-x16-6635752",
+   "family": "gigabyte-aero-x16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6635752",
+     "url": "https://www.bestbuy.com/product/gigabyte-aero-x16-copilot-pc-16-25601600-wqxga-amd-ryzen-al-7-350-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5060-space-gray/J3GWPQCXYT"
+    }
+   ],
+   "specs": {
+    "model": "GIGABYTE AERO X16 1VH93USC64AH",
+    "year": 2025,
+    "cpu": "AMD Ryzen AI 300 Series 350",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false,
+    "weight_lb": 4.19,
+    "thickness_in": 0.65,
+    "usb4": true,
+    "usb": "1 x USB-C 4, 2 x USB-A 3.2, 1 x USB-A 2.0",
+    "hdmi": 1,
+    "battery_claim_h": 12.0,
+    "cpu_key": "Ryzen AI 7 350",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "asus-v16-6683982",
+   "family": "asus-v16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6683982",
+     "url": "https://www.bestbuy.com/product/asus-v16-16-2k-gaming-laptop-intel-core-7-processor-240h-with-nvidia-geforce-rtx-5050-8gb-memory-512gb-ssd-black/JJGHGSRLH6"
+    }
+   ],
+   "specs": {
+    "model": "V3607VH-VS/V16_75",
+    "year": 2026,
+    "cpu": "Intel Core 7 Series 2 240H",
+    "vram_gb": 8,
+    "ram_gb": 8,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 64,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 4.3,
+    "thickness_in": 0.77,
+    "usb": "1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 6",
+    "m2": 1,
+    "cpu_key": "Core 7 240H",
+    "gpu_key": "RTX 5050"
+   }
+  },
+  {
+   "id": "msi-cyborg-15-max-6690923",
+   "family": "msi-cyborg-15-max",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6690923",
+     "url": "https://www.bestbuy.com/product/msi-cyborg-15-max-15-6-2k-144hz-fhd-gaming-laptop-intel-i7-13620h-geforce-rtx-5070-16gb-memory-512gb-storage-platinum-gray/J3P7TXWQKL"
+    }
+   ],
+   "specs": {
+    "model": "Cyborg 15 Max C13WGO-805USY",
+    "year": 2026,
+    "cpu": "Intel 13th Generation Core i7 13620H",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR4",
+    "ram_max_gb": 96,
+    "storage_gb": 512,
+    "size": 15.6,
+    "w": 1920,
+    "h": 1080,
+    "hz": 144,
+    "touch": false,
+    "weight_lb": 4.41,
+    "thickness_in": 0.9,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core i7-13620H",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "lenovo-loq-essential-15-6691123",
+   "family": "lenovo-loq-essential-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6691123",
+     "url": "https://www.bestbuy.com/product/lenovo-loq-essential-15-3-2k-gaming-laptop-intel-core-ultra-x7-358h-2026-16gb-ram-intel-arc-b390-512gb-storage-luna-grey/J3PT7WJ74H"
+    }
+   ],
+   "specs": {
+    "model": "83Y80000US",
+    "year": 2026,
+    "cpu": "Intel Core Ultra X7 Series 3 358H",
+    "ram_gb": 16,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 512,
+    "size": 15.3,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 4.63,
+    "thickness_in": 0.92,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6",
+    "battery_claim_h": 12.0,
+    "numpad": true,
+    "cpu_key": "Core Ultra X7 358H",
+    "gpu_key": "Arc B390"
+   }
+  },
+  {
+   "id": "gigabyte-aero-x16-6632266",
+   "family": "gigabyte-aero-x16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6632266",
+     "url": "https://www.bestbuy.com/product/gigabyte-aero-x16-copilot-pc-16-25601600-wqxga-amd-ryzen-al-7-350-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5070-space-gray/J3GWPQCCFK"
+    }
+   ],
+   "specs": {
+    "model": "GIGABYTE AERO X16 1WH93USC64AH",
+    "year": 2025,
+    "cpu": "AMD Ryzen AI 300 Series 350",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false,
+    "weight_lb": 4.19,
+    "thickness_in": 0.65,
+    "usb4": true,
+    "usb": "1 x USB-C 4, 2 x USB-A 3.2, 1 x USB-A 2.0",
+    "hdmi": 1,
+    "battery_claim_h": 12.0,
+    "cpu_key": "Ryzen AI 7 350",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "asus-tuf-f16-6673588",
+   "family": "asus-tuf-f16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673588",
+     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-f16-16-144hz-fhd-gaming-laptop-intel-core-i7-14650hx-2024-16gb-memory-geforce-rtx-5060-512gb-storage-jaegar-gray/JJGHGSJ7WR"
+    }
+   ],
+   "specs": {
+    "model": "FX608JMI-TF/F16_76",
+    "year": 2026,
+    "cpu": "Intel Core i7 14th Generation 14650HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 1.07,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core i7-14650HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "lenovo-loq-15-6673556",
+   "family": "lenovo-loq-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673556",
+     "url": "https://www.bestbuy.com/product/lenovo-loq-15-6-2k-gaming-laptop-amd-ryzen-7-170-2025-16gb-memory-nvidia-geforce-rtx-5050-512gb-storage-eclipse-black/JJGH3K2C7T"
+    }
+   ],
+   "specs": {
+    "model": "83VA001PUS",
+    "year": 2026,
+    "cpu": "AMD Ryzen 100 Series Ryzen 7 170",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 4800,
+    "storage_gb": 512,
+    "size": 15.6,
+    "w": 1920,
+    "h": 1080,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 5.06,
+    "thickness_in": 0.98,
+    "usb": "2 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6",
+    "battery_claim_h": 5.0,
+    "numpad": true,
+    "cpu_key": "Ryzen 7 170",
+    "gpu_key": "RTX 5050"
+   }
+  },
+  {
+   "id": "msi-crosshair-a16-hx-6677954",
+   "family": "msi-crosshair-a16-hx",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6677954",
+     "url": "https://www.bestbuy.com/product/msi-crosshair-a16-hx-16-2-5k-qhd-240hz-gaming-laptop-amd-r9-8940hx-nvidia-geforce-rtx-5060-16gb-memory-1tb-storage-cosmo-gray/J3P7TXHLF6"
+    }
+   ],
+   "specs": {
+    "model": "Crosshair A16 HX D8WFKG-090US",
+    "year": 2026,
+    "cpu": "AMD Ryzen 9 8000 Series 8940HX",
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 96,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "touch": false,
+    "weight_lb": 5.51,
+    "thickness_in": 1.1,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "numpad": true,
+    "cpu_key": "Ryzen 9 8940HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "hp-omen-16-6672948",
+   "family": "hp-omen-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672948",
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-7-8745hx-2025-16gb-ram-nvidia-geforce-rtx-5060-512gb-ssd-shadow-black/J3YH84FZT9"
+    }
+   ],
+   "specs": {
+    "model": "16-ap1003dx/D8RB8UA#ABA",
+    "year": 2026,
+    "cpu": "AMD Ryzen 7 8000 Series 8745HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5200,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 5.47,
+    "thickness_in": 1.8,
+    "usb": "1 x USB-C 3.1, 1 x USB-A 3.1, 2 x USB-A 3.0",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 7.0,
+    "numpad": true,
+    "cpu_key": "Ryzen 7 8745HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "asus-tuf-a16-6673585",
+   "family": "asus-tuf-a16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673585",
+     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-a16-16-165hz-fhd-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-geforce-rtx-5070-512gb-storage-jaegar-gray/JJGHGSXCV8"
+    }
+   ],
+   "specs": {
+    "model": "FA608PP-TF/A16_97",
+    "year": 2026,
+    "cpu": "AMD Ryzen 9 8000 Series 8940HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5200,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 0.7,
+    "usb": "2 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Ryzen 9 8940HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "hp-omen-16-6672942",
+   "family": "hp-omen-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672942",
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/JJGWKSG2SQ"
+    }
+   ],
+   "specs": {
+    "model": "16-ap1023dx/D60NFUA#ABA",
+    "year": 2026,
+    "cpu": "AMD Ryzen 9 8000 Series 8940HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5200,
+    "storage_gb": 1024,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 5.47,
+    "thickness_in": 1.8,
+    "usb": "1 x USB-C 3.1, 1 x USB-A 3.1, 2 x USB-A 3.0",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 5.25,
+    "numpad": true,
+    "cpu_key": "Ryzen 9 8940HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "alienware-16x-aurora-6675559",
+   "family": "alienware-16x-aurora",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6675559",
+     "url": "https://www.bestbuy.com/product/alienware-16x-aurora-16-3k-oled-gaming-laptop-intel-core-ultra-7-series-2-2026-16gb-memory-nvidia-geforce-rtx-5060-512gb-storage-blue/J3K4L6QQ9T"
+    }
+   ],
+   "specs": {
+    "model": "LAC16251-7317BLU-PUS",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 7 Series 2 270HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 64,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 620,
+    "touch": false,
+    "weight_lb": 5.86,
+    "thickness_in": 0.76,
+    "tb": 1,
+    "usb": "2 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "numpad": true,
+    "cpu_key": "Core Ultra 7 270HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "acer-nitro-v16-6675842",
+   "family": "acer-nitro-v16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6675842",
+     "url": "https://www.bestbuy.com/product/acer-nitro-v-16-wuxga-165hz-gaming-laptop-intel-core-7-240h-2024-nvidia-geforce-rtx-5060-16gb-memory-512gb-storage-obsidian-black/JJ8V8QFPT8"
+    }
+   ],
+   "specs": {
+    "model": "ANV16-I31-70WA",
+    "year": 2026,
+    "cpu": "Intel Core 7 Series 2 240H",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_max_gb": 32,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false,
+    "weight_lb": 4.63,
+    "thickness_in": 0.78,
+    "tb": 1,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6",
+    "m2": 2,
+    "numpad": true,
+    "cpu_key": "Core 7 240H",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "hp-omen-transcend-14-6672941",
+   "family": "hp-omen-transcend-14",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672941",
+     "url": "https://www.bestbuy.com/product/hp-omen-transcend-14-120hz-3k-oled-gaming-laptop-intel-core-ultra-7-2025-16gb-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/J3YH845WJT"
+    }
+   ],
+   "specs": {
+    "model": "14-fb1043dx/D8KM3UA#ABA",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 7 Series 2 255H",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 7467,
+    "storage_gb": 1024,
+    "size": 14.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 3.6,
+    "thickness_in": 0.71,
+    "tb": 1,
+    "usb": "2 x USB-A 3.1, 1 x USB-C 3.1",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "battery_claim_h": 14.75,
+    "numpad": false,
+    "cpu_key": "Core Ultra 7 255H",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "lenovo-loq-15-6673549",
+   "family": "lenovo-loq-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673549",
+     "url": "https://www.bestbuy.com/product/lenovo-loq-15-6-2k-gaming-laptop-core-i7-13650hx-2023-16gb-memory-nvidia-geforce-rtx-5060-512gb-storage-eclipse-black/JJGH3WFLFS"
+    }
+   ],
+   "specs": {
+    "model": "83SC007RUS",
+    "year": 2026,
+    "cpu": "Intel 13th Generation Core i7 13650HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 4800,
+    "storage_gb": 512,
+    "size": 15.6,
+    "w": 1920,
+    "h": 1080,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 5.06,
+    "thickness_in": 0.98,
+    "usb": "2 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6",
+    "battery_claim_h": 5.0,
+    "numpad": true,
+    "cpu_key": "Core i7-13650HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "lenovo-legion-5i-15-6691125",
+   "family": "lenovo-legion-5i-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6691125",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-5i-15-3-3k-gaming-laptop-intel-core-7-245hx-2025-16gb-ram-nvidia-geforce-rtx-5060-512gb-storage-glacier-white/JJGH3V7KPG"
+    }
+   ],
+   "specs": {
+    "model": "83VK0068US",
+    "year": 2026,
+    "cpu": "Intel Core 7 Series 2 245HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 64,
+    "storage_gb": 512,
+    "size": 15.3,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 1000,
+    "touch": false,
+    "weight_lb": 4.25,
+    "thickness_in": 0.79,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 9.0,
+    "numpad": true,
+    "cpu_key": "Core 7 245HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "asus-rog-strix-g16-6635275",
+   "family": "asus-rog-strix-g16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6635275",
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-g16-16-fhd-165hz-gaming-laptop-intel-core-i9-hx-16gb-ram-nvidia-geforce-rtx-5060-1tb-ssd-eclipse-gray/JJGGLHJPZS"
+    }
+   ],
+   "specs": {
+    "model": "G615JMR-DS94",
+    "year": 2025,
+    "cpu": "Intel Core i9 14th Generation i9-14900HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 64,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 5.84,
+    "thickness_in": 0.9,
+    "tb": 1,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "cpu_key": "Core i9-14900HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "alienware-16x-aurora-6678048",
+   "family": "alienware-16x-aurora",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6678048",
+     "url": "https://www.bestbuy.com/product/alienware-16x-aurora-16-3k-oled-gaming-laptop-intel-core-ultra-9-series-2-2026-16gb-memory-nvidia-geforce-rtx-5070-1tb-storage-blue/J3K4L6QQ97"
+    }
+   ],
+   "specs": {
+    "model": "LAC16251-9300BLU-PUS",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 290HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 64,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.86,
+    "thickness_in": 0.76,
+    "tb": 1,
+    "usb": "2 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 290HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "acer-predator-triton-14-6675843",
+   "family": "acer-predator-triton-14",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6675843",
+     "url": "https://www.bestbuy.com/product/acer-predator-triton-14-5-3k-oled-gaming-laptop-intel-core-ultra-9-288v-2024-rtx-5070-32gb-memory-1tb-storage-charcoal-black/JJ8V8HGJPC"
+    }
+   ],
+   "specs": {
+    "model": "PT14-52T-972D",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 Ultra 9 288V",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 14.5,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 340,
+    "touch": true,
+    "weight_lb": 3.53,
+    "thickness_in": 0.68,
+    "tb": 2,
+    "usb": "2 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 288V",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "hp-omen-16-6672947",
+   "family": "hp-omen-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672947",
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2k-gaming-laptop-intel-core-ultra-7-356h-2026-16gb-memory-nvidia-geforce-rtx-5060-512gb-ssd-shadow-black/JJGWKS75YF"
+    }
+   ],
+   "specs": {
+    "model": "16-am2013dx/D5CD0UA#ABA",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 7 Series 3 Evo Edition 356H",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false,
+    "weight_lb": 5.38,
+    "thickness_in": 1.06,
+    "usb": "1 x USB-C 3.1, 1 x USB-A 3.1, 2 x USB-A 3.0",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 19.5,
+    "numpad": true,
+    "cpu_key": "Core Ultra 7 356H",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "asus-rog-flow-z13-6619034",
+   "family": "asus-rog-flow-z13",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6619034",
+     "url": "https://www.bestbuy.com/product/asus-rog-flow-z13-13-4-2-5k-180hz-touch-screen-gaming-laptop-copilot-pc-amd-ryzen-ai-max-395-32gb-ram-1tb-ssd-off-black/JJGGLHJ9PJ"
+    }
+   ],
+   "specs": {
+    "model": "GZ302EA-XS96",
+    "year": 2025,
+    "cpu": "AMD Ryzen AI 300 Series 395",
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "storage_gb": 1000,
+    "size": 13.4,
+    "w": 2560,
+    "h": 1600,
+    "hz": 180,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": true,
+    "weight_lb": 2.65,
+    "thickness_in": 0.51,
+    "usb4": true,
+    "usb": "1 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 1,
+    "numpad": false,
+    "cpu_key": "Ryzen AI Max+ 395",
+    "gpu_key": "Radeon 8060S"
+   }
+  },
+  {
+   "id": "acer-predator-neo-16-6681256",
+   "family": "acer-predator-neo-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6681256",
+     "url": "https://www.bestbuy.com/product/acer-predator-neo-gaming-laptop-16-oled-2-5k-intel-core-ultra-9-290hx-plus-2026-nvidia-rtx-5060-16gb-memory-1tb-storage-obsidian-black/JJ8V8HPGRC"
+    }
+   ],
+   "specs": {
+    "model": "PHN16S-I71-921L",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 290HX Plus",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "ram_max_gb": 64,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 0.74,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g16-2025-6613961",
+   "family": "asus-zephyrus-g16-2025",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6613961",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-2-5k-oled-240hz-gaming-laptop-intel-core-ultra-9-285h-16gb-memory-rtx-5070-1tb-storage-eclipse-gray/JJGGLHJXQK"
+    }
+   ],
+   "specs": {
+    "model": "GU605CP-G16.U95070",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 285H",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 7467,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 4.08,
+    "thickness_in": 0.59,
+    "tb": 1,
+    "usb4": true,
+    "usb": "2 x USB-A 3.2, 1 x USB-C 3.2, 1 x USB-C 4",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 10.0,
+    "cpu_key": "Core Ultra 9 285H",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5i-6691126",
+   "family": "lenovo-legion-pro-5i",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6691126",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-3k-gaming-laptop-intel-core-ultra-7-251hx-2026-24gb-ram-nvidia-geforce-rtx-5070-512gb-storage-eclipse-black/J3PTJ57X2K"
+    }
+   ],
+   "specs": {
+    "model": "83F300E1US",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 7 Series 2 251HX",
+    "vram_gb": 12,
+    "ram_gb": 24,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 5.36,
+    "thickness_in": 1.02,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 4.7,
+    "numpad": true,
+    "cpu_key": "Core Ultra 7 251HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "asus-tuf-a14-max-6672107",
+   "family": "asus-tuf-a14-max",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672107",
+     "url": "https://www.bestbuy.com/product/asus-tuf-a14-w2-5k-165hz-gaming-laptop-copilot-pc-amd-ryzen-ai-max-392-with-32gb-ram-1tb-ssd-jaegar-gray/JJGHGPF8RG"
+    }
+   ],
+   "specs": {
+    "model": "FA401EA-DS96",
+    "year": 2026,
+    "cpu": "AMD Ryzen AI Max Series AI Max+ 392",
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8000,
+    "storage_gb": 1000,
+    "size": 14.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false,
+    "weight_lb": 3.26,
+    "thickness_in": 0.67,
+    "usb4": true,
+    "usb": "1 x USB-C 4, 1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 6E",
+    "m2": 2,
+    "numpad": false,
+    "cpu_key": "Ryzen AI Max+ 392",
+    "gpu_key": "Radeon 8060S"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5-amd-6619247",
+   "family": "lenovo-legion-pro-5-amd",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6619247",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5-16-2-5k-gaming-laptop-amd-ryzen-9-8945hx-2025-nvidia-geforce-rtx-5060-16gb-memory-1tb-ssd-eclipse-black/JJGSH8VF2H"
+    }
+   ],
+   "specs": {
+    "model": "83LT000EUS",
+    "year": 2025,
+    "cpu": "AMD Ryzen 9 8000 Series 8945HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5200,
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.33,
+    "thickness_in": 1.02,
+    "usb": "3 x USB-A 3.2, 2 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 6.3,
+    "numpad": true,
+    "cpu_key": "Ryzen 9 8945HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "asus-rog-strix-g16-6613956",
+   "family": "asus-rog-strix-g16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6613956",
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-g16-16-fhd-165hz-gaming-laptop-amd-ryzen-9-8940hx-16gb-memory-geforce-rtx-5070-ti-1tb-storage-eclipse-gray/JJGGLHJLTS"
+    }
+   ],
+   "specs": {
+    "model": "G614PR-G16.R95070TI",
+    "year": 2025,
+    "cpu": "AMD Ryzen 9 8000 Series 8940HX",
+    "vram_gb": 12,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 5.51,
+    "thickness_in": 0.89,
+    "usb4": true,
+    "usb": "2 x USB-C 4, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "battery_claim_h": 10.0,
+    "cpu_key": "Ryzen 9 8940HX",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g14-2025-6629420",
+   "family": "asus-zephyrus-g14-2025",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6629420",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g14-14-3k-oled-120hz-gaming-laptop-amd-ryzen-9-270-16gb-memory-geforce-rtx-5060-1tb-storage-platinum-white/JJGGLH72GT"
+    }
+   ],
+   "specs": {
+    "model": "GA403UM-G14.R9HX4",
+    "year": 2025,
+    "cpu": "AMD Ryzen 200 Series 270",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 7500,
+    "storage_gb": 1000,
+    "size": 14.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 3.31,
+    "thickness_in": 0.63,
+    "usb4": true,
+    "usb": "1 x USB-C 4, 1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 1,
+    "battery_claim_h": 10.0,
+    "numpad": false,
+    "cpu_key": "Ryzen 9 270",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5i-6673553",
+   "family": "lenovo-legion-pro-5i",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673553",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-3k-lcd-gaming-laptop-intel-core-ultra-7-255hx-2025-16gb-ram-nvidia-geforce-rtx-5070-1tb-eclipse-black/JJGH3Z6XGZ"
+    }
+   ],
+   "specs": {
+    "model": "83F3009TUS",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 7 Series 2 255HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.35,
+    "thickness_in": 1.02,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 4.7,
+    "numpad": true,
+    "cpu_key": "Core Ultra 7 255HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "asus-rog-flow-z13-6619196",
+   "family": "asus-rog-flow-z13",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6619196",
+     "url": "https://www.bestbuy.com/product/asus-rog-flow-z13-13-4-2-5k-180hz-touch-screen-gaming-laptop-copilot-pc-amd-ryzen-ai-max-395-64gb-memory-1tb-storage-off-black/JJGGLHG8X9"
+    }
+   ],
+   "specs": {
+    "model": "GZ302EA-R9641TB",
+    "year": 2025,
+    "cpu": "AMD Ryzen AI Max Series 395",
+    "ram_gb": 64,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8000,
+    "storage_gb": 1000,
+    "size": 13.4,
+    "w": 2560,
+    "h": 1600,
+    "hz": 180,
+    "panel": "IPS",
+    "touch": true,
+    "weight_lb": 2.65,
+    "thickness_in": 0.51,
+    "usb4": true,
+    "usb": "1 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 12.0,
+    "numpad": false,
+    "cpu_key": "Ryzen AI Max+ 395",
+    "gpu_key": "Radeon 8060S"
+   }
+  },
+  {
+   "id": "msi-stealth-16-6670610",
+   "family": "msi-stealth-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6670610",
+     "url": "https://www.bestbuy.com/product/msi-stealth-16-ai-16-2-5k-240hz-oled-gaming-laptop-intel-core-u9-386h-nvidia-geforce-rtx-5060-32gb-memory-1tb-storage-charcoal-black/J3P7TXTXHQ"
+    }
+   ],
+   "specs": {
+    "model": "Stealth 16 AI+ B3WF-002US",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 Ultra 9-386H",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 7200,
+    "ram_max_gb": 128,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "touch": false,
+    "weight_lb": 4.39,
+    "thickness_in": 0.79,
+    "tb": 2,
+    "usb": "2 x USB-C, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "acer-predator-neo-16-6677630",
+   "family": "acer-predator-neo-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6677630",
+     "url": "https://www.bestbuy.com/product/acer-predator-neo-gaming-laptop-16-oled-intel-core-ultra-9-series-2-2026-2-5k-rtx-5070-ti-32gb-memory-1tb-storage-obsidian-black/JJ8V8HPCW6"
+    }
+   ],
+   "specs": {
+    "model": "PHN16S-I71-953L",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 290HX Plus",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "ram_max_gb": 64,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 0.74,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "lenovo-legion-7a-16-6673555",
+   "family": "lenovo-legion-7a-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673555",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-ryzen-ai-9-hx-470-2026-32gb-ram-nvidia-geforce-rtx-5070-1tb-storage-nebula/JJGH3KJRH6"
+    }
+   ],
+   "specs": {
+    "model": "83Q8001GUS",
+    "year": 2026,
+    "cpu": "AMD Ryzen AI 400 Series Al 9 HX 470",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 3.96,
+    "thickness_in": 0.67,
+    "tb": 0,
+    "usb4": true,
+    "usb": "2 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "eth": 0,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 12.8,
+    "numpad": true,
+    "cpu_key": "Ryzen AI 9 HX 470",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "msi-stealth-16-6631787",
+   "family": "msi-stealth-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6631787",
+     "url": "https://www.bestbuy.com/product/msi-stealth-16-ai-16-240hz-qhd-oled-gaming-laptop-intel-u9-285h-nvidia-geforce-rtx-5070-32gb-memory-1tb-ssd-core-black/J3P7TXRYYG"
+    }
+   ],
+   "specs": {
+    "model": "STEALTH16A2008",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 285H",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 96,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "touch": false,
+    "weight_lb": 4.39,
+    "thickness_in": 0.85,
+    "usb": "1 x USB-C, 2 x USB-A",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 285H",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "lenovo-legion-7a-15-6678510",
+   "family": "lenovo-legion-7a-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6678510",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-15-3-3k-oled-gaming-laptop-amd-ryzen-ai-max-388-2026-radeon-8060s-graphics-32gb-memory-1tb-storage-nebula/JJGH3KPF8G"
+    }
+   ],
+   "specs": {
+    "model": "83V90000US",
+    "year": 2026,
+    "cpu": "AMD Ryzen AI Max+ 300 Series 388",
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8000,
+    "storage_gb": 1000,
+    "size": 15.3,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 1000,
+    "touch": false,
+    "weight_lb": 3.63,
+    "thickness_in": 0.63,
+    "usb4": true,
+    "usb": "2 x USB-C 4, 1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 12.0,
+    "numpad": true,
+    "cpu_key": "Ryzen AI Max+ 388",
+    "gpu_key": "Radeon 8060S"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5i-6673557",
+   "family": "lenovo-legion-pro-5i",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673557",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-3k-oled-gaming-laptop-intel-core-ultra-9-275hx-2025-32gb-ram-nvidia-geforce-rtx-5070ti-1tb-eclipse-black/JJGH3K4WRZ"
+    }
+   ],
+   "specs": {
+    "model": "83LU0052US",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 275HX",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.33,
+    "thickness_in": 1.02,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 3.6,
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 275HX",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "hp-omen-16-6672946",
+   "family": "hp-omen-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672946",
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-9-8940hx-2025-24gb-memory-nvidia-geforce-rtx-5070-1tb-ssd-shadow-black/JJGWKSG29G"
+    }
+   ],
+   "specs": {
+    "model": "16-ap1043dx/D60NGUA#ABA",
+    "year": 2026,
+    "cpu": "AMD Ryzen 9 8000 Series 8940HX",
+    "vram_gb": 8,
+    "ram_gb": 24,
+    "ram_type": "DDR5",
+    "ram_speed": 5200,
+    "storage_gb": 1024,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 5.47,
+    "thickness_in": 1.8,
+    "usb": "1 x USB-C 3.1, 1 x USB-A 3.1, 2 x USB-A 3.0",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 5.0,
+    "numpad": true,
+    "cpu_key": "Ryzen 9 8940HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "gigabyte-aorus-master-16-6623748",
+   "family": "gigabyte-aorus-master-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6623748",
+     "url": "https://www.bestbuy.com/product/gigabyte-aorus-master-16-16-240hz-2560x1600-wqxga-intel-core-ultra-9-275hx-1tb-ssd-32gb-ddr5-ram-geforce-5070ti-dark-tide/J3GWPQCCHP"
+    }
+   ],
+   "specs": {
+    "model": "AORUS MASTER 16 BXHC4USE64SH",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 275HX",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "touch": false,
+    "weight_lb": 5.51,
+    "thickness_in": 0.91,
+    "tb": 2,
+    "usb4": true,
+    "usb": "2 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "eth": 1,
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 275HX",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g14-2026-6673587",
+   "family": "asus-zephyrus-g14-2026",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673587",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g14-14-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-platinum-white/JJGHGSLS24"
+    }
+   ],
+   "specs": {
+    "model": "GU405AR-ZP/G14_97T",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 386H",
+    "vram_gb": 12,
+    "ram_gb": 16,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 1000,
+    "size": 14.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 3.48,
+    "thickness_in": 0.72,
+    "tb": 1,
+    "usb": "2 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5i-6691124",
+   "family": "lenovo-legion-pro-5i",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6691124",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-3k-oled-gaming-laptop-intel-core-ultra-7-251hx-2026-24gb-ram-nvidia-geforce-rtx-5070ti-512gb-eclipse-black/J3PTJ5YYK7"
+    }
+   ],
+   "specs": {
+    "model": "83LU007DUS",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 7 Series 2 251HX",
+    "vram_gb": 12,
+    "ram_gb": 24,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 5.34,
+    "thickness_in": 1.02,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 3.6,
+    "numpad": true,
+    "cpu_key": "Core Ultra 7 251HX",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5i-6617090",
+   "family": "lenovo-legion-pro-5i",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6617090",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-2-5k-oled-gaming-laptop-intel-core-ultra-9-275hx-2025-32gb-ram-nvidia-geforce-rtx-5070-1tb-eclipse-black/JJGSHXJRCS"
+    }
+   ],
+   "specs": {
+    "model": "83F3000HUS",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 275HX",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.335,
+    "thickness_in": 1.02,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 8.7,
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 275HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "hp-omen-max-16-6672940",
+   "family": "hp-omen-max-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672940",
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-max-16-2k-oled-gaming-laptop-intel-core-ultra-9-2026-32gb-memory-nvidia-geforce-rtx-5070-ti-1tb-ssd-shadow-black/JJGWKSJTT5"
+    }
+   ],
+   "specs": {
+    "model": "16-ah1023dx/D5FA9UA#ABA",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 290HX Plus",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1024,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 6.56,
+    "thickness_in": 1.13,
+    "tb": 2,
+    "usb": "2 x USB-A 3.1",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "msi-raider-16-hx-6679954",
+   "family": "msi-raider-16-hx",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6679954",
+     "url": "https://www.bestbuy.com/product/msi-raider-16-hx-16-2-5k-qhd-240hz-gaming-laptop-intel-ultra-9-275hx-2025-geforce-rtx-5070ti-32gb-memory-1tb-storage-core-black/J3P7TXT4VL"
+    }
+   ],
+   "specs": {
+    "model": "Raider 16 HX B2WH-255US",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 275HX",
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "touch": false,
+    "weight_lb": 5.4,
+    "thickness_in": 1.02,
+    "tb": 2,
+    "usb": "2 x USB-C, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 275HX",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "lenovo-legion-7a-16-6673551",
+   "family": "lenovo-legion-7a-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673551",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-amd-ryzen-ai-7-450-2026-32gb-ram-nvidia-geforce-rtx-5060-1tb-storage-glacier-white/JJGH3QT2XL"
+    }
+   ],
+   "specs": {
+    "model": "83Q80002US",
+    "year": 2026,
+    "cpu": "AMD Ryzen AI 400 Series Al 7 450",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 3.96,
+    "thickness_in": 0.67,
+    "tb": 0,
+    "usb4": true,
+    "usb": "2 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "eth": 0,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 12.8,
+    "numpad": true,
+    "cpu_key": "Ryzen AI 7 450",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "hp-omen-transcend-14-6672943",
+   "family": "hp-omen-transcend-14",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672943",
+     "url": "https://www.bestbuy.com/product/hp-omen-transcend-14-120hz-3k-oled-gaming-laptop-intel-core-ultra-9-2025-32gb-memory-nvidia-geforce-rtx-5070-1tb-ssd-shadow-black/J3YH845T5W"
+    }
+   ],
+   "specs": {
+    "model": "14-fb1053dx/D8KM4UA#ABA",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 285H",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 7467,
+    "storage_gb": 1024,
+    "size": 14.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 3.6,
+    "thickness_in": 0.71,
+    "tb": 1,
+    "usb": "1 x USB-C 3.1, 2 x USB-A 3.1",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 6E",
+    "battery_claim_h": 14.75,
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 285H",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "lg-gram-pro-max-17-6670749",
+   "family": "lg-gram-pro-max-17",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6670749",
+     "url": "https://www.bestbuy.com/product/lg-gram-pro-max-17-144hz-touch-screen-gaming-laptop-wqxga-intel-core-ultra-9-processor-386h-rtx-5050-32gb-ram-1tb-ssd-brushed-bronze/JJ8VPZZCVX"
+    }
+   ],
+   "specs": {
+    "model": "17Z90UR-P.AU99U3",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 386H",
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 1000,
+    "size": 17.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": true,
+    "weight_lb": 3.84,
+    "thickness_in": 0.68,
+    "tb": 2,
+    "usb4": true,
+    "usb": "2 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 32.5,
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5050"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g14-2025-6613953",
+   "family": "asus-zephyrus-g14-2025",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6613953",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g14-14-3k-oled-120hz-gaming-laptop-copilot-pc-amd-ryzen-ai-9-hx-32gb-memory-rtx-5080-2tb-storage-platinum-white/JJGGLHXFWZ"
+    }
+   ],
+   "specs": {
+    "model": "GA403WW-G14.R95080",
+    "year": 2025,
+    "cpu": "AMD Ryzen AI 300 Series HX 370",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8000,
+    "storage_gb": 2000,
+    "size": 14.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 3.46,
+    "thickness_in": 0.63,
+    "usb4": true,
+    "usb": "2 x USB-A 3.2, 1 x USB-C 3.2, 1 x USB-C 4",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Ryzen AI 9 HX 370",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "asus-rog-strix-g18-6613958",
+   "family": "asus-rog-strix-g18",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6613958",
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-g18-18-2-5k-240hz-gaming-laptop-intel-core-ultra-9-hx-32gb-memory-geforce-rtx-5080-2tb-storage-eclipse-gray/JJGGLHXFW8"
+    }
+   ],
+   "specs": {
+    "model": "G815LW-G18.U95080",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 275HX",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 2000,
+    "size": 18.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 7.54,
+    "thickness_in": 1.26,
+    "tb": 2,
+    "usb4": true,
+    "usb": "3 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 10.0,
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 275HX",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "asus-rog-strix-18-2026-6686857",
+   "family": "asus-rog-strix-18-2026",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6686857",
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-18-18-2-5k-300hz-gaming-laptop-intel-core-ultra-9-hx-plus-32gb-ram-nvidia-geforce-rtx-5070ti-1tb-ssd-eclipse-gray/JJGHGPVZCP"
+    }
+   ],
+   "specs": {
+    "model": "G815LR-DB96",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 290HX Plus",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 18.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 300,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 8.22,
+    "thickness_in": 0.93,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "acer-predator-helios-18-6683796",
+   "family": "acer-predator-helios-18",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6683796",
+     "url": "https://www.bestbuy.com/product/acer-predator-helios-ai-gaming-laptop-18-mini-led-2-5k-intel-ultra-9-290hx-plus-2026-rtx-5080-32gb-memory-1tb-storage-abyssal-black/JJ8V8HPG6R"
+    }
+   ],
+   "specs": {
+    "model": "PH18-I71-94ZL",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 290HX Plus",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 4400,
+    "ram_max_gb": 128,
+    "storage_gb": 1000,
+    "size": 18.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 250,
+    "panel": "Mini-LED",
+    "nits": 1000,
+    "touch": false,
+    "weight_lb": 7.72,
+    "thickness_in": 1.16,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 3,
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "alienware-area-51-6628371",
+   "family": "alienware-area-51",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6628371",
+     "url": "https://www.bestbuy.com/product/alienware-area-51-18-3k-gaming-laptop-intel-core-ultra-9-series-2-2025-32gb-memory-nvidia-geforce-rtx-5070ti-2tb-storage-liquid-teal/J3K4L6QTGK"
+    }
+   ],
+   "specs": {
+    "model": "LAA18250 -9444BLU-PUS",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 275HX",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "storage_gb": 2000,
+    "size": 18.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 300,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 9.56,
+    "thickness_in": 1.2,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 275HX",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g16-2025-6613960",
+   "family": "asus-zephyrus-g16-2025",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6613960",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-2-5k-240hz-gaming-laptop-intel-core-ultra-9-32gb-memory-geforce-rtx-5080-2tb-storage-eclipse-gray/JJGGLHJLTW"
+    }
+   ],
+   "specs": {
+    "model": "GU605CW-G16.U95080",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 285H",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 7467,
+    "storage_gb": 2000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 4.3,
+    "thickness_in": 0.59,
+    "tb": 1,
+    "usb4": true,
+    "usb": "2 x USB-A 3.2, 1 x USB-C 3.2, 1 x USB-C 4",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 10.0,
+    "cpu_key": "Core Ultra 9 285H",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g16-2026-6673586",
+   "family": "asus-zephyrus-g16-2026",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673586",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-eclipse-gray/JJGHGSL6G8"
+    }
+   ],
+   "specs": {
+    "model": "GU606AR-ZP/G16_97T",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 386H",
+    "vram_gb": 12,
+    "ram_gb": 16,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 4.3,
+    "thickness_in": 0.7,
+    "tb": 1,
+    "usb": "2 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "lenovo-legion-7a-15-6678512",
+   "family": "lenovo-legion-7a-15",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6678512",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-15-3-3k-oled-gaming-laptop-amd-ryzen-ai-max-392-2026-radeon-8060s-graphics-64gb-memory-1tb-storage-nebula/JJGH34WGXT"
+    }
+   ],
+   "specs": {
+    "model": "83V9000CUS",
+    "year": 2026,
+    "cpu": "AMD Ryzen AI Max+ 300 Series 392",
+    "ram_gb": 64,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8000,
+    "storage_gb": 1000,
+    "size": 15.3,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 1000,
+    "touch": false,
+    "weight_lb": 3.63,
+    "thickness_in": 0.63,
+    "usb4": true,
+    "usb": "2 x USB-C 4, 1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 12.0,
+    "numpad": true,
+    "cpu_key": "Ryzen AI Max+ 392",
+    "gpu_key": "Radeon 8060S"
+   }
+  },
+  {
+   "id": "msi-stealth-16-6670611",
+   "family": "msi-stealth-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6670611",
+     "url": "https://www.bestbuy.com/product/msi-stealth-16-ai-16-2-5k-240hz-oled-gaming-laptop-intel-core-u9-386h-nvidia-geforce-rtx-5080-32gb-memory-2tb-storage-charcoal-black/J3P7TXTXQC"
+    }
+   ],
+   "specs": {
+    "model": "Stealth 16 AI+ B3WI-005US",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 Ultra 9-386H",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 7200,
+    "ram_max_gb": 128,
+    "storage_gb": 2000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "touch": false,
+    "weight_lb": 4.39,
+    "thickness_in": 0.79,
+    "tb": 2,
+    "usb": "2 x USB-C, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g16-2026-6679860",
+   "family": "asus-zephyrus-g16-2026",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6679860",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-2026-16-oled-3k-240hz-gaming-laptop-intel-core-ultra-9-386h-rtx-5070-ti-32gb-ram-1tb-ssd-platinum-white/JJGHGSGJ7T"
+    }
+   ],
+   "specs": {
+    "model": "GU606AR-XB96",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 U9 386H",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 4.3,
+    "thickness_in": 0.59,
+    "tb": 1,
+    "usb": "1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "hp-omen-max-16-6672945",
+   "family": "hp-omen-max-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6672945",
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-max-16-240hz-2-5k-oled-gaming-laptop-amd-ryzen-ai-9-hx-2026-32gb-ram-nvidia-geforce-rtx-5080-1tb-ssd-shadow-black/JJGWKS75PJ"
+    }
+   ],
+   "specs": {
+    "model": "16-ak1043dx/D5CC9UA#ABA",
+    "year": 2026,
+    "cpu": "AMD Ryzen AI 9 400 Series HX 475",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1024,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 6.13,
+    "thickness_in": 0.98,
+    "usb4": true,
+    "usb": "2 x USB-C 4, 2 x USB-A 3.1",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 11.0,
+    "numpad": true,
+    "cpu_key": "Ryzen AI 9 HX 475",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "alienware-area-51-6632697",
+   "family": "alienware-area-51",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6632697",
+     "url": "https://www.bestbuy.com/product/alienware-area-51-16-3k-gaming-laptop-intel-core-ultra-9-series-2-2025-32gb-memory-nvidia-geforce-rtx-5070-ti-2tb-storage-liquid-teal/J3K4L6QTYV"
+    }
+   ],
+   "specs": {
+    "model": "LAA16250-9499BLU-PUS",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 275HX",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "ram_max_gb": 32,
+    "storage_gb": 2000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 7.49,
+    "thickness_in": 1.12,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 0,
+    "wifi": "Wi-Fi 7",
+    "numpad": false,
+    "cpu_key": "Core Ultra 9 275HX",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "asus-rog-strix-18-2026-6686853",
+   "family": "asus-rog-strix-18-2026",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6686853",
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-scar-18-18-4k-240hz-gaming-laptop-intel-core-ultra-9-hx-plus-32gb-ram-nvidia-geforce-rtx-5080-1tb-ssd-off-black/JJGHGPV4J4"
+    }
+   ],
+   "specs": {
+    "model": "G835LWG-DB96",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 290HX Plus",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "storage_gb": 1000,
+    "size": 18.0,
+    "w": 3840,
+    "h": 2400,
+    "hz": 240,
+    "panel": "Mini-LED",
+    "nits": 1600,
+    "touch": false,
+    "weight_lb": 8.22,
+    "thickness_in": 0.93,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g16-2026-6673590",
+   "family": "asus-zephyrus-g16-2026",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6673590",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-32gb-memory-geforce-rtx-5080-1tb-storage-eclipse-gray/JJGHGSJZR6"
+    }
+   ],
+   "specs": {
+    "model": "GU606AW-ZP/G16_98",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 386H",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 4.3,
+    "thickness_in": 0.7,
+    "tb": 1,
+    "usb": "2 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g16-2025-6613959",
+   "family": "asus-zephyrus-g16-2025",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6613959",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-2-5k-240hz-gaming-laptop-intel-core-ultra-9-32gb-memory-geforce-rtx-5090-2tb-storage-eclipse-gray/JJGGLHJXH7"
+    }
+   ],
+   "specs": {
+    "model": "GU605CX-G16.U9X5090",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 285H",
+    "vram_gb": 24,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 7467,
+    "storage_gb": 2000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 4.3,
+    "thickness_in": 0.59,
+    "tb": 1,
+    "usb4": true,
+    "usb": "2 x USB-A 3.2, 1 x USB-C 3.2, 1 x USB-C 4",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 285H",
+    "gpu_key": "RTX 5090"
+   }
+  },
+  {
+   "id": "asus-rog-strix-scar-18-2025-6613957",
+   "family": "asus-rog-strix-scar-18-2025",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6613957",
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-scar-18-18-2-5k-240hz-gaming-laptop-intel-core-ultra-9-hx-32gb-memory-geforce-rtx-5090-2tb-storage-off-black/JJGGLHXJY3"
+    }
+   ],
+   "specs": {
+    "model": "G835LX-XS97",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 275HX",
+    "vram_gb": 24,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 2000,
+    "size": 18.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "Mini-LED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 7.67,
+    "thickness_in": 0.93,
+    "tb": 2,
+    "usb4": true,
+    "usb": "3 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 10.0,
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 275HX",
+    "gpu_key": "RTX 5090"
+   }
+  },
+  {
+   "id": "acer-predator-helios-18-6681255",
+   "family": "acer-predator-helios-18",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6681255",
+     "url": "https://www.bestbuy.com/product/acer-predator-helios-ai-gaming-laptop-18-mini-led-4k-intel-ultra-9-290hx-plus-2026-rtx-5090-32gb-memory-1tb-storage-abyssal-black/JJ8V8HPG64"
+    }
+   ],
+   "specs": {
+    "model": "PH18-I71-90WJ",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 290HX Plus",
+    "vram_gb": 24,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_max_gb": 128,
+    "storage_gb": 1000,
+    "size": 18.0,
+    "w": 3840,
+    "h": 2160,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 1000,
+    "touch": false,
+    "weight_lb": 7.72,
+    "thickness_in": 1.16,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5090"
+   }
+  },
+  {
+   "id": "asus-zephyrus-duo-6680553",
+   "family": "asus-zephyrus-duo",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6680553",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5070-ti-32gb-ram-1tb-ssd-stellar-grey/JJGHGPV42Q"
+    }
+   ],
+   "specs": {
+    "model": "GX651AR-DB96",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 U9 386H",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": true,
+    "weight_lb": 6.22,
+    "thickness_in": 0.78,
+    "tb": 2,
+    "usb": "2 x USB-A 3.2",
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g16-2026-6679868",
+   "family": "asus-zephyrus-g16-2026",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6679868",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-2026-16-oled-3k-240hz-gaming-laptop-intel-core-ultra-9-386h-rtx-5080-64gb-ram-1tb-ssd-platinum-white/JJGHGSGJ7V"
+    }
+   ],
+   "specs": {
+    "model": "GU606AW-XB97",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 U9 386H",
+    "vram_gb": 16,
+    "ram_gb": 64,
+    "ram_type": "LPDDR5X",
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 4.3,
+    "thickness_in": 0.59,
+    "tb": 1,
+    "usb": "1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "asus-zephyrus-duo-6679872",
+   "family": "asus-zephyrus-duo",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6679872",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5090-32gb-ram-1tb-ssd-stellar-grey/JJGHGS84V5"
+    }
+   ],
+   "specs": {
+    "model": "GX651AX-DB96",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 U9 386H",
+    "vram_gb": 24,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": true,
+    "weight_lb": 6.22,
+    "thickness_in": 0.78,
+    "tb": 2,
+    "usb": "2 x USB-A 3.2",
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5090"
+   }
+  },
+  {
+   "id": "alienware-area-51-6628373",
+   "family": "alienware-area-51",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6628373",
+     "url": "https://www.bestbuy.com/product/alienware-area-51-18-3k-gaming-laptop-intel-core-ultra-9-series-2-2025-32gb-memory-nvidia-geforce-rtx-5090-2tb-storage-liquid-teal/J3K4L6QT3L"
+    }
+   ],
+   "specs": {
+    "model": "LAA18250 -9383BLU-PUS",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 9 Series 2 275HX",
+    "vram_gb": 24,
+    "ram_gb": 64,
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "storage_gb": 2000,
+    "size": 18.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 300,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 9.56,
+    "thickness_in": 1.2,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 6.0,
+    "numpad": true,
+    "cpu_key": "Core Ultra 9 275HX",
+    "gpu_key": "RTX 5090"
+   }
+  },
+  {
+   "id": "razer-blade-16-2026-5070ti",
+   "family": "razer-blade-16-2026",
+   "offers": [
+    {
+     "retailer": "razer",
+     "url": "https://www.razer.com/gaming-laptops/razer-blade-16/RZ09-05817EN3-R3U1",
+     "sku": "RZ09-05817EN3-R3U1"
+    }
+   ],
+   "specs": {
+    "model": "RZ09-05817EN3-R3U1",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 386H",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 9600,
+    "storage_gb": 1000,
+    "size": 16,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 4.6,
+    "thickness_in": 0.59,
+    "tb": 1,
+    "usb4": true,
+    "usb": "Thunderbolt 5, USB-C, 3 x USB-A",
+    "hdmi": 1,
+    "eth": 0,
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "razer-blade-16-2026-5080",
+   "family": "razer-blade-16-2026",
+   "offers": [
+    {
+     "retailer": "razer",
+     "url": "https://www.razer.com/gaming-laptops/razer-blade-16/RZ09-05818EN3-R3U1",
+     "sku": "RZ09-05818EN3-R3U1"
+    }
+   ],
+   "specs": {
+    "model": "RZ09-05818EN3-R3U1",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 386H",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 9600,
+    "storage_gb": 1000,
+    "size": 16,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 4.6,
+    "thickness_in": 0.59,
+    "tb": 1,
+    "usb4": true,
+    "usb": "Thunderbolt 5, USB-C, 3 x USB-A",
+    "hdmi": 1,
+    "eth": 0,
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "framework-16-ai7-5070",
+   "family": "framework-16",
+   "offers": [
+    {
+     "retailer": "framework",
+     "url": "https://frame.work/products/laptop16-amd-ai300/configuration/new",
+     "sku": "laptop16-amd-ai300",
+     "manual": true
+    }
+   ],
+   "specs": {
+    "model": "Laptop 16 (Ryzen AI 300)",
+    "year": 2025,
+    "cpu": "AMD Ryzen AI 7 350",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 96,
+    "storage_gb": 1000,
+    "size": 16,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.3,
+    "thickness_in": 0.82,
+    "tb": 0,
+    "usb4": true,
+    "usb": "6 swappable expansion cards (USB4/USB-C/USB-A/HDMI)",
+    "hdmi": 0,
+    "eth": 0,
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "cpu_key": "Ryzen AI 7 350",
+    "gpu_key": "RTX 5070"
+   }
+  }
+ ]
+}

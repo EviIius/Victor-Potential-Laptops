@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Victor's Laptop Finder</title>
+<meta name="description" content="Gaming and work laptops for Victor: live prices, part analysis, cost analysis and side-by-side comparisons.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='12' width='52' height='32' rx='4' fill='%23E4572E'/%3E%3Crect x='2' y='46' width='60' height='6' rx='3' fill='%2316181D'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="12" width="52" height="32" rx="4"/><rect class="base" x="2" y="46" width="60" height="6" rx="3"/><path class="pulse" d="M14 30h8l4-8 6 16 5-10h13" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <h1>Victor's Laptop Finder</h1>
+        <p class="brand-sub">Gaming + work laptops, priced and picked apart</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button class="freshness" id="freshness" type="button" title="Data status and re-scrape">
+        <span class="dot" aria-hidden="true"></span><span id="freshness-text">Loading prices…</span>
+      </button>
+      <button class="btn btn-accent" id="rescrape-btn" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Re-scrape
+      </button>
+      <button class="btn btn-ghost icon-only" id="theme-btn" type="button" aria-label="Toggle light or dark theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a href="#picks" data-view="picks">Picks for Victor</a>
+    <a href="#browse" data-view="browse">Browse all</a>
+    <a href="#compare" data-view="compare">Compare <span class="tab-count" id="compare-count" hidden></span></a>
+    <a href="#costs" data-view="costs">Cost analysis</a>
+    <a href="#parts" data-view="parts">Part analysis</a>
+    <a href="#market" data-view="market">Market scan</a>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="banner" id="banner" hidden></div>
+
+  <section class="view" id="view-picks" aria-labelledby="picks-h">
+    <div class="picks-layout">
+      <aside class="panel prefs" aria-labelledby="prefs-h">
+        <h2 id="prefs-h" class="panel-title">What Victor needs</h2>
+        <div class="presets" id="presets" role="group" aria-label="Presets"></div>
+        <div class="field">
+          <label for="budget-max">Budget up to <output id="budget-out" for="budget-max"></output></label>
+          <input type="range" id="budget-max" min="800" max="6000" step="50">
+          <div class="range-ends"><span>$800</span><span>$6,000</span></div>
+        </div>
+        <fieldset class="weights" id="weights">
+          <legend>How much each thing matters</legend>
+        </fieldset>
+        <fieldset class="musts" id="musts">
+          <legend>Must-haves</legend>
+        </fieldset>
+        <p class="hint">Settings are saved in this browser. Every score on the site uses them.</p>
+      </aside>
+      <div class="picks-main">
+        <div class="picks-head">
+          <h2 id="picks-h">Best matches right now</h2>
+          <p class="sub" id="picks-sub"></p>
+        </div>
+        <div class="top-picks" id="top-picks"></div>
+        <h3 class="section-h">Best in each price range</h3>
+        <div class="tier-grid" id="tier-grid"></div>
+        <div class="context" id="market-context"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-browse" aria-labelledby="browse-h" hidden>
+    <div class="view-head">
+      <h2 id="browse-h">All tracked laptops</h2>
+      <p class="sub" id="browse-sub"></p>
+    </div>
+    <div class="filters panel" id="filters"></div>
+    <div class="table-wrap">
+      <table class="grid-table" id="browse-table">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="card-list" id="browse-cards"></div>
+  </section>
+
+  <section class="view" id="view-compare" aria-labelledby="compare-h" hidden>
+    <div class="view-head">
+      <h2 id="compare-h">Compare two laptops</h2>
+      <p class="sub">Pick any two. Winners are highlighted row by row, and the verdict explains the trade-offs.</p>
+    </div>
+    <div class="compare-pickers">
+      <div class="picker" data-slot="a"></div>
+      <button class="btn btn-ghost swap" id="swap-btn" type="button" aria-label="Swap A and B">⇄</button>
+      <div class="picker" data-slot="b"></div>
+    </div>
+    <div id="compare-body"></div>
+  </section>
+
+  <section class="view" id="view-costs" aria-labelledby="costs-h" hidden>
+    <div class="view-head">
+      <h2 id="costs-h">Cost analysis</h2>
+      <p class="sub">What you get for each dollar, where prices jump, and when to buy.</p>
+    </div>
+    <div class="panel chart-panel">
+      <div class="chart-head">
+        <h3>Price vs gaming performance</h3>
+        <div class="seg" role="group" aria-label="Y axis">
+          <button type="button" class="seg-btn is-on" data-y="gaming">Gaming</button>
+          <button type="button" class="seg-btn" data-y="work">Work</button>
+          <button type="button" class="seg-btn" data-y="fit">Victor fit</button>
+        </div>
+      </div>
+      <p class="chart-note">Each dot is a laptop. The line connects the best-value options: nothing above-left of it is cheaper and faster. Click a dot for details.</p>
+      <div id="scatter"></div>
+      <div class="legend" id="scatter-legend"></div>
+    </div>
+    <div class="two-col">
+      <div class="panel">
+        <h3>Most performance per dollar</h3>
+        <div id="value-table"></div>
+      </div>
+      <div class="panel">
+        <h3>The GPU price ladder</h3>
+        <p class="chart-note">Cheapest in-stock price for each graphics tier and what the next step up costs.</p>
+        <div id="gpu-ladder"></div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="panel">
+        <h3>The thin-and-light premium</h3>
+        <p class="chart-note">Median price for the same GPU in slim (under 0.8") versus regular chassis.</p>
+        <div id="thin-premium"></div>
+      </div>
+      <div class="panel">
+        <h3>Discounts and where else to buy</h3>
+        <div id="deal-table"></div>
+      </div>
+    </div>
+    <div class="context" id="cost-context"></div>
+  </section>
+
+  <section class="view" id="view-parts" aria-labelledby="parts-h" hidden>
+    <div class="view-head">
+      <h2 id="parts-h">Part analysis</h2>
+      <p class="sub">What's inside these laptops, how the parts rank, and which specs actually matter.</p>
+    </div>
+    <div class="explainers" id="explainers"></div>
+    <div class="panel">
+      <h3>Graphics (GPU): the part that decides gaming</h3>
+      <div id="gpu-table"></div>
+    </div>
+    <div class="panel">
+      <h3>Processors (CPU): the part that decides heavy work</h3>
+      <div id="cpu-table"></div>
+    </div>
+    <div class="sources" id="ref-sources"></div>
+  </section>
+
+  <section class="view" id="view-market" aria-labelledby="market-h" hidden>
+    <div class="view-head">
+      <h2 id="market-h">Market scan</h2>
+      <p class="sub" id="market-sub"></p>
+    </div>
+    <div class="filters panel" id="market-filters"></div>
+    <div class="table-wrap"><table class="grid-table" id="market-table"><thead></thead><tbody></tbody></table></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p id="footer-text">Prices are scraped from retailer pages and can change at any time. Check the retailer before buying.</p>
+</footer>
+
+<div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+<aside class="drawer" id="drawer" aria-modal="true" role="dialog" aria-labelledby="drawer-title" hidden></aside>
+
+<div class="modal-backdrop" id="modal-backdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" id="modal"></div>
+</div>
+
+<div class="compare-tray" id="compare-tray" hidden></div>
+
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
