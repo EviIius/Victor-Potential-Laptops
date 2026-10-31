@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-10-31T17:26:53Z",
- "prices_as_of": "2026-10-31T17:26:47Z",
+ "generated_at": "2026-10-31T17:46:01Z",
+ "prices_as_of": "2026-10-31T17:45:58Z",
  "scrape": {
-  "started": "2026-10-31T17:26:19Z",
-  "finished": "2026-10-31T17:26:53Z",
+  "started": "2026-10-31T17:45:31Z",
+  "finished": "2026-10-31T17:46:01Z",
   "mode": "live",
   "runner": "github-actions",
   "ok": 2,
@@ -1089,7 +1089,7 @@
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
      "stale": true,
-     "error": "skipped: site kept refusing requests this run"
+     "error": "PermissionError: robots.txt unreachable, so the site is skipped this run"
     }
    ],
    "price": 1399.99,
@@ -1439,7 +1439,7 @@
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
      "stale": true,
-     "error": "PermissionError: robots.txt unreachable, so the site is skipped this run"
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1499.99,
@@ -6932,7 +6932,7 @@
      "price": 3499.99,
      "regular": 3499.99,
      "in_stock": true,
-     "checked_at": "2026-10-31T17:26:47Z",
+     "checked_at": "2026-10-31T17:45:56Z",
      "source": "www.razer.com product page",
      "stale": false
     }
@@ -7022,7 +7022,7 @@
      "price": 3999.99,
      "regular": 3999.99,
      "in_stock": true,
-     "checked_at": "2026-10-31T17:26:44Z",
+     "checked_at": "2026-10-31T17:45:58Z",
      "source": "www.razer.com product page",
      "stale": false
     }
