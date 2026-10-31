@@ -1,212 +1,237 @@
 {
- "checked_at": "2026-10-31T18:13:10Z",
+ "checked_at": "2026-10-31T18:18:19Z",
  "results": [
   {
-   "store": "newegg",
-   "url": "https://www.newegg.com/p/pl?N=100167748",
-   "robots": "ok",
-   "status": 403,
-   "seconds": 0.0,
-   "kb": 5,
-   "final_url": "https://www.newegg.com/p/pl?N=100167748",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": [
-    "challenge-platform"
+   "store": "walmart",
+   "pages": [
+    {
+     "url": "https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
+     "final_url": "https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
+     "status": 200,
+     "seconds": 0.6,
+     "kb": 360,
+     "jsonld_products": 0,
+     "name": null,
+     "offers": [],
+     "next_data": true,
+     "bot_check": [],
+     "title": null,
+     "laptop_links": [
+      "https://www.walmart.com/cp/tax-exemption-program/8480422"
+     ]
+    },
+    {
+     "url": "https://www.walmart.com/ip/17849219077",
+     "final_url": "https://www.walmart.com/ip/ASUS-ROG-Strix-G16-Gaming-Laptop-NVIDIA-GeForce-RTX-5070-Ti-AMD-Ryzen-9-8940HX-32GB-DDR5-RAM-1TB-SSD-16-inch-165Hz-300-nits-Wi-Fi-6E-Backlit-KB-Windo/17849219077",
+     "status": 200,
+     "seconds": 1.4,
+     "kb": 537,
+     "jsonld_products": 0,
+     "name": null,
+     "offers": [],
+     "next_data": true,
+     "bot_check": [],
+     "title": "ASUS ROG Strix G16 Gaming Laptop, NVIDIA GeForce RTX 5070 Ti, AMD Ryzen 9 8940HX, 32GB DDR5 RAM, 1TB SSD, 16 inch 165Hz 300 nits, Wi-Fi 6E, Backlit KB, Windows 11 Pro - Walmart.com",
+     "laptop_links": [
+      "https://www.walmart.com/ip/ASUS-ROG-Strix-G16-Gaming-Laptop-NVIDIA-GeForce-RTX-5070-Ti-AMD-Ryzen-9-8940HX-32GB-DDR5-RAM-1TB-SSD-16-inch-165Hz-300-nits-Wi-Fi-6E-Backlit-KB-Windo/17849219077",
+      "https://www.walmart.com/cp/tax-exemption-program/8480422"
+     ]
+    },
+    {
+     "url": "https://www.walmart.com/ip/17967461396",
+     "final_url": "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-32GB-DDR5-RAM-1TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17967461396",
+     "status": 200,
+     "seconds": 1.4,
+     "kb": 582,
+     "jsonld_products": 0,
+     "name": null,
+     "offers": [],
+     "next_data": true,
+     "bot_check": [],
+     "title": "Lenovo Legion Pro 5i Gen 10 Gaming Laptop, Intel Ultra 9 275HX, RTX 5070 Ti GPU 12GB GDDR7, 32GB DDR5 RAM, 1TB SSD, 16&quot; WQXGA (2560 x 1600), 24 Zone RGB Backlit, Wi-Fi 7, Win 11pro - Walmart.com",
+     "laptop_links": [
+      "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-32GB-DDR5-RAM-1TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17967461396",
+      "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-64GB-DDR5-RAM-4TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17969970324",
+      "https://www.walmart.com/ip/Lenovo-Legion-16-Gaming-Laptop-Intel-Core-i9-i9-14900HX-NVIDIA-GeForce-RTX-4070-8-GB-1TB-SSD-Windows-11-Home-83FD0015US/5556780401",
+      "https://www.walmart.com/cp/tax-exemption-program/8480422"
+     ]
+    },
+    {
+     "url": "https://www.walmart.com/ip/ASUS-ROG-Strix-G16-Gaming-Laptop-NVIDIA-GeForce-RTX-5070-Ti-AMD-Ryzen-9-8940HX-32GB-DDR5-RAM-1TB-SSD-16-inch-165Hz-300-nits-Wi-Fi-6E-Backlit-KB-Windo/17849219077",
+     "final_url": "https://www.walmart.com/ip/ASUS-ROG-Strix-G16-Gaming-Laptop-NVIDIA-GeForce-RTX-5070-Ti-AMD-Ryzen-9-8940HX-32GB-DDR5-RAM-1TB-SSD-16-inch-165Hz-300-nits-Wi-Fi-6E-Backlit-KB-Windo/17849219077",
+     "status": 200,
+     "seconds": 1.0,
+     "kb": 537,
+     "jsonld_products": 0,
+     "name": null,
+     "offers": [],
+     "next_data": true,
+     "bot_check": [],
+     "title": "ASUS ROG Strix G16 Gaming Laptop, NVIDIA GeForce RTX 5070 Ti, AMD Ryzen 9 8940HX, 32GB DDR5 RAM, 1TB SSD, 16 inch 165Hz 300 nits, Wi-Fi 6E, Backlit KB, Windows 11 Pro - Walmart.com",
+     "from_listing": true
+    },
+    {
+     "url": "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-32GB-DDR5-RAM-1TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17967461396",
+     "final_url": "https://www.walmart.com/ip/Lenovo-Legion-Pro-5i-Gen-10-Gaming-Laptop-Intel-Ultra-9-275HX-RTX-5070-Ti-GPU-12GB-GDDR7-32GB-DDR5-RAM-1TB-SSD-16-WQXGA-2560-x-1600-24-Zone-RGB-Backl/17967461396",
+     "status": 200,
+     "seconds": 0.9,
+     "kb": 582,
+     "jsonld_products": 0,
+     "name": null,
+     "offers": [],
+     "next_data": true,
+     "bot_check": [],
+     "title": "Lenovo Legion Pro 5i Gen 10 Gaming Laptop, Intel Ultra 9 275HX, RTX 5070 Ti GPU 12GB GDDR7, 32GB DDR5 RAM, 1TB SSD, 16&quot; WQXGA (2560 x 1600), 24 Zone RGB Backlit, Wi-Fi 7, Win 11pro - Walmart.com",
+     "from_listing": true
+    }
    ]
   },
   {
-   "store": "bhphoto",
-   "url": "https://www.bhphotovideo.com/c/buy/gaming-laptops/ci/40227",
-   "robots": "ok",
-   "status": 403,
-   "seconds": 0.0,
-   "kb": 5,
-   "final_url": "https://www.bhphotovideo.com/c/buy/gaming-laptops/ci/40227",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": [
-    "challenge-platform"
-   ]
-  },
-  {
-   "store": "microcenter",
-   "url": "https://www.microcenter.com/category/4294964290/gaming-laptops",
-   "robots": "ok",
-   "status": 403,
-   "seconds": 0.0,
-   "kb": 5,
-   "final_url": "https://www.microcenter.com/category/4294964290/gaming-laptops",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": [
-    "challenge-platform"
+   "store": "lenovo",
+   "pages": [
+    {
+     "url": "https://www.lenovo.com/us/en/c/laptops/legion-laptops/",
+     "final_url": "https://www.lenovo.com/us/en/legion/?visibleDatas=1014%253ALaptops#dlp_anchor",
+     "status": 200,
+     "seconds": 0.4,
+     "kb": 740,
+     "jsonld_products": 0,
+     "name": null,
+     "offers": [],
+     "next_data": false,
+     "bot_check": [],
+     "title": "Lenovo Legion | Reach Your Impossible | Lenovo US",
+     "laptop_links": [
+      "https://www.lenovo.com/us/en/legion/",
+      "https://www.lenovo.com/jp/ja/legion/",
+      "https://www.lenovo.com/pe/es/legion/",
+      "https://www.lenovo.com/cl/es/legion/",
+      "https://www.lenovo.com/co/es/legion/",
+      "https://www.lenovo.com/nl/nl/legion/",
+      "https://www.lenovo.com/ie/en/legion/",
+      "https://www.lenovo.com/be/fr/legion/",
+      "https://www.lenovo.com/ch/fr/legion/",
+      "https://www.lenovo.com/at/de/legion/",
+      "https://www.lenovo.com/mx/es/legion/",
+      "https://www.lenovo.com/se/sv/legion/"
+     ]
+    }
    ]
   },
   {
    "store": "costco",
-   "url": "https://www.costco.com/gaming-laptops.html",
-   "robots": "ok",
-   "status": 200,
-   "seconds": 0.1,
-   "kb": 2430,
-   "final_url": "https://www.costco.com/gaming-laptops.html",
-   "jsonld_products": 0,
-   "has_dollar_prices": true,
-   "bot_check": [
-    "captcha"
-   ]
-  },
-  {
-   "store": "walmart",
-   "url": "https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
-   "robots": "ok",
-   "status": 200,
-   "seconds": 0.8,
-   "kb": 360,
-   "final_url": "https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
-   "jsonld_products": 0,
-   "has_dollar_prices": true,
-   "bot_check": [
-    "captcha"
-   ]
-  },
-  {
-   "store": "amazon",
-   "url": "https://www.amazon.com/s?k=gaming+laptop",
-   "robots": "ok",
-   "status": 503,
-   "seconds": 0.0,
-   "kb": 2,
-   "final_url": "https://www.amazon.com/s?k=gaming+laptop",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": []
-  },
-  {
-   "store": "lenovo",
-   "url": "https://www.lenovo.com/us/en/c/laptops/legion-laptops/",
-   "robots": "ok",
-   "status": 200,
-   "seconds": 0.5,
-   "kb": 740,
-   "final_url": "https://www.lenovo.com/us/en/legion/?visibleDatas=1014%253ALaptops#dlp_anchor",
-   "jsonld_products": 0,
-   "has_dollar_prices": true,
-   "bot_check": [
-    "captcha"
-   ]
-  },
-  {
-   "store": "hp",
-   "url": "https://www.hp.com/us-en/shop/vwa/laptops/segm=Gaming",
-   "robots": "ok",
-   "error": "TimeoutError: The read operation timed out",
-   "seconds": 20.0
-  },
-  {
-   "store": "dell",
-   "url": "https://www.dell.com/en-us/shop/gaming-laptops/ar/8212",
-   "robots": "ok",
-   "status": 403,
-   "seconds": 0.2,
-   "kb": 0,
-   "final_url": "https://www.dell.com/en-us/shop/gaming-laptops/ar/8212",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": [
-    "access denied"
+   "pages": [
+    {
+     "url": "https://www.costco.com/gaming-laptops.html",
+     "final_url": "https://www.costco.com/gaming-laptops.html",
+     "status": 200,
+     "seconds": 0.5,
+     "kb": 2430,
+     "jsonld_products": 0,
+     "name": null,
+     "offers": [],
+     "next_data": false,
+     "bot_check": [],
+     "title": "Gaming Laptops",
+     "laptop_links": []
+    }
    ]
   },
   {
    "store": "asus",
-   "url": "https://shop.asus.com/us/rog-laptops.html",
-   "robots": "ok",
-   "status": 404,
-   "seconds": 0.6,
-   "kb": 230,
-   "final_url": "https://www.asus.com/us/pageerror/",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": []
-  },
-  {
-   "store": "msi",
-   "url": "https://us-store.msi.com/Gaming-Laptops",
-   "robots": "ok",
-   "status": 403,
-   "seconds": 0.0,
-   "kb": 0,
-   "final_url": "https://us-store.msi.com/Gaming-Laptops",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": [
-    "access denied"
-   ]
-  },
-  {
-   "store": "acer",
-   "url": "https://store.acer.com/en-us/laptops/gaming",
-   "robots": "unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "store": "alienware",
-   "url": "https://www.dell.com/en-us/shop/alienware-laptops/ar/8209",
-   "robots": "ok",
-   "status": 403,
-   "seconds": 0.2,
-   "kb": 0,
-   "final_url": "https://www.dell.com/en-us/shop/alienware-laptops/ar/8209",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": [
-    "access denied"
-   ]
-  },
-  {
-   "store": "gigabyte",
-   "url": "https://www.gigabyte.com/us/Laptop",
-   "robots": "ok",
-   "status": 403,
-   "seconds": 0.0,
-   "kb": 0,
-   "final_url": "https://www.gigabyte.com/us/Laptop",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": [
-    "access denied"
+   "pages": [
+    {
+     "url": "https://shop.asus.com/us/",
+     "final_url": "https://www.asus.com/us/store/",
+     "status": 200,
+     "seconds": 0.4,
+     "kb": 982,
+     "jsonld_products": 0,
+     "name": null,
+     "offers": [],
+     "next_data": false,
+     "bot_check": [],
+     "title": "Shop Laptops, Gaming PCs, Desktops, Mobile &amp; Motherboards | ASUS Store USA",
+     "laptop_links": [
+      "https://shop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html",
+      "https://shop.asus.com/us/rog/rog-zephyrus-g16-g14-2026.html?config=90NR0PC1-M006M0"
+     ]
+    },
+    {
+     "url": "https://shop.asus.com/us/laptops.html",
+     "final_url": "https://www.asus.com/us/pageerror/",
+     "status": 404,
+     "seconds": 0.9,
+     "kb": 230,
+     "jsonld_products": 0,
+     "name": null,
+     "offers": [],
+     "next_data": false,
+     "bot_check": [],
+     "title": "officialsite",
+     "laptop_links": []
+    },
+    {
+     "url": "https://shop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html",
+     "final_url": "https://eshop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html",
+     "status": 200,
+     "seconds": 0.1,
+     "kb": 336,
+     "jsonld_products": 1,
+     "name": "ROG Strix Scar 18 (2026) Gaming Laptop",
+     "offers": [
+      {
+       "price": 4299.99,
+       "lowPrice": null,
+       "availability": "https://schema.org/InStock",
+       "seller": null
+      }
+     ],
+     "next_data": false,
+     "bot_check": [],
+     "title": "ROG Strix Scar 18 (2026) Gaming Laptop",
+     "from_listing": true
+    }
    ]
   },
   {
    "store": "razer",
-   "url": "https://www.razer.com/gaming-laptops/razer-blade-16",
-   "robots": "ok",
-   "status": 200,
-   "seconds": 0.1,
-   "kb": 1718,
-   "final_url": "https://www.razer.com/gaming-laptops/razer-blade-16",
-   "jsonld_products": 1,
-   "has_dollar_prices": true,
-   "bot_check": []
-  },
-  {
-   "store": "framework",
-   "url": "https://frame.work/products/laptop16-amd-ai300/configuration/new",
-   "robots": "ok",
-   "status": 403,
-   "seconds": 0.0,
-   "kb": 5,
-   "final_url": "https://frame.work/products/laptop16-amd-ai300/configuration/new",
-   "jsonld_products": 0,
-   "has_dollar_prices": false,
-   "bot_check": [
-    "challenge-platform"
+   "pages": [
+    {
+     "url": "https://www.razer.com/gaming-laptops/razer-blade-16",
+     "final_url": "https://www.razer.com/gaming-laptops/razer-blade-16",
+     "status": 200,
+     "seconds": 0.2,
+     "kb": 1717,
+     "jsonld_products": 1,
+     "name": "Thinnest RTX 5090 Gaming Laptop - Razer Blade 16 | Razer United States",
+     "offers": [
+      {
+       "price": null,
+       "lowPrice": "2399.99",
+       "availability": "http://schema.org/InStock",
+       "seller": null
+      }
+     ],
+     "next_data": false,
+     "bot_check": [],
+     "title": "Thinnest RTX 5090 Gaming Laptop - Razer Blade 16 | Razer United States",
+     "laptop_links": [
+      "https://www.razer.com/gaming-laptops/favicon.png",
+      "https://www.razer.com/gaming-laptops/styles-BVLSDV3Q.css",
+      "https://www.razer.com/au-en/gaming-laptops/razer-blade-16",
+      "https://www.razer.com/hk-en/gaming-laptops/razer-blade-16",
+      "https://www.razer.com/hk-zh/gaming-laptops/razer-blade-16",
+      "https://www.razer.com/sg-en/gaming-laptops/razer-blade-16",
+      "https://www.razer.com/tw-zh/gaming-laptops/razer-blade-16",
+      "https://www.razer.com/de-de/gaming-laptops/razer-blade-16",
+      "https://www.razer.com/eu-en/gaming-laptops/razer-blade-16",
+      "https://www.razer.com/fr-fr/gaming-laptops/razer-blade-16",
+      "https://www.razer.com/gb-en/gaming-laptops/razer-blade-16",
+      "https://www.razer.com/ca-en/gaming-laptops/razer-blade-16"
+     ]
+    }
    ]
-  },
-  {
-   "store": "bestbuy",
-   "url": "https://www.bestbuy.com/site/laptop-computers/gaming-laptops/pcmcat287600050003.c?id=pcmcat287600050003",
-   "robots": "unreachable (TimeoutError: The read operation timed out)"
   }
  ]
 }
