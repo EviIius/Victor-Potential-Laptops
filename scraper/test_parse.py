@@ -42,6 +42,14 @@ ok &= check(N.cpu_key("AMD Ryzen 200 Series 260") == "Ryzen 7 260", "CPU normali
 ok &= check(N.cpu_key("Intel Core 7 Series 2 240H") == "Core 7 240H", "CPU normalize (Core 7 240H, not Ryzen 5 240)")
 ok &= check(N.gpu_key("AMD Radeon", "Ryzen AI Max+ 395") == "Radeon 8060S", "GPU normalize (Strix Halo)")
 
+WALMART = '<html><script id="__NEXT_DATA__" type="application/json">%s</script></html>' % json.dumps({"props": {"pageProps": {"initialData": {"data": {"product": {
+    "usItemId": "17849219077", "name": "ASUS ROG Strix G16", "sellerDisplayName": "Walmart.com", "availabilityStatus": "IN_STOCK",
+    "averageRating": 4.44, "numberOfReviews": 240, "priceInfo": {"currentPrice": {"price": 1949.99}, "wasPrice": {"price": 2399.99}}}}}}}})
+r = parse_product_page(WALMART, "walmart")
+ok &= check(r["price"] == 1949.99 and r["regular"] == 2399.99 and r["in_stock"] and r["seller"] == "Walmart.com" and not r.get("marketplace_only"), "Walmart page data")
+r = parse_product_page(WALMART.replace("Walmart.com", "antonline"), "walmart")
+ok &= check(r.get("marketplace_only") and r["seller"] == "antonline", "Walmart outside seller flagged")
+
 # robots.txt: wildcards, longest match, the right group for our agent (excerpt in the shape of Best Buy's file)
 ROBOTS = """User-agent: GPTBot
 Allow: /site/

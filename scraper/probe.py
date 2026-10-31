@@ -15,15 +15,17 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from scrape import PoliteFetcher, http_get, jsonld_products, now_iso  # noqa: E402
+from scrape import NEXT_RE, PoliteFetcher, http_get, jsonld_products, now_iso, parse_product_page  # noqa: E402
 
 # Stores that answered the first probe (Oct 31, 2026), plus pages to start from.
 STORES = {
     "walmart": ["https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
                 "https://www.walmart.com/ip/17849219077", "https://www.walmart.com/ip/17967461396"],
-    "lenovo": ["https://www.lenovo.com/us/en/c/laptops/legion-laptops/"],
+    "lenovo": ["https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
+               "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042"],
     "costco": ["https://www.costco.com/gaming-laptops.html"],
-    "asus": ["https://shop.asus.com/us/", "https://shop.asus.com/us/laptops.html"],
+    "asus": ["https://shop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html",
+             "https://shop.asus.com/us/rog/rog-zephyrus-g16-g14-2026.html?config=90NR0PC1-M006M0"],
     "razer": ["https://www.razer.com/gaming-laptops/razer-blade-16"],
 }
 LAPTOP_WORDS = re.compile(r"(rog|strix|zephyrus|tuf|legion|loq|omen|victus|predator|helios|nitro|alienware|katana|"
@@ -67,7 +69,20 @@ def get(f: PoliteFetcher, url: str) -> tuple[dict, str]:
         status, html, final = http_get(f.opener, url, f.headers, f.timeout)
     except Exception as e:
         return {"url": url, "error": f"{e.__class__.__name__}: {str(e)[:160]}", "seconds": round(time.time() - t, 1)}, ""
-    return {"url": url, "final_url": final, "status": status, "seconds": round(time.time() - t, 1), **summarize(html)}, html
+    info = {"url": url, "final_url": final, "status": status, "seconds": round(time.time() - t, 1), **summarize(html)}
+    store = urlparse(url).netloc.split(".")[-2]  # walmart, lenovo, costco, asus, razer
+    try:
+        info["parsed"] = parse_product_page(html, store)
+    except Exception as e:
+        info["parsed"] = f"{e.__class__.__name__}: {str(e)[:120]}"
+    m = NEXT_RE.search(html)
+    if m and not isinstance(info["parsed"], dict):
+        try:  # leave a trail of where the data lives, for writing a parser
+            nd = json.loads(m.group(1))
+            info["next_data_keys"] = list(((((nd.get("props") or {}).get("pageProps") or {}).get("initialData") or {}).get("data") or {}).keys())[:20]
+        except ValueError:
+            pass
+    return info, html
 
 
 def probe_store(name: str, starts: list[str], f: PoliteFetcher) -> dict:

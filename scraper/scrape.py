@@ -245,8 +245,67 @@ def parse_fallback(html: str, sku: str | None) -> dict | None:
     return None
 
 
+NEXT_RE = re.compile(r'<script[^>]*id="__NEXT_DATA__"[^>]*>(.*?)</script>', re.S)
+FIRST_PARTY = {"bestbuy": "best buy", "walmart": "walmart.com"}
+
+
+def _find(node, test, depth=0):
+    """Depth-first search of parsed JSON for the first dict that passes test()."""
+    if depth > 14:
+        return None
+    if isinstance(node, dict):
+        if test(node):
+            return node
+        children = node.values()
+    elif isinstance(node, list):
+        children = node
+    else:
+        return None
+    for child in children:
+        hit = _find(child, test, depth + 1)
+        if hit is not None:
+            return hit
+    return None
+
+
+def parse_walmart(html: str) -> dict | None:
+    """Walmart product pages carry their data in the page's __NEXT_DATA__ JSON instead of schema.org markup."""
+    m = NEXT_RE.search(html)
+    if not m:
+        return None
+    try:
+        data = json.loads(m.group(1))
+    except ValueError:
+        return None
+    prod = _find(data, lambda d: isinstance(d.get("priceInfo"), dict) and ("usItemId" in d or "name" in d))
+    if not prod:
+        return None
+    pi = prod["priceInfo"]
+    cur = (pi.get("currentPrice") or {}).get("price")
+    if cur is None:
+        return None
+    was = (pi.get("wasPrice") or {}).get("price")
+    seller = (prod.get("sellerDisplayName") or prod.get("sellerName") or "").strip()
+    in_stock = str(prod.get("availabilityStatus", "")).upper() == "IN_STOCK"
+    out: dict = {"seller": seller or None}
+    if seller.lower() in ("walmart.com", "walmart"):
+        out.update(price=float(cur), in_stock=in_stock)
+    else:  # sold by an outside seller through Walmart's marketplace
+        out.update(price=float(cur), in_stock=in_stock, marketplace_only=True)
+    if was and float(was) > float(cur):
+        out["regular"] = float(was)
+    if prod.get("averageRating"):
+        out["rating"] = round(float(prod["averageRating"]), 1)
+        out["reviews"] = int(prod.get("numberOfReviews") or 0)
+    return out
+
+
 def parse_product_page(html: str, retailer: str, sku: str | None = None) -> dict:
     """Pull price/availability/rating (and a spec snapshot) out of schema.org Product data."""
+    if retailer == "walmart":
+        w = parse_walmart(html)
+        if w:
+            return w
     products = [p for p in jsonld_products(html) if p.get("offers")]
     if not products:
         fb = parse_fallback(html, sku)
@@ -257,8 +316,7 @@ def parse_product_page(html: str, retailer: str, sku: str | None = None) -> dict
     offers = prod.get("offers") or []
     if isinstance(offers, dict):
         offers = [offers]
-    first_party_names = {"bestbuy": "best buy"}
-    fp = first_party_names.get(retailer)
+    fp = FIRST_PARTY.get(retailer)
     out: dict = {}
     news, used, mkt = [], [], []
     for o in offers:
@@ -373,7 +431,7 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
             po = prev_offers.get(off["retailer"], {})
             o = {"retailer": off["retailer"], "retailer_name": retailers.get(off["retailer"], {}).get("name", off["retailer"]),
                  "sku": off.get("sku"), "url": off.get("url"), "manual": bool(off.get("manual"))}
-            keep = ("price", "regular", "in_stock", "open_box", "marketplace", "rating", "reviews", "checked_at", "source")
+            keep = ("price", "regular", "in_stock", "open_box", "marketplace", "rating", "reviews", "checked_at", "source", "seller", "marketplace_only")
             if ob and ob.get("ok"):  # refreshed this run
                 o.update({k: ob.get(k) for k in keep if ob.get(k) is not None})
                 o["stale"], o["_fresh"] = False, True
