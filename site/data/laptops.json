@@ -1,19 +1,26 @@
 {
- "generated_at": "2026-10-31T15:40:00Z",
- "prices_as_of": "2026-10-31T15:40:00Z",
+ "generated_at": "2026-10-31T17:26:53Z",
+ "prices_as_of": "2026-10-31T17:26:47Z",
  "scrape": {
-  "started": "2026-10-31T16:12:37Z",
-  "finished": "2026-10-31T15:40:00Z",
-  "mode": "offline",
-  "runner": "browser (seed)",
-  "ok": 79,
-  "failed": 0,
+  "started": "2026-10-31T17:26:19Z",
+  "finished": "2026-10-31T17:26:53Z",
+  "mode": "live",
+  "runner": "github-actions",
+  "ok": 2,
+  "failed": 76,
   "tracked_offers": 79,
-  "by_retailer": {},
-  "notes": [
-   "First price collection: Best Buy listings and product pages, read in a web browser."
-  ],
-  "user_agent": null,
+  "by_retailer": {
+   "bestbuy": {
+    "ok": 0,
+    "failed": 76
+   },
+   "razer": {
+    "ok": 2,
+    "failed": 0
+   }
+  },
+  "notes": [],
+  "user_agent": "Mozilla/5.0 (compatible; VictorLaptopFinder/1.0; +https://github.com/EviIius/Victor-Potential-Laptops)",
   "api": false
  },
  "laptops": [
@@ -88,12 +95,13 @@
      "reviews": 1440,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 849.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 1474.99,
    "rating": 4.7,
    "reviews": 1440,
@@ -175,12 +183,13 @@
      "reviews": 44,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 889.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 1249.99,
    "rating": 4.2,
    "reviews": 44,
@@ -269,12 +278,13 @@
      "reviews": 10,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 899.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 1249.99,
    "rating": 3.6,
    "reviews": 10,
@@ -366,12 +376,13 @@
      "reviews": 65,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 999.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 1699.99,
    "rating": 4.8,
    "reviews": 65,
@@ -454,12 +465,13 @@
      "reviews": 49,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1049.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 1599.99,
    "rating": 4.3,
    "reviews": 49,
@@ -542,12 +554,13 @@
      "reviews": 125,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1089.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.5,
    "reviews": 125,
@@ -630,12 +643,13 @@
      "reviews": 39,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1239.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 1924.99,
    "rating": 4.6,
    "reviews": 39,
@@ -719,12 +733,13 @@
      "reviews": 21,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1324.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.9,
    "reviews": 21,
@@ -807,12 +822,13 @@
      "reviews": 130,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1299.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.5,
    "reviews": 130,
@@ -892,12 +908,13 @@
      "reviews": 223,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1299.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 223,
@@ -986,12 +1003,13 @@
      "reviews": 1,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1299.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 1649.99,
    "rating": 3.0,
    "reviews": 1,
@@ -1070,12 +1088,13 @@
      "in_stock": true,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1399.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -1153,12 +1172,13 @@
      "in_stock": true,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1449.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -1237,12 +1257,13 @@
      "reviews": 327,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1499.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 327,
@@ -1327,12 +1348,13 @@
      "reviews": 34,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1499.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 1989.99,
    "rating": 4.7,
    "reviews": 34,
@@ -1416,12 +1438,13 @@
      "reviews": 64,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "PermissionError: robots.txt unreachable, so the site is skipped this run"
     }
    ],
    "price": 1499.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.7,
    "reviews": 64,
@@ -1504,12 +1527,13 @@
      "reviews": 4,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1574.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 1899.99,
    "rating": 4.8,
    "reviews": 4,
@@ -1593,12 +1617,13 @@
      "reviews": 40,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1599.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2149.99,
    "rating": 4.8,
    "reviews": 40,
@@ -1681,12 +1706,13 @@
      "reviews": 44,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1599.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2224.99,
    "rating": 4.5,
    "reviews": 44,
@@ -1770,12 +1796,13 @@
      "reviews": 60,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1649.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2299.99,
    "rating": 4.7,
    "reviews": 60,
@@ -1868,12 +1895,13 @@
      "reviews": 2,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1699.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2574.99,
    "rating": 5.0,
    "reviews": 2,
@@ -1960,12 +1988,13 @@
      "reviews": 35,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1799.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.5,
    "reviews": 35,
@@ -2049,12 +2078,13 @@
      "reviews": 37,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1849.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2499.99,
    "rating": 4.8,
    "reviews": 37,
@@ -2138,12 +2168,13 @@
      "reviews": 35,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1849.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.7,
    "reviews": 35,
@@ -2223,12 +2254,13 @@
      "in_stock": true,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1889.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -2313,12 +2345,13 @@
      "reviews": 6,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2199.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 5.0,
    "reviews": 6,
@@ -2411,12 +2444,13 @@
      "reviews": 12,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1949.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2899.99,
    "rating": 5.0,
    "reviews": 12,
@@ -2500,12 +2534,13 @@
      "reviews": 12,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1999.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2799.99,
    "rating": 4.7,
    "reviews": 12,
@@ -2591,12 +2626,13 @@
      "reviews": 31,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2099.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.5,
    "reviews": 31,
@@ -2678,12 +2714,13 @@
      "reviews": 28,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2030.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2399.99,
    "rating": 4.8,
    "reviews": 28,
@@ -2766,12 +2803,13 @@
      "reviews": 10,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2099.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.8,
    "reviews": 10,
@@ -2854,12 +2892,13 @@
      "reviews": 315,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2149.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 315,
@@ -2940,12 +2979,13 @@
      "in_stock": true,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2199.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2539.99,
    "rating": null,
    "reviews": null,
@@ -3028,12 +3068,13 @@
      "reviews": 2,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2199.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.5,
    "reviews": 2,
@@ -3118,12 +3159,13 @@
      "reviews": 172,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2249.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 172,
@@ -3208,12 +3250,13 @@
      "reviews": 493,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2299.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 493,
@@ -3299,12 +3342,13 @@
      "reviews": 497,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2299.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.4,
    "reviews": 497,
@@ -3390,12 +3434,13 @@
      "reviews": 6,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2649.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 5.0,
    "reviews": 6,
@@ -3477,12 +3522,13 @@
      "reviews": 284,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2419.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2999.99,
    "rating": 4.5,
    "reviews": 284,
@@ -3565,12 +3611,13 @@
      "reviews": 14,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2449.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 2699.99,
    "rating": 5.0,
    "reviews": 14,
@@ -3653,12 +3700,13 @@
      "reviews": 3,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2459.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 3199.99,
    "rating": 4.7,
    "reviews": 3,
@@ -3742,12 +3790,13 @@
      "reviews": 6,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2499.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 3549.99,
    "rating": 4.7,
    "reviews": 6,
@@ -3828,12 +3877,13 @@
      "reviews": 24,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2499.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 24,
@@ -3917,12 +3967,13 @@
      "reviews": 8,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2549.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 8,
@@ -4009,7 +4060,8 @@
      "reviews": 18,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2594.99,
@@ -4097,12 +4149,13 @@
      "reviews": 17,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2599.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 17,
@@ -4183,7 +4236,8 @@
      "reviews": 1,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2287.99,
@@ -4278,12 +4332,13 @@
      "reviews": 32,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2649.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 3199.99,
    "rating": 4.8,
    "reviews": 32,
@@ -4363,12 +4418,13 @@
      "in_stock": true,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2749.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -4451,12 +4507,13 @@
      "reviews": 295,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2749.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.7,
    "reviews": 295,
@@ -4538,12 +4595,13 @@
      "reviews": 43,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2799.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 3899.99,
    "rating": 4.5,
    "reviews": 43,
@@ -4626,12 +4684,13 @@
      "reviews": 3,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2849.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.3,
    "reviews": 3,
@@ -4718,12 +4777,13 @@
      "reviews": 36,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2999.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.7,
    "reviews": 36,
@@ -4809,12 +4869,13 @@
      "reviews": 8,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2999.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 5.0,
    "reviews": 8,
@@ -4897,12 +4958,13 @@
      "reviews": 15,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 2999.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.9,
    "reviews": 15,
@@ -4984,12 +5046,13 @@
      "reviews": 170,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3169.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.7,
    "reviews": 170,
@@ -5072,12 +5135,13 @@
      "reviews": 318,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3299.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.5,
    "reviews": 318,
@@ -5163,12 +5227,13 @@
      "reviews": 1,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3299.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 5.0,
    "reviews": 1,
@@ -5246,12 +5311,13 @@
      "in_stock": true,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3299.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 3699.99,
    "rating": null,
    "reviews": null,
@@ -5344,12 +5410,13 @@
      "reviews": 117,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3378.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 3974.99,
    "rating": 4.7,
    "reviews": 117,
@@ -5431,12 +5498,13 @@
      "reviews": 177,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3399.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.4,
    "reviews": 177,
@@ -5516,12 +5584,13 @@
      "reviews": 33,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3399.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.7,
    "reviews": 33,
@@ -5605,12 +5674,13 @@
      "reviews": 1,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3449.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 5.0,
    "reviews": 1,
@@ -5693,12 +5763,13 @@
      "reviews": 6,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3649.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 3999.99,
    "rating": 4.7,
    "reviews": 6,
@@ -5778,12 +5849,13 @@
      "reviews": 1,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3699.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 5.0,
    "reviews": 1,
@@ -5864,12 +5936,13 @@
      "reviews": 1,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 3999.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 2.0,
    "reviews": 1,
@@ -5964,12 +6037,13 @@
      "reviews": 44,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 4174.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.7,
    "reviews": 44,
@@ -6053,12 +6127,13 @@
      "open_box": 4170.99,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 4299.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -6138,12 +6213,13 @@
      "reviews": 49,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 4399.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 49,
@@ -6226,12 +6302,13 @@
      "reviews": 16,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 4399.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.7,
    "reviews": 16,
@@ -6309,12 +6386,13 @@
      "reviews": 71,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 4499.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 3.8,
    "reviews": 71,
@@ -6391,12 +6469,13 @@
      "in_stock": true,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 4499.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -6487,12 +6566,13 @@
      "reviews": 3,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 4499.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 5.0,
    "reviews": 3,
@@ -6572,12 +6652,13 @@
      "reviews": 1,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 4799.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.0,
    "reviews": 1,
@@ -6665,12 +6746,13 @@
      "reviews": 2,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 5499.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 3.0,
    "reviews": 2,
@@ -6761,12 +6843,13 @@
      "reviews": 25,
      "checked_at": "2026-10-31T15:40:00Z",
      "source": "Best Buy listing + product page (browser scrape)",
-     "stale": false
+     "stale": true,
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 5949.99,
    "price_retailer": "Best Buy",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": 4.6,
    "reviews": 25,
@@ -6847,16 +6930,17 @@
      "url": "https://www.razer.com/gaming-laptops/razer-blade-16/RZ09-05817EN3-R3U1",
      "manual": false,
      "price": 3499.99,
+     "regular": 3499.99,
      "in_stock": true,
-     "checked_at": "2026-10-31T15:40:00Z",
-     "source": "razer.com JSON-LD (2026-10-31)",
+     "checked_at": "2026-10-31T17:26:47Z",
+     "source": "www.razer.com product page",
      "stale": false
     }
    ],
    "price": 3499.99,
    "price_retailer": "Razer.com",
    "price_status": "live",
-   "regular": null,
+   "regular": 3499.99,
    "rating": null,
    "reviews": null,
    "history": [
@@ -6936,16 +7020,17 @@
      "url": "https://www.razer.com/gaming-laptops/razer-blade-16/RZ09-05818EN3-R3U1",
      "manual": false,
      "price": 3999.99,
+     "regular": 3999.99,
      "in_stock": true,
-     "checked_at": "2026-10-31T15:40:00Z",
-     "source": "razer.com configurator (+$500 over the 5070 Ti, 2026-10-31)",
+     "checked_at": "2026-10-31T17:26:44Z",
+     "source": "www.razer.com product page",
      "stale": false
     }
    ],
    "price": 3999.99,
    "price_retailer": "Razer.com",
    "price_status": "live",
-   "regular": null,
+   "regular": 3999.99,
    "rating": null,
    "reviews": null,
    "history": [
