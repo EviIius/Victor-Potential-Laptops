@@ -1,0 +1,212 @@
+{
+ "checked_at": "2026-10-31T18:13:10Z",
+ "results": [
+  {
+   "store": "newegg",
+   "url": "https://www.newegg.com/p/pl?N=100167748",
+   "robots": "ok",
+   "status": 403,
+   "seconds": 0.0,
+   "kb": 5,
+   "final_url": "https://www.newegg.com/p/pl?N=100167748",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": [
+    "challenge-platform"
+   ]
+  },
+  {
+   "store": "bhphoto",
+   "url": "https://www.bhphotovideo.com/c/buy/gaming-laptops/ci/40227",
+   "robots": "ok",
+   "status": 403,
+   "seconds": 0.0,
+   "kb": 5,
+   "final_url": "https://www.bhphotovideo.com/c/buy/gaming-laptops/ci/40227",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": [
+    "challenge-platform"
+   ]
+  },
+  {
+   "store": "microcenter",
+   "url": "https://www.microcenter.com/category/4294964290/gaming-laptops",
+   "robots": "ok",
+   "status": 403,
+   "seconds": 0.0,
+   "kb": 5,
+   "final_url": "https://www.microcenter.com/category/4294964290/gaming-laptops",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": [
+    "challenge-platform"
+   ]
+  },
+  {
+   "store": "costco",
+   "url": "https://www.costco.com/gaming-laptops.html",
+   "robots": "ok",
+   "status": 200,
+   "seconds": 0.1,
+   "kb": 2430,
+   "final_url": "https://www.costco.com/gaming-laptops.html",
+   "jsonld_products": 0,
+   "has_dollar_prices": true,
+   "bot_check": [
+    "captcha"
+   ]
+  },
+  {
+   "store": "walmart",
+   "url": "https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
+   "robots": "ok",
+   "status": 200,
+   "seconds": 0.8,
+   "kb": 360,
+   "final_url": "https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
+   "jsonld_products": 0,
+   "has_dollar_prices": true,
+   "bot_check": [
+    "captcha"
+   ]
+  },
+  {
+   "store": "amazon",
+   "url": "https://www.amazon.com/s?k=gaming+laptop",
+   "robots": "ok",
+   "status": 503,
+   "seconds": 0.0,
+   "kb": 2,
+   "final_url": "https://www.amazon.com/s?k=gaming+laptop",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": []
+  },
+  {
+   "store": "lenovo",
+   "url": "https://www.lenovo.com/us/en/c/laptops/legion-laptops/",
+   "robots": "ok",
+   "status": 200,
+   "seconds": 0.5,
+   "kb": 740,
+   "final_url": "https://www.lenovo.com/us/en/legion/?visibleDatas=1014%253ALaptops#dlp_anchor",
+   "jsonld_products": 0,
+   "has_dollar_prices": true,
+   "bot_check": [
+    "captcha"
+   ]
+  },
+  {
+   "store": "hp",
+   "url": "https://www.hp.com/us-en/shop/vwa/laptops/segm=Gaming",
+   "robots": "ok",
+   "error": "TimeoutError: The read operation timed out",
+   "seconds": 20.0
+  },
+  {
+   "store": "dell",
+   "url": "https://www.dell.com/en-us/shop/gaming-laptops/ar/8212",
+   "robots": "ok",
+   "status": 403,
+   "seconds": 0.2,
+   "kb": 0,
+   "final_url": "https://www.dell.com/en-us/shop/gaming-laptops/ar/8212",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": [
+    "access denied"
+   ]
+  },
+  {
+   "store": "asus",
+   "url": "https://shop.asus.com/us/rog-laptops.html",
+   "robots": "ok",
+   "status": 404,
+   "seconds": 0.6,
+   "kb": 230,
+   "final_url": "https://www.asus.com/us/pageerror/",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": []
+  },
+  {
+   "store": "msi",
+   "url": "https://us-store.msi.com/Gaming-Laptops",
+   "robots": "ok",
+   "status": 403,
+   "seconds": 0.0,
+   "kb": 0,
+   "final_url": "https://us-store.msi.com/Gaming-Laptops",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": [
+    "access denied"
+   ]
+  },
+  {
+   "store": "acer",
+   "url": "https://store.acer.com/en-us/laptops/gaming",
+   "robots": "unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "store": "alienware",
+   "url": "https://www.dell.com/en-us/shop/alienware-laptops/ar/8209",
+   "robots": "ok",
+   "status": 403,
+   "seconds": 0.2,
+   "kb": 0,
+   "final_url": "https://www.dell.com/en-us/shop/alienware-laptops/ar/8209",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": [
+    "access denied"
+   ]
+  },
+  {
+   "store": "gigabyte",
+   "url": "https://www.gigabyte.com/us/Laptop",
+   "robots": "ok",
+   "status": 403,
+   "seconds": 0.0,
+   "kb": 0,
+   "final_url": "https://www.gigabyte.com/us/Laptop",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": [
+    "access denied"
+   ]
+  },
+  {
+   "store": "razer",
+   "url": "https://www.razer.com/gaming-laptops/razer-blade-16",
+   "robots": "ok",
+   "status": 200,
+   "seconds": 0.1,
+   "kb": 1718,
+   "final_url": "https://www.razer.com/gaming-laptops/razer-blade-16",
+   "jsonld_products": 1,
+   "has_dollar_prices": true,
+   "bot_check": []
+  },
+  {
+   "store": "framework",
+   "url": "https://frame.work/products/laptop16-amd-ai300/configuration/new",
+   "robots": "ok",
+   "status": 403,
+   "seconds": 0.0,
+   "kb": 5,
+   "final_url": "https://frame.work/products/laptop16-amd-ai300/configuration/new",
+   "jsonld_products": 0,
+   "has_dollar_prices": false,
+   "bot_check": [
+    "challenge-platform"
+   ]
+  },
+  {
+   "store": "bestbuy",
+   "url": "https://www.bestbuy.com/site/laptop-computers/gaming-laptops/pcmcat287600050003.c?id=pcmcat287600050003",
+   "robots": "unreachable (TimeoutError: The read operation timed out)"
+  }
+ ]
+}
