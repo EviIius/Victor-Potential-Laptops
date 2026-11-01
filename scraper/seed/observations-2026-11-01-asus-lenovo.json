@@ -1,0 +1,217 @@
+{
+ "checked_at": "2026-11-01T14:15:00Z",
+ "runner": "browser (manual update)",
+ "note": "ASUS Store and Lenovo.com prices, read in a web browser (Oct 31 \u2013 Nov 1, 2026).",
+ "observations": [
+  {
+   "laptop_id": "asus-tuf-a14-max-6672107",
+   "retailer": "asus",
+   "sku": "FA401EA-DS96",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 2199.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2026-6679860",
+   "retailer": "asus",
+   "sku": "GU606AR-XB96",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 3699.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2026-6679868",
+   "retailer": "asus",
+   "sku": "GU606AW-XB97",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 4799.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-zephyrus-duo-6680553",
+   "retailer": "asus",
+   "sku": "GX651AR-DB96",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 4499.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-rog-strix-18-2026-6686853",
+   "retailer": "asus",
+   "sku": "G835LWG-DB96",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 4299.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-tuf-a16-asus-fa608uhi-ob73",
+   "retailer": "asus",
+   "sku": "FA608UHI-OB73",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 1549.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-tuf-a16-asus-fa608umi-nb73",
+   "retailer": "asus",
+   "sku": "FA608UMI-NB73",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 1799.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-tuf-f16-asus-fx608lpg-bb94",
+   "retailer": "asus",
+   "sku": "FX608LPG-BB94",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 2399.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-rog-strix-g16-asus-g615jhr-db73",
+   "retailer": "asus",
+   "sku": "G615JHR-DB73",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 1799.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-rog-strix-g18-asus-g815jpr-sb94",
+   "retailer": "asus",
+   "sku": "G815JPR-SB94",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 2499.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g14-2025-asus-ga403up-cb94",
+   "retailer": "asus",
+   "sku": "GA403UP-CB94",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 2499.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g14-2026-asus-gu405ar-xb96",
+   "retailer": "asus",
+   "sku": "GU405AR-XB96",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 3599.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "asus-rog-flow-z13-asus-gz302ea-xs99",
+   "retailer": "asus",
+   "sku": "GZ302EA-XS99",
+   "checked_at": "2026-10-31T19:05:00Z",
+   "ok": true,
+   "price": 3299.99,
+   "in_stock": true,
+   "source": "asus product page (browser check)"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-lenovo-83f300baus",
+   "retailer": "lenovo",
+   "sku": "83F300BAUS",
+   "checked_at": "2026-11-01T14:15:00Z",
+   "ok": true,
+   "price": 1777.99,
+   "in_stock": true,
+   "source": "lenovo product page (browser check)"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-lenovo-83nn0039us",
+   "retailer": "lenovo",
+   "sku": "83NN0039US",
+   "checked_at": "2026-11-01T14:15:00Z",
+   "ok": true,
+   "price": 1799.99,
+   "in_stock": true,
+   "source": "lenovo product page (browser check)"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-lenovo-83f300bbus",
+   "retailer": "lenovo",
+   "sku": "83F300BBUS",
+   "checked_at": "2026-11-01T14:15:00Z",
+   "ok": true,
+   "price": 2349.0,
+   "in_stock": true,
+   "source": "lenovo product page (browser check)"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-lenovo-83lu004wus",
+   "retailer": "lenovo",
+   "sku": "83LU004WUS",
+   "checked_at": "2026-11-01T14:15:00Z",
+   "ok": true,
+   "price": 2449.99,
+   "in_stock": true,
+   "source": "lenovo product page (browser check)"
+  },
+  {
+   "laptop_id": "lenovo-legion-5i-gen10-lenovo-83f00005us",
+   "retailer": "lenovo",
+   "sku": "83F00005US",
+   "checked_at": "2026-11-01T14:15:00Z",
+   "ok": true,
+   "price": 1499.99,
+   "in_stock": true,
+   "source": "lenovo product page (browser check)"
+  },
+  {
+   "laptop_id": "lenovo-legion-5i-gen10-lenovo-83f00006us",
+   "retailer": "lenovo",
+   "sku": "83F00006US",
+   "checked_at": "2026-11-01T14:15:00Z",
+   "ok": true,
+   "price": 1949.99,
+   "in_stock": true,
+   "source": "lenovo product page (browser check)"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-7i-lenovo-83f500m0us",
+   "retailer": "lenovo",
+   "sku": "83F500M0US",
+   "checked_at": "2026-11-01T14:15:00Z",
+   "ok": true,
+   "price": 3399.99,
+   "in_stock": true,
+   "source": "lenovo product page (browser check)"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-7i-lenovo-83f500m2us",
+   "retailer": "lenovo",
+   "sku": "83F500M2US",
+   "checked_at": "2026-11-01T14:15:00Z",
+   "ok": true,
+   "price": 4206.99,
+   "in_stock": true,
+   "source": "lenovo product page (browser check)"
+  }
+ ]
+}

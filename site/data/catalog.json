@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-31",
+ "updated": "2026-11-01",
  "_about": "Curated laptops tracked by the scraper. Specs are a baseline captured from retailer product pages; the scraper refreshes prices and availability. Edit 'families' for model-level notes and 'laptops' to add or remove configurations.",
  "retailers": {
   "bestbuy": {
@@ -14,6 +14,14 @@
   "framework": {
    "name": "Framework",
    "home": "https://frame.work"
+  },
+  "asus": {
+   "name": "ASUS Store",
+   "home": "https://eshop.asus.com/us/"
+  },
+  "lenovo": {
+   "name": "Lenovo.com",
+   "home": "https://www.lenovo.com/us/en/"
   }
  },
  "families": {
@@ -1060,6 +1068,60 @@
     "Clear price premium over equivalent RTX 5070 laptops",
     "Price depends on the configurator (tracked manually)",
     "~5.3 lb with the GPU module"
+   ]
+  },
+  "lenovo-legion-5i-gen10": {
+   "brand": "Lenovo",
+   "name": "Legion 5i Gen 10 15.1\"",
+   "year": 2025,
+   "form": "Performance 15\"",
+   "battery_wh": 80,
+   "tgp": {
+    "RTX 5060": 115,
+    "RTX 5070": 115
+   },
+   "ram_slots": 2,
+   "pros": [
+    "15.1\" 2560x1600 OLED screen",
+    "Full-power graphics in a smaller 15\" body",
+    "Upgradeable RAM"
+   ],
+   "cons": [
+    "165Hz rather than 240Hz",
+    "The RTX 5070 version has only 8GB of graphics memory",
+    "Short battery life when gaming"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp",
+    "battery_wh",
+    "weight"
+   ]
+  },
+  "lenovo-legion-pro-7i": {
+   "brand": "Lenovo",
+   "name": "Legion Pro 7i Gen 10",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "battery_wh": 99.9,
+   "tgp": {
+    "RTX 5080": 175
+   },
+   "ram_slots": 2,
+   "pros": [
+    "RTX 5080 at full power with heavy-duty cooling",
+    "240Hz 2560x1600 OLED",
+    "32GB of fast DDR5-6400 as standard"
+   ],
+   "cons": [
+    "Expensive",
+    "Heavy, around 5.7 lb",
+    "Short battery life when gaming"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp",
+    "weight"
    ]
   }
  },
@@ -2302,6 +2364,11 @@
      "retailer": "bestbuy",
      "sku": "6672107",
      "url": "https://www.bestbuy.com/product/asus-tuf-a14-w2-5k-165hz-gaming-laptop-copilot-pc-amd-ryzen-ai-max-392-with-32gb-ram-1tb-ssd-jaegar-gray/JJGHGPF8RG"
+    },
+    {
+     "retailer": "asus",
+     "sku": "FA401EA-DS96",
+     "url": "https://eshop.asus.com/us/rog/90nr0pm1-m000m0-asus-tuf-gaming-a14-2026-fa401ea.html"
     }
    ],
    "specs": {
@@ -3478,6 +3545,11 @@
      "retailer": "bestbuy",
      "sku": "6679860",
      "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-2026-16-oled-3k-240hz-gaming-laptop-intel-core-ultra-9-386h-rtx-5070-ti-32gb-ram-1tb-ssd-platinum-white/JJGHGSGJ7T"
+    },
+    {
+     "retailer": "asus",
+     "sku": "GU606AR-XB96",
+     "url": "https://eshop.asus.com/us/rog/90nr0pc1-m006m0-rog-zephyrus-g16-2026.html"
     }
    ],
    "specs": {
@@ -3591,6 +3663,11 @@
      "retailer": "bestbuy",
      "sku": "6686853",
      "url": "https://www.bestbuy.com/product/asus-rog-strix-scar-18-18-4k-240hz-gaming-laptop-intel-core-ultra-9-hx-plus-32gb-ram-nvidia-geforce-rtx-5080-1tb-ssd-off-black/JJGHGPV4J4"
+    },
+    {
+     "retailer": "asus",
+     "sku": "G835LWG-DB96",
+     "url": "https://eshop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html"
     }
    ],
    "specs": {
@@ -3780,6 +3857,11 @@
      "retailer": "bestbuy",
      "sku": "6680553",
      "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5070-ti-32gb-ram-1tb-ssd-stellar-grey/JJGHGPV42Q"
+    },
+    {
+     "retailer": "asus",
+     "sku": "GX651AR-DB96",
+     "url": "https://eshop.asus.com/us/rog/90nr0nr2-m003p0-rog-zephyrus-duo-2026.html"
     }
    ],
    "specs": {
@@ -3816,6 +3898,11 @@
      "retailer": "bestbuy",
      "sku": "6679868",
      "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-2026-16-oled-3k-240hz-gaming-laptop-intel-core-ultra-9-386h-rtx-5080-64gb-ram-1tb-ssd-platinum-white/JJGHGSGJ7V"
+    },
+    {
+     "retailer": "asus",
+     "sku": "GU606AW-XB97",
+     "url": "https://eshop.asus.com/us/rog/90nr0pg1-m00650-rog-zephyrus-g16-2026.html"
     }
    ],
    "specs": {
@@ -4036,6 +4123,628 @@
     "m2": 2,
     "cpu_key": "Ryzen AI 7 350",
     "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "asus-tuf-a16-asus-fa608uhi-ob73",
+   "family": "asus-tuf-a16",
+   "offers": [
+    {
+     "retailer": "asus",
+     "sku": "FA608UHI-OB73",
+     "url": "https://eshop.asus.com/us/rog/90nr0ks1-m00dz0-asus-tuf-gaming-a16-2025.html"
+    }
+   ],
+   "specs": {
+    "model": "FA608UHI-OB73",
+    "year": 2025,
+    "cpu": "AMD Ryzen 7 260",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5200,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 0.7,
+    "usb": "2 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Ryzen 7 260",
+    "gpu_key": "RTX 5050"
+   }
+  },
+  {
+   "id": "asus-tuf-a16-asus-fa608umi-nb73",
+   "family": "asus-tuf-a16",
+   "offers": [
+    {
+     "retailer": "asus",
+     "sku": "FA608UMI-NB73",
+     "url": "https://eshop.asus.com/us/rog/90nr0kv1-m00fb0-asus-tuf-gaming-a16-2025.html"
+    }
+   ],
+   "specs": {
+    "model": "FA608UMI-NB73",
+    "year": 2025,
+    "cpu": "AMD Ryzen 7 260",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5200,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 0.7,
+    "usb": "2 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Ryzen 7 260",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "asus-tuf-f16-asus-fx608lpg-bb94",
+   "family": "asus-tuf-f16",
+   "offers": [
+    {
+     "retailer": "asus",
+     "sku": "FX608LPG-BB94",
+     "url": "https://eshop.asus.com/us/rog/90nr0k11-m000y0-asus-tuf-gaming-f16--2026-.html"
+    }
+   ],
+   "specs": {
+    "model": "FX608LPG-BB94",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 1.07,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "asus-rog-strix-g16-asus-g615jhr-db73",
+   "family": "asus-rog-strix-g16",
+   "offers": [
+    {
+     "retailer": "asus",
+     "sku": "G615JHR-DB73",
+     "url": "https://eshop.asus.com/us/rog/90nr0ll1-m00740-rog-strix-g16-2025.html"
+    }
+   ],
+   "specs": {
+    "model": "G615JHR-DB73",
+    "year": 2025,
+    "cpu": "Intel Core i7-14650HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 64,
+    "storage_gb": 512,
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false,
+    "weight_lb": 5.84,
+    "thickness_in": 0.9,
+    "tb": 1,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 2,
+    "cpu_key": "Core i7-14650HX",
+    "gpu_key": "RTX 5050"
+   }
+  },
+  {
+   "id": "asus-rog-strix-g18-asus-g815jpr-sb94",
+   "family": "asus-rog-strix-g18",
+   "offers": [
+    {
+     "retailer": "asus",
+     "sku": "G815JPR-SB94",
+     "url": "https://eshop.asus.com/us/rog/90nr0lm1-m00630-rog-strix-g18-2025.html"
+    }
+   ],
+   "specs": {
+    "model": "G815JPR-SB94",
+    "year": 2025,
+    "cpu": "Intel Core i9-14900HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 18.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 7.54,
+    "thickness_in": 1.26,
+    "tb": 2,
+    "usb4": true,
+    "usb": "3 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 10.0,
+    "numpad": true,
+    "cpu_key": "Core i9-14900HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g14-2025-asus-ga403up-cb94",
+   "family": "asus-zephyrus-g14-2025",
+   "offers": [
+    {
+     "retailer": "asus",
+     "sku": "GA403UP-CB94",
+     "url": "https://eshop.asus.com/us/rog/90nr0lv1-m00270-rog-zephyrus-g14-2025.html"
+    }
+   ],
+   "specs": {
+    "model": "GA403UP-CB94",
+    "year": 2025,
+    "cpu": "AMD Ryzen 200 Series 270",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 7500,
+    "storage_gb": 1000,
+    "size": 14.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 3.31,
+    "thickness_in": 0.63,
+    "usb4": true,
+    "usb": "1 x USB-C 4, 1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 1,
+    "battery_claim_h": 10.0,
+    "numpad": false,
+    "cpu_key": "Ryzen 9 270",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "asus-zephyrus-g14-2026-asus-gu405ar-xb96",
+   "family": "asus-zephyrus-g14-2026",
+   "offers": [
+    {
+     "retailer": "asus",
+     "sku": "GU405AR-XB96",
+     "url": "https://eshop.asus.com/us/rog/90nr0p94-m005v0-rog-zephyrus-g14-2026-gu405.html"
+    }
+   ],
+   "specs": {
+    "model": "GU405AR-XB96",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 3 386H",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "LPDDR5X",
+    "ram_speed": 8533,
+    "storage_gb": 1000,
+    "size": 14.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false,
+    "weight_lb": 3.48,
+    "thickness_in": 0.72,
+    "tb": 1,
+    "usb": "2 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 386H",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "asus-rog-flow-z13-asus-gz302ea-xs99",
+   "family": "asus-rog-flow-z13",
+   "offers": [
+    {
+     "retailer": "asus",
+     "sku": "GZ302EA-XS99",
+     "url": "https://eshop.asus.com/us/rog/90nr0jy1-m00ed0-rog-flow-z13-2025.html"
+    }
+   ],
+   "specs": {
+    "model": "GZ302EA-XS99",
+    "year": 2025,
+    "cpu": "AMD Ryzen AI 300 Series 395",
+    "ram_gb": 128,
+    "ram_type": "LPDDR5X",
+    "storage_gb": 1000,
+    "size": 13.4,
+    "w": 2560,
+    "h": 1600,
+    "hz": 180,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": true,
+    "weight_lb": 2.65,
+    "thickness_in": 0.51,
+    "usb4": true,
+    "usb": "1 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "m2": 1,
+    "numpad": false,
+    "cpu_key": "Ryzen AI Max+ 395",
+    "gpu_key": "Radeon 8060S"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5i-lenovo-83f300baus",
+   "family": "lenovo-legion-pro-5i",
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "sku": "83F300BAUS",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83f300baus"
+    }
+   ],
+   "specs": {
+    "model": "83F300BAUS",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 7 251HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.35,
+    "thickness_in": 1.02,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 4.7,
+    "numpad": true,
+    "cpu_key": "Core Ultra 7 251HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5i-lenovo-83nn0039us",
+   "family": "lenovo-legion-pro-5i",
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "sku": "83NN0039US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83nn0039us"
+    }
+   ],
+   "specs": {
+    "model": "83NN0039US",
+    "year": 2025,
+    "cpu": "Intel Core i7-14650HX",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.35,
+    "thickness_in": 1.02,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 4.7,
+    "numpad": true,
+    "cpu_key": "Core i7-14650HX",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5i-lenovo-83f300bbus",
+   "family": "lenovo-legion-pro-5i",
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "sku": "83F300BBUS",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83f300bbus"
+    }
+   ],
+   "specs": {
+    "model": "83F300BBUS",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 7 251HX",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.35,
+    "thickness_in": 1.02,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 4.7,
+    "numpad": true,
+    "cpu_key": "Core Ultra 7 251HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-5i-lenovo-83lu004wus",
+   "family": "lenovo-legion-pro-5i",
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "sku": "83LU004WUS",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83lu004wus"
+    }
+   ],
+   "specs": {
+    "model": "83LU004WUS",
+    "year": 2025,
+    "cpu": "Intel Core Ultra 7 251HX",
+    "vram_gb": 12,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.35,
+    "thickness_in": 1.02,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "battery_claim_h": 4.7,
+    "numpad": true,
+    "cpu_key": "Core Ultra 7 251HX",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "lenovo-legion-5i-gen10-lenovo-83f00005us",
+   "family": "lenovo-legion-5i-gen10",
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "sku": "83F00005US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-series/lenovo-legion-5i-gen-10-15-inch-intel/83f00005us"
+    }
+   ],
+   "specs": {
+    "year": 2025,
+    "ram_type": "DDR5",
+    "touch": false,
+    "eth": 1,
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "numpad": false,
+    "battery_claim_h": null,
+    "usb4": null,
+    "cpu": "Intel Core Ultra 7 255HX",
+    "cpu_key": "Core Ultra 7 255HX",
+    "gpu_key": "RTX 5060",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "storage_gb": 512,
+    "size": 15.1,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 500,
+    "weight_lb": 4.3,
+    "thickness_in": 0.79,
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "tb": null,
+    "usb": "USB-A and USB-C",
+    "model": "83F00005US"
+   }
+  },
+  {
+   "id": "lenovo-legion-5i-gen10-lenovo-83f00006us",
+   "family": "lenovo-legion-5i-gen10",
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "sku": "83F00006US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-series/lenovo-legion-5i-gen-10-15-inch-intel/83f00006us"
+    }
+   ],
+   "specs": {
+    "year": 2025,
+    "ram_type": "DDR5",
+    "touch": false,
+    "eth": 1,
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "numpad": false,
+    "battery_claim_h": null,
+    "usb4": null,
+    "cpu": "Intel Core Ultra 7 255HX",
+    "cpu_key": "Core Ultra 7 255HX",
+    "gpu_key": "RTX 5070",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "storage_gb": 1000,
+    "size": 15.1,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 500,
+    "weight_lb": 4.3,
+    "thickness_in": 0.79,
+    "ram_speed": 5600,
+    "ram_max_gb": 32,
+    "tb": null,
+    "usb": "USB-A and USB-C",
+    "model": "83F00006US"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-7i-lenovo-83f500m0us",
+   "family": "lenovo-legion-pro-7i",
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "sku": "83F500M0US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-7i-gen-10-16-inch-intel/83f500m0us"
+    }
+   ],
+   "specs": {
+    "year": 2025,
+    "ram_type": "DDR5",
+    "touch": false,
+    "eth": 1,
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "numpad": false,
+    "battery_claim_h": null,
+    "usb4": null,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5080",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "weight_lb": 5.73,
+    "thickness_in": 1.05,
+    "ram_speed": 6400,
+    "ram_max_gb": 64,
+    "tb": 1,
+    "usb": "USB-A and USB-C",
+    "model": "83F500M0US"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-7i-lenovo-83f500m2us",
+   "family": "lenovo-legion-pro-7i",
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "sku": "83F500M2US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-7i-gen-10-16-inch-intel/83f500m2us"
+    }
+   ],
+   "specs": {
+    "year": 2025,
+    "ram_type": "DDR5",
+    "touch": false,
+    "eth": 1,
+    "hdmi": 1,
+    "wifi": "Wi-Fi 7",
+    "numpad": false,
+    "battery_claim_h": null,
+    "usb4": null,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5080",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "storage_gb": 2000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "weight_lb": 5.73,
+    "thickness_in": 1.05,
+    "ram_speed": 6400,
+    "ram_max_gb": 64,
+    "tb": 1,
+    "usb": "USB-A and USB-C",
+    "model": "83F500M2US"
    }
   }
  ]

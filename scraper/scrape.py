@@ -452,7 +452,7 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
             offers.append(o)
         priced = [o for o in offers if o.get("price")]
         live = [o for o in priced if o.get("in_stock")]
-        best = min(live or priced, key=lambda o: o["price"]) if priced else None
+        best = min(live or priced, key=lambda o: (o["price"], bool(o.get("stale")))) if priced else None  # ties go to the fresher price
         history = [h for h in prev.get("history", [])]
         if best and best.get("_fresh"):
             if history and history[-1][0] == today:

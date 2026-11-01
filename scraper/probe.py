@@ -19,14 +19,7 @@ from scrape import NEXT_RE, PoliteFetcher, http_get, jsonld_products, now_iso, p
 
 # Stores that answered the first probe (Oct 31, 2026), plus pages to start from.
 STORES = {
-    "walmart": ["https://www.walmart.com/browse/electronics/gaming-laptops/3944_3951_1089430_1230091_8835131",
-                "https://www.walmart.com/ip/17849219077", "https://www.walmart.com/ip/17967461396"],
-    "lenovo": ["https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/len101g0040",
-               "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042"],
-    "costco": ["https://www.costco.com/gaming-laptops.html"],
-    "asus": ["https://shop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html",
-             "https://shop.asus.com/us/rog/rog-zephyrus-g16-g14-2026.html?config=90NR0PC1-M006M0"],
-    "razer": ["https://www.razer.com/gaming-laptops/razer-blade-16"],
+    "walmart": ["https://www.walmart.com/ip/17849219077", "https://www.walmart.com/ip/17967461396"],
 }
 LAPTOP_WORDS = re.compile(r"(rog|strix|zephyrus|tuf|legion|loq|omen|victus|predator|helios|nitro|alienware|katana|"
                           r"stealth|raider|vector|crosshair|cyborg|aorus|blade|gaming-laptop|gaming_laptop)", re.I)
@@ -80,6 +73,21 @@ def get(f: PoliteFetcher, url: str) -> tuple[dict, str]:
         try:  # leave a trail of where the data lives, for writing a parser
             nd = json.loads(m.group(1))
             info["next_data_keys"] = list(((((nd.get("props") or {}).get("pageProps") or {}).get("initialData") or {}).get("data") or {}).keys())[:20]
+            paths = []
+
+            def walk(node, path, depth=0):  # where do price-like fields live?
+                if depth > 12 or len(paths) >= 25:
+                    return
+                if isinstance(node, dict):
+                    for k, v in node.items():
+                        if re.search(r"price|seller|availab", k, re.I) and not isinstance(v, (dict, list)):
+                            paths.append([f"{path}.{k}", str(v)[:60]])
+                        walk(v, f"{path}.{k}", depth + 1)
+                elif isinstance(node, list):
+                    for i, v in enumerate(node[:3]):
+                        walk(v, f"{path}[{i}]", depth + 1)
+            walk(nd, "")
+            info["price_paths"] = paths
         except ValueError:
             pass
     return info, html

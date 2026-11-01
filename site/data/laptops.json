@@ -1,28 +1,19 @@
 {
- "generated_at": "2026-11-01T11:22:10Z",
+ "generated_at": "2026-11-01T14:15:00Z",
  "prices_as_of": "2026-10-31T15:40:00Z",
  "scrape": {
-  "started": "2026-11-01T11:21:37Z",
-  "finished": "2026-11-01T11:22:10Z",
-  "mode": "live",
-  "runner": "github-actions",
-  "ok": 2,
-  "failed": 76,
-  "tracked_offers": 79,
-  "by_retailer": {
-   "bestbuy": {
-    "ok": 0,
-    "failed": 76
-   },
-   "razer": {
-    "ok": 2,
-    "failed": 0
-   }
-  },
+  "started": "2026-11-01T14:16:31Z",
+  "finished": "2026-11-01T14:15:00Z",
+  "mode": "offline",
+  "runner": "browser (manual update)",
+  "ok": 21,
+  "failed": 0,
+  "tracked_offers": 100,
+  "by_retailer": {},
   "notes": [
-   "www.bestbuy.com didn't answer this machine at all, most likely because it blocks automated traffic from cloud servers. Last known prices kept. Fix: run the scrape from a home connection (see README)."
+   "ASUS Store and Lenovo.com prices, read in a web browser (Oct 31 – Nov 1, 2026)."
   ],
-  "user_agent": "Mozilla/5.0 (compatible; VictorLaptopFinder/1.0; +https://github.com/EviIius/Victor-Potential-Laptops)",
+  "user_agent": null,
   "api": false
  },
  "laptops": [
@@ -3072,17 +3063,33 @@
      "source": "Best Buy listing + product page (browser scrape)",
      "stale": true,
      "error": "skipped: site kept refusing requests this run"
+    },
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "FA401EA-DS96",
+     "url": "https://eshop.asus.com/us/rog/90nr0pm1-m000m0-asus-tuf-gaming-a14-2026-fa401ea.html",
+     "manual": false,
+     "price": 2199.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
     }
    ],
    "price": 2199.99,
-   "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
    "regular": null,
    "rating": 4.5,
    "reviews": 2,
    "history": [
     [
      "2026-10-31",
+     2199.99
+    ],
+    [
+     "2026-11-01",
      2199.99
     ]
    ]
@@ -5853,17 +5860,33 @@
      "source": "Best Buy listing + product page (browser scrape)",
      "stale": true,
      "error": "skipped: site kept refusing requests this run"
+    },
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "GU606AR-XB96",
+     "url": "https://eshop.asus.com/us/rog/90nr0pc1-m006m0-rog-zephyrus-g16-2026.html",
+     "manual": false,
+     "price": 3699.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
     }
    ],
    "price": 3699.99,
-   "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
    "regular": null,
    "rating": 5.0,
    "reviews": 1,
    "history": [
     [
      "2026-10-31",
+     3699.99
+    ],
+    [
+     "2026-11-01",
      3699.99
     ]
    ]
@@ -6131,17 +6154,33 @@
      "source": "Best Buy listing + product page (browser scrape)",
      "stale": true,
      "error": "skipped: site kept refusing requests this run"
+    },
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "G835LWG-DB96",
+     "url": "https://eshop.asus.com/us/rog/rog-strix-scar-18-2026-gaming-laptop.html",
+     "manual": false,
+     "price": 4299.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
     }
    ],
    "price": 4299.99,
-   "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
    "regular": null,
    "rating": null,
    "reviews": null,
    "history": [
     [
      "2026-10-31",
+     4299.99
+    ],
+    [
+     "2026-11-01",
      4299.99
     ]
    ]
@@ -6570,17 +6609,33 @@
      "source": "Best Buy listing + product page (browser scrape)",
      "stale": true,
      "error": "skipped: site kept refusing requests this run"
+    },
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "GX651AR-DB96",
+     "url": "https://eshop.asus.com/us/rog/90nr0nr2-m003p0-rog-zephyrus-duo-2026.html",
+     "manual": false,
+     "price": 4499.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
     }
    ],
    "price": 4499.99,
-   "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
    "regular": null,
    "rating": 5.0,
    "reviews": 3,
    "history": [
     [
      "2026-10-31",
+     4499.99
+    ],
+    [
+     "2026-11-01",
      4499.99
     ]
    ]
@@ -6656,17 +6711,33 @@
      "source": "Best Buy listing + product page (browser scrape)",
      "stale": true,
      "error": "skipped: site kept refusing requests this run"
+    },
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "GU606AW-XB97",
+     "url": "https://eshop.asus.com/us/rog/90nr0pg1-m00650-rog-zephyrus-g16-2026.html",
+     "manual": false,
+     "price": 4799.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
     }
    ],
    "price": 4799.99,
-   "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
    "regular": null,
    "rating": 4.0,
    "reviews": 1,
    "history": [
     [
      "2026-10-31",
+     4799.99
+    ],
+    [
+     "2026-11-01",
      4799.99
     ]
    ]
@@ -7130,6 +7201,1371 @@
     [
      "2026-10-31",
      2757.0
+    ]
+   ]
+  },
+  {
+   "id": "asus-tuf-a16-asus-fa608uhi-ob73",
+   "family": "asus-tuf-a16",
+   "brand": "ASUS",
+   "name": "TUF Gaming A16",
+   "year": 2025,
+   "form": "Mainstream 16\"",
+   "model": "FA608UHI-OB73",
+   "cpu": "AMD Ryzen 7 260",
+   "cpu_key": "Ryzen 7 260",
+   "gpu_key": "RTX 5050",
+   "vram_gb": 8,
+   "tgp_w": 100,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5200,
+   "ram_max_gb": null,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 512,
+   "m2": null,
+   "display": {
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false
+   },
+   "weight_lb": 4.85,
+   "thickness_in": 0.7,
+   "battery_wh": 90,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": null,
+    "usb4": null,
+    "usb": "2 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 6E",
+   "numpad": null,
+   "pros": [
+    "16-core Ryzen 9 8940HX + RTX 5070 for under $1,600",
+    "Big 90Wh battery",
+    "400-nit 165Hz 16:10 screen"
+   ],
+   "cons": [
+    "Only 16GB RAM and 512GB SSD in this config",
+    "No OLED/high-res option at this price"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp"
+   ],
+   "offers": [
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "FA608UHI-OB73",
+     "url": "https://eshop.asus.com/us/rog/90nr0ks1-m00dz0-asus-tuf-gaming-a16-2025.html",
+     "manual": false,
+     "price": 1549.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 1549.99,
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     1549.99
+    ]
+   ]
+  },
+  {
+   "id": "asus-tuf-a16-asus-fa608umi-nb73",
+   "family": "asus-tuf-a16",
+   "brand": "ASUS",
+   "name": "TUF Gaming A16",
+   "year": 2025,
+   "form": "Mainstream 16\"",
+   "model": "FA608UMI-NB73",
+   "cpu": "AMD Ryzen 7 260",
+   "cpu_key": "Ryzen 7 260",
+   "gpu_key": "RTX 5060",
+   "vram_gb": 8,
+   "tgp_w": 115,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5200,
+   "ram_max_gb": null,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 512,
+   "m2": null,
+   "display": {
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 400,
+    "touch": false
+   },
+   "weight_lb": 4.85,
+   "thickness_in": 0.7,
+   "battery_wh": 90,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": null,
+    "usb4": null,
+    "usb": "2 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 6E",
+   "numpad": null,
+   "pros": [
+    "16-core Ryzen 9 8940HX + RTX 5070 for under $1,600",
+    "Big 90Wh battery",
+    "400-nit 165Hz 16:10 screen"
+   ],
+   "cons": [
+    "Only 16GB RAM and 512GB SSD in this config",
+    "No OLED/high-res option at this price"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp"
+   ],
+   "offers": [
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "FA608UMI-NB73",
+     "url": "https://eshop.asus.com/us/rog/90nr0kv1-m00fb0-asus-tuf-gaming-a16-2025.html",
+     "manual": false,
+     "price": 1799.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 1799.99,
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     1799.99
+    ]
+   ]
+  },
+  {
+   "id": "asus-tuf-f16-asus-fx608lpg-bb94",
+   "family": "asus-tuf-f16",
+   "brand": "ASUS",
+   "name": "TUF Gaming F16",
+   "year": 2026,
+   "form": "Mainstream 16\"",
+   "model": "FX608LPG-BB94",
+   "cpu": "Intel Core Ultra 9 290HX Plus",
+   "cpu_key": "Core Ultra 9 290HX Plus",
+   "gpu_key": "RTX 5070",
+   "vram_gb": 8,
+   "tgp_w": 115,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5600,
+   "ram_max_gb": null,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 1000,
+   "m2": null,
+   "display": {
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 300,
+    "touch": false
+   },
+   "weight_lb": 4.85,
+   "thickness_in": 1.07,
+   "battery_wh": 56,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": null,
+    "usb4": null,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 6E",
+   "numpad": null,
+   "pros": [
+    "Full-power RTX 5060 with a 16-core i7-14650HX",
+    "Rugged, serviceable chassis with two SO-DIMM slots",
+    "Wi-Fi 6E"
+   ],
+   "cons": [
+    "1200p 144Hz panel at 300 nits",
+    "Thick (1.07\")",
+    "Battery is small for a 16\" machine"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ],
+   "offers": [
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "FX608LPG-BB94",
+     "url": "https://eshop.asus.com/us/rog/90nr0k11-m000y0-asus-tuf-gaming-f16--2026-.html",
+     "manual": false,
+     "price": 2399.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 2399.99,
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     2399.99
+    ]
+   ]
+  },
+  {
+   "id": "asus-rog-strix-g16-asus-g615jhr-db73",
+   "family": "asus-rog-strix-g16",
+   "brand": "ASUS",
+   "name": "ROG Strix G16 (2025)",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "model": "G615JHR-DB73",
+   "cpu": "Intel Core i7-14650HX",
+   "cpu_key": "Core i7-14650HX",
+   "gpu_key": "RTX 5050",
+   "vram_gb": 8,
+   "tgp_w": 100,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5600,
+   "ram_max_gb": 64,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 512,
+   "m2": 2,
+   "display": {
+    "size": 16.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 165,
+    "panel": "IPS",
+    "nits": 300,
+    "touch": false
+   },
+   "weight_lb": 5.84,
+   "thickness_in": 0.9,
+   "battery_wh": 90,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": 1,
+    "usb4": null,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": null,
+   "pros": [
+    "Cheapest RTX 5070 Ti here with a 16-core CPU",
+    "USB4 ports, two SO-DIMM slots",
+    "Good cooling"
+   ],
+   "cons": [
+    "1200p 165Hz 300-nit screen undersells the 5070 Ti",
+    "5.5 lb"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp"
+   ],
+   "offers": [
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "G615JHR-DB73",
+     "url": "https://eshop.asus.com/us/rog/90nr0ll1-m00740-rog-strix-g16-2025.html",
+     "manual": false,
+     "price": 1799.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 1799.99,
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     1799.99
+    ]
+   ]
+  },
+  {
+   "id": "asus-rog-strix-g18-asus-g815jpr-sb94",
+   "family": "asus-rog-strix-g18",
+   "brand": "ASUS",
+   "name": "ROG Strix G18 (2025)",
+   "year": 2025,
+   "form": "Desktop replacement 18\"",
+   "model": "G815JPR-SB94",
+   "cpu": "Intel Core i9-14900HX",
+   "cpu_key": "Core i9-14900HX",
+   "gpu_key": "RTX 5070",
+   "vram_gb": 8,
+   "tgp_w": 115,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5600,
+   "ram_max_gb": null,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 1000,
+   "m2": null,
+   "display": {
+    "size": 18.0,
+    "w": 1920,
+    "h": 1200,
+    "hz": 144,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 7.54,
+   "thickness_in": 1.26,
+   "battery_wh": 90,
+   "battery_claim_h": 10.0,
+   "ports": {
+    "tb": 2,
+    "usb4": true,
+    "usb": "3 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": true,
+   "pros": [
+    "Big 18\" 2560x1600 240Hz screen",
+    "Full-power RTX 5080",
+    "USB4 x2"
+   ],
+   "cons": [
+    "7.5 lb",
+    "Not a travel laptop"
+   ],
+   "awards": [],
+   "estimates": [],
+   "offers": [
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "G815JPR-SB94",
+     "url": "https://eshop.asus.com/us/rog/90nr0lm1-m00630-rog-strix-g18-2025.html",
+     "manual": false,
+     "price": 2499.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 2499.99,
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     2499.99
+    ]
+   ]
+  },
+  {
+   "id": "asus-zephyrus-g14-2025-asus-ga403up-cb94",
+   "family": "asus-zephyrus-g14-2025",
+   "brand": "ASUS",
+   "name": "ROG Zephyrus G14 (2025)",
+   "year": 2025,
+   "form": "Thin & light 14\"",
+   "model": "GA403UP-CB94",
+   "cpu": "AMD Ryzen 200 Series 270",
+   "cpu_key": "Ryzen 9 270",
+   "gpu_key": "RTX 5070",
+   "vram_gb": 8,
+   "tgp_w": 110,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "LPDDR5X",
+   "ram_speed": 7500,
+   "ram_max_gb": null,
+   "ram_soldered": true,
+   "ram_slots": 0,
+   "storage_gb": 1000,
+   "m2": 1,
+   "display": {
+    "size": 14.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 3.31,
+   "thickness_in": 0.63,
+   "battery_wh": 73,
+   "battery_claim_h": 10.0,
+   "ports": {
+    "tb": null,
+    "usb4": true,
+    "usb": "1 x USB-C 4, 1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": null
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": false,
+   "pros": [
+    "3.3-3.5 lb aluminum 14\" with a 3K 120Hz OLED",
+    "USB4, Wi-Fi 7",
+    "Great work-and-travel machine that still games"
+   ],
+   "cons": [
+    "Pricey; RTX 5060 config is weak value",
+    "Soldered RAM",
+    "Reduced GPU power vs 16\" laptops"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp"
+   ],
+   "offers": [
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "GA403UP-CB94",
+     "url": "https://eshop.asus.com/us/rog/90nr0lv1-m00270-rog-zephyrus-g14-2025.html",
+     "manual": false,
+     "price": 2499.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 2499.99,
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     2499.99
+    ]
+   ]
+  },
+  {
+   "id": "asus-zephyrus-g14-2026-asus-gu405ar-xb96",
+   "family": "asus-zephyrus-g14-2026",
+   "brand": "ASUS",
+   "name": "ROG Zephyrus G14 (2026)",
+   "year": 2026,
+   "form": "Thin & light 14\"",
+   "model": "GU405AR-XB96",
+   "cpu": "Intel Core Ultra 9 Series 3 386H",
+   "cpu_key": "Core Ultra 9 386H",
+   "gpu_key": "RTX 5070 Ti",
+   "vram_gb": 12,
+   "tgp_w": 115,
+   "tgp_estimated": true,
+   "ram_gb": 32,
+   "ram_type": "LPDDR5X",
+   "ram_speed": 8533,
+   "ram_max_gb": null,
+   "ram_soldered": true,
+   "ram_slots": 0,
+   "storage_gb": 1000,
+   "m2": null,
+   "display": {
+    "size": 14.0,
+    "w": 2880,
+    "h": 1800,
+    "hz": 120,
+    "panel": "OLED",
+    "nits": 1100,
+    "touch": false
+   },
+   "weight_lb": 3.48,
+   "thickness_in": 0.72,
+   "battery_wh": 73,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": 1,
+    "usb4": null,
+    "usb": "2 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": null
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": null,
+   "pros": [
+    "#1 in Notebookcheck's gaming laptop ranking (89.9%)",
+    "Panther Lake Core Ultra 9 386H + RTX 5070 Ti in 3.5 lb",
+    "1,100-nit 3K OLED"
+   ],
+   "cons": [
+    "16GB soldered RAM on the Best Buy config",
+    "Expensive",
+    "14\" screen for long sessions"
+   ],
+   "awards": [
+    {
+     "label": "#1 in ranking (89.9%)",
+     "source": "Notebookcheck (Aug 2026)",
+     "url": "https://www.notebookcheck.net/Notebookcheck-s-Top-10-Gaming-Notebooks.98628.0.html"
+    }
+   ],
+   "estimates": [
+    "tgp"
+   ],
+   "offers": [
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "GU405AR-XB96",
+     "url": "https://eshop.asus.com/us/rog/90nr0p94-m005v0-rog-zephyrus-g14-2026-gu405.html",
+     "manual": false,
+     "price": 3599.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 3599.99,
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     3599.99
+    ]
+   ]
+  },
+  {
+   "id": "asus-rog-flow-z13-asus-gz302ea-xs99",
+   "family": "asus-rog-flow-z13",
+   "brand": "ASUS",
+   "name": "ROG Flow Z13",
+   "year": 2025,
+   "form": "2-in-1 tablet 13\"",
+   "model": "GZ302EA-XS99",
+   "cpu": "AMD Ryzen AI 300 Series 395",
+   "cpu_key": "Ryzen AI Max+ 395",
+   "gpu_key": "Radeon 8060S",
+   "vram_gb": null,
+   "tgp_w": 120,
+   "tgp_estimated": false,
+   "ram_gb": 128,
+   "ram_type": "LPDDR5X",
+   "ram_speed": null,
+   "ram_max_gb": null,
+   "ram_soldered": true,
+   "ram_slots": 0,
+   "storage_gb": 1000,
+   "m2": 1,
+   "display": {
+    "size": 13.4,
+    "w": 2560,
+    "h": 1600,
+    "hz": 180,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": true
+   },
+   "weight_lb": 2.65,
+   "thickness_in": 0.51,
+   "battery_wh": 70,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": null,
+    "usb4": true,
+    "usb": "1 x USB-A 3.2, 2 x USB-C 4",
+    "hdmi": 1,
+    "eth": null
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": false,
+   "pros": [
+    "A 2.65 lb tablet that games like an RTX 4060 laptop",
+    "16-core Ryzen AI Max+ 395 is a workstation-class CPU",
+    "Unified memory: 32GB or 64GB shared with the GPU"
+   ],
+   "cons": [
+    "13.4\" screen and detachable keyboard aren't for long gaming sessions",
+    "Everything is soldered",
+    "Expensive for the gaming performance"
+   ],
+   "awards": [],
+   "estimates": [],
+   "offers": [
+    {
+     "retailer": "asus",
+     "retailer_name": "ASUS Store",
+     "sku": "GZ302EA-XS99",
+     "url": "https://eshop.asus.com/us/rog/90nr0jy1-m00ed0-rog-flow-z13-2025.html",
+     "manual": false,
+     "price": 3299.99,
+     "in_stock": true,
+     "checked_at": "2026-10-31T19:05:00Z",
+     "source": "asus product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 3299.99,
+   "price_retailer": "ASUS Store",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     3299.99
+    ]
+   ]
+  },
+  {
+   "id": "lenovo-legion-pro-5i-lenovo-83f300baus",
+   "family": "lenovo-legion-pro-5i",
+   "brand": "Lenovo",
+   "name": "Legion Pro 5i",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "model": "83F300BAUS",
+   "cpu": "Intel Core Ultra 7 251HX",
+   "cpu_key": "Core Ultra 7 251HX",
+   "gpu_key": "RTX 5060",
+   "vram_gb": 8,
+   "tgp_w": 115,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5600,
+   "ram_max_gb": 32,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 1000,
+   "m2": null,
+   "display": {
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 5.35,
+   "thickness_in": 1.02,
+   "battery_wh": 80,
+   "battery_claim_h": 4.7,
+   "ports": {
+    "tb": 1,
+    "usb4": null,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": true,
+   "pros": [
+    "Full-power GPUs with excellent cooling",
+    "240Hz 2560x1600 OLED options",
+    "Two SO-DIMM + two M.2 slots"
+   ],
+   "cons": [
+    "5.3 lb and 1\" thick",
+    "Short battery life when gaming",
+    "Some configs pair a slow price with an 8GB RTX 5070"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp"
+   ],
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "retailer_name": "Lenovo.com",
+     "sku": "83F300BAUS",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83f300baus",
+     "manual": false,
+     "price": 1777.99,
+     "in_stock": true,
+     "checked_at": "2026-11-01T14:15:00Z",
+     "source": "lenovo product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 1777.99,
+   "price_retailer": "Lenovo.com",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     1777.99
+    ]
+   ]
+  },
+  {
+   "id": "lenovo-legion-pro-5i-lenovo-83nn0039us",
+   "family": "lenovo-legion-pro-5i",
+   "brand": "Lenovo",
+   "name": "Legion Pro 5i",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "model": "83NN0039US",
+   "cpu": "Intel Core i7-14650HX",
+   "cpu_key": "Core i7-14650HX",
+   "gpu_key": "RTX 5060",
+   "vram_gb": 8,
+   "tgp_w": 115,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5600,
+   "ram_max_gb": 32,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 1000,
+   "m2": null,
+   "display": {
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 5.35,
+   "thickness_in": 1.02,
+   "battery_wh": 80,
+   "battery_claim_h": 4.7,
+   "ports": {
+    "tb": 1,
+    "usb4": null,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": true,
+   "pros": [
+    "Full-power GPUs with excellent cooling",
+    "240Hz 2560x1600 OLED options",
+    "Two SO-DIMM + two M.2 slots"
+   ],
+   "cons": [
+    "5.3 lb and 1\" thick",
+    "Short battery life when gaming",
+    "Some configs pair a slow price with an 8GB RTX 5070"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp"
+   ],
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "retailer_name": "Lenovo.com",
+     "sku": "83NN0039US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83nn0039us",
+     "manual": false,
+     "price": 1799.99,
+     "in_stock": true,
+     "checked_at": "2026-11-01T14:15:00Z",
+     "source": "lenovo product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 1799.99,
+   "price_retailer": "Lenovo.com",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     1799.99
+    ]
+   ]
+  },
+  {
+   "id": "lenovo-legion-pro-5i-lenovo-83f300bbus",
+   "family": "lenovo-legion-pro-5i",
+   "brand": "Lenovo",
+   "name": "Legion Pro 5i",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "model": "83F300BBUS",
+   "cpu": "Intel Core Ultra 7 251HX",
+   "cpu_key": "Core Ultra 7 251HX",
+   "gpu_key": "RTX 5070",
+   "vram_gb": 12,
+   "tgp_w": 115,
+   "tgp_estimated": true,
+   "ram_gb": 32,
+   "ram_type": "DDR5",
+   "ram_speed": 5600,
+   "ram_max_gb": 32,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 1000,
+   "m2": null,
+   "display": {
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 5.35,
+   "thickness_in": 1.02,
+   "battery_wh": 80,
+   "battery_claim_h": 4.7,
+   "ports": {
+    "tb": 1,
+    "usb4": null,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": true,
+   "pros": [
+    "Full-power GPUs with excellent cooling",
+    "240Hz 2560x1600 OLED options",
+    "Two SO-DIMM + two M.2 slots"
+   ],
+   "cons": [
+    "5.3 lb and 1\" thick",
+    "Short battery life when gaming",
+    "Some configs pair a slow price with an 8GB RTX 5070"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp"
+   ],
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "retailer_name": "Lenovo.com",
+     "sku": "83F300BBUS",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83f300bbus",
+     "manual": false,
+     "price": 2349.0,
+     "in_stock": true,
+     "checked_at": "2026-11-01T14:15:00Z",
+     "source": "lenovo product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 2349.0,
+   "price_retailer": "Lenovo.com",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     2349.0
+    ]
+   ]
+  },
+  {
+   "id": "lenovo-legion-pro-5i-lenovo-83lu004wus",
+   "family": "lenovo-legion-pro-5i",
+   "brand": "Lenovo",
+   "name": "Legion Pro 5i",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "model": "83LU004WUS",
+   "cpu": "Intel Core Ultra 7 251HX",
+   "cpu_key": "Core Ultra 7 251HX",
+   "gpu_key": "RTX 5070 Ti",
+   "vram_gb": 12,
+   "tgp_w": 140,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5600,
+   "ram_max_gb": 32,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 1000,
+   "m2": null,
+   "display": {
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 5.35,
+   "thickness_in": 1.02,
+   "battery_wh": 80,
+   "battery_claim_h": 4.7,
+   "ports": {
+    "tb": 1,
+    "usb4": null,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": true,
+   "pros": [
+    "Full-power GPUs with excellent cooling",
+    "240Hz 2560x1600 OLED options",
+    "Two SO-DIMM + two M.2 slots"
+   ],
+   "cons": [
+    "5.3 lb and 1\" thick",
+    "Short battery life when gaming",
+    "Some configs pair a slow price with an 8GB RTX 5070"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp"
+   ],
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "retailer_name": "Lenovo.com",
+     "sku": "83LU004WUS",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83lu004wus",
+     "manual": false,
+     "price": 2449.99,
+     "in_stock": true,
+     "checked_at": "2026-11-01T14:15:00Z",
+     "source": "lenovo product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 2449.99,
+   "price_retailer": "Lenovo.com",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     2449.99
+    ]
+   ]
+  },
+  {
+   "id": "lenovo-legion-5i-gen10-lenovo-83f00005us",
+   "family": "lenovo-legion-5i-gen10",
+   "brand": "Lenovo",
+   "name": "Legion 5i Gen 10 15.1\"",
+   "year": 2025,
+   "form": "Performance 15\"",
+   "model": "83F00005US",
+   "cpu": "Intel Core Ultra 7 255HX",
+   "cpu_key": "Core Ultra 7 255HX",
+   "gpu_key": "RTX 5060",
+   "vram_gb": 8,
+   "tgp_w": 115,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5600,
+   "ram_max_gb": 32,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 512,
+   "m2": null,
+   "display": {
+    "size": 15.1,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 4.3,
+   "thickness_in": 0.79,
+   "battery_wh": 80,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": null,
+    "usb4": null,
+    "usb": "USB-A and USB-C",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": false,
+   "pros": [
+    "15.1\" 2560x1600 OLED screen",
+    "Full-power graphics in a smaller 15\" body",
+    "Upgradeable RAM"
+   ],
+   "cons": [
+    "165Hz rather than 240Hz",
+    "The RTX 5070 version has only 8GB of graphics memory",
+    "Short battery life when gaming"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp",
+    "battery_wh",
+    "weight"
+   ],
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "retailer_name": "Lenovo.com",
+     "sku": "83F00005US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-series/lenovo-legion-5i-gen-10-15-inch-intel/83f00005us",
+     "manual": false,
+     "price": 1499.99,
+     "in_stock": true,
+     "checked_at": "2026-11-01T14:15:00Z",
+     "source": "lenovo product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 1499.99,
+   "price_retailer": "Lenovo.com",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     1499.99
+    ]
+   ]
+  },
+  {
+   "id": "lenovo-legion-5i-gen10-lenovo-83f00006us",
+   "family": "lenovo-legion-5i-gen10",
+   "brand": "Lenovo",
+   "name": "Legion 5i Gen 10 15.1\"",
+   "year": 2025,
+   "form": "Performance 15\"",
+   "model": "83F00006US",
+   "cpu": "Intel Core Ultra 7 255HX",
+   "cpu_key": "Core Ultra 7 255HX",
+   "gpu_key": "RTX 5070",
+   "vram_gb": 8,
+   "tgp_w": 115,
+   "tgp_estimated": true,
+   "ram_gb": 16,
+   "ram_type": "DDR5",
+   "ram_speed": 5600,
+   "ram_max_gb": 32,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 1000,
+   "m2": null,
+   "display": {
+    "size": 15.1,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 4.3,
+   "thickness_in": 0.79,
+   "battery_wh": 80,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": null,
+    "usb4": null,
+    "usb": "USB-A and USB-C",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": false,
+   "pros": [
+    "15.1\" 2560x1600 OLED screen",
+    "Full-power graphics in a smaller 15\" body",
+    "Upgradeable RAM"
+   ],
+   "cons": [
+    "165Hz rather than 240Hz",
+    "The RTX 5070 version has only 8GB of graphics memory",
+    "Short battery life when gaming"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp",
+    "battery_wh",
+    "weight"
+   ],
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "retailer_name": "Lenovo.com",
+     "sku": "83F00006US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-series/lenovo-legion-5i-gen-10-15-inch-intel/83f00006us",
+     "manual": false,
+     "price": 1949.99,
+     "in_stock": true,
+     "checked_at": "2026-11-01T14:15:00Z",
+     "source": "lenovo product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 1949.99,
+   "price_retailer": "Lenovo.com",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     1949.99
+    ]
+   ]
+  },
+  {
+   "id": "lenovo-legion-pro-7i-lenovo-83f500m0us",
+   "family": "lenovo-legion-pro-7i",
+   "brand": "Lenovo",
+   "name": "Legion Pro 7i Gen 10",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "model": "83F500M0US",
+   "cpu": "Intel Core Ultra 9 290HX Plus",
+   "cpu_key": "Core Ultra 9 290HX Plus",
+   "gpu_key": "RTX 5080",
+   "vram_gb": 16,
+   "tgp_w": 175,
+   "tgp_estimated": true,
+   "ram_gb": 32,
+   "ram_type": "DDR5",
+   "ram_speed": 6400,
+   "ram_max_gb": 64,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 1000,
+   "m2": null,
+   "display": {
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 5.73,
+   "thickness_in": 1.05,
+   "battery_wh": 99.9,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": 1,
+    "usb4": null,
+    "usb": "USB-A and USB-C",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": false,
+   "pros": [
+    "RTX 5080 at full power with heavy-duty cooling",
+    "240Hz 2560x1600 OLED",
+    "32GB of fast DDR5-6400 as standard"
+   ],
+   "cons": [
+    "Expensive",
+    "Heavy, around 5.7 lb",
+    "Short battery life when gaming"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp",
+    "weight"
+   ],
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "retailer_name": "Lenovo.com",
+     "sku": "83F500M0US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-7i-gen-10-16-inch-intel/83f500m0us",
+     "manual": false,
+     "price": 3399.99,
+     "in_stock": true,
+     "checked_at": "2026-11-01T14:15:00Z",
+     "source": "lenovo product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 3399.99,
+   "price_retailer": "Lenovo.com",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     3399.99
+    ]
+   ]
+  },
+  {
+   "id": "lenovo-legion-pro-7i-lenovo-83f500m2us",
+   "family": "lenovo-legion-pro-7i",
+   "brand": "Lenovo",
+   "name": "Legion Pro 7i Gen 10",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "model": "83F500M2US",
+   "cpu": "Intel Core Ultra 9 290HX Plus",
+   "cpu_key": "Core Ultra 9 290HX Plus",
+   "gpu_key": "RTX 5080",
+   "vram_gb": 16,
+   "tgp_w": 175,
+   "tgp_estimated": true,
+   "ram_gb": 32,
+   "ram_type": "DDR5",
+   "ram_speed": 6400,
+   "ram_max_gb": 64,
+   "ram_soldered": false,
+   "ram_slots": 2,
+   "storage_gb": 2000,
+   "m2": null,
+   "display": {
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false
+   },
+   "weight_lb": 5.73,
+   "thickness_in": 1.05,
+   "battery_wh": 99.9,
+   "battery_claim_h": null,
+   "ports": {
+    "tb": 1,
+    "usb4": null,
+    "usb": "USB-A and USB-C",
+    "hdmi": 1,
+    "eth": 1
+   },
+   "wifi": "Wi-Fi 7",
+   "numpad": false,
+   "pros": [
+    "RTX 5080 at full power with heavy-duty cooling",
+    "240Hz 2560x1600 OLED",
+    "32GB of fast DDR5-6400 as standard"
+   ],
+   "cons": [
+    "Expensive",
+    "Heavy, around 5.7 lb",
+    "Short battery life when gaming"
+   ],
+   "awards": [],
+   "estimates": [
+    "tgp",
+    "weight"
+   ],
+   "offers": [
+    {
+     "retailer": "lenovo",
+     "retailer_name": "Lenovo.com",
+     "sku": "83F500M2US",
+     "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-7i-gen-10-16-inch-intel/83f500m2us",
+     "manual": false,
+     "price": 4206.99,
+     "in_stock": true,
+     "checked_at": "2026-11-01T14:15:00Z",
+     "source": "lenovo product page (browser check)",
+     "stale": false
+    }
+   ],
+   "price": 4206.99,
+   "price_retailer": "Lenovo.com",
+   "price_status": "live",
+   "regular": null,
+   "rating": null,
+   "reviews": null,
+   "history": [
+    [
+     "2026-11-01",
+     4206.99
     ]
    ]
   }
