@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-11-06T11:23:31Z",
+ "generated_at": "2026-11-06T23:00:57Z",
  "prices_as_of": "2026-11-01T14:28:48Z",
  "scrape": {
-  "started": "2026-11-06T11:21:49Z",
-  "finished": "2026-11-06T11:23:31Z",
+  "started": "2026-11-06T22:59:23Z",
+  "finished": "2026-11-06T23:00:57Z",
   "mode": "live",
   "runner": "github-actions",
   "ok": 23,
@@ -14,12 +14,12 @@
     "ok": 0,
     "failed": 76
    },
-   "lenovo": {
-    "ok": 8,
-    "failed": 0
-   },
    "asus": {
     "ok": 13,
+    "failed": 0
+   },
+   "lenovo": {
+    "ok": 8,
     "failed": 0
    },
    "razer": {
@@ -2275,7 +2275,7 @@
      "checked_at": "2026-11-01T14:28:48Z",
      "source": "Best Buy product page (browser check)",
      "stale": true,
-     "error": "PermissionError: robots.txt unreachable (TimeoutError: The read operation timed out), so the site is skipped this run"
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 1849.99,
@@ -3233,7 +3233,7 @@
      "manual": false,
      "price": 2199.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:57Z",
+     "checked_at": "2026-11-06T22:59:48Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -3729,7 +3729,7 @@
      "checked_at": "2026-11-01T14:28:48Z",
      "source": "Best Buy product page (browser check)",
      "stale": true,
-     "error": "skipped: site kept refusing requests this run"
+     "error": "PermissionError: robots.txt unreachable (TimeoutError: The read operation timed out), so the site is skipped this run"
     }
    ],
    "price": 2419.99,
@@ -6193,7 +6193,7 @@
      "manual": false,
      "price": 3699.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:37Z",
+     "checked_at": "2026-11-06T23:00:12Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -6519,7 +6519,7 @@
      "manual": false,
      "price": 4299.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:23:17Z",
+     "checked_at": "2026-11-06T23:00:49Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -7007,7 +7007,7 @@
      "manual": false,
      "price": 4499.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:36Z",
+     "checked_at": "2026-11-06T23:00:36Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -7108,7 +7108,7 @@
      "manual": false,
      "price": 4799.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:43Z",
+     "checked_at": "2026-11-06T23:00:05Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -7425,7 +7425,7 @@
      "price": 3499.99,
      "regular": 3499.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:32Z",
+     "checked_at": "2026-11-06T23:00:18Z",
      "source": "www.razer.com product page",
      "stale": false
     }
@@ -7539,7 +7539,7 @@
      "price": 3999.99,
      "regular": 3999.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:37Z",
+     "checked_at": "2026-11-06T23:00:21Z",
      "source": "www.razer.com product page",
      "stale": false
     }
@@ -7730,7 +7730,7 @@
      "manual": false,
      "price": 1549.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:26Z",
+     "checked_at": "2026-11-06T22:59:57Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -7834,7 +7834,7 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:47Z",
+     "checked_at": "2026-11-06T23:00:32Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -7940,7 +7940,7 @@
      "manual": false,
      "price": 2399.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:23:24Z",
+     "checked_at": "2026-11-06T23:00:09Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8044,7 +8044,7 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:23:12Z",
+     "checked_at": "2026-11-06T22:59:50Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8146,7 +8146,7 @@
      "manual": false,
      "price": 2499.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:23:02Z",
+     "checked_at": "2026-11-06T23:00:54Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8251,7 +8251,7 @@
      "manual": false,
      "price": 2499.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:23:20Z",
+     "checked_at": "2026-11-06T22:59:59Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8362,7 +8362,7 @@
      "manual": false,
      "price": 3599.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:23:07Z",
+     "checked_at": "2026-11-06T23:00:33Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8465,7 +8465,7 @@
      "manual": false,
      "price": 3299.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:52Z",
+     "checked_at": "2026-11-06T23:00:50Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8570,7 +8570,7 @@
      "manual": false,
      "price": 1649.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:23:24Z",
+     "checked_at": "2026-11-06T22:59:53Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -8675,7 +8675,7 @@
      "manual": false,
      "price": 1649.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:23:06Z",
+     "checked_at": "2026-11-06T23:00:27Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -8778,14 +8778,14 @@
      "sku": "83F300BBUS",
      "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83f300bbus",
      "manual": false,
-     "price": 2299.99,
+     "price": 2099.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:56Z",
+     "checked_at": "2026-11-06T23:00:42Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
    ],
-   "price": 2299.99,
+   "price": 2099.99,
    "price_retailer": "Lenovo.com",
    "price_status": "live",
    "regular": null,
@@ -8814,7 +8814,7 @@
     ],
     [
      "2026-11-06",
-     2299.99
+     2099.99
     ]
    ]
   },
@@ -8883,14 +8883,14 @@
      "sku": "83LU004WUS",
      "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83lu004wus",
      "manual": false,
-     "price": 2299.99,
+     "price": 1999.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:14Z",
+     "checked_at": "2026-11-06T22:59:53Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
    ],
-   "price": 2299.99,
+   "price": 1999.99,
    "price_retailer": "Lenovo.com",
    "price_status": "live",
    "regular": null,
@@ -8919,7 +8919,7 @@
     ],
     [
      "2026-11-06",
-     2299.99
+     1999.99
     ]
    ]
   },
@@ -8992,7 +8992,7 @@
      "manual": false,
      "price": 1499.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:29Z",
+     "checked_at": "2026-11-06T23:00:45Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -9099,7 +9099,7 @@
      "manual": false,
      "price": 1999.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:15Z",
+     "checked_at": "2026-11-06T23:00:41Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -9205,7 +9205,7 @@
      "manual": false,
      "price": 3399.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:20Z",
+     "checked_at": "2026-11-06T23:00:26Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -9311,7 +9311,7 @@
      "manual": false,
      "price": 4199.99,
      "in_stock": true,
-     "checked_at": "2026-11-06T11:22:28Z",
+     "checked_at": "2026-11-06T23:00:57Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
