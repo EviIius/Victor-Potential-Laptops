@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-10T11:23:30Z",
+ "generated_at": "2026-11-11T11:23:48Z",
  "prices_as_of": "2026-11-01T14:28:48Z",
  "scrape": {
-  "started": "2026-11-10T11:21:54Z",
-  "finished": "2026-11-10T11:23:30Z",
+  "started": "2026-11-11T11:22:08Z",
+  "finished": "2026-11-11T11:23:48Z",
   "mode": "live",
   "runner": "github-actions",
-  "ok": 23,
-  "failed": 76,
+  "ok": 21,
+  "failed": 78,
   "tracked_offers": 100,
   "by_retailer": {
    "asus": {
@@ -19,12 +19,12 @@
     "failed": 76
    },
    "razer": {
-    "ok": 2,
-    "failed": 0
+    "ok": 1,
+    "failed": 1
    },
    "lenovo": {
-    "ok": 8,
-    "failed": 0
+    "ok": 7,
+    "failed": 1
    }
   },
   "notes": [
@@ -585,7 +585,7 @@
      "checked_at": "2026-11-01T14:28:48Z",
      "source": "Best Buy product page (browser check)",
      "stale": true,
-     "error": "skipped: site kept refusing requests this run"
+     "error": "PermissionError: robots.txt unreachable (TimeoutError: The read operation timed out), so the site is skipped this run"
     }
    ],
    "price": 1089.99,
@@ -3233,7 +3233,7 @@
      "manual": false,
      "price": 2199.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:20Z",
+     "checked_at": "2026-11-11T11:23:32Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -3287,6 +3287,10 @@
     ],
     [
      "2026-11-10",
+     2199.99
+    ],
+    [
+     "2026-11-11",
      2199.99
     ]
    ]
@@ -6209,7 +6213,7 @@
      "manual": false,
      "price": 3699.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:23:10Z",
+     "checked_at": "2026-11-11T11:23:07Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -6263,6 +6267,10 @@
     ],
     [
      "2026-11-10",
+     3699.99
+    ],
+    [
+     "2026-11-11",
      3699.99
     ]
    ]
@@ -6551,7 +6559,7 @@
      "manual": false,
      "price": 4299.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:23:02Z",
+     "checked_at": "2026-11-11T11:22:51Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -6605,6 +6613,10 @@
     ],
     [
      "2026-11-10",
+     4299.99
+    ],
+    [
+     "2026-11-11",
      4299.99
     ]
    ]
@@ -6679,7 +6691,7 @@
      "checked_at": "2026-11-01T14:28:48Z",
      "source": "Best Buy product page (browser check)",
      "stale": true,
-     "error": "PermissionError: robots.txt unreachable (TimeoutError: The read operation timed out), so the site is skipped this run"
+     "error": "skipped: site kept refusing requests this run"
     }
    ],
    "price": 4399.99,
@@ -7055,7 +7067,7 @@
      "manual": false,
      "price": 4499.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:23:26Z",
+     "checked_at": "2026-11-11T11:22:08Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -7156,7 +7168,7 @@
      "manual": false,
      "price": 4799.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:21:54Z",
+     "checked_at": "2026-11-11T11:22:41Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -7210,6 +7222,10 @@
     ],
     [
      "2026-11-10",
+     4799.99
+    ],
+    [
+     "2026-11-11",
      4799.99
     ]
    ]
@@ -7489,7 +7505,7 @@
      "price": 3499.99,
      "regular": 3499.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:36Z",
+     "checked_at": "2026-11-11T11:22:53Z",
      "source": "www.razer.com product page",
      "stale": false
     }
@@ -7543,6 +7559,10 @@
     ],
     [
      "2026-11-10",
+     3499.99
+    ],
+    [
+     "2026-11-11",
      3499.99
     ]
    ]
@@ -7621,12 +7641,13 @@
      "in_stock": true,
      "checked_at": "2026-11-10T11:22:22Z",
      "source": "www.razer.com product page",
-     "stale": false
+     "stale": true,
+     "error": "ValueError: no price data found on page (layout may have changed)"
     }
    ],
    "price": 3999.99,
    "price_retailer": "Razer.com",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": 3999.99,
    "rating": null,
    "reviews": null,
@@ -7826,7 +7847,7 @@
      "manual": false,
      "price": 1549.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:23:05Z",
+     "checked_at": "2026-11-11T11:22:58Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -7876,6 +7897,10 @@
     ],
     [
      "2026-11-10",
+     1549.99
+    ],
+    [
+     "2026-11-11",
      1549.99
     ]
    ]
@@ -7946,7 +7971,7 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:31Z",
+     "checked_at": "2026-11-11T11:22:53Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -7996,6 +8021,10 @@
     ],
     [
      "2026-11-10",
+     1799.99
+    ],
+    [
+     "2026-11-11",
      1799.99
     ]
    ]
@@ -8068,7 +8097,7 @@
      "manual": false,
      "price": 2399.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:28Z",
+     "checked_at": "2026-11-11T11:23:11Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8118,6 +8147,10 @@
     ],
     [
      "2026-11-10",
+     2399.99
+    ],
+    [
+     "2026-11-11",
      2399.99
     ]
    ]
@@ -8188,7 +8221,7 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:23:14Z",
+     "checked_at": "2026-11-11T11:23:29Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8238,6 +8271,10 @@
     ],
     [
      "2026-11-10",
+     1799.99
+    ],
+    [
+     "2026-11-11",
      1799.99
     ]
    ]
@@ -8306,7 +8343,7 @@
      "manual": false,
      "price": 2499.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:48Z",
+     "checked_at": "2026-11-11T11:22:47Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8356,6 +8393,10 @@
     ],
     [
      "2026-11-10",
+     2499.99
+    ],
+    [
+     "2026-11-11",
      2499.99
     ]
    ]
@@ -8427,7 +8468,7 @@
      "manual": false,
      "price": 2499.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:22Z",
+     "checked_at": "2026-11-11T11:23:09Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8477,6 +8518,10 @@
     ],
     [
      "2026-11-10",
+     2499.99
+    ],
+    [
+     "2026-11-11",
      2499.99
     ]
    ]
@@ -8554,7 +8599,7 @@
      "manual": false,
      "price": 3599.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:41Z",
+     "checked_at": "2026-11-11T11:23:28Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8604,6 +8649,10 @@
     ],
     [
      "2026-11-10",
+     3599.99
+    ],
+    [
+     "2026-11-11",
      3599.99
     ]
    ]
@@ -8673,7 +8722,7 @@
      "manual": false,
      "price": 3299.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:41Z",
+     "checked_at": "2026-11-11T11:23:45Z",
      "source": "eshop.asus.com product page",
      "stale": false
     }
@@ -8723,6 +8772,10 @@
     ],
     [
      "2026-11-10",
+     3299.99
+    ],
+    [
+     "2026-11-11",
      3299.99
     ]
    ]
@@ -8794,7 +8847,7 @@
      "manual": false,
      "price": 1649.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:53Z",
+     "checked_at": "2026-11-11T11:23:02Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -8844,6 +8897,10 @@
     ],
     [
      "2026-11-10",
+     1649.99
+    ],
+    [
+     "2026-11-11",
      1649.99
     ]
    ]
@@ -8915,7 +8972,7 @@
      "manual": false,
      "price": 1599.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:58Z",
+     "checked_at": "2026-11-11T11:23:03Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -8965,6 +9022,10 @@
     ],
     [
      "2026-11-10",
+     1599.99
+    ],
+    [
+     "2026-11-11",
      1599.99
     ]
    ]
@@ -9038,12 +9099,13 @@
      "in_stock": true,
      "checked_at": "2026-11-10T11:22:52Z",
      "source": "www.lenovo.com product page",
-     "stale": false
+     "stale": true,
+     "error": "ValueError: no price data found on page (layout may have changed)"
     }
    ],
    "price": 2099.99,
    "price_retailer": "Lenovo.com",
-   "price_status": "live",
+   "price_status": "stale",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -9157,7 +9219,7 @@
      "manual": false,
      "price": 1999.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:23:02Z",
+     "checked_at": "2026-11-11T11:23:39Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -9207,6 +9269,10 @@
     ],
     [
      "2026-11-10",
+     1999.99
+    ],
+    [
+     "2026-11-11",
      1999.99
     ]
    ]
@@ -9280,7 +9346,7 @@
      "manual": false,
      "price": 1499.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:23:27Z",
+     "checked_at": "2026-11-11T11:22:47Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -9330,6 +9396,10 @@
     ],
     [
      "2026-11-10",
+     1499.99
+    ],
+    [
+     "2026-11-11",
      1499.99
     ]
    ]
@@ -9403,7 +9473,7 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:23:25Z",
+     "checked_at": "2026-11-11T11:23:40Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -9453,6 +9523,10 @@
     ],
     [
      "2026-11-10",
+     1799.99
+    ],
+    [
+     "2026-11-11",
      1799.99
     ]
    ]
@@ -9525,7 +9599,7 @@
      "manual": false,
      "price": 5094.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:27Z",
+     "checked_at": "2026-11-11T11:22:46Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -9575,6 +9649,10 @@
     ],
     [
      "2026-11-10",
+     5094.99
+    ],
+    [
+     "2026-11-11",
      5094.99
     ]
    ]
@@ -9647,7 +9725,7 @@
      "manual": false,
      "price": 3999.99,
      "in_stock": true,
-     "checked_at": "2026-11-10T11:22:47Z",
+     "checked_at": "2026-11-11T11:23:45Z",
      "source": "www.lenovo.com product page",
      "stale": false
     }
@@ -9697,6 +9775,10 @@
     ],
     [
      "2026-11-10",
+     3999.99
+    ],
+    [
+     "2026-11-11",
      3999.99
     ]
    ]
