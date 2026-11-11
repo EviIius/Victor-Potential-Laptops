@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Victor's Laptop Finder</title>
-<meta name="description" content="Gaming and work laptops for Victor: live prices, part analysis, cost analysis and side-by-side comparisons.">
+<meta name="description" content="Gaming and work laptops for Victor: recorded retailer prices, part analysis, cost analysis and side-by-side comparisons.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/app.css?v=20261111-price-audit2">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='12' width='52' height='32' rx='4' fill='%23E4572E'/%3E%3Crect x='2' y='46' width='60' height='6' rx='3' fill='%2316181D'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -65,13 +65,15 @@
           <legend>Must-haves</legend>
         </fieldset>
         <p class="hint">Settings are saved in this browser. Every score on the site uses them.</p>
+        <button class="btn btn-sm" type="button" id="show-all-laptops">Show every configuration</button>
       </aside>
       <div class="picks-main">
         <div class="picks-head">
-          <h2 id="picks-h">Best matches right now</h2>
+          <h2 id="picks-h">Best matches for your priorities</h2>
           <p class="sub" id="picks-sub"></p>
         </div>
         <div class="top-picks" id="top-picks"></div>
+        <div id="more-picks"></div>
         <h3 class="section-h">Best in each price range</h3>
         <div class="tier-grid" id="tier-grid"></div>
         <div class="context" id="market-context"></div>
@@ -132,7 +134,7 @@
       </div>
       <div class="panel">
         <h3>The GPU price ladder</h3>
-        <p class="chart-note">Cheapest in-stock price for each graphics tier and what the next step up costs.</p>
+        <p class="chart-note">Lowest recorded in-stock quote for each graphics tier. Snapshot quotes need retailer confirmation.</p>
         <div id="gpu-ladder"></div>
       </div>
     </div>
@@ -191,6 +193,6 @@
 <div class="compare-tray" id="compare-tray" hidden></div>
 
 <script src="assets/config.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=20261111-price-audit2"></script>
 </body>
 </html>

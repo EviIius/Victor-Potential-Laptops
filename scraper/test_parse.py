@@ -133,4 +133,13 @@ old = json.loads(json.dumps(d1))
 old["laptops"][0]["history"] = [["2025-10-01", 900], ["2026-10-31", 1001]]
 dh = merge(CAT, old, [], REF, meta("2026-11-08T10:05:00Z"), None)
 ok &= check(dh["laptops"][0]["history"] == [["2026-10-31", 1001]], "history expires by calendar date")
+snapshot = [dict(obs1[0], price=500, verification_method="page-reader", checked_at="2026-11-11T10:00:00Z")]
+dp = merge(CAT, d1, snapshot, REF, meta("2026-11-11T10:05:00Z"), None)
+ok &= check(dp["laptops"][0]["price"] == 1001 and dp["laptops"][0]["offers"][0]["checked_at"] == obs1[0]["checked_at"] and len(dp["laptops"][0]["history"]) == 1, "page snapshots cannot replace a price, confirmation date or history")
+correction = [dict(obs1[0], price=2849.99, on_sale=False, verification_method="user-report", checked_at="2026-10-31T12:00:00Z", discard_history_dates=["2026-10-31"])]
+dc = merge(CAT, d1, correction, REF, meta("2026-10-31T12:00:00Z"), None)
+ok &= check(dc["laptops"][0]["history"] == [["2026-10-31", 2849.99]] and dc["laptops"][0]["offers"][0]["on_sale"] is False, "price corrections remove a false daily low and preserve explicit no-sale status")
+two = [dict(obs1[0], retailer="bb", price=800, verification_method="page-reader"), dict(obs1[0], retailer="other", price=1200, source="retailer product page")]
+dv = merge(multi, dm, two, REF, meta("2026-11-11T10:05:00Z"), None)
+ok &= check(dv["laptops"][0]["price"] == 1200, "direct retailer price takes priority over an unconfirmed cheaper snapshot")
 sys.exit(0 if ok else 1)

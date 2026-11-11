@@ -27,6 +27,7 @@ vm.runInContext(source.replace('  init();', `
   globalThis.app = {
     load(data, ref) { DATA = data; REF = ref; L = data.laptops; BYID = Object.fromEntries(L.map(l => [l.id, l])); computeAll(); },
     state, verdictHtml, renderBrowse, renderScatter, renderMarket, upgrade, available, freshPrice, scoreAssumptions,
+    passesMusts, renderPicks, browseRows, verifiedDiscount, priceBlock, renderCosts,
     bind, openDrawer, closeDrawer, modal, closeModal,
   };`), context);
 new vm.Script(fs.readFileSync(path.join(site, 'assets/config.js'), 'utf8'));
@@ -75,6 +76,51 @@ check('recent-price filtering rejects failed checks, estimates and older quotes'
   offer.manual = false;
   offer.checked_at = new Date(Date.now() - 49 * 3600000).toISOString();
   assert.equal(app.freshPrice(l), false);
+});
+check('recent-price filtering is optional and migrates previously forced settings', () => {
+  assert.equal(app.state.prefs.musts.fresh, false);
+  for (const version of [undefined, 2]) {
+    const saved = { musts: { fresh: true, ram32: true }, filterVersion: version };
+    const ctx = vm.createContext({ window: {}, localStorage: { getItem: () => JSON.stringify(saved), setItem() {} } });
+    vm.runInContext(source.replace('  init();', '  globalThis.prefs = state.prefs;'), ctx);
+    assert.equal(ctx.prefs.musts.fresh, version === 2);
+    assert.equal(ctx.prefs.musts.ram32, true);
+  }
+});
+check('unchecking recent prices adds matches and every matched laptop is reachable', () => {
+  const saved = JSON.parse(JSON.stringify(app.state.prefs));
+  app.state.prefs.budget = 6000;
+  app.state.prefs.musts = { fresh: true };
+  const recent = data.laptops.filter(l => app.passesMusts(l));
+  app.state.prefs.musts.fresh = false;
+  const all = data.laptops.filter(l => app.passesMusts(l));
+  assert.equal(all.length, data.laptops.length);
+  assert(recent.every(l => all.includes(l)));
+  app.renderPicks();
+  const markup = element('#top-picks').innerHTML + element('#more-picks').innerHTML;
+  for (const l of all) assert(markup.includes(`data-open="${l.id}"`), l.id);
+  assert.equal(app.browseRows().length, data.laptops.length);
+  app.state.prefs = saved;
+});
+check('a reference price or snapshot cannot create a deal badge', () => {
+  const offer = { price: 2479.99, regular: 2849.99, checked_at: new Date().toISOString(), in_stock: true, verification_method: 'page-reader' };
+  const l = { price: offer.price, regular: offer.regular, offers: [offer] };
+  assert.equal(app.verifiedDiscount(l), 0);
+  assert(!app.priceBlock(l).includes('class="save"'));
+  offer.verification_method = 'retailer-api'; offer.on_sale = true;
+  assert.equal(app.verifiedDiscount(l), 370);
+  offer.on_sale = false; assert.equal(app.verifiedDiscount(l), 0);
+  offer.on_sale = true; offer.stale = true; assert.equal(app.verifiedDiscount(l), 0);
+});
+check('a user-reported MSI quote never inherits a snapshot discount', () => {
+  const sample = data.laptops.find(l => l.id === 'msi-raider-16-hx-6679954');
+  const l = { ...sample, price: 2849.99, regular: 2849.99, offers: [{ ...sample.offers[0], price: 2849.99, regular: 2849.99, verification_method: 'user-report', on_sale: false, checked_at: new Date().toISOString() }] };
+  app.load({ laptops: [l] }, ref);
+  assert.equal(app.verifiedDiscount(l), 0);
+  assert(!app.priceBlock(l).includes('class="save"'));
+  app.renderCosts();
+  assert(!element('#deal-table').innerHTML.includes(l.id));
+  app.load(data, ref);
 });
 check('browse rows support keyboard access and column headers expose sorting', () => {
   app.renderBrowse();

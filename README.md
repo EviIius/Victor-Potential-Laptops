@@ -74,6 +74,8 @@ python3 -B scraper/scrape.py --save-observations scraper/seed/observations-YYYY-
 python3 -B scraper/scrape.py --offline --observations scraper/seed/observations-YYYY-MM-DD-manual.json
 ```
 
+Page-reader results are cached snapshots, not proof of a live price. They cannot replace a direct price confirmation or add a history point. `verification_method` distinguishes `page-reader`, `retailer-html`, `retailer-api`, `browser-rendered`, and `user-report`; user-reported quotes are labeled. A lower price than a comparable-value reference alone never creates a sale badge: a recent direct check and explicit `on_sale: true` are required.
+
 A stock-only observation can omit `price`: it updates availability while retaining the old price and its original confirmation date. A plain `--offline` rebuild preserves the last refresh metadata. Reusable observation files make manual updates auditable. The overall freshness date follows the offer actually displayed, and partial refresh counts appear in the status dialog and Actions summary. If a live scrape fails entirely, retained data can still publish while a separate workflow check reports the failed refresh.
 
 ## Adding or removing laptops
@@ -95,7 +97,7 @@ All scores are 0–100 and only compare laptops on this site.
 - **Portability:** weight, thickness and battery size.
 - **Upgradeability:** replaceable RAM, confirmed SSD slots, Thunderbolt or USB4. Unknown SSD slot counts receive no storage-upgrade points. The detail drawer identifies estimated GPU power and scoring assumptions for missing specifications.
 - **Value:** gaming and work performance per dollar.
-- **Fit:** the visitor's own slider weights applied to the above, within their budget and must-haves. By default, picks require an in-stock offer with a price confirmed within 48 hours. Turn off the recent-price filter to include older quotes or manual estimates.
+- **Fit:** the visitor's own slider weights applied to the above, within their budget and must-haves. The recent-price filter is optional and off by default. Unchecking it includes older and snapshot quotes with visible labels. Picks exposes every matching configuration below its top three; Show every configuration clears budget and must-have restrictions. Browse all starts with the complete catalog.
 
 GPU and CPU figures come from published benchmarks (Notebookcheck and others, listed on the Part analysis page). Power limits marked "est." are estimates where the maker doesn't publish them.
 
@@ -120,3 +122,5 @@ scraper/
 ```
 
 Prices change constantly. Always check the store before buying. Not affiliated with any retailer or manufacturer.
+
+The November 11 recheck is recorded in `scraper/seed/price-audit-2026-11-11.json`, with one entry for every retailer offer. `observations-2026-11-11-recheck.json` records the corrected MSI quote, its user-reported provenance, and invalidation of unsupported snapshot history points. Earlier observation files are historical inputs; their page-reader prices are not live confirmations.

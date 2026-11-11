@@ -403,6 +403,7 @@ def bestbuy_api(key: str, skus: list[str], discover: bool) -> tuple[dict, list |
 
 def api_to_obs(p: dict) -> dict:
     return {"price": float(p["salePrice"]), "regular": float(p.get("regularPrice") or p["salePrice"]),
+            "on_sale": p.get("onSale") is True, "verification_method": "retailer-api",
             "in_stock": bool(p.get("onlineAvailability")), "rating": p.get("customerReviewAverage"),
             "reviews": p.get("customerReviewCount"), "url": p.get("url")}
 
@@ -446,13 +447,15 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
             po = prev_offers.get(off["retailer"], {})
             o = {"retailer": off["retailer"], "retailer_name": retailers.get(off["retailer"], {}).get("name", off["retailer"]),
                  "sku": off.get("sku"), "url": off.get("url"), "manual": bool(off.get("manual"))}
-            keep = ("price", "regular", "in_stock", "open_box", "marketplace", "rating", "reviews", "checked_at", "source", "seller", "marketplace_only", "evidence_url", "verified_sku", "availability_checked_at")
-            if ob and ob.get("ok"):  # refreshed this run
+            keep = ("price", "regular", "in_stock", "open_box", "marketplace", "rating", "reviews", "checked_at", "source", "seller", "marketplace_only", "evidence_url", "verified_sku", "availability_checked_at", "verification_method", "on_sale")
+            snapshot = ob and (ob.get("verification_method") == "page-reader" or "browser reader" in (ob.get("source") or "").lower())
+            if ob and ob.get("ok") and not snapshot:  # refreshed this run
                 o.update({k: ob.get(k) for k in keep if ob.get(k) is not None})
                 o["stale"], o["_fresh"] = False, True
                 if not ob.get("price") and po.get("price"):
                     # A stock-only check cannot reconfirm the previous price.
-                    o.update({k: po[k] for k in ("price", "regular", "checked_at", "source") if k in po})
+                    o.update({k: po[k] for k in ("price", "regular", "checked_at", "source", "verification_method") if k in po})
+                    o.pop("on_sale", None)
                     o["availability_checked_at"] = ob.get("checked_at")
                     o["stale"], o["_fresh"] = True, False
                     o["error"] = ob.get("price_note") or "Availability checked; the previous price was not reconfirmed."
@@ -470,12 +473,26 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
             else:
                 o["stale"] = True
                 o["error"] = "never scraped"
+            if not o.get("verification_method"):
+                source = (o.get("source") or "").lower()
+                o["verification_method"] = "page-reader" if "browser reader" in source else "retailer-api" if "products api" in source else "retailer-html" if "product page" in source else "unconfirmed"
+            if ob and ob.get("invalidate_verification"):
+                o["verification_method"] = "page-reader"
+            if o["verification_method"] == "page-reader":
+                o["stale"], o["_fresh"] = True, False
+                o["on_sale"] = False
+                o["error"] = "Page-reader snapshot; the live purchase price has not been confirmed."
+            if o.get("stale"):
+                o["on_sale"] = False
             offers.append(o)
         priced = [o for o in offers if o.get("price") and not o.get("marketplace_only")]
         live = [o for o in priced if o.get("in_stock") is True and not o.get("marketplace_only")]
-        best = min(live or priced, key=lambda o: (o["price"], bool(o.get("stale")))) if priced else None  # ties go to the fresher price
+        eligible = live or priced
+        confirmed = [o for o in eligible if not o.get("stale") and o.get("verification_method") not in ("page-reader", "unconfirmed")]
+        best = min(confirmed or eligible, key=lambda o: (o["price"], bool(o.get("stale")))) if priced else None
         cutoff = (dt.date.fromisoformat(today) - dt.timedelta(days=HISTORY_DAYS - 1)).isoformat()
-        history = [list(h) for h in prev.get("history", []) if h[0] >= cutoff]
+        discarded_dates = {date for ob in observations if ob["laptop_id"] == item["id"] for date in ob.get("discard_history_dates", [])}
+        history = [list(h) for h in prev.get("history", []) if h[0] >= cutoff and h[0] not in discarded_dates]
         if best and best.get("_fresh"):
             if history and history[-1][0] == today:
                 history[-1][1] = min(history[-1][1], best["price"])
@@ -617,6 +634,10 @@ def main():
         observations = [o for o in observations if (o["laptop_id"], o["retailer"]) not in seen] + live_obs
         market = live_market or market
 
+    for observation in observations:
+        if observation.get("verification_method") == "page-reader" or "browser reader" in (observation.get("source") or "").lower():
+            observation["ok"] = False
+            observation["error"] = "Page-reader snapshots cannot establish a live retailer price."
     ok = sum(1 for o in observations if o.get("ok"))
     failed = sum(1 for o in observations if not o.get("ok"))
     by_retailer = {}
@@ -628,6 +649,8 @@ def main():
             "ok": ok, "failed": failed, "tracked_offers": sum(len(l["offers"]) for l in catalog["laptops"]),
             "prices_refreshed": sum(1 for o in observations if o.get("ok") and o.get("price")),
             "availability_only": sum(1 for o in observations if o.get("ok") and not o.get("price")),
+            "retailer_confirmed_prices": sum(1 for o in observations if o.get("ok") and o.get("price") and o.get("verification_method") != "user-report"),
+            "user_reported_prices": sum(1 for o in observations if o.get("ok") and o.get("price") and o.get("verification_method") == "user-report"),
             "by_retailer": by_retailer, "notes": extra.get("notes", []),
             "user_agent": UA if not args.offline else None, "api": bool(os.environ.get("BESTBUY_API_KEY"))}
     if args.observations and args.offline:

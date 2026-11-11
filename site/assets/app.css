@@ -326,3 +326,6 @@ fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+#more-picks summary { cursor: pointer; font-weight: 600; padding: 8px 0; }
+#more-picks .tier-grid { margin-top: 8px; }

@@ -12,7 +12,8 @@
   const median = (a) => { if (!a.length) return null; const s = [...a].sort((x, y) => x - y); const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
   const performanceGap = (a, b) => a > 0 && b > 0 ? Math.sign(a - b) * (Math.max(a, b) / Math.min(a, b) - 1) : 0;
   const available = (l) => bestOffer(l).in_stock === true && !bestOffer(l).marketplace_only;
-  const freshPrice = (l) => { const o = bestOffer(l); const age = Date.now() - new Date(o.checked_at).getTime(); return !o.stale && !o.manual && Number.isFinite(age) && age >= 0 && age <= 48 * 36e5; };
+  const freshPrice = (l) => { const o = bestOffer(l); const age = Date.now() - new Date(o.checked_at).getTime(); return !o.stale && !o.manual && !['page-reader', 'unconfirmed'].includes(o.verification_method) && Number.isFinite(age) && age >= 0 && age <= 48 * 36e5; };
+  const verifiedDiscount = (l) => { const o = bestOffer(l); return freshPrice(l) && available(l) && o.on_sale === true && ['retailer-api', 'browser-rendered'].includes(o.verification_method) && o.regular > l.price ? o.regular - l.price : 0; };
   const store = {
     get(k, d) { try { const v = localStorage.getItem('vlf:' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem('vlf:' + k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } },
@@ -53,16 +54,18 @@
     { id: 'high', label: '$2,600 and up', min: 2600, max: 1e9 },
   ];
   const SHORT = { fit: 'Victor fit', gaming: 'Gaming', work: 'Work', display: 'Screen', portability: 'Portable', upgrade: 'Upgrades', value: 'Value' };
-  const DEFAULT_PREFS = { preset: 'balanced', budget: 2500, weights: { ...PRESETS[0].w }, musts: { stock: true, fresh: true, dgpu: true } };
+  const DEFAULT_PREFS = { preset: 'balanced', budget: 2500, weights: { ...PRESETS[0].w }, musts: { stock: true, fresh: false, dgpu: true }, filterVersion: 2 };
+  const savedPrefs = store.get('prefs', {});
   const state = {
-    prefs: Object.assign({}, DEFAULT_PREFS, store.get('prefs', {})),
+    prefs: Object.assign({}, DEFAULT_PREFS, savedPrefs),
     compare: store.get('compare', { a: null, b: null }),
-    browse: { sort: 'fit', dir: -1, q: '', gpu: '', brand: '', size: '', maxWeight: '', inBudget: false, stockOnly: true },
+    browse: { sort: 'fit', dir: -1, q: '', gpu: '', brand: '', size: '', maxWeight: '', inBudget: false, stockOnly: false },
     market: { q: '', gpu: '', stock: true, sort: 'price', dir: 1 },
     yAxis: 'gaming',
   };
   state.prefs.weights = Object.assign({}, DEFAULT_PREFS.weights, state.prefs.weights || {});
   state.prefs.musts = Object.assign({}, DEFAULT_PREFS.musts, state.prefs.musts || {});
+  if (savedPrefs.filterVersion !== 2) { state.prefs.musts.fresh = false; state.prefs.filterVersion = 2; store.set('prefs', state.prefs); }
 
   let DATA = null; let REF = null; let L = []; let BYID = {};
   const MAX = { gpu: 202, cpu: 2350 };
@@ -160,15 +163,18 @@
     if ((l.display || {}).panel === 'OLED' || (l.display || {}).panel === 'Mini-LED') out.push(`${(l.display || {}).panel} ${l.display.hz}Hz screen`);
     if ((l.weight_lb || 9) < 4.3) out.push(`Only ${l.weight_lb} lb`);
     if ((l.ram_gb || 0) >= 32) out.push(`${l.ram_gb}GB RAM`);
-    if (l.regular && l.price && l.regular - l.price >= 100) out.push(`${money(l.regular - l.price)} off right now`);
+    if (verifiedDiscount(l) >= 100) out.push(`${money(verifiedDiscount(l))} retailer-listed saving at last check`);
     if (rankIn('value') < 5) out.push('Top-5 value in the list');
     return out.slice(0, 3);
   }
   function stockChip(l) {
-    if (l.price_status === 'unavailable') return '<span class="chip bad">Sold out</span>';
+    const offer = bestOffer(l);
+    const quote = offer.verification_method === 'page-reader' ? '<span class="chip warn">Page snapshot · verify price</span>' : offer.verification_method === 'user-report' ? '<span class="chip">User-reported price</span>' : '';
+    if (l.price_status === 'unavailable') return quote + '<span class="chip bad">Last seen sold out</span>';
+    if (quote) return quote;
     if (l.price_status === 'manual') return '<span class="chip warn" title="Configured price, tracked by hand">Est. price</span>';
     if (!available(l)) return '<span class="chip warn">Stock unconfirmed</span>';
-    if (l.price_status === 'stale' && !lastRunFailed()) { const o = (l.offers || []).find((x) => x.retailer_name === l.price_retailer) || {}; return `<span class="chip warn" title="The last scrape couldn't refresh this ${esc(l.price_retailer || '')} price">${esc(l.price_retailer || 'Price')} price from ${esc(new Date(o.checked_at || pricesAsOf()).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }))}</span>`; }
+    if (!freshPrice(l)) return `<span class="chip warn">Last quote ${esc(new Date(offer.checked_at || pricesAsOf()).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }))} · verify price</span>`;
     return '';
   }
 
@@ -182,8 +188,8 @@
     }).join('')}</div>`;
   }
   function priceBlock(l, size = '') {
-    const save = l.regular && l.price && l.regular > l.price ? l.regular - l.price : 0;
-    return `<div class="price-row"><span class="price ${size}">${money2(l.price)}</span>${save >= 1 ? `<span class="was">${money2(l.regular)}</span><span class="save">save ${money(save)}</span>` : ''}${stockChip(l)}</div>`;
+    const save = verifiedDiscount(l);
+    return `<div class="price-row"><span class="price ${size}">${money2(l.price)}</span>${save >= 1 ? `<span class="was">${money2(l.regular)}</span><span class="save">${money(save)} retailer-listed saving at last check</span>` : ''}${stockChip(l)}</div>`;
   }
   function cmpToggle(l) {
     const a = state.compare.a === l.id; const b = state.compare.b === l.id;
@@ -222,6 +228,7 @@
     $('#picks-sub').textContent = `${within.length} of ${L.length} laptops fit a ${money(state.prefs.budget)} budget and your must-haves. Ranked by "fit": your priority sliders applied to each laptop's scores.`;
     $('#top-picks').innerHTML = top.length ? top.map((l, i) => lcard(l, { rank: i + 1, cls: i === 0 ? 'rank-1' : '' })).join('')
       : '<p class="empty">Nothing matches. Raise the budget or turn off a must-have.</p>';
+    $('#more-picks').innerHTML = within.length > 3 ? `<details><summary>Show all ${within.length} matches (${within.length - 3} more)</summary><div class="tier-grid">${within.slice(3).map((l, i) => lcard(l, { rank: i + 4 })).join('')}</div></details>` : '';
     $('#tier-grid').innerHTML = TIERS.map((t) => {
       const inTier = pool.filter((l) => l.price >= t.min && l.price <= t.max);
       if (!inTier.length) return `<div class="lcard tier-card"><div class="tier-label">${esc(t.label)}</div><p class="empty">No laptops match the must-haves here.</p></div>`;
@@ -298,7 +305,7 @@
     thead.innerHTML = '<tr>' + BROWSE_COLS.map((c) => c.key === 'cmp' ? `<th>${c.label}</th>` : `<th class="${c.cls || ''}" aria-sort="${state.browse.sort === c.key ? (state.browse.dir > 0 ? 'ascending' : 'descending') : 'none'}"><button type="button" data-sort="${c.key}">${c.label}</button></th>`).join('') + '</tr>';
     $('#browse-table tbody').innerHTML = rows.map((l) => `<tr class="is-clickable" data-open="${l.id}" tabindex="0" aria-label="Details for ${esc(shortName(l))}, ${esc(configLine(l))}">
       <td><div class="cell-title">${esc(shortName(l))}</div><div class="cell-sub">${esc(l.form || '')} · ${esc(l.year || '')}</div></td>
-      <td class="r"><div class="num">${money2(l.price)}</div>${l.regular && l.regular > l.price ? `<div class="cell-sub was">${money2(l.regular)}</div>` : ''}${stockChip(l)}</td>
+      <td class="r"><div class="num">${money2(l.price)}</div>${verifiedDiscount(l) ? `<div class="cell-sub was">${money2(l.regular)}</div>` : ''}${stockChip(l)}</td>
       <td><div>${esc(gpuLabel(l))}</div><div class="cell-sub">${esc(tgpNote(l) || (REF.gpus[l.gpu_key] || {}).kind || '')}</div></td>
       <td><div>${esc(l.cpu_key)}</div><div class="cell-sub">${esc(cpuRef(l).cores)}</div></td>
       <td><div>${l.ram_gb}GB / ${storageLabel(l.storage_gb || 0)}</div><div class="cell-sub">${l.ram_soldered ? 'soldered' : `${l.ram_slots} slots`}</div></td>
@@ -349,8 +356,8 @@
   function offersHtml(l) {
     return (l.offers || []).map((o) => `<div class="offer">
       <div><b>${esc(o.retailer_name)}</b>${o.sku ? ` <span class="cell-sub">SKU ${esc(o.sku)}</span>` : ''}<div class="cell-sub">${o.checked_at ? `Price checked ${esc(fmtDate(o.checked_at))}` : 'Price not checked yet'}${o.stale ? ' · <span class="chip warn">price not reconfirmed, showing last known price</span>' : ''}${o.manual ? ' · price tracked by hand' : ''}${o.availability_checked_at ? `<br>Stock checked ${esc(fmtDate(o.availability_checked_at))}` : ''}</div>
-        ${o.open_box ? `<div class="cell-sub">Open-box from ${money2(o.open_box)}</div>` : ''}
-        ${o.marketplace ? `<div class="cell-sub">Marketplace seller ${esc(o.marketplace.seller)}: ${money2(o.marketplace.price)} (third-party, check returns)</div>` : ''}
+        ${o.open_box ? `<div class="cell-sub">Last recorded open-box quote: ${money2(o.open_box)}</div>` : ''}
+        ${o.marketplace ? `<div class="cell-sub">Last recorded marketplace quote (${esc(o.marketplace.seller)}): ${money2(o.marketplace.price)} (third-party, check returns)</div>` : ''}
         ${o.rating ? `<div class="cell-sub">${o.rating}★ from ${(o.reviews || 0).toLocaleString()} reviews</div>` : ''}</div>
       <div style="text-align:right"><div class="price sm">${money2(o.price)}</div>${o.in_stock === false ? '<span class="chip bad">Sold out</span>' : ''}<div><a class="btn btn-sm" href="${esc(o.url)}" target="_blank" rel="noopener">Open ↗</a></div></div></div>`).join('');
   }
@@ -557,7 +564,7 @@
       }
       return '';
     }).join('');
-    $('#scatter').innerHTML = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter plot of price versus ${label} for ${pts.length} laptops">${g}<text class="axis-title" x="${(W + m.l) / 2}" y="${H - 6}" text-anchor="middle">Price (USD, current)</text><text class="axis-title" transform="translate(14 ${(H - m.b) / 2}) rotate(-90)" text-anchor="middle">${label}</text><path class="frontier" d="${fpath}"/>${dots}${labels}</svg>`;
+    $('#scatter').innerHTML = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter plot of price versus ${label} for ${pts.length} laptops">${g}<text class="axis-title" x="${(W + m.l) / 2}" y="${H - 6}" text-anchor="middle">Price (USD, last recorded quote)</text><text class="axis-title" transform="translate(14 ${(H - m.b) / 2}) rotate(-90)" text-anchor="middle">${label}</text><path class="frontier" d="${fpath}"/>${dots}${labels}</svg>`;
     const used = [...new Set(pts.map((p) => p.l.gpu_key))].sort((a, b) => (REF.gpus[b] || {}).perf - (REF.gpus[a] || {}).perf);
     $('#scatter-legend').innerHTML = used.map((gk) => `<span><i style="${(REF.gpus[gk] || {}).kind === 'iGPU' ? `border:2.5px solid ${GPU_COLORS[gk]};background:transparent` : `background:${GPU_COLORS[gk] || '#888'}`}"></i>${esc(gk)}${(REF.gpus[gk] || {}).kind === 'iGPU' ? ' (built-in)' : ''}</span>`).join('') + '<span><i style="background:transparent;border:2px dashed var(--accent);border-radius:0;height:0;width:16px"></i>Best-value line</span>';
   }
@@ -565,7 +572,7 @@
     renderScatter();
     const pool = L.filter((l) => l.price && available(l));
     const v = [...pool].sort((a, b) => b.s.gaming / b.price - a.s.gaming / a.price).slice(0, 12);
-    $('#value-table').innerHTML = `<div class="table-wrap" style="box-shadow:none"><table class="grid-table"><thead><tr><th>Laptop</th><th class="r">Price</th><th>GPU</th><th class="r">Gaming pts per $1k</th><th class="r">Work pts per $1k</th></tr></thead><tbody>${v.map((l) => `<tr class="is-clickable" data-open="${l.id}" tabindex="0"><td><div class="cell-title">${esc(shortName(l))}</div><div class="cell-sub">${esc(l.cpu_key)} · ${l.ram_gb}GB</div></td><td class="r num">${money(l.price)}</td><td>${esc(l.gpu_key)}</td><td class="r num">${(l.s.gaming / l.price * 1000).toFixed(1)}</td><td class="r num">${(l.s.work / l.price * 1000).toFixed(1)}</td></tr>`).join('')}</tbody></table></div>`;
+    $('#value-table').innerHTML = `<div class="table-wrap" style="box-shadow:none"><table class="grid-table"><thead><tr><th>Laptop</th><th class="r">Price</th><th>GPU</th><th class="r">Gaming pts per $1k</th><th class="r">Work pts per $1k</th></tr></thead><tbody>${v.map((l) => `<tr class="is-clickable" data-open="${l.id}" tabindex="0"><td><div class="cell-title">${esc(shortName(l))}</div><div class="cell-sub">${esc(l.cpu_key)} · ${l.ram_gb}GB</div></td><td class="r num">${money(l.price)}${stockChip(l)}</td><td>${esc(l.gpu_key)}</td><td class="r num">${(l.s.gaming / l.price * 1000).toFixed(1)}</td><td class="r num">${(l.s.work / l.price * 1000).toFixed(1)}</td></tr>`).join('')}</tbody></table></div>`;
     // GPU ladder
     const gpus = Object.keys(REF.gpus).filter((g) => pool.some((l) => l.gpu_key === g)).sort((a, b) => REF.gpus[a].perf - REF.gpus[b].perf);
     let prev = null;
@@ -588,11 +595,11 @@
     $('#thin-premium').innerHTML = thinRows.length ? `<div class="table-wrap" style="box-shadow:none"><table class="grid-table"><thead><tr><th>GPU</th><th class="r">Slim median</th><th class="r">Regular median</th><th class="r">Price gap</th><th class="r">Speed gap</th></tr></thead><tbody>${thinRows.join('')}</tbody></table></div><p class="chart-note" style="margin-top:8px">Slim laptops usually run the same GPU at lower power, so you often pay more for less speed in exchange for weight and looks.</p>` : '<p class="empty">Not enough data.</p>';
     // deals
     const deals = pool.map((l) => {
-      const o = bestOffer(l); const off = l.regular && l.regular > l.price ? l.regular - l.price : 0;
-      const alt = [o.open_box ? { kind: 'Open-box', p: o.open_box } : null, o.marketplace && o.marketplace.price < l.price ? { kind: o.marketplace.seller, p: o.marketplace.price } : null].filter(Boolean).sort((a, b) => a.p - b.p)[0];
+      const o = bestOffer(l); const off = verifiedDiscount(l);
+      const alt = freshPrice(l) ? [o.open_box ? { kind: 'Open-box', p: o.open_box } : null, o.marketplace && o.marketplace.price < l.price ? { kind: o.marketplace.seller, p: o.marketplace.price } : null].filter(Boolean).sort((a, b) => a.p - b.p)[0] : null;
       return { l, off, alt };
     }).filter((d) => d.off >= 50 || d.alt).sort((a, b) => Math.max(b.off, b.alt ? b.l.price - b.alt.p : 0) - Math.max(a.off, a.alt ? a.l.price - a.alt.p : 0)).slice(0, 12);
-    $('#deal-table').innerHTML = `<div class="table-wrap" style="box-shadow:none"><table class="grid-table"><thead><tr><th>Laptop</th><th class="r">Price</th><th class="r">Listed discount</th><th>Cheaper option</th></tr></thead><tbody>${deals.map((d) => `<tr class="is-clickable" data-open="${d.l.id}" tabindex="0"><td><div class="cell-title">${esc(shortName(d.l))}</div><div class="cell-sub">${esc(d.l.gpu_key)}</div></td><td class="r num">${money(d.l.price)}</td><td class="r num">${d.off ? `−${money(d.off)}` : '—'}</td><td class="cell-sub">${d.alt ? `${esc(d.alt.kind)} ${money(d.alt.p)}` : '—'}</td></tr>`).join('')}</tbody></table></div><p class="chart-note" style="margin-top:8px">"Listed discount" is Best Buy's own comparable-value claim. Open-box units come with Best Buy's return policy; marketplace sellers are third parties.</p>`;
+    $('#deal-table').innerHTML = `<div class="table-wrap" style="box-shadow:none"><table class="grid-table"><thead><tr><th>Laptop</th><th class="r">Price</th><th class="r">Listed discount</th><th>Cheaper option</th></tr></thead><tbody>${deals.length ? deals.map((d) => `<tr class="is-clickable" data-open="${d.l.id}" tabindex="0"><td><div class="cell-title">${esc(shortName(d.l))}</div><div class="cell-sub">${esc(d.l.gpu_key)}</div></td><td class="r num">${money(d.l.price)}</td><td class="r num">${d.off ? `−${money(d.off)}` : '—'}</td><td class="cell-sub">${d.alt ? `${esc(d.alt.kind)} ${money(d.alt.p)}` : '—'}</td></tr>`).join('') : '<tr><td colspan="4">No current promotions verified. Open a retailer listing to check today’s price.</td></tr>'}</tbody></table></div><p class="chart-note" style="margin-top:8px">Savings appear only with an explicit retailer promotion and a recent direct check. A comparable-value reference or page snapshot alone does not establish a current deal.</p>`;
     $('#cost-context').innerHTML = marketContext();
   }
 
@@ -638,7 +645,7 @@
     const col = cols.find((c) => c.k === f.sort) || cols[3];
     rows.sort((a, b) => { const x = col.s(a); const y = col.s(b); return (x > y ? 1 : x < y ? -1 : 0) * f.dir; });
     $('#market-table thead').innerHTML = '<tr>' + cols.map((c) => `<th class="${c.c || ''}" aria-sort="${f.sort === c.k ? (f.dir > 0 ? 'ascending' : 'descending') : 'none'}"><button type="button" data-msort="${c.k}">${c.l}</button></th>`).join('') + '</tr>';
-    $('#market-table tbody').innerHTML = rows.map((m) => `<tr><td><a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.title)}</a> ${m.tracked ? '<span class="chip accent">tracked</span>' : ''}</td><td>${esc(m.gpu_key || '—')}</td><td>${esc(m.cpu_key || '—')}</td><td class="r num">${money2(m.price)}${m.regular && m.regular > m.price ? `<div class="cell-sub was">${money2(m.regular)}</div>` : ''}</td><td class="r num">${m.rating ? `${m.rating}★ <span class="cell-sub">${m.reviews}</span>` : '—'}</td><td>${m.status === 'in_stock' ? '<span class="chip good">In stock</span>' : m.status === 'sold_out' ? '<span class="chip bad">Sold out</span>' : '<span class="chip">Unknown</span>'}</td></tr>`).join('') || '<tr><td colspan="6" class="empty">No listings match.</td></tr>';
+    $('#market-table tbody').innerHTML = rows.map((m) => `<tr><td><a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.title)}</a> ${m.tracked ? '<span class="chip accent">tracked</span>' : ''}</td><td>${esc(m.gpu_key || '—')}</td><td>${esc(m.cpu_key || '—')}</td><td class="r num">${money2(m.price)}</td><td class="r num">${m.rating ? `${m.rating}★ <span class="cell-sub">${m.reviews}</span>` : '—'}</td><td>${m.status === 'in_stock' ? '<span class="chip good">In stock</span>' : m.status === 'sold_out' ? '<span class="chip bad">Sold out</span>' : '<span class="chip">Unknown</span>'}</td></tr>`).join('') || '<tr><td colspan="6" class="empty">No listings match.</td></tr>';
   }
 
   // ------------------------------------------------------------------ RE-SCRAPE (GitHub Actions)
@@ -668,7 +675,7 @@
     const names = {}; L.forEach((l) => l.offers.forEach((o) => { names[o.retailer] = o.retailer_name || o.retailer; }));
     const per = Object.entries(sc.by_retailer || {}).map(([r, v]) => `${esc(names[r] || r)}: ${v.ok} ok${v.failed ? `, ${v.failed} failed` : ''}`).join(' · ');
     const sameTime = pricesAsOf() === DATA.generated_at;
-    return `<dl class="kv"><dt>Prices confirmed</dt><dd>${esc(fmtDate(pricesAsOf()))} (${esc(ago(pricesAsOf()))})</dd>${sameTime ? '' : `<dt>Last attempt</dt><dd>${esc(fmtDate(DATA.generated_at))} (${esc(ago(DATA.generated_at))})</dd>`}<dt>Ran on</dt><dd>${esc(runnerLabel(sc.runner))}</dd><dt>Offers confirmed</dt><dd>${sc.ok ?? '—'} of ${sc.tracked_offers ?? '—'}${per ? ` · ${per}` : ''}</dd><dt>Automatic runs</dt><dd>${esc(CFG.schedule || 'daily')}</dd>${(sc.notes || []).length ? `<dt>Notes</dt><dd>${sc.notes.map(esc).join('<br>')}</dd>` : ''}</dl>`;
+    return `<dl class="kv"><dt>Oldest quote</dt><dd>${esc(fmtDate(pricesAsOf()))} (${esc(ago(pricesAsOf()))})</dd>${sameTime ? '' : `<dt>Last attempt</dt><dd>${esc(fmtDate(DATA.generated_at))} (${esc(ago(DATA.generated_at))})</dd>`}<dt>Ran on</dt><dd>${esc(runnerLabel(sc.runner))}</dd><dt>Quotes updated</dt><dd>${sc.ok ?? '—'} of ${sc.tracked_offers ?? '—'}${sc.user_reported_prices ? ` (${sc.retailer_confirmed_prices} direct retailer checks, ${sc.user_reported_prices} user-reported)` : ''}${per ? ` · ${per}` : ''}</dd><dt>Automatic runs</dt><dd>${esc(CFG.schedule || 'daily')}</dd>${(sc.notes || []).length ? `<dt>Notes</dt><dd>${sc.notes.map(esc).join('<br>')}</dd>` : ''}</dl>`;
   }
   function openRescrape() {
     const tok = store.get('ghToken', '');
@@ -762,7 +769,7 @@
     sizeHeader(); window.addEventListener('resize', sizeHeader); if (document.fonts) document.fonts.ready.then(sizeHeader);
     window.addEventListener('hashchange', () => { closeDrawer(); route(); window.scrollTo(0, 0); });
     document.addEventListener('click', (e) => {
-      const t = e.target.closest('[data-open],[data-cmp],[data-cmp-set],[data-sort],[data-msort],[data-preset],[data-close-drawer],[data-close-modal],[data-clear-compare],[data-pair],[data-gpu-filter],.seg-btn,#swap-btn,#rescrape-btn,#freshness,#theme-btn,#go-scrape,#save-go,#forget-token,#reload-data');
+      const t = e.target.closest('[data-open],[data-cmp],[data-cmp-set],[data-sort],[data-msort],[data-preset],[data-close-drawer],[data-close-modal],[data-clear-compare],[data-pair],[data-gpu-filter],.seg-btn,#swap-btn,#rescrape-btn,#freshness,#theme-btn,#go-scrape,#save-go,#forget-token,#reload-data,#show-all-laptops');
       if (!t) return;
       if (t.matches('[data-cmp]')) { e.stopPropagation(); setCompare(t.dataset.cmp, t.dataset.id); return; }
       if (t.matches('[data-cmp-set]')) { setCompare(t.dataset.cmpSet, t.dataset.id); closeDrawer(); if (state.compare.a && state.compare.b) location.hash = '#compare'; return; }
@@ -783,6 +790,7 @@
       if (t.id === 'save-go') { const v = ($('#tok-in').value || '').trim(); if (!v) { $('#tok-in').focus(); return; } store.set('ghToken', v); t.disabled = true; dispatchScrape(v); return; }
       if (t.id === 'forget-token') { store.del('ghToken'); closeModal(); openRescrape(); return; }
       if (t.id === 'reload-data') { reloadData(); return; }
+      if (t.id === 'show-all-laptops') { state.prefs.budget = 6000; state.prefs.musts = Object.fromEntries(MUSTS.map(m => [m.id, false])); savePrefs(); renderPrefs(); renderPicks(); return; }
     });
     document.addEventListener('input', (e) => {
       const t = e.target;
@@ -829,7 +837,7 @@
     computeAll();
     if (!isReload) renderPrefs();
     renderFreshness();
-    $('#footer-text').innerHTML = `Prices scraped from retailer product pages (confirmed ${esc(fmtDate(pricesAsOf()))}) and can change at any time; check the retailer before buying. Scores are estimates built from published benchmarks. Source code and data: <a href="https://github.com/${esc(CFG.repo)}" target="_blank" rel="noopener">github.com/${esc(CFG.repo)}</a>.`;
+    $('#footer-text').innerHTML = `Prices are last recorded quotes (oldest ${esc(fmtDate(pricesAsOf()))}). Snapshot and user-reported quotes are labeled; check the retailer before buying. Scores are estimates built from published benchmarks. Source code and data: <a href="https://github.com/${esc(CFG.repo)}" target="_blank" rel="noopener">github.com/${esc(CFG.repo)}</a>.`;
     route();
   }
   async function init() {
