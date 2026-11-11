@@ -20,12 +20,12 @@ const context = vm.createContext({
   window: { SITE_CONFIG: { owner: 'Victor' }, matchMedia: () => ({ matches: false }), addEventListener() {} },
   document: { querySelector: element, querySelectorAll: () => [], documentElement: { style: { setProperty() {} } }, addEventListener: (name, fn) => handlers.set(name, fn) },
   localStorage: { getItem: () => null },
-  console,
+  console, scoringModule: require('./assets/scoring.mjs'),
 });
 assert(source.includes('  init();'), 'test hook must replace the startup call');
 vm.runInContext(source.replace('  init();', `
   globalThis.app = {
-    load(data, ref) { DATA = data; REF = ref; L = data.laptops; BYID = Object.fromEntries(L.map(l => [l.id, l])); computeAll(); },
+    load(data, ref) { DATA = data; REF = ref; scoringEngine = scoringModule.createScoring(ref); L = data.laptops; BYID = Object.fromEntries(L.map(l => [l.id, l])); computeAll(); },
     state, verdictHtml, renderBrowse, renderScatter, renderMarket, upgrade, available, freshPrice, scoreAssumptions,
     passesMusts, renderPicks, browseRows, verifiedDiscount, priceBlock, renderCosts,
     bind, openDrawer, closeDrawer, modal, closeModal,

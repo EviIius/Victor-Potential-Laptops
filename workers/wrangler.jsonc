@@ -1,0 +1,17 @@
+{
+  "$schema": "https://unpkg.com/wrangler@4/config-schema.json",
+  "name": "victor-laptop-chat",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-11-11",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "ALLOWED_ORIGIN": "https://eviiius.github.io",
+    "SITE_URL": "https://eviiius.github.io/Victor-Potential-Laptops/",
+    "GEMINI_MODEL": "gemini-3.5-flash-lite"
+  },
+  "ratelimits": [
+    { "name": "CHAT_LIMITER", "namespace_id": "1001", "simple": { "limit": 6, "period": 60 } }
+  ],
+  "observability": { "enabled": false }
+}

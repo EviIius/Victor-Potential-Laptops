@@ -1,4 +1,4 @@
-/* Victor's Laptop Finder — all logic in one file, no build step. Data: data/laptops.json + data/reference.json */
+/* Victor's Laptop Finder — no build step. Shared scoring and chat are loaded as modules. */
 (() => {
   'use strict';
   const CFG = window.SITE_CONFIG || {};
@@ -68,59 +68,17 @@
   if (savedPrefs.filterVersion !== 2) { state.prefs.musts.fresh = false; state.prefs.filterVersion = 2; store.set('prefs', state.prefs); }
 
   let DATA = null; let REF = null; let L = []; let BYID = {};
-  const MAX = { gpu: 202, cpu: 2350 };
+  let chatController = null;
 
   // ------------------------------------------------------------------ scoring
-  function gpuPerf(l) {
-    const g = REF.gpus[l.gpu_key]; if (!g) return 0;
-    const f = l.tgp_w && g.ref_tgp ? clamp(Math.pow(l.tgp_w / g.ref_tgp, 0.3), 0.72, 1.02) : 1;
-    return g.perf * f;
-  }
-  const cpuRef = (l) => REF.cpus[l.cpu_key] || { mt: 800, st: 110, cores: '?', class: '?' };
-  function displayScore(l) {
-    const d = l.display || {}; const px = (d.w || 1920) * (d.h || 1080);
-    const res = px >= 3840 * 2160 * 0.95 ? 45 : px >= 2880 * 1800 * 0.95 ? 40 : px >= 2560 * 1440 * 0.95 ? 34 : px >= 1920 * 1200 * 0.95 ? 20 : 16;
-    const panel = d.panel === 'OLED' ? 25 : d.panel === 'Mini-LED' ? 23 : 9;
-    const hz = d.hz >= 240 ? 15 : d.hz >= 165 ? 11 : d.hz >= 144 ? 9 : 6;
-    const nits = clamp((d.nits || 300) / 1100, 0, 1) * 15;
-    return clamp(res + panel + hz + nits, 0, 100);
-  }
-  const ramScore = (gb) => (gb >= 64 ? 1 : gb >= 32 ? 0.85 : gb >= 24 ? 0.72 : gb >= 16 ? 0.55 : 0.25);
-  function portability(l) {
-    const w = clamp((8 - (l.weight_lb || 5.5)) / 5, 0, 1);
-    const t = clamp((1.25 - (l.thickness_in || 0.95)) / 0.7, 0, 1);
-    const b = clamp(((l.battery_wh || 70) - 50) / 49.9, 0, 1);
-    return 100 * (0.6 * w + 0.2 * t + 0.2 * b);
-  }
-  function upgrade(l) {
-    let s = l.ram_soldered ? 0 : l.ram_slots >= 2 ? 50 : 30;
-    s += l.m2 >= 2 ? 35 : l.m2 === 1 ? 15 : 0;
-    s += ((l.ports || {}).tb > 0 || (l.ports || {}).usb4) ? 15 : 0;
-    return clamp(s, 0, 100);
-  }
-  function gamingScore(l) {
-    let s = (100 * gpuPerf(l)) / MAX.gpu;
-    if (cpuRef(l).st < 105) s *= 0.95;
-    if ((l.vram_gb || 0) >= 12) s += 2;
-    return clamp(s, 0, 100);
-  }
-  function workScore(l) {
-    return clamp(100 * (0.5 * cpuRef(l).mt / MAX.cpu + 0.2 * ramScore(l.ram_gb || 16) + 0.15 * gpuPerf(l) / MAX.gpu + 0.15 * displayScore(l) / 100), 0, 100);
-  }
-  function computeAll() {
-    L.forEach((l) => {
-      l.s = { gaming: gamingScore(l), work: workScore(l), display: displayScore(l), portability: portability(l), upgrade: upgrade(l) };
-      l.perf = gpuPerf(l);
-      l.valueRaw = l.price ? ((0.65 * l.s.gaming + 0.35 * l.s.work) / l.price) * 1000 : 0;
-    });
-    const maxV = Math.max(...L.map((l) => l.valueRaw));
-    L.forEach((l) => { l.s.value = maxV ? clamp((100 * l.valueRaw) / maxV, 0, 100) : 0; });
-    recomputeFit();
-  }
-  function recomputeFit() {
-    const w = state.prefs.weights; const total = CATS.reduce((a, c) => a + (+w[c.key] || 0), 0) || 1;
-    L.forEach((l) => { l.fit = CATS.reduce((a, c) => a + (l.s[c.key] * (+w[c.key] || 0)), 0) / total; });
-  }
+  let scoringEngine = null;
+  const gpuPerf = l => scoringEngine.gpuPerf(l);
+  const cpuRef = l => scoringEngine.cpuRef(l);
+  const displayScore = l => scoringEngine.displayScore(l);
+  const portability = l => scoringEngine.portability(l);
+  const upgrade = l => scoringEngine.upgrade(l);
+  function computeAll() { scoringEngine.compute(L, state.prefs.weights); }
+  function recomputeFit() { scoringEngine.fit(L, state.prefs.weights); }
   const passesMusts = (l) => MUSTS.every((m) => !state.prefs.musts[m.id] || m.test(l));
   const inBudget = (l) => l.price != null && l.price <= state.prefs.budget;
 
@@ -368,7 +326,7 @@
     dr.innerHTML = `<button class="btn btn-sm drawer-close" type="button" data-close-drawer>Close ✕</button>
       <div class="drawer-head"><div class="cell-sub">${esc(l.form || '')} · ${esc(l.year || '')}</div><h2 id="drawer-title">${esc(shortName(l))}</h2><div class="lcard-config">${esc(configLine(l))}</div>
       ${priceBlock(l)}<div class="chips">${(l.awards || []).map((a) => `<a class="chip accent" href="${esc(a.url)}" target="_blank" rel="noopener" title="${esc(a.source)}">${esc(a.label)} · ${esc(a.source)}</a>`).join('')}</div>
-      <div class="lcard-foot"><button class="btn btn-sm btn-accent" type="button" data-cmp-set="a" data-id="${l.id}">Compare as A</button><button class="btn btn-sm" type="button" data-cmp-set="b" data-id="${l.id}">Compare as B</button></div></div>
+      <div class="lcard-foot"><button class="btn btn-sm btn-accent" type="button" data-cmp-set="a" data-id="${l.id}">Compare as A</button><button class="btn btn-sm" type="button" data-cmp-set="b" data-id="${l.id}">Compare as B</button><button class="btn btn-sm" type="button" data-ask="${l.id}">Ask Gemini</button></div></div>
       <div class="panel"><h3>Scores</h3>${scoreBars(l, ['fit', 'gaming', 'work', 'display', 'portability', 'upgrade', 'value'])}<p class="hint">${esc(scoreAssumptions(l))}</p></div>
       <div class="panel"><h3>Part analysis</h3><div class="partnote">${partNotes(l)}</div></div>
       <div class="panel pc"><div class="pros"><h4>Pros</h4><ul>${(l.pros || []).map((p) => `<li>${esc(p)}</li>`).join('')}</ul></div><div class="cons"><h4>Cons</h4><ul>${(l.cons || []).map((p) => `<li>${esc(p)}</li>`).join('')}</ul></div></div>
@@ -751,13 +709,13 @@
   }
 
   // ------------------------------------------------------------------ routing + events
-  const VIEWS = ['picks', 'browse', 'compare', 'costs', 'parts', 'market'];
+  const VIEWS = ['picks', 'browse', 'compare', 'costs', 'parts', 'market', 'chat'];
   const currentView = () => { const h = (location.hash || '').replace('#', ''); return VIEWS.includes(h) ? h : 'picks'; };
   function route() {
     const v = currentView();
     VIEWS.forEach((x) => { $(`#view-${x}`).hidden = x !== v; });
     $$('.tabs a').forEach((a) => a.classList.toggle('is-active', a.dataset.view === v));
-    ({ picks: renderPicks, browse: () => { renderFilters(); renderBrowse(); }, compare: renderCompare, costs: renderCosts, parts: renderParts, market: renderMarket })[v]();
+    ({ picks: renderPicks, browse: () => { renderFilters(); renderBrowse(); }, compare: renderCompare, costs: renderCosts, parts: renderParts, market: renderMarket, chat: () => chatController?.refresh() })[v]();
     updateCompareUi();
   }
   function savePrefs() { store.set('prefs', state.prefs); recomputeFit(); }
@@ -769,11 +727,12 @@
     sizeHeader(); window.addEventListener('resize', sizeHeader); if (document.fonts) document.fonts.ready.then(sizeHeader);
     window.addEventListener('hashchange', () => { closeDrawer(); route(); window.scrollTo(0, 0); });
     document.addEventListener('click', (e) => {
-      const t = e.target.closest('[data-open],[data-cmp],[data-cmp-set],[data-sort],[data-msort],[data-preset],[data-close-drawer],[data-close-modal],[data-clear-compare],[data-pair],[data-gpu-filter],.seg-btn,#swap-btn,#rescrape-btn,#freshness,#theme-btn,#go-scrape,#save-go,#forget-token,#reload-data,#show-all-laptops');
+      const t = e.target.closest('[data-open],[data-cmp],[data-cmp-set],[data-ask],[data-sort],[data-msort],[data-preset],[data-close-drawer],[data-close-modal],[data-clear-compare],[data-pair],[data-gpu-filter],.seg-btn,#swap-btn,#rescrape-btn,#freshness,#theme-btn,#go-scrape,#save-go,#forget-token,#reload-data,#show-all-laptops');
       if (!t) return;
       if (t.matches('[data-cmp]')) { e.stopPropagation(); setCompare(t.dataset.cmp, t.dataset.id); return; }
       if (t.matches('[data-cmp-set]')) { setCompare(t.dataset.cmpSet, t.dataset.id); closeDrawer(); if (state.compare.a && state.compare.b) location.hash = '#compare'; return; }
       if (t.matches('[data-open]')) { openDrawer(t.dataset.open); return; }
+      if (t.matches('[data-ask]')) { const l = BYID[t.dataset.ask]; if (l) { closeDrawer(); location.hash = '#chat'; chatController?.prefill(`How well does the ${shortName(l)} (${l.id}) fit my priorities? Explain its scores, trade-offs and price reliability.`); } return; }
       if (t.matches('[data-sort]')) { const k = t.dataset.sort; state.browse.dir = state.browse.sort === k ? -state.browse.dir : (['name', 'price', 'weight'].includes(k) ? 1 : -1); state.browse.sort = k; renderBrowse(); return; }
       if (t.matches('[data-msort]')) { const k = t.dataset.msort; state.market.dir = state.market.sort === k ? -state.market.dir : (k === 'price' || k === 'title' ? 1 : -1); state.market.sort = k; renderMarket(); return; }
       if (t.matches('[data-preset]')) { const p = PRESETS.find((x) => x.id === t.dataset.preset); state.prefs.preset = p.id; state.prefs.weights = { ...p.w }; savePrefs(); renderPrefs(); route(); return; }
@@ -844,13 +803,23 @@
     const th = store.get('theme', null); if (th) document.documentElement.dataset.theme = th;
     bind();
     try {
-      const [d, r] = await Promise.all([fetch(`data/laptops.json?ts=${Date.now()}`, { cache: 'no-store' }).then((x) => x.json()), fetch('data/reference.json').then((x) => x.json())]);
-      DATA = d; REF = r;
+      const [d, r, scoring] = await Promise.all([fetch(`data/laptops.json?ts=${Date.now()}`, { cache: 'no-store' }).then((x) => x.json()), fetch('data/reference.json').then((x) => x.json()), import('./scoring.mjs')]);
+      DATA = d; REF = r; scoringEngine = scoring.createScoring(REF);
     } catch (e) {
       const b = $('#banner'); b.hidden = false; b.textContent = `Couldn't load the laptop data (${e.message}). If you opened index.html directly from disk, serve the folder instead, e.g. "python -m http.server" inside site/.`;
       return;
     }
     boot(false);
+    try {
+      const [chat, config] = await Promise.all([import('./chat.mjs'), fetch(`data/chat-config.json?ts=${Date.now()}`, { cache: 'no-store' }).then(r => r.json()).catch(() => ({}))]);
+      chatController = chat.createChat({
+        endpoint: config.endpoint || '',
+        getContext: () => ({ count: L.length, catalog_generated_at: DATA.generated_at,
+          preferences: JSON.parse(JSON.stringify(state.prefs)), compare: [state.compare.a, state.compare.b].filter(Boolean),
+          summary: `${PRESETS.find(p => p.id === state.prefs.preset)?.label || 'Custom'} priorities · ${MUSTS.filter(m => state.prefs.musts[m.id]).map(m => m.label).join(', ') || 'No must-haves'}` }),
+        sourceCard: id => { const l = BYID[id]; return l ? `<article class="chat-source"><button type="button" class="chat-source-title" data-open="${esc(l.id)}">${esc(shortName(l))}</button><p class="cell-sub">${esc(configLine(l))}</p>${priceBlock(l, 'sm')}${scoreBars(l, ['fit', 'gaming', 'work'])}<div class="lcard-foot"><button class="btn btn-sm" type="button" data-open="${esc(l.id)}">View configuration</button>${cmpToggle(l)}</div></article>` : ''; },
+      });
+    } catch { $('#chat-app').textContent = 'Chat could not load. Reload the page to try again.'; }
   }
   init();
 })();

@@ -49,6 +49,40 @@ body {
   background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+/* Gemini uses the same spec-sheet vocabulary as the rest of the finder. */
+.chat-app { max-width: 980px; margin-inline: auto; }
+.chat-context { display: grid; gap: 6px; border-left: 3px solid var(--cool); margin-bottom: 16px; }
+.eyebrow { font: 500 11px var(--font-mono); letter-spacing: .08em; color: var(--muted); }
+.chat-shell { padding: 24px; }
+.chat-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.chat-shell details { margin: 18px 0; padding: 12px 14px; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); }
+.chat-shell summary { cursor: pointer; font-weight: 600; }
+.chat-shell details label { display: block; margin: 10px 0 6px; }
+.chat-code-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.chat-code-row input { flex: 1; min-width: 120px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
+.chat-suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 20px; }
+.chat-messages { display: grid; gap: 20px; }
+.chat-message { display: grid; gap: 10px; min-width: 0; }
+.chat-user { border-left: 3px solid var(--accent); padding: 12px 16px; background: var(--accent-soft); border-radius: 0 var(--radius) var(--radius) 0; }
+.chat-model { padding-block: 4px 12px; }
+.chat-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; }
+.chat-sources { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.chat-source { height: 100%; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; background: var(--surface-2); }
+.chat-source-title { display: block; background: none; border: 0; padding: 0; text-align: left; font-weight: 600; font-size: 16px; color: var(--cool); cursor: pointer; }
+.chat-source .price-row { flex-wrap: wrap; margin-block: 8px; }
+.chat-form { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 20px; }
+.chat-form label { display: block; font-weight: 600; margin-bottom: 8px; }
+.chat-form textarea { width: 100%; resize: vertical; min-height: 94px; max-height: 360px; padding: 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); font: inherit; }
+.chat-form-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.chat-form-foot > div { display: flex; gap: 8px; }
+.chat-status { min-height: 1.5em; color: var(--cool); margin-top: 12px; }
+.chat-privacy { margin-top: 14px; }
+@media (max-width: 600px) {
+  .chat-shell { padding: 16px; }
+  .chat-sources { grid-template-columns: 1fr; }
+  .chat-toolbar h3 { max-width: 70%; }
+  .chat-form-foot > div { margin-left: auto; }
+}
 h1, h2, h3, h4 { font-family: var(--font-display); font-stretch: 112%; letter-spacing: -0.01em; line-height: 1.15; margin: 0; text-wrap: balance; }
 h2 { font-size: 1.6rem; font-weight: 750; }
 h3 { font-size: 1.12rem; font-weight: 700; }

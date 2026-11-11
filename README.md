@@ -12,8 +12,13 @@ A small website for picking a gaming + work laptop. It tracks 95 laptop configur
 | Cost analysis | Price vs performance chart with the best-value line, value ranking, cheapest way into each GPU, thin-and-light premium, current deals. |
 | Part analysis | Plain-English GPU, CPU, RAM, screen and power explainers, plus GPU and CPU tables. |
 | Market scan | Every gaming laptop Best Buy sells and ships itself, so nothing gets missed. |
+| Ask Gemini | Ask questions about the full catalog, scores, priorities and A/B comparisons, with source configuration cards and price-evidence context. Requires the free backend setup below. |
 
 Settings (budget, sliders, theme, compare picks) are saved in each visitor's browser.
+
+## Gemini chat
+
+The interface is included; activating Gemini requires your own free Google AI Studio key and Cloudflare account. Run `python3 scripts/setup_gemini.py` from your terminal to save credentials privately and deploy the backend. The workflow automatically connects it to the live site. See [the setup guide](workers/README.md) for the account links, instructions and limits. Victor uses a separate chat access code; the Gemini key is never included in the public website.
 
 ## One-time setup
 

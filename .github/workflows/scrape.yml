@@ -11,6 +11,10 @@ on:
         description: "Only test which stores answer the scraper (writes scraper/probe-results.json)"
         type: boolean
         default: false
+      publish_only:
+        description: "Publish the current catalog and site without contacting retailers"
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -33,7 +37,7 @@ jobs:
   # (Settings -> Secrets and variables -> Actions -> Variables), e.g. to "self-hosted"
   # so the scrape comes from your own internet connection.
   scrape:
-    if: github.event_name != 'push' && !inputs.probe
+    if: github.event_name != 'push' && !inputs.probe && !inputs.publish_only
     runs-on: ${{ vars.SCRAPER_RUNNER || 'ubuntu-latest' }}
     timeout-minutes: 30
     outputs:
@@ -51,6 +55,9 @@ jobs:
 
       - name: Check site calculations
         run: node site/test_app.cjs
+
+      - name: Check Gemini backend
+        run: node --test workers/test_worker.mjs
 
       # If the store refuses, the last known prices stay up and the site says the refresh failed.
       - name: Scrape prices
@@ -107,7 +114,6 @@ jobs:
 
       # Code or catalog pushes rebuild the data from the catalog (fast, no scraping).
       - uses: actions/setup-node@v7
-        if: github.event_name == 'push'
         with:
           node-version: 24
           package-manager-cache: false
@@ -118,10 +124,17 @@ jobs:
           python3 -B scraper/test_parse.py
           python3 -B scraper/scrape.py --offline
           node site/test_app.cjs
+          node --test workers/test_worker.mjs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/data/laptops.json
           git diff --cached --quiet || { git commit -m "Rebuild data from catalog" && git push; }
+
+      - name: Check site before publishing retained data
+        if: github.event_name != 'push'
+        run: |
+          node site/test_app.cjs
+          node --test workers/test_worker.mjs
 
       - uses: actions/configure-pages@v6
 
