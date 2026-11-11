@@ -10,6 +10,9 @@
   const money2 = (n) => (n == null ? '—' : '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
   const pct = (x) => (x >= 0 ? '+' : '') + Math.round(x * 100) + '%';
   const median = (a) => { if (!a.length) return null; const s = [...a].sort((x, y) => x - y); const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  const performanceGap = (a, b) => a > 0 && b > 0 ? Math.sign(a - b) * (Math.max(a, b) / Math.min(a, b) - 1) : 0;
+  const available = (l) => bestOffer(l).in_stock === true && !bestOffer(l).marketplace_only;
+  const freshPrice = (l) => { const o = bestOffer(l); const age = Date.now() - new Date(o.checked_at).getTime(); return !o.stale && !o.manual && Number.isFinite(age) && age >= 0 && age <= 48 * 36e5; };
   const store = {
     get(k, d) { try { const v = localStorage.getItem('vlf:' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem('vlf:' + k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } },
@@ -33,7 +36,8 @@
     { id: 'future', label: 'Future-proof', w: { gaming: 35, work: 20, display: 10, portability: 5, upgrade: 20, value: 10 } },
   ];
   const MUSTS = [
-    { id: 'stock', label: 'Available to buy now', test: (l) => l.price_status !== 'unavailable' },
+    { id: 'stock', label: 'Last confirmed in stock', test: available },
+    { id: 'fresh', label: 'Price confirmed in the last 48 hours', test: freshPrice },
     { id: 'dgpu', label: 'Dedicated NVIDIA graphics', test: (l) => /^RTX/.test(l.gpu_key) },
     { id: 'ram32', label: '32GB+ RAM', test: (l) => (l.ram_gb || 0) >= 32 },
     { id: 'vram12', label: '12GB+ graphics memory', test: (l) => (l.vram_gb || 0) >= 12 },
@@ -49,7 +53,7 @@
     { id: 'high', label: '$2,600 and up', min: 2600, max: 1e9 },
   ];
   const SHORT = { fit: 'Victor fit', gaming: 'Gaming', work: 'Work', display: 'Screen', portability: 'Portable', upgrade: 'Upgrades', value: 'Value' };
-  const DEFAULT_PREFS = { preset: 'balanced', budget: 2500, weights: { ...PRESETS[0].w }, musts: { stock: true, dgpu: true } };
+  const DEFAULT_PREFS = { preset: 'balanced', budget: 2500, weights: { ...PRESETS[0].w }, musts: { stock: true, fresh: true, dgpu: true } };
   const state = {
     prefs: Object.assign({}, DEFAULT_PREFS, store.get('prefs', {})),
     compare: store.get('compare', { a: null, b: null }),
@@ -58,7 +62,7 @@
     yAxis: 'gaming',
   };
   state.prefs.weights = Object.assign({}, DEFAULT_PREFS.weights, state.prefs.weights || {});
-  state.prefs.musts = Object.assign({}, state.prefs.musts || {});
+  state.prefs.musts = Object.assign({}, DEFAULT_PREFS.musts, state.prefs.musts || {});
 
   let DATA = null; let REF = null; let L = []; let BYID = {};
   const MAX = { gpu: 202, cpu: 2350 };
@@ -87,7 +91,7 @@
   }
   function upgrade(l) {
     let s = l.ram_soldered ? 0 : l.ram_slots >= 2 ? 50 : 30;
-    s += l.m2 >= 2 ? 35 : l.m2 === 1 ? 15 : l.ram_soldered ? 10 : 25;
+    s += l.m2 >= 2 ? 35 : l.m2 === 1 ? 15 : 0;
     s += ((l.ports || {}).tb > 0 || (l.ports || {}).usb4) ? 15 : 0;
     return clamp(s, 0, 100);
   }
@@ -163,6 +167,7 @@
   function stockChip(l) {
     if (l.price_status === 'unavailable') return '<span class="chip bad">Sold out</span>';
     if (l.price_status === 'manual') return '<span class="chip warn" title="Configured price, tracked by hand">Est. price</span>';
+    if (!available(l)) return '<span class="chip warn">Stock unconfirmed</span>';
     if (l.price_status === 'stale' && !lastRunFailed()) { const o = (l.offers || []).find((x) => x.retailer_name === l.price_retailer) || {}; return `<span class="chip warn" title="The last scrape couldn't refresh this ${esc(l.price_retailer || '')} price">${esc(l.price_retailer || 'Price')} price from ${esc(new Date(o.checked_at || pricesAsOf()).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }))}</span>`; }
     return '';
   }
@@ -263,7 +268,7 @@
       <div class="f"><label for="f-size">Screen</label><select id="f-size"><option value="">Any</option><option value="14" ${f.size === '14' ? 'selected' : ''}>14" and smaller</option><option value="15" ${f.size === '15' ? 'selected' : ''}>15–15.9"</option><option value="16" ${f.size === '16' ? 'selected' : ''}>16"</option><option value="18" ${f.size === '18' ? 'selected' : ''}>17–18"</option></select></div>
       <div class="f"><label for="f-weight">Max weight</label><select id="f-weight"><option value="">Any</option>${[4, 4.5, 5, 5.5, 6].map((w) => `<option value="${w}" ${String(f.maxWeight) === String(w) ? 'selected' : ''}>${w} lb</option>`).join('')}</select></div>
       <label class="check"><input type="checkbox" id="f-budget" ${f.inBudget ? 'checked' : ''}> Within ${money(state.prefs.budget)}</label>
-      <label class="check"><input type="checkbox" id="f-stock" ${f.stockOnly ? 'checked' : ''}> In stock</label>`;
+      <label class="check"><input type="checkbox" id="f-stock" ${f.stockOnly ? 'checked' : ''}> Last confirmed in stock</label>`;
   }
   function browseRows() {
     const f = state.browse; const q = f.q.trim().toLowerCase();
@@ -278,7 +283,7 @@
       if (f.size === '18' && sz < 17) return false;
       if (f.maxWeight && (l.weight_lb || 99) > +f.maxWeight) return false;
       if (f.inBudget && !inBudget(l)) return false;
-      if (f.stockOnly && l.price_status === 'unavailable') return false;
+      if (f.stockOnly && !available(l)) return false;
       return true;
     });
     const col = BROWSE_COLS.find((c) => c.key === f.sort) || BROWSE_COLS[1];
@@ -290,8 +295,8 @@
     const rows = browseRows();
     $('#browse-sub').textContent = `${rows.length} of ${L.length} configurations · scores are 0–100 and update with the priorities on the Picks tab · click a row for full specs and part analysis.`;
     const thead = $('#browse-table thead');
-    thead.innerHTML = '<tr>' + BROWSE_COLS.map((c) => c.key === 'cmp' ? `<th>${c.label}</th>` : `<th class="${c.cls || ''}"><button type="button" data-sort="${c.key}" aria-sort="${state.browse.sort === c.key ? (state.browse.dir > 0 ? 'ascending' : 'descending') : 'none'}">${c.label}</button></th>`).join('') + '</tr>';
-    $('#browse-table tbody').innerHTML = rows.map((l) => `<tr class="is-clickable" data-open="${l.id}">
+    thead.innerHTML = '<tr>' + BROWSE_COLS.map((c) => c.key === 'cmp' ? `<th>${c.label}</th>` : `<th class="${c.cls || ''}" aria-sort="${state.browse.sort === c.key ? (state.browse.dir > 0 ? 'ascending' : 'descending') : 'none'}"><button type="button" data-sort="${c.key}">${c.label}</button></th>`).join('') + '</tr>';
+    $('#browse-table tbody').innerHTML = rows.map((l) => `<tr class="is-clickable" data-open="${l.id}" tabindex="0" aria-label="Details for ${esc(shortName(l))}, ${esc(configLine(l))}">
       <td><div class="cell-title">${esc(shortName(l))}</div><div class="cell-sub">${esc(l.form || '')} · ${esc(l.year || '')}</div></td>
       <td class="r"><div class="num">${money2(l.price)}</div>${l.regular && l.regular > l.price ? `<div class="cell-sub was">${money2(l.regular)}</div>` : ''}${stockChip(l)}</td>
       <td><div>${esc(gpuLabel(l))}</div><div class="cell-sub">${esc(tgpNote(l) || (REF.gpus[l.gpu_key] || {}).kind || '')}</div></td>
@@ -343,7 +348,7 @@
   }
   function offersHtml(l) {
     return (l.offers || []).map((o) => `<div class="offer">
-      <div><b>${esc(o.retailer_name)}</b>${o.sku ? ` <span class="cell-sub">SKU ${esc(o.sku)}</span>` : ''}<div class="cell-sub">${o.checked_at ? `Checked ${esc(fmtDate(o.checked_at))}` : 'Not checked yet'}${o.stale ? ' · <span class="chip warn">last scrape failed, showing last known price</span>' : ''}${o.manual ? ' · price tracked by hand' : ''}</div>
+      <div><b>${esc(o.retailer_name)}</b>${o.sku ? ` <span class="cell-sub">SKU ${esc(o.sku)}</span>` : ''}<div class="cell-sub">${o.checked_at ? `Price checked ${esc(fmtDate(o.checked_at))}` : 'Price not checked yet'}${o.stale ? ' · <span class="chip warn">price not reconfirmed, showing last known price</span>' : ''}${o.manual ? ' · price tracked by hand' : ''}${o.availability_checked_at ? `<br>Stock checked ${esc(fmtDate(o.availability_checked_at))}` : ''}</div>
         ${o.open_box ? `<div class="cell-sub">Open-box from ${money2(o.open_box)}</div>` : ''}
         ${o.marketplace ? `<div class="cell-sub">Marketplace seller ${esc(o.marketplace.seller)}: ${money2(o.marketplace.price)} (third-party, check returns)</div>` : ''}
         ${o.rating ? `<div class="cell-sub">${o.rating}★ from ${(o.reviews || 0).toLocaleString()} reviews</div>` : ''}</div>
@@ -352,11 +357,12 @@
   function openDrawer(id) {
     const l = BYID[id]; if (!l) return;
     const dr = $('#drawer');
+    if (dr.hidden) drawerTrigger = document.activeElement;
     dr.innerHTML = `<button class="btn btn-sm drawer-close" type="button" data-close-drawer>Close ✕</button>
       <div class="drawer-head"><div class="cell-sub">${esc(l.form || '')} · ${esc(l.year || '')}</div><h2 id="drawer-title">${esc(shortName(l))}</h2><div class="lcard-config">${esc(configLine(l))}</div>
       ${priceBlock(l)}<div class="chips">${(l.awards || []).map((a) => `<a class="chip accent" href="${esc(a.url)}" target="_blank" rel="noopener" title="${esc(a.source)}">${esc(a.label)} · ${esc(a.source)}</a>`).join('')}</div>
       <div class="lcard-foot"><button class="btn btn-sm btn-accent" type="button" data-cmp-set="a" data-id="${l.id}">Compare as A</button><button class="btn btn-sm" type="button" data-cmp-set="b" data-id="${l.id}">Compare as B</button></div></div>
-      <div class="panel"><h3>Scores</h3>${scoreBars(l, ['fit', 'gaming', 'work', 'display', 'portability', 'upgrade', 'value'])}</div>
+      <div class="panel"><h3>Scores</h3>${scoreBars(l, ['fit', 'gaming', 'work', 'display', 'portability', 'upgrade', 'value'])}<p class="hint">${esc(scoreAssumptions(l))}</p></div>
       <div class="panel"><h3>Part analysis</h3><div class="partnote">${partNotes(l)}</div></div>
       <div class="panel pc"><div class="pros"><h4>Pros</h4><ul>${(l.pros || []).map((p) => `<li>${esc(p)}</li>`).join('')}</ul></div><div class="cons"><h4>Cons</h4><ul>${(l.cons || []).map((p) => `<li>${esc(p)}</li>`).join('')}</ul></div></div>
       <div class="panel"><h3>Where to buy</h3>${offersHtml(l)}</div>
@@ -364,7 +370,12 @@
       <div class="panel"><h3>Specs</h3><table class="spec-table"><tbody>${specRows(l)}</tbody></table>${(l.estimates || []).length ? `<p class="hint">Estimated: ${esc(l.estimates.map((e) => ({ tgp: 'GPU power', battery_wh: 'battery size' }[e] || e)).join(', '))}. Makers rarely publish these per configuration.</p>` : ''}</div>`;
     dr.hidden = false; $('#drawer-backdrop').hidden = false; dr.scrollTop = 0; $('.drawer-close', dr).focus();
   }
-  function closeDrawer() { $('#drawer').hidden = true; $('#drawer-backdrop').hidden = true; }
+  let drawerTrigger = null; let modalTrigger = null;
+  function closeDrawer() { const wasOpen = !$('#drawer').hidden; $('#drawer').hidden = true; $('#drawer-backdrop').hidden = true; if (wasOpen && drawerTrigger?.isConnected) drawerTrigger.focus(); }
+  function scoreAssumptions(l) {
+    const missing = [l.m2 == null ? 'SSD slot count (no upgrade points awarded)' : '', l.display?.nits == null ? 'brightness (300 nits assumed)' : '', l.display?.panel == null ? 'panel type (IPS assumed)' : '', l.battery_wh == null ? 'battery size (70 Wh assumed)' : ''].filter(Boolean);
+    return [l.tgp_estimated ? 'GPU power is estimated.' : '', missing.length ? `Unconfirmed: ${missing.join('; ')}.` : '', 'Scores are approximate; battery capacity is not measured runtime.'].filter(Boolean).join(' ');
+  }
 
   // ------------------------------------------------------------------ COMPARE
   function setCompare(slot, id) {
@@ -404,7 +415,7 @@
     body.innerHTML = verdictHtml(a, b) + catBarsHtml(a, b) + specCompareHtml(a, b);
   }
   function suggestions() {
-    const pool = L.filter((l) => l.price && l.price_status !== 'unavailable');
+    const pool = L.filter((l) => l.price && available(l));
     const byFit = [...pool].filter(inBudget).sort((x, y) => y.fit - x.fit);
     const out = [];
     if (byFit[0] && byFit[1]) out.push([byFit[0], byFit[1], `Top two picks: ${shortName(byFit[0])} vs ${shortName(byFit[1])}`]);
@@ -420,10 +431,9 @@
   }
   function verdictHtml(a, b) {
     const pa = []; const pb = [];
-    const ratio = (x, y) => (y ? x / y - 1 : 0);
-    const g = ratio(a.perf, b.perf);
+    const g = performanceGap(a.perf, b.perf);
     if (Math.abs(g) >= 0.05) (g > 0 ? pa : pb).push(`About ${Math.round(Math.abs(g) * 100)}% faster in games (${esc(g > 0 ? a.gpu_key : b.gpu_key)}${(g > 0 ? a : b).tgp_w ? ` at ~${(g > 0 ? a : b).tgp_w}W` : ''})`);
-    const c = ratio(cpuRef(a).mt, cpuRef(b).mt);
+    const c = performanceGap(cpuRef(a).mt, cpuRef(b).mt);
     if (Math.abs(c) >= 0.1) (c > 0 ? pa : pb).push(`About ${Math.round(Math.abs(c) * 100)}% faster at heavy multi-core work (${esc(c > 0 ? a.cpu_key : b.cpu_key)})`);
     if ((a.vram_gb || 0) !== (b.vram_gb || 0) && Math.max(a.vram_gb || 0, b.vram_gb || 0) >= 12) ((a.vram_gb || 0) > (b.vram_gb || 0) ? pa : pb).push(`${Math.max(a.vram_gb, b.vram_gb)}GB of graphics memory vs ${Math.min(a.vram_gb || 0, b.vram_gb || 0) || 'shared'}${Math.min(a.vram_gb || 0, b.vram_gb || 0) ? 'GB' : ''}`);
     if (a.ram_gb !== b.ram_gb) (a.ram_gb > b.ram_gb ? pa : pb).push(`${Math.max(a.ram_gb, b.ram_gb)}GB RAM vs ${Math.min(a.ram_gb, b.ram_gb)}GB`);
@@ -522,10 +532,11 @@
     return out;
   }
   function renderScatter() {
-    const key = state.yAxis; const pts = L.filter((l) => l.price && l.price_status !== 'unavailable').map((l) => ({ l, x: l.price, y: key === 'fit' ? l.fit : l.s[key] }));
+    const key = state.yAxis; const pts = L.filter((l) => l.price && available(l)).map((l) => ({ l, x: l.price, y: key === 'fit' ? l.fit : l.s[key] }));
     const W = 980; const H = 420; const m = { l: 56, r: 20, t: 16, b: 46 };
-    const xmax = Math.ceil(Math.max(...pts.map((p) => p.x)) / 500) * 500; const xmin = Math.floor(Math.min(...pts.map((p) => p.x)) / 500) * 500;
-    const ymin = Math.max(0, Math.floor(Math.min(...pts.map((p) => p.y)) / 10) * 10); const ymax = Math.min(100, Math.ceil(Math.max(...pts.map((p) => p.y)) / 10) * 10);
+    if (!pts.length) { $('#scatter').innerHTML = '<p class="empty">No confirmed in-stock prices to chart.</p>'; $('#scatter-legend').innerHTML = ''; return; }
+    const xmin = Math.floor(Math.min(...pts.map((p) => p.x)) / 500) * 500; const xmax = Math.max(xmin + 500, Math.ceil(Math.max(...pts.map((p) => p.x)) / 500) * 500);
+    const ymin = Math.max(0, Math.floor(Math.min(...pts.map((p) => p.y)) / 10) * 10); const ymax = Math.max(ymin + 10, Math.min(100, Math.ceil(Math.max(...pts.map((p) => p.y)) / 10) * 10));
     const X = (v) => m.l + ((v - xmin) * (W - m.l - m.r)) / (xmax - xmin); const Y = (v) => H - m.b - ((v - ymin) * (H - m.t - m.b)) / (ymax - ymin);
     let g = '';
     for (let v = xmin; v <= xmax; v += 500) g += `<line class="grid" x1="${X(v)}" x2="${X(v)}" y1="${m.t}" y2="${H - m.b}"/><text x="${X(v)}" y="${H - m.b + 16}" text-anchor="middle">${money(v)}</text>`;
@@ -552,9 +563,9 @@
   }
   function renderCosts() {
     renderScatter();
-    const pool = L.filter((l) => l.price && l.price_status !== 'unavailable');
+    const pool = L.filter((l) => l.price && available(l));
     const v = [...pool].sort((a, b) => b.s.gaming / b.price - a.s.gaming / a.price).slice(0, 12);
-    $('#value-table').innerHTML = `<div class="table-wrap" style="box-shadow:none"><table class="grid-table"><thead><tr><th>Laptop</th><th class="r">Price</th><th>GPU</th><th class="r">Gaming pts per $1k</th><th class="r">Work pts per $1k</th></tr></thead><tbody>${v.map((l) => `<tr class="is-clickable" data-open="${l.id}"><td><div class="cell-title">${esc(shortName(l))}</div><div class="cell-sub">${esc(l.cpu_key)} · ${l.ram_gb}GB</div></td><td class="r num">${money(l.price)}</td><td>${esc(l.gpu_key)}</td><td class="r num">${(l.s.gaming / l.price * 1000).toFixed(1)}</td><td class="r num">${(l.s.work / l.price * 1000).toFixed(1)}</td></tr>`).join('')}</tbody></table></div>`;
+    $('#value-table').innerHTML = `<div class="table-wrap" style="box-shadow:none"><table class="grid-table"><thead><tr><th>Laptop</th><th class="r">Price</th><th>GPU</th><th class="r">Gaming pts per $1k</th><th class="r">Work pts per $1k</th></tr></thead><tbody>${v.map((l) => `<tr class="is-clickable" data-open="${l.id}" tabindex="0"><td><div class="cell-title">${esc(shortName(l))}</div><div class="cell-sub">${esc(l.cpu_key)} · ${l.ram_gb}GB</div></td><td class="r num">${money(l.price)}</td><td>${esc(l.gpu_key)}</td><td class="r num">${(l.s.gaming / l.price * 1000).toFixed(1)}</td><td class="r num">${(l.s.work / l.price * 1000).toFixed(1)}</td></tr>`).join('')}</tbody></table></div>`;
     // GPU ladder
     const gpus = Object.keys(REF.gpus).filter((g) => pool.some((l) => l.gpu_key === g)).sort((a, b) => REF.gpus[a].perf - REF.gpus[b].perf);
     let prev = null;
@@ -581,7 +592,7 @@
       const alt = [o.open_box ? { kind: 'Open-box', p: o.open_box } : null, o.marketplace && o.marketplace.price < l.price ? { kind: o.marketplace.seller, p: o.marketplace.price } : null].filter(Boolean).sort((a, b) => a.p - b.p)[0];
       return { l, off, alt };
     }).filter((d) => d.off >= 50 || d.alt).sort((a, b) => Math.max(b.off, b.alt ? b.l.price - b.alt.p : 0) - Math.max(a.off, a.alt ? a.l.price - a.alt.p : 0)).slice(0, 12);
-    $('#deal-table').innerHTML = `<div class="table-wrap" style="box-shadow:none"><table class="grid-table"><thead><tr><th>Laptop</th><th class="r">Price</th><th class="r">Listed discount</th><th>Cheaper option</th></tr></thead><tbody>${deals.map((d) => `<tr class="is-clickable" data-open="${d.l.id}"><td><div class="cell-title">${esc(shortName(d.l))}</div><div class="cell-sub">${esc(d.l.gpu_key)}</div></td><td class="r num">${money(d.l.price)}</td><td class="r num">${d.off ? `−${money(d.off)}` : '—'}</td><td class="cell-sub">${d.alt ? `${esc(d.alt.kind)} ${money(d.alt.p)}` : '—'}</td></tr>`).join('')}</tbody></table></div><p class="chart-note" style="margin-top:8px">"Listed discount" is Best Buy's own comparable-value claim. Open-box units come with Best Buy's return policy; marketplace sellers are third parties.</p>`;
+    $('#deal-table').innerHTML = `<div class="table-wrap" style="box-shadow:none"><table class="grid-table"><thead><tr><th>Laptop</th><th class="r">Price</th><th class="r">Listed discount</th><th>Cheaper option</th></tr></thead><tbody>${deals.map((d) => `<tr class="is-clickable" data-open="${d.l.id}" tabindex="0"><td><div class="cell-title">${esc(shortName(d.l))}</div><div class="cell-sub">${esc(d.l.gpu_key)}</div></td><td class="r num">${money(d.l.price)}</td><td class="r num">${d.off ? `−${money(d.off)}` : '—'}</td><td class="cell-sub">${d.alt ? `${esc(d.alt.kind)} ${money(d.alt.p)}` : '—'}</td></tr>`).join('')}</tbody></table></div><p class="chart-note" style="margin-top:8px">"Listed discount" is Best Buy's own comparable-value claim. Open-box units come with Best Buy's return policy; marketplace sellers are third parties.</p>`;
     $('#cost-context').innerHTML = marketContext();
   }
 
@@ -612,7 +623,7 @@
     const M = (DATA.market || {}).items || [];
     const f = state.market;
     const gpus = [...new Set(M.map((m) => m.gpu_key).filter(Boolean))].sort((a, b) => ((REF.gpus[b] || {}).perf || 0) - ((REF.gpus[a] || {}).perf || 0));
-    $('#market-sub').textContent = M.length ? `Every gaming laptop Best Buy sells and ships itself: ${M.length} listings, captured ${fmtDate((DATA.market || {}).generated_at)}. Tracked ones are in the comparison set; the rest are here so nothing gets missed.` : 'No market scan yet.';
+    $('#market-sub').textContent = M.length ? `Saved snapshot of gaming laptops sold and shipped by Best Buy: ${M.length} listings, captured ${fmtDate((DATA.market || {}).generated_at)}. Tracked ones are in the comparison set; the rest are here so nothing gets missed.` : 'No market scan yet.';
     $('#market-filters').innerHTML = `<div class="f"><label for="m-q">Search</label><input type="search" id="m-q" value="${esc(f.q)}" placeholder="Brand, CPU, GPU…"></div><div class="f"><label for="m-gpu">Graphics</label><select id="m-gpu"><option value="">Any</option>${gpus.map((g) => `<option ${f.gpu === g ? 'selected' : ''}>${esc(g)}</option>`).join('')}</select></div><label class="check"><input type="checkbox" id="m-stock" ${f.stock ? 'checked' : ''}> In stock only</label>`;
     const q = f.q.toLowerCase();
     let rows = M.filter((m) => (!q || m.title.toLowerCase().includes(q)) && (!f.gpu || m.gpu_key === f.gpu) && (!f.stock || m.status === 'in_stock'));
@@ -626,7 +637,7 @@
     ];
     const col = cols.find((c) => c.k === f.sort) || cols[3];
     rows.sort((a, b) => { const x = col.s(a); const y = col.s(b); return (x > y ? 1 : x < y ? -1 : 0) * f.dir; });
-    $('#market-table thead').innerHTML = '<tr>' + cols.map((c) => `<th class="${c.c || ''}"><button type="button" data-msort="${c.k}" aria-sort="${f.sort === c.k ? (f.dir > 0 ? 'ascending' : 'descending') : 'none'}">${c.l}</button></th>`).join('') + '</tr>';
+    $('#market-table thead').innerHTML = '<tr>' + cols.map((c) => `<th class="${c.c || ''}" aria-sort="${f.sort === c.k ? (f.dir > 0 ? 'ascending' : 'descending') : 'none'}"><button type="button" data-msort="${c.k}">${c.l}</button></th>`).join('') + '</tr>';
     $('#market-table tbody').innerHTML = rows.map((m) => `<tr><td><a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.title)}</a> ${m.tracked ? '<span class="chip accent">tracked</span>' : ''}</td><td>${esc(m.gpu_key || '—')}</td><td>${esc(m.cpu_key || '—')}</td><td class="r num">${money2(m.price)}${m.regular && m.regular > m.price ? `<div class="cell-sub was">${money2(m.regular)}</div>` : ''}</td><td class="r num">${m.rating ? `${m.rating}★ <span class="cell-sub">${m.reviews}</span>` : '—'}</td><td>${m.status === 'in_stock' ? '<span class="chip good">In stock</span>' : m.status === 'sold_out' ? '<span class="chip bad">Sold out</span>' : '<span class="chip">Unknown</span>'}</td></tr>`).join('') || '<tr><td colspan="6" class="empty">No listings match.</td></tr>';
   }
 
@@ -639,25 +650,25 @@
   const RUNNERS = { 'github-actions': 'GitHub Actions', local: 'a computer (run by hand)', 'browser (seed)': 'first collection, in a web browser', 'browser (manual update)': 'a manual update, read in a web browser' };
   const runnerLabel = (r) => RUNNERS[r] || r || '—';
   const pricesAsOf = () => DATA.prices_as_of || DATA.generated_at;
-  function lastRunFailed() { const sc = DATA.scrape || {}; return sc.mode === 'live' && !sc.ok && !!sc.failed; }
+  function lastRunFailed() { const sc = DATA.scrape || {}; return ['live', 'manual'].includes(sc.mode) && !sc.ok && !!sc.failed; }
   function renderFreshness() {
     const sc = DATA.scrape || {}; const iso = pricesAsOf(); const hours = (Date.now() - new Date(iso).getTime()) / 36e5;
     const failed = lastRunFailed();
     const el = $('#freshness'); el.classList.remove('is-fresh', 'is-aging', 'is-stale');
     el.classList.add(failed ? (hours < 96 ? 'is-aging' : 'is-stale') : hours < 36 ? 'is-fresh' : hours < 96 ? 'is-aging' : 'is-stale');
-    $('#freshness-text').textContent = `Prices ${ago(iso)} · ${L.length} laptops${failed ? ' · last refresh failed' : sc.failed ? ` · ${sc.failed} not refreshed` : ''}`;
+    $('#freshness-text').textContent = `Oldest price ${ago(iso)} · ${L.length} laptops${failed ? ' · last refresh failed' : sc.failed ? ` · ${sc.failed} not refreshed` : ''}`;
     el.title = `Prices confirmed ${fmtDate(iso)}. Last scrape attempt ${fmtDate(DATA.generated_at)} on ${runnerLabel(sc.runner)}.`;
     sizeHeader();
   }
-  function modal(html) { $('#modal').innerHTML = html; $('#modal-backdrop').hidden = false; const f = $('#modal [autofocus], #modal button, #modal input'); if (f) f.focus(); }
-  function closeModal() { $('#modal-backdrop').hidden = true; if (pollTimer) { clearTimeout(pollTimer); pollTimer = null; } }
+  function modal(html) { if ($('#modal-backdrop').hidden) modalTrigger = document.activeElement; $('#modal').innerHTML = html; $('#modal-backdrop').hidden = false; const f = $('#modal [autofocus], #modal button, #modal input'); if (f) f.focus(); }
+  function closeModal() { const wasOpen = !$('#modal-backdrop').hidden; $('#modal-backdrop').hidden = true; if (pollTimer) { clearTimeout(pollTimer); pollTimer = null; } if (wasOpen && modalTrigger?.isConnected) modalTrigger.focus(); }
   let pollTimer = null;
   function statusHtml() {
     const sc = DATA.scrape || {};
     const names = {}; L.forEach((l) => l.offers.forEach((o) => { names[o.retailer] = o.retailer_name || o.retailer; }));
     const per = Object.entries(sc.by_retailer || {}).map(([r, v]) => `${esc(names[r] || r)}: ${v.ok} ok${v.failed ? `, ${v.failed} failed` : ''}`).join(' · ');
     const sameTime = pricesAsOf() === DATA.generated_at;
-    return `<dl class="kv"><dt>Prices confirmed</dt><dd>${esc(fmtDate(pricesAsOf()))} (${esc(ago(pricesAsOf()))})</dd>${sameTime ? '' : `<dt>Last attempt</dt><dd>${esc(fmtDate(DATA.generated_at))} (${esc(ago(DATA.generated_at))})</dd>`}<dt>Ran on</dt><dd>${esc(runnerLabel(sc.runner))}</dd><dt>Prices refreshed</dt><dd>${sc.ok ?? '—'} of ${sc.tracked_offers ?? '—'}${per ? ` · ${per}` : ''}</dd><dt>Automatic runs</dt><dd>${esc(CFG.schedule || 'daily')}</dd>${(sc.notes || []).length ? `<dt>Notes</dt><dd>${sc.notes.map(esc).join('<br>')}</dd>` : ''}</dl>`;
+    return `<dl class="kv"><dt>Prices confirmed</dt><dd>${esc(fmtDate(pricesAsOf()))} (${esc(ago(pricesAsOf()))})</dd>${sameTime ? '' : `<dt>Last attempt</dt><dd>${esc(fmtDate(DATA.generated_at))} (${esc(ago(DATA.generated_at))})</dd>`}<dt>Ran on</dt><dd>${esc(runnerLabel(sc.runner))}</dd><dt>Offers confirmed</dt><dd>${sc.ok ?? '—'} of ${sc.tracked_offers ?? '—'}${per ? ` · ${per}` : ''}</dd><dt>Automatic runs</dt><dd>${esc(CFG.schedule || 'daily')}</dd>${(sc.notes || []).length ? `<dt>Notes</dt><dd>${sc.notes.map(esc).join('<br>')}</dd>` : ''}</dl>`;
   }
   function openRescrape() {
     const tok = store.get('ghToken', '');
@@ -667,7 +678,7 @@
       : `<p class="sub">Starting it needs a re-scrape key${CFG.maintainer ? ` from ${esc(CFG.maintainer)}` : ''}. Paste it once; it's saved in this browser only.</p>
         <label class="cell-sub" for="tok-in">Re-scrape key</label><input type="password" id="tok-in" autocomplete="off" placeholder="github_pat_…">
         <div class="modal-actions" style="justify-content:flex-start"><button class="btn btn-accent" type="button" id="save-go">Save key and re-scrape</button></div>
-        <details class="cell-sub"><summary>Making a key (repo owner)</summary><ol><li>On GitHub, open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Settings → Developer settings → Fine-grained tokens</a>.</li><li>Repository access: only <b>${esc(CFG.repo)}</b>. Permissions: <b>Actions: Read and write</b>. Nothing else.</li><li>Paste it above, or send it to whoever should be able to re-scrape. It can only start and watch this repo's workflows.</li></ol><p>Or skip the key: <a href="${esc(actionsUrl())}" target="_blank" rel="noopener">open the workflow on GitHub</a> and press "Run workflow".</p></details>`}
+        <details class="cell-sub"><summary>Making a key (repo owner)</summary><ol><li>On GitHub, open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Settings → Developer settings → Fine-grained tokens</a>.</li><li>Repository access: only <b>${esc(CFG.repo)}</b>. Permissions: <b>Actions: Read and write</b>. Nothing else.</li><li>Paste it above, or send it to whoever should be able to re-scrape. The key grants Actions read/write access on this repository. Use a short expiry and forget the key on shared computers.</li></ol><p>Or skip the key: <a href="${esc(actionsUrl())}" target="_blank" rel="noopener">open the workflow on GitHub</a> and press "Run workflow".</p></details>`}
       <div class="status-list" id="run-status"></div>
       <div class="modal-actions"><button class="btn" type="button" id="reload-data">Reload latest data</button><button class="btn" type="button" data-close-modal>Close</button></div>`);
     showLastRun(tok);
@@ -724,7 +735,7 @@
         const sc = d.scrape || {};
         if (lastRunFailed()) { if (s) s.className = 'status-step fail'; step('fail', `The scraper ran but couldn't read any prices (the stores may be refusing automated requests). Prices from ${esc(fmtDate(pricesAsOf()))} stay up. See the README for fixes.`); return; }
         if (s) s.className = 'status-step done';
-        step('done', `New prices loaded: ${sc.ok} refreshed${sc.failed ? `, ${sc.failed} couldn't be read (last known price kept)` : ''}.`);
+        step('done', `New data loaded: ${sc.ok} offers confirmed${sc.failed ? `, ${sc.failed} couldn't be read (last known price kept)` : ''}.`);
         return;
       }
     } catch (e) { /* retry */ }
@@ -792,6 +803,12 @@
       if (t.dataset.pick) { state.compare[t.dataset.pick] = t.value || null; store.set('compare', state.compare); renderCompare(); updateCompareUi(); }
     });
     document.addEventListener('keydown', (e) => {
+      const dialog = !$('#modal-backdrop').hidden ? $('#modal') : !$('#drawer').hidden ? $('#drawer') : null;
+      if (e.key === 'Tab' && dialog) {
+        const focusable = $$('button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), summary, [tabindex="0"]', dialog).filter((el) => el.getClientRects().length);
+        const first = focusable[0]; const last = focusable[focusable.length - 1];
+        if (first && (e.shiftKey ? document.activeElement === first || !dialog.contains(document.activeElement) : document.activeElement === last || !dialog.contains(document.activeElement))) { e.preventDefault(); (e.shiftKey ? last : first).focus(); }
+      }
       if (e.key === 'Escape') { if (!$('#modal-backdrop').hidden) closeModal(); else if (!$('#drawer').hidden) closeDrawer(); }
       if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('circle.dot,tr[data-open]')) { e.preventDefault(); openDrawer(e.target.dataset.open); }
     });

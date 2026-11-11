@@ -1,6 +1,6 @@
 # Victor's Laptop Finder
 
-A small website for picking a gaming + work laptop. It tracks 79 laptop configurations (42 models, $850 to $5,950) with prices scraped from Best Buy, Razer and Framework, scores each one, and explains the trade-offs.
+A small website for picking a gaming + work laptop. It tracks 95 laptop configurations across 44 model families, with prices from Best Buy, ASUS Store, Lenovo.com and Razer, plus a manually tracked Framework configuration, scores each one, and explains the trade-offs.
 
 **Live site:** https://eviiius.github.io/Victor-Potential-Laptops/ (once the setup below is done)
 
@@ -29,7 +29,7 @@ The button starts the same workflow through the GitHub API, so it needs a key:
 
 1. GitHub → Settings → Developer settings → [Fine-grained tokens](https://github.com/settings/personal-access-tokens/new) → Generate new token.
 2. Repository access: **only `EviIius/Victor-Potential-Laptops`**. Permissions: **Actions: Read and write**. Nothing else. Pick an expiry you're happy with.
-3. Paste it into the site's Re-scrape dialog, and send it to Victor so he can do the same. It's stored only in the browser it's pasted into, and it can only start and watch this repo's workflows.
+3. Paste it into the site's Re-scrape dialog, and send it to Victor so he can do the same. It's stored in that browser's local storage and gives Actions read/write access to this repository. Use a short-lived token and the Forget saved key button on shared computers.
 
 Without a key, the dialog still shows when prices were last confirmed, and the repo owner can always use **Run workflow** on GitHub.
 
@@ -39,7 +39,7 @@ Without a key, the dialog still shows when prices were last confirmed, and the r
 - **What's read:** each product page's schema.org Product data (the structured data stores publish for search engines). For Best Buy it separates Best Buy's own new price from cheaper marketplace sellers and open-box offers, and records rating and stock.
 - **Politeness:** one request at a time, 3–6 seconds apart, robots.txt respected (wildcard rules included), an honest user agent, and it stops trying a site after 3 failures in a row. About 6 minutes per run.
 - **When a page can't be read,** the last known price is kept and flagged. If a whole run fails, the site keeps the old prices and the header says "last refresh failed" with the date prices were last confirmed.
-- **Price history:** one point per day per laptop (kept for a year), shown as a sparkline in each laptop's details.
+- **Price history:** one daily minimum per laptop (kept for the last 365 calendar days), shown as a sparkline in each laptop's details.
 
 ### If the daily run gets blocked
 
@@ -54,15 +54,27 @@ The Market scan page only refreshes with the API key; otherwise it shows the sca
 
 ## Run it locally
 
-Python 3.9+ and nothing to install (standard library only).
+The site and scraper need Python 3.9+ and nothing to install (standard library only). The frontend regression checks additionally need Node.js 24 or later; the workflow installs it with `actions/setup-node`.
 
 ```bash
 python3 -m http.server -d site 8000            # then open http://localhost:8000
-python3 scraper/test_parse.py                  # offline checks for the parsers, robots.txt and merge logic
+python3 -B scraper/test_parse.py               # offline parser, robots.txt and merge checks
+node site/test_app.cjs                         # scoring, comparison and rendering regressions
 python3 scraper/scrape.py --limit 3 --dry-run  # read 3 product pages, print, write nothing
 python3 scraper/scrape.py                      # full scrape, rewrites site/data/laptops.json
 python3 scraper/scrape.py --offline            # rebuild laptops.json from catalog.json without scraping
 ```
+
+### Manually verified prices
+
+When a retailer blocks the script, read the exact product page and record observations in a JSON file under `scraper/seed/`. Each observation identifies `laptop_id`, `retailer`, `sku`, `ok`, its actual UTC `checked_at`, the observed `price` and `in_stock`, plus `source` and `evidence_url`. Confirm the exact SKU and seller; do not substitute a different configuration, a marketplace price, financing, or an open-box offer. Failed checks use `ok: false` and an `error`; the previous price and confirmation date remain visible.
+
+```bash
+python3 -B scraper/scrape.py --save-observations scraper/seed/observations-YYYY-MM-DD-scraper.json
+python3 -B scraper/scrape.py --offline --observations scraper/seed/observations-YYYY-MM-DD-manual.json
+```
+
+A stock-only observation can omit `price`: it updates availability while retaining the old price and its original confirmation date. A plain `--offline` rebuild preserves the last refresh metadata. Reusable observation files make manual updates auditable. The overall freshness date follows the offer actually displayed, and partial refresh counts appear in the status dialog and Actions summary. If a live scrape fails entirely, retained data can still publish while a separate workflow check reports the failed refresh.
 
 ## Adding or removing laptops
 
@@ -77,13 +89,13 @@ To add one, copy an existing laptop entry, change the SKU, URL and specs, and pu
 
 All scores are 0–100 and only compare laptops on this site.
 
-- **Gaming:** graphics speed relative to a laptop RTX 5060 (= 100), adjusted for how much power that model gives its GPU, with small tweaks for weak CPUs and extra graphics memory.
+- **Gaming:** the underlying GPU index sets a full-power RTX 5060 to 100. The displayed gaming score divides that index by the reference maximum (202 for an RTX 5090) and scales it to 0–100, with power-limit adjustments, a small weak-CPU penalty and an extra-VRAM bonus.
 - **Work:** multi-core CPU speed (half the weight), RAM, graphics and screen.
 - **Screen:** resolution, refresh rate, panel type (OLED, Mini-LED, IPS) and brightness.
 - **Portability:** weight, thickness and battery size.
-- **Upgradeability:** replaceable RAM, spare SSD slots, Thunderbolt or USB4.
+- **Upgradeability:** replaceable RAM, confirmed SSD slots, Thunderbolt or USB4. Unknown SSD slot counts receive no storage-upgrade points. The detail drawer identifies estimated GPU power and scoring assumptions for missing specifications.
 - **Value:** gaming and work performance per dollar.
-- **Fit:** the visitor's own slider weights applied to the above, within their budget and must-haves.
+- **Fit:** the visitor's own slider weights applied to the above, within their budget and must-haves. By default, picks require an in-stock offer with a price confirmed within 48 hours. Turn off the recent-price filter to include older quotes or manual estimates.
 
 GPU and CPU figures come from published benchmarks (Notebookcheck and others, listed on the Part analysis page). Power limits marked "est." are estimates where the maker doesn't publish them.
 
@@ -92,6 +104,7 @@ GPU and CPU figures come from published benchmarks (Notebookcheck and others, li
 ```
 site/                     the website (plain HTML, CSS and JavaScript; no build step)
   index.html
+  test_app.cjs            frontend regression checks (Node.js)
   assets/app.js           scoring, pages, compare, charts, re-scrape button
   assets/app.css
   assets/config.js        repo name, schedule text, site address
@@ -101,7 +114,7 @@ site/                     the website (plain HTML, CSS and JavaScript; no build 
 scraper/
   scrape.py               the scraper
   normalize.py            turns store spec text into GPU/CPU names
-  test_parse.py           offline checks
+  test_parse.py           offline parser and merge checks
   seed/                   the first price collection (Oct 31, 2026)
 .github/workflows/scrape.yml   daily scrape, commit and publish
 ```

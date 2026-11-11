@@ -96,4 +96,41 @@ ok &= check(d3["prices_as_of"] == "2026-10-31T10:00:00Z" and "_fresh" not in d3[
 full = [{"laptop_id": f"f-{i}", "retailer": "bb", "ok": True, "price": 900.0, "in_stock": True, "checked_at": "2026-11-03T10:00:00Z"} for i in (1, 2)]
 d4 = merge(CAT, d3, full, REF, meta("2026-11-03T10:05:00Z"), None)
 ok &= check(d4["prices_as_of"] == "2026-11-03T10:00:00Z", "merge: prices_as_of advances when everything refreshes")
+
+# SKU selection must survive unrelated products appearing before or after the target.
+products = [{"@type": "Product", "sku": "target", "offers": {"price": 1000}},
+            {"@type": "Product", "sku": "other", "offers": {"price": 2000}}]
+for order in (products, products[::-1]):
+    html = '<script type="application/ld+json">' + json.dumps(order) + '</script>'
+    ok &= check(parse_product_page(html, "asus", "target")["price"] == 1000, "SKU match is independent of product order")
+try:
+    parse_product_page(html, "asus", "missing")
+    ok &= check(False, "mismatched SKU rejected")
+except ValueError:
+    ok &= check(True, "mismatched SKU rejected")
+try:
+    parse_product_page(RAZER, "razer", "missing")
+    ok &= check(False, "fallback cannot take another variant's price")
+except ValueError:
+    ok &= check(True, "fallback cannot take another variant's price")
+r = parse_product_page('<script type="application/ld+json">' + json.dumps(products[0]) + '</script>', "asus", "target")
+ok &= check(r["in_stock"] is None, "missing stock stays unknown")
+
+multi = json.loads(json.dumps(CAT))
+multi["laptops"] = multi["laptops"][:1]
+multi["laptops"][0]["offers"].append({"retailer": "other", "sku": "x", "url": "https://other/x"})
+observations = [dict(obs1[0], price=900, in_stock=False, checked_at="2026-11-08T10:00:00Z"),
+                dict(obs1[0], retailer="other", price=1000)]
+dm = merge(multi, None, observations, REF, meta("2026-11-08T10:05:00Z"), None)
+ok &= check(dm["laptops"][0]["price"] == 1000 and dm["prices_as_of"] == "2026-10-31T10:00:00Z", "freshness follows the selected in-stock offer")
+stock_only = [dict(obs1[0], price=None, in_stock=False, checked_at="2026-11-08T10:00:00Z")]
+ds = merge(CAT, d1, stock_only, REF, meta("2026-11-08T10:05:00Z"), None)
+ok &= check(ds["laptops"][0]["price"] == 1001 and ds["laptops"][0]["price_status"] == "unavailable" and ds["laptops"][0]["offers"][0]["checked_at"] == obs1[0]["checked_at"], "stock-only check retains the old price and its confirmation date")
+before = json.dumps(d1)
+merge(CAT, d1, [dict(obs1[0], price=800)], REF, meta("2026-10-31T12:00:00Z"), None)
+ok &= check(json.dumps(d1) == before, "merge does not mutate the previous history")
+old = json.loads(json.dumps(d1))
+old["laptops"][0]["history"] = [["2025-10-01", 900], ["2026-10-31", 1001]]
+dh = merge(CAT, old, [], REF, meta("2026-11-08T10:05:00Z"), None)
+ok &= check(dh["laptops"][0]["history"] == [["2026-10-31", 1001]], "history expires by calendar date")
 sys.exit(0 if ok else 1)

@@ -174,9 +174,9 @@ fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
 .grid-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
 .grid-table th { text-align: left; font-weight: 600; font-size: 0.76rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; padding: 10px; border-bottom: 1px solid var(--line); white-space: nowrap; background: var(--surface-2); position: sticky; top: 0; }
 .grid-table th button { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-transform: inherit; cursor: pointer; letter-spacing: inherit; }
-.grid-table th button[aria-sort]::after { content: " ↕"; opacity: 0.4; }
-.grid-table th button[aria-sort="ascending"]::after { content: " ↑"; opacity: 1; }
-.grid-table th button[aria-sort="descending"]::after { content: " ↓"; opacity: 1; }
+.grid-table th[aria-sort] button::after { content: " ↕"; opacity: 0.4; }
+.grid-table th[aria-sort="ascending"] button::after { content: " ↑"; opacity: 1; }
+.grid-table th[aria-sort="descending"] button::after { content: " ↓"; opacity: 1; }
 .grid-table td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
 .grid-table tbody tr:hover { background: var(--surface-2); }
 .grid-table tbody tr.is-clickable { cursor: pointer; }

@@ -36,14 +36,25 @@ jobs:
     if: github.event_name != 'push' && !inputs.probe
     runs-on: ${{ vars.SCRAPER_RUNNER || 'ubuntu-latest' }}
     timeout-minutes: 30
+    outputs:
+      refresh_outcome: ${{ steps.refresh.outcome }}
     steps:
       - uses: actions/checkout@v7
 
       - name: Check the scraper
         run: python3 -B scraper/test_parse.py
 
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Check site calculations
+        run: node site/test_app.cjs
+
       # If the store refuses, the last known prices stay up and the site says the refresh failed.
       - name: Scrape prices
+        id: refresh
         continue-on-error: true
         env:
           BESTBUY_API_KEY: ${{ secrets.BESTBUY_API_KEY }}
@@ -95,11 +106,18 @@ jobs:
           ref: main
 
       # Code or catalog pushes rebuild the data from the catalog (fast, no scraping).
+      - uses: actions/setup-node@v7
+        if: github.event_name == 'push'
+        with:
+          node-version: 24
+          package-manager-cache: false
+
       - name: Rebuild data from the catalog
         if: github.event_name == 'push'
         run: |
           python3 -B scraper/test_parse.py
           python3 -B scraper/scrape.py --offline
+          node site/test_app.cjs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/data/laptops.json
@@ -121,3 +139,14 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  # Publish retained prices even after a blocked scrape, but don't report that refresh as successful.
+  verify-refresh:
+    needs: [scrape, deploy]
+    if: ${{ !cancelled() && needs.scrape.outputs.refresh_outcome == 'failure' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report unsuccessful refresh
+        run: |
+          echo "::error::The price scraper failed. Retained data was published where deployment succeeded; inspect the scrape log."
+          exit 1

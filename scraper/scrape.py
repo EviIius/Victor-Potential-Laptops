@@ -236,6 +236,8 @@ def parse_fallback(html: str, sku: str | None) -> dict | None:
             purchasable = re.search(r'"code":"%s","purchasable":(true|false)' % re.escape(sku), html)
             return {"price": float(m.group(2)), "regular": float(m.group(1)),
                     "in_stock": (purchasable.group(1) == "true") if purchasable else None}
+        if re.search(r'data-product-sku=', html):
+            raise ValueError("requested SKU not found in product price markup")
     m = re.search(r'data-product-now-price="([\d.]+)"', html)
     if m:
         return {"price": float(m.group(1)), "in_stock": None}
@@ -312,7 +314,18 @@ def parse_product_page(html: str, retailer: str, sku: str | None = None) -> dict
         if fb:
             return fb
         raise ValueError("no price data found on page (layout may have changed)")
-    prod = products[0]
+    def identifiers(product):
+        return {str(product[k]).strip().casefold() for k in ("sku", "mpn", "productID", "model")
+                if isinstance(product.get(k), (str, int))}
+
+    matching = [p for p in products if sku and (str(sku).strip().casefold() in identifiers(p)
+                or re.search(r"(?<![\w-])" + re.escape(str(sku)) + r"(?![\w-])", p.get("name") or "", re.I))]
+    if len(matching) == 1:
+        prod = matching[0]
+    elif len(products) == 1 and (not sku or not identifiers(products[0])):
+        prod = products[0]
+    else:
+        raise ValueError("product data does not identify a unique match for the requested SKU")
     offers = prod.get("offers") or []
     if isinstance(offers, dict):
         offers = [offers]
@@ -334,8 +347,9 @@ def parse_product_page(html: str, retailer: str, sku: str | None = None) -> dict
         elif seller.lower() == (fp or seller.lower()):
             used.append(price)
     if news:
-        price, avail = min(news, key=lambda x: x[0])
-        out["price"], out["in_stock"] = price, avail if avail is not None else True
+        available = [o for o in news if o[1] is True]
+        price, avail = min(available or news, key=lambda x: x[0])
+        out["price"], out["in_stock"] = price, avail
     else:
         out["in_stock"] = False
     if used:
@@ -416,6 +430,7 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
     retailers = catalog.get("retailers", {})
     today = run_meta["finished"][:10]
     laptops = []
+    shown = []
     for item in catalog["laptops"]:
         fam = catalog["families"].get(item["family"], {})
         s = dict(item.get("specs", {}))
@@ -431,10 +446,16 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
             po = prev_offers.get(off["retailer"], {})
             o = {"retailer": off["retailer"], "retailer_name": retailers.get(off["retailer"], {}).get("name", off["retailer"]),
                  "sku": off.get("sku"), "url": off.get("url"), "manual": bool(off.get("manual"))}
-            keep = ("price", "regular", "in_stock", "open_box", "marketplace", "rating", "reviews", "checked_at", "source", "seller", "marketplace_only")
+            keep = ("price", "regular", "in_stock", "open_box", "marketplace", "rating", "reviews", "checked_at", "source", "seller", "marketplace_only", "evidence_url", "verified_sku", "availability_checked_at")
             if ob and ob.get("ok"):  # refreshed this run
                 o.update({k: ob.get(k) for k in keep if ob.get(k) is not None})
                 o["stale"], o["_fresh"] = False, True
+                if not ob.get("price") and po.get("price"):
+                    # A stock-only check cannot reconfirm the previous price.
+                    o.update({k: po[k] for k in ("price", "regular", "checked_at", "source") if k in po})
+                    o["availability_checked_at"] = ob.get("checked_at")
+                    o["stale"], o["_fresh"] = True, False
+                    o["error"] = ob.get("price_note") or "Availability checked; the previous price was not reconfirmed."
                 if ob.get("manual"):
                     o["manual"] = True
             elif ob:  # tried this run and failed: keep the last known price, flag it
@@ -450,17 +471,20 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
                 o["stale"] = True
                 o["error"] = "never scraped"
             offers.append(o)
-        priced = [o for o in offers if o.get("price")]
-        live = [o for o in priced if o.get("in_stock")]
+        priced = [o for o in offers if o.get("price") and not o.get("marketplace_only")]
+        live = [o for o in priced if o.get("in_stock") is True and not o.get("marketplace_only")]
         best = min(live or priced, key=lambda o: (o["price"], bool(o.get("stale")))) if priced else None  # ties go to the fresher price
-        history = [h for h in prev.get("history", [])]
+        cutoff = (dt.date.fromisoformat(today) - dt.timedelta(days=HISTORY_DAYS - 1)).isoformat()
+        history = [list(h) for h in prev.get("history", []) if h[0] >= cutoff]
         if best and best.get("_fresh"):
             if history and history[-1][0] == today:
                 history[-1][1] = min(history[-1][1], best["price"])
             else:
                 history.append([today, best["price"]])
         history = history[-HISTORY_DAYS:]
-        status = "unavailable" if best and not best.get("in_stock") else ("manual" if best and best.get("manual") else ("stale" if best and best.get("stale") else "live"))
+        status = "unavailable" if best and best.get("in_stock") is False else ("manual" if best and best.get("manual") else ("stale" if best and best.get("stale") else "live"))
+        if best and not best.get("manual") and best.get("checked_at"):
+            shown.append(best["checked_at"])
         laptops.append({
             "id": item["id"], "family": item["family"], "brand": fam.get("brand"), "name": fam.get("name"),
             "year": s.get("year") or fam.get("year"), "form": fam.get("form"), "model": s.get("model"),
@@ -481,13 +505,7 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
             "reviews": next((o.get("reviews") for o in offers if o.get("reviews")), None),
             "history": history,
         })
-    # When prices were last actually confirmed: the newest successful check this run, else whatever the previous file said.
     # How old the prices on the site are: the oldest confirmation among the prices actually shown (hand-tracked ones aside).
-    shown = []
-    for l in laptops:
-        priced = [o for o in l["offers"] if o.get("price") and not o.get("manual") and o.get("checked_at")]
-        if priced:
-            shown.append(min(priced, key=lambda o: o["price"])["checked_at"])
     prices_as_of = min(shown) if shown else ((previous or {}).get("prices_as_of") or (previous or {}).get("generated_at") or run_meta["finished"])
     for l in laptops:
         for o in l["offers"]:
@@ -570,6 +588,7 @@ def main():
     ap.add_argument("--limit", type=int, help="only scrape N offers (testing)")
     ap.add_argument("--only", help="only scrape one retailer id, e.g. bestbuy")
     ap.add_argument("--dry-run", action="store_true", help="print what was found but don't write laptops.json")
+    ap.add_argument("--save-observations", help="also save this run's observations as reusable JSON")
     args = ap.parse_args()
 
     catalog = load_json(CATALOG)
@@ -583,6 +602,13 @@ def main():
     if args.observations:
         obs_file = load_json(args.observations)
         observations = obs_file["observations"]
+        valid = {(l["id"], o["retailer"]): o for l in catalog["laptops"] for o in l["offers"]}
+        for observation in observations:
+            offer = valid.get((observation.get("laptop_id"), observation.get("retailer")))
+            if offer is None or (observation.get("sku") and observation["sku"] != offer.get("sku")):
+                ap.error("observation does not match a catalog offer: " + str(observation.get("laptop_id")))
+            if observation.get("ok") and not observation.get("checked_at"):
+                ap.error("successful observations need their actual checked_at timestamp")
         extra["notes"].append(obs_file.get("note") or f"Merged observations from {Path(args.observations).name}.")
     if not args.offline:
         live_obs, live_extra, live_market = run_live(catalog, args.limit, args.only)
@@ -593,14 +619,23 @@ def main():
 
     ok = sum(1 for o in observations if o.get("ok"))
     failed = sum(1 for o in observations if not o.get("ok"))
+    by_retailer = {}
+    for observation in observations:
+        counts = by_retailer.setdefault(observation["retailer"], {"ok": 0, "failed": 0})
+        counts["ok" if observation.get("ok") else "failed"] += 1
     meta = {"started": started, "finished": now_iso(), "mode": "offline" if args.offline else "live",
             "runner": os.environ.get("SCRAPER_RUNNER") or ("github-actions" if os.environ.get("GITHUB_ACTIONS") else "local"),
             "ok": ok, "failed": failed, "tracked_offers": sum(len(l["offers"]) for l in catalog["laptops"]),
-            "by_retailer": extra.get("by_retailer", {}), "notes": extra.get("notes", []),
+            "prices_refreshed": sum(1 for o in observations if o.get("ok") and o.get("price")),
+            "availability_only": sum(1 for o in observations if o.get("ok") and not o.get("price")),
+            "by_retailer": by_retailer, "notes": extra.get("notes", []),
             "user_agent": UA if not args.offline else None, "api": bool(os.environ.get("BESTBUY_API_KEY"))}
     if args.observations and args.offline:
+        meta["mode"] = "manual"
         meta["runner"] = load_json(args.observations).get("runner", meta["runner"])
         meta["finished"] = load_json(args.observations).get("checked_at", meta["finished"])
+        timestamps = [o["checked_at"] for o in observations if o.get("checked_at")]
+        meta["started"] = min(timestamps) if timestamps else meta["finished"]
     elif args.offline and previous.get("scrape"):
         # A plain rebuild (e.g. after editing catalog.json) isn't a scrape: keep the last run's details and timestamp.
         meta = dict(previous["scrape"])
@@ -609,11 +644,22 @@ def main():
     if not args.offline and observations and ok == 0:
         meta["notes"].append("No prices could be read this run, so the site keeps showing the last known prices.")
     data = merge(catalog, previous, observations, ref, meta, market)
+    if os.environ.get("GITHUB_ACTIONS"):
+        summary = f"Price refresh: {ok} offers confirmed, {failed} failed. Failed offers retain their previous prices and dates.\n"
+        if os.environ.get("GITHUB_STEP_SUMMARY"):
+            with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as report:
+                report.write(summary)
+        if failed:
+            print(f"::warning::{summary.strip()}")
+    if args.save_observations and not args.dry_run:
+        Path(args.save_observations).write_text(json.dumps({"checked_at": meta["finished"], "runner": meta["runner"],
+                                                          "note": "Price and availability observations from the live scraper.",
+                                                          "observations": observations}, indent=1, ensure_ascii=False))
     if args.dry_run:
         print(f"dry run: {ok} prices read, {failed} failed; laptops.json not written")
     else:
         OUTPUT.write_text(json.dumps(data, indent=1, ensure_ascii=False))
-        what = "rebuilt from the catalog, no scraping" if args.offline and not args.observations else f"{ok} prices refreshed, {failed} failed"
+        what = "rebuilt from the catalog, no scraping" if args.offline and not args.observations else f"{ok} offers confirmed ({meta['prices_refreshed']} prices, {meta['availability_only']} stock-only), {failed} failed"
         print(f"wrote {OUTPUT.relative_to(ROOT)}: {len(data['laptops'])} laptops, {what}")
     # Non-zero exit only when a live run refreshed nothing at all, so the workflow flags it.
     if not args.offline and observations and ok == 0:

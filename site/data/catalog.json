@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-01",
+ "updated": "2026-11-11",
  "_about": "Curated laptops tracked by the scraper. Specs are a baseline captured from retailer product pages; the scraper refreshes prices and availability. Edit 'families' for model-level notes and 'laptops' to add or remove configurations.",
  "retailers": {
   "bestbuy": {
@@ -1247,7 +1247,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6675841",
-     "url": "https://www.bestbuy.com/product/acer-nitro-v-16-wuxga-165hz-gaming-laptop-intel-core-7-240h-2024-nvidia-geforce-rtx-5050-16gb-memory-512gb-storage-obsidian-black/JJ8V8HYVHP"
+     "url": "https://www.bestbuy.com/product/acer-nitro-v-16-wuxga-165hz-gaming-laptop-intel-core-7-240h-2024-nvidia-geforce-rtx-5050-16gb-memory-512gb-storage-obsidian-black/6675841"
     }
    ],
    "specs": {
@@ -1356,7 +1356,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6674559",
-     "url": "https://www.bestbuy.com/product/alienware-15-3-2k-gaming-laptop-amd-ryzen-200-series-r7-260-2026-16gb-memory-nvidia-geforce-rtx-5050-8gb-1tb-storage-black/J3K4L6QR6V"
+     "url": "https://www.bestbuy.com/product/alienware-15-3-2k-gaming-laptop-amd-ryzen-200-series-r7-260-2026-16gb-memory-nvidia-geforce-rtx-5050-8gb-1tb-storage-black/6674559"
     }
    ],
    "specs": {
@@ -1393,7 +1393,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6673554",
-     "url": "https://www.bestbuy.com/product/lenovo-loq-15-6-2k-gaming-laptop-amd-ryzen-7-170-2025-16gb-memory-nvidia-geforce-rtx-4050-512gb-storage-luna-grey/JJGH3Q67WX"
+     "url": "https://www.bestbuy.com/product/lenovo-loq-15-6-2k-gaming-laptop-amd-ryzen-7-170-2025-16gb-memory-nvidia-geforce-rtx-4050-512gb-storage-luna-grey/6673554"
     }
    ],
    "specs": {
@@ -1463,7 +1463,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6635752",
-     "url": "https://www.bestbuy.com/product/gigabyte-aero-x16-copilot-pc-16-25601600-wqxga-amd-ryzen-al-7-350-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5060-space-gray/J3GWPQCXYT"
+     "url": "https://www.bestbuy.com/product/gigabyte-aero-x16-copilot-pc-16-25601600-wqxga-amd-ryzen-al-7-350-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5060-space-gray/6635752"
     }
    ],
    "specs": {
@@ -1642,7 +1642,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6673588",
-     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-f16-16-144hz-fhd-gaming-laptop-intel-core-i7-14650hx-2024-16gb-memory-geforce-rtx-5060-512gb-storage-jaegar-gray/JJGHGSJ7WR"
+     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-f16-16-144hz-fhd-gaming-laptop-intel-core-i7-14650hx-2024-16gb-memory-geforce-rtx-5060-512gb-storage-jaegar-gray/6673588"
     }
    ],
    "specs": {
@@ -1790,7 +1790,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6673585",
-     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-a16-16-165hz-fhd-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-geforce-rtx-5070-512gb-storage-jaegar-gray/JJGHGSXCV8"
+     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-a16-16-165hz-fhd-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-geforce-rtx-5070-512gb-storage-jaegar-gray/6673585"
     }
    ],
    "specs": {
@@ -1826,7 +1826,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6672942",
-     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/JJGWKSG2SQ"
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/6672942"
     }
    ],
    "specs": {
@@ -2173,7 +2173,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6672947",
-     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2k-gaming-laptop-intel-core-ultra-7-356h-2026-16gb-memory-nvidia-geforce-rtx-5060-512gb-ssd-shadow-black/JJGWKS75YF"
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2k-gaming-laptop-intel-core-ultra-7-356h-2026-16gb-memory-nvidia-geforce-rtx-5060-512gb-ssd-shadow-black/6672947"
     }
    ],
    "specs": {
@@ -2444,7 +2444,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6613956",
-     "url": "https://www.bestbuy.com/product/asus-rog-strix-g16-16-fhd-165hz-gaming-laptop-amd-ryzen-9-8940hx-16gb-memory-geforce-rtx-5070-ti-1tb-storage-eclipse-gray/JJGGLHJLTS"
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-g16-16-fhd-165hz-gaming-laptop-amd-ryzen-9-8940hx-16gb-memory-geforce-rtx-5070-ti-1tb-storage-eclipse-gray/6613956"
     }
    ],
    "specs": {
@@ -2561,7 +2561,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6619196",
-     "url": "https://www.bestbuy.com/product/asus-rog-flow-z13-13-4-2-5k-180hz-touch-screen-gaming-laptop-copilot-pc-amd-ryzen-ai-max-395-64gb-memory-1tb-storage-off-black/JJGGLHG8X9"
+     "url": "https://www.bestbuy.com/product/asus-rog-flow-z13-13-4-2-5k-180hz-touch-screen-gaming-laptop-copilot-pc-amd-ryzen-ai-max-395-64gb-memory-1tb-storage-off-black/6619196"
     }
    ],
    "specs": {
@@ -2634,7 +2634,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6677630",
-     "url": "https://www.bestbuy.com/product/acer-predator-neo-gaming-laptop-16-oled-intel-core-ultra-9-series-2-2026-2-5k-rtx-5070-ti-32gb-memory-1tb-storage-obsidian-black/JJ8V8HPCW6"
+     "url": "https://www.bestbuy.com/product/acer-predator-neo-gaming-laptop-16-oled-intel-core-ultra-9-series-2-2026-2-5k-rtx-5070-ti-32gb-memory-1tb-storage-obsidian-black/6677630"
     }
    ],
    "specs": {
@@ -2672,7 +2672,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6673555",
-     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-ryzen-ai-9-hx-470-2026-32gb-ram-nvidia-geforce-rtx-5070-1tb-storage-nebula/JJGH3KJRH6"
+     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-ryzen-ai-9-hx-470-2026-32gb-ram-nvidia-geforce-rtx-5070-1tb-storage-nebula/6673555"
     }
    ],
    "specs": {
@@ -2900,7 +2900,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6673587",
-     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g14-14-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-platinum-white/JJGHGSLS24"
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g14-14-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-platinum-white/6673587"
     }
    ],
    "specs": {
@@ -3016,7 +3016,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6672940",
-     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-max-16-2k-oled-gaming-laptop-intel-core-ultra-9-2026-32gb-memory-nvidia-geforce-rtx-5070-ti-1tb-ssd-shadow-black/JJGWKSJTT5"
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-max-16-2k-oled-gaming-laptop-intel-core-ultra-9-2026-32gb-memory-nvidia-geforce-rtx-5070-ti-1tb-ssd-shadow-black/6672940"
     }
    ],
    "specs": {
@@ -3054,7 +3054,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6679954",
-     "url": "https://www.bestbuy.com/product/msi-raider-16-hx-16-2-5k-qhd-240hz-gaming-laptop-intel-ultra-9-275hx-2025-geforce-rtx-5070ti-32gb-memory-1tb-storage-core-black/J3P7TXT4VL"
+     "url": "https://www.bestbuy.com/product/msi-raider-16-hx-16-2-5k-qhd-240hz-gaming-laptop-intel-ultra-9-275hx-2025-geforce-rtx-5070ti-32gb-memory-1tb-storage-core-black/6679954"
     }
    ],
    "specs": {
@@ -3089,7 +3089,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6673551",
-     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-amd-ryzen-ai-7-450-2026-32gb-ram-nvidia-geforce-rtx-5060-1tb-storage-glacier-white/JJGH3QT2XL"
+     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-amd-ryzen-ai-7-450-2026-32gb-ram-nvidia-geforce-rtx-5060-1tb-storage-glacier-white/6673551"
     }
    ],
    "specs": {
@@ -3240,7 +3240,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6613958",
-     "url": "https://www.bestbuy.com/product/asus-rog-strix-g18-18-2-5k-240hz-gaming-laptop-intel-core-ultra-9-hx-32gb-memory-geforce-rtx-5080-2tb-storage-eclipse-gray/JJGGLHXFW8"
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-g18-18-2-5k-240hz-gaming-laptop-intel-core-ultra-9-hx-32gb-memory-geforce-rtx-5080-2tb-storage-eclipse-gray/6613958"
     }
    ],
    "specs": {
@@ -3434,7 +3434,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6673586",
-     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-eclipse-gray/JJGHGSL6G8"
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-eclipse-gray/6673586"
     }
    ],
    "specs": {
@@ -3856,7 +3856,7 @@
     {
      "retailer": "bestbuy",
      "sku": "6680553",
-     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5070-ti-32gb-ram-1tb-ssd-stellar-grey/JJGHGPV42Q"
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5070-ti-32gb-ram-1tb-ssd-stellar-grey/6680553"
     },
     {
      "retailer": "asus",

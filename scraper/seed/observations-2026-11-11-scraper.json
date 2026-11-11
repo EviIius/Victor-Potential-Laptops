@@ -1,0 +1,821 @@
+{
+ "checked_at": "2026-11-11T16:13:34Z",
+ "runner": "local",
+ "note": "Price and availability observations from the live scraper.",
+ "observations": [
+  {
+   "laptop_id": "lenovo-legion-5i-15-6691125",
+   "retailer": "bestbuy",
+   "sku": "6691125",
+   "checked_at": "2026-11-11T16:11:59Z",
+   "ok": false,
+   "error": "PermissionError: robots.txt unreachable (TimeoutError: The read operation timed out), so the site is skipped this run"
+  },
+  {
+   "laptop_id": "gigabyte-aorus-master-16-6623748",
+   "retailer": "bestbuy",
+   "sku": "6623748",
+   "checked_at": "2026-11-11T16:12:24Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "hp-omen-16-6672942",
+   "retailer": "bestbuy",
+   "sku": "6672942",
+   "checked_at": "2026-11-11T16:12:24Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "gigabyte-gaming-a16-6632143",
+   "retailer": "bestbuy",
+   "sku": "6632143",
+   "checked_at": "2026-11-11T16:12:24Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-lenovo-83lu004wus",
+   "retailer": "lenovo",
+   "sku": "83LU004WUS",
+   "checked_at": "2026-11-11T16:12:24Z",
+   "price": 1999.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.lenovo.com product page"
+  },
+  {
+   "laptop_id": "acer-predator-helios-18-6683796",
+   "retailer": "bestbuy",
+   "sku": "6683796",
+   "checked_at": "2026-11-11T16:12:24Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2025-6613960",
+   "retailer": "bestbuy",
+   "sku": "6613960",
+   "checked_at": "2026-11-11T16:12:24Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "acer-predator-triton-14-6675843",
+   "retailer": "bestbuy",
+   "sku": "6675843",
+   "checked_at": "2026-11-11T16:12:24Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-lenovo-83f300bbus",
+   "retailer": "lenovo",
+   "sku": "83F300BBUS",
+   "checked_at": "2026-11-11T16:12:24Z",
+   "price": 2099.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.lenovo.com product page"
+  },
+  {
+   "laptop_id": "hp-omen-16-6672947",
+   "retailer": "bestbuy",
+   "sku": "6672947",
+   "checked_at": "2026-11-11T16:12:28Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-6691124",
+   "retailer": "bestbuy",
+   "sku": "6691124",
+   "checked_at": "2026-11-11T16:12:28Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-rog-strix-g16-6635275",
+   "retailer": "bestbuy",
+   "sku": "6635275",
+   "checked_at": "2026-11-11T16:12:28Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-v16-6683982",
+   "retailer": "bestbuy",
+   "sku": "6683982",
+   "checked_at": "2026-11-11T16:12:28Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-5i-gen10-lenovo-83f00006us",
+   "retailer": "lenovo",
+   "sku": "83F00006US",
+   "checked_at": "2026-11-11T16:12:28Z",
+   "price": 1799.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.lenovo.com product page"
+  },
+  {
+   "laptop_id": "alienware-15-6674559",
+   "retailer": "bestbuy",
+   "sku": "6674559",
+   "checked_at": "2026-11-11T16:12:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "hp-omen-transcend-14-6672941",
+   "retailer": "bestbuy",
+   "sku": "6672941",
+   "checked_at": "2026-11-11T16:12:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "alienware-16x-aurora-6678048",
+   "retailer": "bestbuy",
+   "sku": "6678048",
+   "checked_at": "2026-11-11T16:12:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "razer-blade-16-2026-5070ti",
+   "retailer": "razer",
+   "sku": "RZ09-05817EN3-R3U1",
+   "checked_at": "2026-11-11T16:12:32Z",
+   "price": 3499.99,
+   "regular": 3499.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.razer.com product page"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2026-6679860",
+   "retailer": "asus",
+   "sku": "GU606AR-XB96",
+   "checked_at": "2026-11-11T16:12:36Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "msi-stealth-16-6670611",
+   "retailer": "bestbuy",
+   "sku": "6670611",
+   "checked_at": "2026-11-11T16:12:38Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-tuf-a16-6673585",
+   "retailer": "bestbuy",
+   "sku": "6673585",
+   "checked_at": "2026-11-11T16:12:38Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-rog-strix-g18-asus-g815jpr-sb94",
+   "retailer": "asus",
+   "sku": "G815JPR-SB94",
+   "checked_at": "2026-11-11T16:12:38Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2025-6613961",
+   "retailer": "bestbuy",
+   "sku": "6613961",
+   "checked_at": "2026-11-11T16:12:41Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "msi-crosshair-a16-hx-6677954",
+   "retailer": "bestbuy",
+   "sku": "6677954",
+   "checked_at": "2026-11-11T16:12:41Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "msi-cyborg-15-max-6690923",
+   "retailer": "bestbuy",
+   "sku": "6690923",
+   "checked_at": "2026-11-11T16:12:41Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2026-6673586",
+   "retailer": "bestbuy",
+   "sku": "6673586",
+   "checked_at": "2026-11-11T16:12:41Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "msi-stealth-16-6670610",
+   "retailer": "bestbuy",
+   "sku": "6670610",
+   "checked_at": "2026-11-11T16:12:41Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-lenovo-83f300baus",
+   "retailer": "lenovo",
+   "sku": "83F300BAUS",
+   "checked_at": "2026-11-11T16:12:41Z",
+   "price": 1649.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.lenovo.com product page"
+  },
+  {
+   "laptop_id": "lenovo-legion-7a-15-6678512",
+   "retailer": "bestbuy",
+   "sku": "6678512",
+   "checked_at": "2026-11-11T16:12:42Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-loq-essential-15-6691123",
+   "retailer": "bestbuy",
+   "sku": "6691123",
+   "checked_at": "2026-11-11T16:12:42Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "gigabyte-aero-x16-6632266",
+   "retailer": "bestbuy",
+   "sku": "6632266",
+   "checked_at": "2026-11-11T16:12:42Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g14-2025-6629420",
+   "retailer": "bestbuy",
+   "sku": "6629420",
+   "checked_at": "2026-11-11T16:12:42Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-6617090",
+   "retailer": "bestbuy",
+   "sku": "6617090",
+   "checked_at": "2026-11-11T16:12:42Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "alienware-area-51-6632697",
+   "retailer": "bestbuy",
+   "sku": "6632697",
+   "checked_at": "2026-11-11T16:12:42Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g14-2026-asus-gu405ar-xb96",
+   "retailer": "asus",
+   "sku": "GU405AR-XB96",
+   "checked_at": "2026-11-11T16:12:42Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "asus-rog-strix-g18-6613958",
+   "retailer": "bestbuy",
+   "sku": "6613958",
+   "checked_at": "2026-11-11T16:12:48Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g14-2026-6673587",
+   "retailer": "bestbuy",
+   "sku": "6673587",
+   "checked_at": "2026-11-11T16:12:48Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "razer-blade-16-2026-5080",
+   "retailer": "razer",
+   "sku": "RZ09-05818EN3-R3U1",
+   "checked_at": "2026-11-11T16:12:48Z",
+   "price": 3999.99,
+   "regular": 3999.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.razer.com product page"
+  },
+  {
+   "laptop_id": "asus-v16-6683981",
+   "retailer": "bestbuy",
+   "sku": "6683981",
+   "checked_at": "2026-11-11T16:12:48Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-rog-strix-18-2026-6686857",
+   "retailer": "bestbuy",
+   "sku": "6686857",
+   "checked_at": "2026-11-11T16:12:48Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "hp-victus-15-6623881",
+   "retailer": "bestbuy",
+   "sku": "6623881",
+   "checked_at": "2026-11-11T16:12:48Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g14-2025-asus-ga403up-cb94",
+   "retailer": "asus",
+   "sku": "GA403UP-CB94",
+   "checked_at": "2026-11-11T16:12:48Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "asus-rog-strix-18-2026-6686853",
+   "retailer": "asus",
+   "sku": "G835LWG-DB96",
+   "checked_at": "2026-11-11T16:12:50Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "asus-rog-strix-18-2026-6686853",
+   "retailer": "bestbuy",
+   "sku": "6686853",
+   "checked_at": "2026-11-11T16:12:53Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2026-6679860",
+   "retailer": "bestbuy",
+   "sku": "6679860",
+   "checked_at": "2026-11-11T16:12:53Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-5i-gen10-lenovo-83f00005us",
+   "retailer": "lenovo",
+   "sku": "83F00005US",
+   "checked_at": "2026-11-11T16:12:53Z",
+   "price": 1499.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.lenovo.com product page"
+  },
+  {
+   "laptop_id": "acer-nitro-v16-6675841",
+   "retailer": "bestbuy",
+   "sku": "6675841",
+   "checked_at": "2026-11-11T16:12:53Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "alienware-15-6678996",
+   "retailer": "bestbuy",
+   "sku": "6678996",
+   "checked_at": "2026-11-11T16:12:53Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2025-6613959",
+   "retailer": "bestbuy",
+   "sku": "6613959",
+   "checked_at": "2026-11-11T16:12:53Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-tuf-a16-asus-fa608uhi-ob73",
+   "retailer": "asus",
+   "sku": "FA608UHI-OB73",
+   "checked_at": "2026-11-11T16:12:53Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "acer-predator-neo-16-6677630",
+   "retailer": "bestbuy",
+   "sku": "6677630",
+   "checked_at": "2026-11-11T16:12:58Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-tuf-a16-asus-fa608umi-nb73",
+   "retailer": "asus",
+   "sku": "FA608UMI-NB73",
+   "checked_at": "2026-11-11T16:12:58Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "hp-victus-15-6672944",
+   "retailer": "bestbuy",
+   "sku": "6672944",
+   "checked_at": "2026-11-11T16:13:02Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-loq-15-6673554",
+   "retailer": "bestbuy",
+   "sku": "6673554",
+   "checked_at": "2026-11-11T16:13:02Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-rog-flow-z13-6619034",
+   "retailer": "bestbuy",
+   "sku": "6619034",
+   "checked_at": "2026-11-11T16:13:02Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5-amd-6619247",
+   "retailer": "bestbuy",
+   "sku": "6619247",
+   "checked_at": "2026-11-11T16:13:02Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-rog-flow-z13-asus-gz302ea-xs99",
+   "retailer": "asus",
+   "sku": "GZ302EA-XS99",
+   "checked_at": "2026-11-11T16:13:02Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "asus-zephyrus-duo-6679872",
+   "retailer": "bestbuy",
+   "sku": "6679872",
+   "checked_at": "2026-11-11T16:13:07Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g14-2025-6613953",
+   "retailer": "bestbuy",
+   "sku": "6613953",
+   "checked_at": "2026-11-11T16:13:07Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-tuf-a14-max-6672107",
+   "retailer": "asus",
+   "sku": "FA401EA-DS96",
+   "checked_at": "2026-11-11T16:13:07Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2026-6679868",
+   "retailer": "asus",
+   "sku": "GU606AW-XB97",
+   "checked_at": "2026-11-11T16:13:10Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "asus-zephyrus-duo-6680553",
+   "retailer": "asus",
+   "sku": "GX651AR-DB96",
+   "checked_at": "2026-11-11T16:13:16Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-6691126",
+   "retailer": "bestbuy",
+   "sku": "6691126",
+   "checked_at": "2026-11-11T16:13:22Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "acer-predator-neo-16-6681256",
+   "retailer": "bestbuy",
+   "sku": "6681256",
+   "checked_at": "2026-11-11T16:13:22Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-7i-lenovo-83f500m0us",
+   "retailer": "lenovo",
+   "sku": "83F500M0US",
+   "checked_at": "2026-11-11T16:13:22Z",
+   "price": 5094.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.lenovo.com product page"
+  },
+  {
+   "laptop_id": "msi-raider-16-hx-6679954",
+   "retailer": "bestbuy",
+   "sku": "6679954",
+   "checked_at": "2026-11-11T16:13:23Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-rog-strix-g16-6613956",
+   "retailer": "bestbuy",
+   "sku": "6613956",
+   "checked_at": "2026-11-11T16:13:23Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "hp-omen-max-16-6672945",
+   "retailer": "bestbuy",
+   "sku": "6672945",
+   "checked_at": "2026-11-11T16:13:23Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "msi-stealth-16-6631787",
+   "retailer": "bestbuy",
+   "sku": "6631787",
+   "checked_at": "2026-11-11T16:13:23Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-7i-lenovo-83f500m2us",
+   "retailer": "lenovo",
+   "sku": "83F500M2US",
+   "checked_at": "2026-11-11T16:13:23Z",
+   "price": 3999.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.lenovo.com product page"
+  },
+  {
+   "laptop_id": "asus-rog-strix-g16-asus-g615jhr-db73",
+   "retailer": "asus",
+   "sku": "G615JHR-DB73",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "alienware-area-51-6628371",
+   "retailer": "bestbuy",
+   "sku": "6628371",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "hp-omen-transcend-14-6672943",
+   "retailer": "bestbuy",
+   "sku": "6672943",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "acer-predator-helios-18-6681255",
+   "retailer": "bestbuy",
+   "sku": "6681255",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "alienware-16x-aurora-6675559",
+   "retailer": "bestbuy",
+   "sku": "6675559",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "hp-omen-16-6672948",
+   "retailer": "bestbuy",
+   "sku": "6672948",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-6673553",
+   "retailer": "bestbuy",
+   "sku": "6673553",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-rog-flow-z13-6619196",
+   "retailer": "bestbuy",
+   "sku": "6619196",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-rog-strix-scar-18-2025-6613957",
+   "retailer": "bestbuy",
+   "sku": "6613957",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-6673557",
+   "retailer": "bestbuy",
+   "sku": "6673557",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2026-6673590",
+   "retailer": "bestbuy",
+   "sku": "6673590",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "acer-nitro-v16-6675842",
+   "retailer": "bestbuy",
+   "sku": "6675842",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-pro-5i-lenovo-83nn0039us",
+   "retailer": "lenovo",
+   "sku": "83NN0039US",
+   "checked_at": "2026-11-11T16:13:27Z",
+   "price": 1599.99,
+   "in_stock": true,
+   "ok": true,
+   "source": "www.lenovo.com product page"
+  },
+  {
+   "laptop_id": "lenovo-loq-15-6673549",
+   "retailer": "bestbuy",
+   "sku": "6673549",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "hp-omen-16-6672946",
+   "retailer": "bestbuy",
+   "sku": "6672946",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-tuf-f16-6673588",
+   "retailer": "bestbuy",
+   "sku": "6673588",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-g16-2026-6679868",
+   "retailer": "bestbuy",
+   "sku": "6679868",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "alienware-area-51-6628373",
+   "retailer": "bestbuy",
+   "sku": "6628373",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-7a-16-6673555",
+   "retailer": "bestbuy",
+   "sku": "6673555",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-7a-15-6678510",
+   "retailer": "bestbuy",
+   "sku": "6678510",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lenovo-legion-7a-16-6673551",
+   "retailer": "bestbuy",
+   "sku": "6673551",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-tuf-a14-max-6672107",
+   "retailer": "bestbuy",
+   "sku": "6672107",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-tuf-f16-asus-fx608lpg-bb94",
+   "retailer": "asus",
+   "sku": "FX608LPG-BB94",
+   "checked_at": "2026-11-11T16:13:32Z",
+   "ok": false,
+   "error": "ValueError: product data does not identify a unique match for the requested SKU"
+  },
+  {
+   "laptop_id": "lenovo-loq-15-6673556",
+   "retailer": "bestbuy",
+   "sku": "6673556",
+   "checked_at": "2026-11-11T16:13:34Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "gigabyte-gaming-a16-6632144",
+   "retailer": "bestbuy",
+   "sku": "6632144",
+   "checked_at": "2026-11-11T16:13:34Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "asus-zephyrus-duo-6680553",
+   "retailer": "bestbuy",
+   "sku": "6680553",
+   "checked_at": "2026-11-11T16:13:34Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "lg-gram-pro-max-17-6670749",
+   "retailer": "bestbuy",
+   "sku": "6670749",
+   "checked_at": "2026-11-11T16:13:34Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "gigabyte-aero-x16-6635752",
+   "retailer": "bestbuy",
+   "sku": "6635752",
+   "checked_at": "2026-11-11T16:13:34Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  },
+  {
+   "laptop_id": "hp-omen-max-16-6672940",
+   "retailer": "bestbuy",
+   "sku": "6672940",
+   "checked_at": "2026-11-11T16:13:34Z",
+   "ok": false,
+   "error": "skipped: site kept refusing requests this run"
+  }
+ ]
+}
