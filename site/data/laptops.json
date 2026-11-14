@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-11-13T11:24:08Z",
+ "generated_at": "2026-11-14T11:23:38Z",
  "prices_as_of": "2026-11-01T14:28:48Z",
  "scrape": {
-  "started": "2026-11-13T11:22:31Z",
-  "finished": "2026-11-13T11:24:08Z",
+  "started": "2026-11-14T11:21:43Z",
+  "finished": "2026-11-14T11:23:38Z",
   "mode": "live",
   "runner": "github-actions",
   "ok": 22,
@@ -18,13 +18,13 @@
     "ok": 0,
     "failed": 76
    },
-   "asus": {
-    "ok": 12,
-    "failed": 1
-   },
    "lenovo": {
     "ok": 8,
     "failed": 0
+   },
+   "asus": {
+    "ok": 12,
+    "failed": 1
    },
    "razer": {
     "ok": 2,
@@ -3278,7 +3278,7 @@
      "manual": false,
      "price": 2199.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:20Z",
+     "checked_at": "2026-11-14T11:23:16Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -3345,6 +3345,10 @@
     ],
     [
      "2026-11-13",
+     2199.99
+    ],
+    [
+     "2026-11-14",
      2199.99
     ]
    ]
@@ -6290,7 +6294,7 @@
      "manual": false,
      "price": 3699.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:17Z",
+     "checked_at": "2026-11-14T11:22:10Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -6357,6 +6361,10 @@
     ],
     [
      "2026-11-13",
+     3699.99
+    ],
+    [
+     "2026-11-14",
      3699.99
     ]
    ]
@@ -7166,7 +7174,7 @@
      "manual": false,
      "price": 4499.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:05Z",
+     "checked_at": "2026-11-14T11:23:06Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -7197,6 +7205,10 @@
     ],
     [
      "2026-11-13",
+     4499.99
+    ],
+    [
+     "2026-11-14",
      4499.99
     ]
    ]
@@ -7282,7 +7294,7 @@
      "manual": false,
      "price": 4799.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:41Z",
+     "checked_at": "2026-11-14T11:22:15Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -7349,6 +7361,10 @@
     ],
     [
      "2026-11-13",
+     4799.99
+    ],
+    [
+     "2026-11-14",
      4799.99
     ]
    ]
@@ -7627,7 +7643,7 @@
      "price": 3499.99,
      "regular": 3499.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:17Z",
+     "checked_at": "2026-11-14T11:23:33Z",
      "source": "www.razer.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -7694,6 +7710,10 @@
     ],
     [
      "2026-11-13",
+     3499.99
+    ],
+    [
+     "2026-11-14",
      3499.99
     ]
    ]
@@ -7770,7 +7790,7 @@
      "price": 3999.99,
      "regular": 3999.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:25Z",
+     "checked_at": "2026-11-14T11:22:30Z",
      "source": "www.razer.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -7837,6 +7857,10 @@
     ],
     [
      "2026-11-13",
+     3999.99
+    ],
+    [
+     "2026-11-14",
      3999.99
     ]
    ]
@@ -7993,7 +8017,7 @@
      "manual": false,
      "price": 1549.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:12Z",
+     "checked_at": "2026-11-14T11:23:29Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -8056,6 +8080,10 @@
     ],
     [
      "2026-11-13",
+     1549.99
+    ],
+    [
+     "2026-11-14",
      1549.99
     ]
    ]
@@ -8126,7 +8154,7 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:25Z",
+     "checked_at": "2026-11-14T11:23:24Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -8189,6 +8217,10 @@
     ],
     [
      "2026-11-13",
+     1799.99
+    ],
+    [
+     "2026-11-14",
      1799.99
     ]
    ]
@@ -8261,7 +8293,7 @@
      "manual": false,
      "price": 2399.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:47Z",
+     "checked_at": "2026-11-14T11:22:33Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -8324,6 +8356,10 @@
     ],
     [
      "2026-11-13",
+     2399.99
+    ],
+    [
+     "2026-11-14",
      2399.99
     ]
    ]
@@ -8394,7 +8430,7 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:24:08Z",
+     "checked_at": "2026-11-14T11:23:08Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -8457,6 +8493,10 @@
     ],
     [
      "2026-11-13",
+     1799.99
+    ],
+    [
+     "2026-11-14",
      1799.99
     ]
    ]
@@ -8525,7 +8565,7 @@
      "manual": false,
      "price": 2499.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:22:58Z",
+     "checked_at": "2026-11-14T11:23:12Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -8588,6 +8628,10 @@
     ],
     [
      "2026-11-13",
+     2499.99
+    ],
+    [
+     "2026-11-14",
      2499.99
     ]
    ]
@@ -8659,7 +8703,7 @@
      "manual": false,
      "price": 2499.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:10Z",
+     "checked_at": "2026-11-14T11:23:20Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -8722,6 +8766,10 @@
     ],
     [
      "2026-11-13",
+     2499.99
+    ],
+    [
+     "2026-11-14",
      2499.99
     ]
    ]
@@ -8799,7 +8847,7 @@
      "manual": false,
      "price": 3599.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:22:56Z",
+     "checked_at": "2026-11-14T11:22:08Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -8862,6 +8910,10 @@
     ],
     [
      "2026-11-13",
+     3599.99
+    ],
+    [
+     "2026-11-14",
      3599.99
     ]
    ]
@@ -8931,7 +8983,7 @@
      "manual": false,
      "price": 3299.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:00Z",
+     "checked_at": "2026-11-14T11:22:45Z",
      "source": "eshop.asus.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -8994,6 +9046,10 @@
     ],
     [
      "2026-11-13",
+     3299.99
+    ],
+    [
+     "2026-11-14",
      3299.99
     ]
    ]
@@ -9065,7 +9121,7 @@
      "manual": false,
      "price": 1649.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:55Z",
+     "checked_at": "2026-11-14T11:23:23Z",
      "source": "www.lenovo.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -9128,6 +9184,10 @@
     ],
     [
      "2026-11-13",
+     1649.99
+    ],
+    [
+     "2026-11-14",
      1649.99
     ]
    ]
@@ -9199,7 +9259,7 @@
      "manual": false,
      "price": 1599.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:24:03Z",
+     "checked_at": "2026-11-14T11:22:56Z",
      "source": "www.lenovo.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -9262,6 +9322,10 @@
     ],
     [
      "2026-11-13",
+     1599.99
+    ],
+    [
+     "2026-11-14",
      1599.99
     ]
    ]
@@ -9333,7 +9397,7 @@
      "manual": false,
      "price": 2249.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:57Z",
+     "checked_at": "2026-11-14T11:22:57Z",
      "source": "www.lenovo.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -9396,6 +9460,10 @@
     ],
     [
      "2026-11-13",
+     2249.99
+    ],
+    [
+     "2026-11-14",
      2249.99
     ]
    ]
@@ -9465,15 +9533,15 @@
      "sku": "83LU004WUS",
      "url": "https://www.lenovo.com/us/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5i-gen-10-16-inch-intel/83lu004wus",
      "manual": false,
-     "price": 1999.99,
+     "price": 2099.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:53Z",
+     "checked_at": "2026-11-14T11:22:36Z",
      "source": "www.lenovo.com product page",
      "stale": false,
      "verification_method": "retailer-html"
     }
    ],
-   "price": 1999.99,
+   "price": 2099.99,
    "price_retailer": "Lenovo.com",
    "price_status": "live",
    "regular": null,
@@ -9527,6 +9595,10 @@
     [
      "2026-11-13",
      1999.99
+    ],
+    [
+     "2026-11-14",
+     2099.99
     ]
    ]
   },
@@ -9599,7 +9671,7 @@
      "manual": false,
      "price": 1499.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:06Z",
+     "checked_at": "2026-11-14T11:22:41Z",
      "source": "www.lenovo.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -9662,6 +9734,10 @@
     ],
     [
      "2026-11-13",
+     1499.99
+    ],
+    [
+     "2026-11-14",
      1499.99
     ]
    ]
@@ -9735,7 +9811,7 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:40Z",
+     "checked_at": "2026-11-14T11:23:01Z",
      "source": "www.lenovo.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -9798,6 +9874,10 @@
     ],
     [
      "2026-11-13",
+     1799.99
+    ],
+    [
+     "2026-11-14",
      1799.99
     ]
    ]
@@ -9870,7 +9950,7 @@
      "manual": false,
      "price": 5094.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:16Z",
+     "checked_at": "2026-11-14T11:22:08Z",
      "source": "www.lenovo.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -9933,6 +10013,10 @@
     ],
     [
      "2026-11-13",
+     5094.99
+    ],
+    [
+     "2026-11-14",
      5094.99
     ]
    ]
@@ -10005,7 +10089,7 @@
      "manual": false,
      "price": 3999.99,
      "in_stock": true,
-     "checked_at": "2026-11-13T11:23:07Z",
+     "checked_at": "2026-11-14T11:22:36Z",
      "source": "www.lenovo.com product page",
      "stale": false,
      "verification_method": "retailer-html"
@@ -10068,6 +10152,10 @@
     ],
     [
      "2026-11-13",
+     3999.99
+    ],
+    [
+     "2026-11-14",
      3999.99
     ]
    ]
