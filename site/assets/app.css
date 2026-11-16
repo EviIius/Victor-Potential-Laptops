@@ -180,6 +180,9 @@ fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
 .lcard-config { color: var(--muted); font-size: 0.82rem; }
 .rank { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
 .price-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.asof { font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
+.asof.sm { font-size: 0.7rem; }
+.asof.is-old { color: var(--warn); }
 .price { font-family: var(--font-mono); font-weight: 600; font-size: 1.35rem; }
 .price.sm { font-size: 1rem; }
 .was { color: var(--muted); text-decoration: line-through; font-family: var(--font-mono); font-size: 0.85rem; }

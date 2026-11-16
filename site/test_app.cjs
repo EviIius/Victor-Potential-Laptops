@@ -122,6 +122,17 @@ check('a user-reported MSI quote never inherits a snapshot discount', () => {
   assert(!element('#deal-table').innerHTML.includes(l.id));
   app.load(data, ref);
 });
+check('every listed price carries its as-of time, and old ones say so', () => {
+  const sample = data.laptops.find(l => l.offers.some(o => o.checked_at && !o.manual));
+  const fresh = { ...sample, offers: sample.offers.map(o => ({ ...o, stale: false, verification_method: 'browser-rendered', checked_at: new Date().toISOString() })) };
+  app.load({ laptops: [fresh] }, ref);
+  assert.match(app.priceBlock(fresh), /as of /);
+  assert(!app.priceBlock(fresh).includes('check before buying'));
+  const old = { ...fresh, offers: fresh.offers.map(o => ({ ...o, checked_at: '2026-10-01T12:00:00Z' })) };
+  app.load({ laptops: [old] }, ref);
+  assert.match(app.priceBlock(old), /check before buying/);
+  app.load(data, ref);
+});
 check('browse rows support keyboard access and column headers expose sorting', () => {
   app.renderBrowse();
   assert(element('#browse-table tbody').innerHTML.includes('tabindex="0"'));

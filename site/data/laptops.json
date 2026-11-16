@@ -1,38 +1,42 @@
 {
- "generated_at": "2026-11-15T11:22:55Z",
- "prices_as_of": "2026-11-01T14:28:48Z",
+ "generated_at": "2026-11-16T01:31:23Z",
+ "prices_as_of": "2026-11-15T18:59:15.685Z",
  "scrape": {
-  "started": "2026-11-15T11:21:32Z",
-  "finished": "2026-11-15T11:22:55Z",
-  "mode": "live",
-  "runner": "github-actions",
-  "ok": 22,
-  "failed": 77,
+  "started": "2026-11-15T18:59:15.685Z",
+  "finished": "2026-11-16T01:31:23Z",
+  "mode": "manual",
+  "runner": "browser (manual update)",
+  "ok": 99,
+  "failed": 0,
   "tracked_offers": 100,
-  "prices_refreshed": 22,
-  "availability_only": 0,
-  "retailer_confirmed_prices": 22,
+  "prices_refreshed": 95,
+  "availability_only": 4,
+  "retailer_confirmed_prices": 95,
   "user_reported_prices": 0,
   "by_retailer": {
    "bestbuy": {
-    "ok": 0,
-    "failed": 76
+    "ok": 75,
+    "failed": 0
+   },
+   "asus": {
+    "ok": 13,
+    "failed": 0
    },
    "lenovo": {
     "ok": 8,
     "failed": 0
    },
-   "asus": {
-    "ok": 12,
-    "failed": 1
-   },
    "razer": {
     "ok": 2,
+    "failed": 0
+   },
+   "framework": {
+    "ok": 1,
     "failed": 0
    }
   },
   "notes": [
-   "www.bestbuy.com didn't answer this machine at all, most likely because it blocks automated traffic from cloud servers. Last known prices kept. Fix: run the scrape from a home connection (see README)."
+   "Every listing re-read live in a web browser on Nov 15, 2026 (Best Buy ~8:10 PM ET; ASUS Store and Lenovo.com rechecked ~8:30 PM ET; Razer ~2 PM ET)."
   ],
   "user_agent": "Mozilla/5.0 (compatible; VictorLaptopFinder/1.0; +https://github.com/EviIius/Victor-Potential-Laptops)",
   "api": false
@@ -102,24 +106,25 @@
      "url": "https://www.bestbuy.com/product/hp-victus-15-6-144hz-full-hd-gaming-laptop-amd-ryzen-7-7445hs-2023-16gb-memory-nvidia-geforce-rtx-4050-512gb-ssd-mica-silver/JJGH2L8JVV",
      "manual": false,
      "price": 949.99,
-     "regular": 1474.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/hp-victus-15-6-144hz-full-hd-gaming-laptop-amd-ryzen-7-7445hs-2023-16gb-memory-nvidia-geforce-rtx-4050-512gb-ssd-mica-silver/JJGH2L8JVV",
-     "verified_sku": "6623881",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "open_box": 815.99,
+     "rating": 4.7,
+     "reviews": 1481,
+     "checked_at": "2026-11-16T01:09:53Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:00:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
    "price": 949.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 1474.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.7,
+   "reviews": 1481,
    "history": [
     [
      "2026-10-31",
@@ -128,6 +133,10 @@
     [
      "2026-11-01",
      849.99
+    ],
+    [
+     "2026-11-16",
+     949.99
     ]
    ]
   },
@@ -194,26 +203,26 @@
      "sku": "6672944",
      "url": "https://www.bestbuy.com/product/hp-victus-15-6-full-hd-gaming-laptop-amd-ryzen-5-7535hs-2023-8gb-ddr5-memory-nvidia-geforce-rtx-3050-512gb-ssd-mica-silver/J3YH84TCPC",
      "manual": false,
-     "price": 889.99,
-     "regular": 1249.99,
+     "price": 974.99,
      "in_stock": true,
-     "open_box": 724.99,
+     "open_box": 833.99,
      "rating": 4.2,
-     "reviews": 44,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "reviews": 45,
+     "checked_at": "2026-11-16T01:09:59Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:00:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
-   "price": 889.99,
+   "price": 974.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 1249.99,
+   "price_status": "live",
+   "regular": null,
    "rating": 4.2,
-   "reviews": 44,
+   "reviews": 45,
    "history": [
     [
      "2026-10-31",
@@ -222,6 +231,10 @@
     [
      "2026-11-01",
      889.99
+    ],
+    [
+     "2026-11-16",
+     974.99
     ]
    ]
   },
@@ -298,22 +311,21 @@
      "manual": false,
      "price": 1249.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-v16-16-2k-gaming-laptop-intel-core-5-processor-210h-with-nvidia-geforce-rtx-3050-8gb-memory-512gb-ssd-black/JJGHGS624Z",
-     "verified_sku": "6683981",
-     "verification_method": "page-reader",
+     "rating": 4,
+     "reviews": 21,
+     "checked_at": "2026-11-16T01:10:05Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1249.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4,
+   "reviews": 21,
    "history": [
     [
      "2026-10-31",
@@ -322,6 +334,10 @@
     [
      "2026-11-01",
      899.99
+    ],
+    [
+     "2026-11-16",
+     1249.99
     ]
    ]
   },
@@ -392,27 +408,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6675841",
-     "url": "https://www.bestbuy.com/product/acer-nitro-v-16-wuxga-165hz-gaming-laptop-intel-core-7-240h-2024-nvidia-geforce-rtx-5050-16gb-memory-512gb-storage-obsidian-black/6675841",
+     "url": "https://www.bestbuy.com/product/acer-nitro-v-16-wuxga-165hz-gaming-laptop-intel-core-7-240h-2024-nvidia-geforce-rtx-5050-16gb-memory-512gb-storage-obsidian-black/JJ8V8HYVHP",
      "manual": false,
      "price": 1404.99,
-     "regular": 1699.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/acer-nitro-v-16-wuxga-165hz-gaming-laptop-intel-core-7-240h-2024-nvidia-geforce-rtx-5050-16gb-memory-512gb-storage-obsidian-black/6675841",
-     "verified_sku": "6675841",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 1339,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.8,
+     "reviews": 80,
+     "checked_at": "2026-11-16T01:10:11Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1404.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 1699.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.8,
+   "reviews": 80,
    "history": [
     [
      "2026-10-31",
@@ -421,6 +439,10 @@
     [
      "2026-11-01",
      999.99
+    ],
+    [
+     "2026-11-16",
+     1404.99
     ]
    ]
   },
@@ -488,26 +510,27 @@
      "sku": "6678996",
      "url": "https://www.bestbuy.com/product/alienware-15-3-2k-gaming-laptop-intel-core-7-series-2-240h-2026-16gb-memory-nvidia-geforce-rtx-4050-6gb-512gb-storage-black/J3K4L6QK9F",
      "manual": false,
-     "price": 1049.99,
-     "regular": 1599.99,
+     "price": 1599.99,
      "in_stock": true,
-     "open_box": 891.99,
+     "marketplace": {
+      "price": 1339.05,
+      "seller": "CompVoy"
+     },
      "rating": 4.3,
-     "reviews": 49,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "reviews": 54,
+     "checked_at": "2026-11-16T01:10:18Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 1049.99,
+   "price": 1599.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 1599.99,
+   "price_status": "live",
+   "regular": null,
    "rating": 4.3,
-   "reviews": 49,
+   "reviews": 54,
    "history": [
     [
      "2026-10-31",
@@ -516,6 +539,10 @@
     [
      "2026-11-01",
      1049.99
+    ],
+    [
+     "2026-11-16",
+     1599.99
     ]
    ]
   },
@@ -585,24 +612,25 @@
      "url": "https://www.bestbuy.com/product/gigabyte-gaming-a16-16-165hz-1920x1200-wuxga-intel-core-i7-13620h-512gb-ssd-16gb-ddr5-ram-geforce-rtx-4050-black-steel/J3GWPQCCVJ",
      "manual": false,
      "price": 1029.99,
-     "regular": 1089.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/gigabyte-gaming-a16-16-165hz-1920x1200-wuxga-intel-core-i7-13620h-512gb-ssd-16gb-ddr5-ram-geforce-rtx-4050-black-steel/J3GWPQCCVJ",
-     "verified_sku": "6632144",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "open_box": 935.99,
+     "rating": 4.5,
+     "reviews": 125,
+     "checked_at": "2026-11-16T01:10:25Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:00:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
    "price": 1029.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 1089.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.5,
+   "reviews": 125,
    "history": [
     [
      "2026-10-31",
@@ -611,6 +639,10 @@
     [
      "2026-11-01",
      1089.99
+    ],
+    [
+     "2026-11-16",
+     1029.99
     ]
    ]
   },
@@ -676,27 +708,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6674559",
-     "url": "https://www.bestbuy.com/product/alienware-15-3-2k-gaming-laptop-amd-ryzen-200-series-r7-260-2026-16gb-memory-nvidia-geforce-rtx-5050-8gb-1tb-storage-black/6674559",
+     "url": "https://www.bestbuy.com/product/alienware-15-3-2k-gaming-laptop-amd-ryzen-200-series-r7-260-2026-16gb-memory-nvidia-geforce-rtx-5050-8gb-1tb-storage-black/J3K4L6QR6V",
      "manual": false,
-     "price": 1199.99,
-     "regular": 1924.99,
+     "price": 1924.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/alienware-15-3-2k-gaming-laptop-amd-ryzen-200-series-r7-260-2026-16gb-memory-nvidia-geforce-rtx-5050-8gb-1tb-storage-black/6674559",
-     "verified_sku": "6674559",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 1579,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.6,
+     "reviews": 51,
+     "checked_at": "2026-11-16T01:10:31Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 1199.99,
+   "price": 1924.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 1924.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.6,
+   "reviews": 51,
    "history": [
     [
      "2026-10-31",
@@ -705,6 +739,10 @@
     [
      "2026-11-01",
      1239.99
+    ],
+    [
+     "2026-11-16",
+     1924.99
     ]
    ]
   },
@@ -769,26 +807,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6673554",
-     "url": "https://www.bestbuy.com/product/lenovo-loq-15-6-2k-gaming-laptop-amd-ryzen-7-170-2025-16gb-memory-nvidia-geforce-rtx-4050-512gb-storage-luna-grey/6673554",
+     "url": "https://www.bestbuy.com/product/lenovo-loq-15-6-2k-gaming-laptop-amd-ryzen-7-170-2025-16gb-memory-nvidia-geforce-rtx-4050-512gb-storage-luna-grey/JJGH3Q67WX",
      "manual": false,
      "price": 1324.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/lenovo-loq-15-6-2k-gaming-laptop-amd-ryzen-7-170-2025-16gb-memory-nvidia-geforce-rtx-4050-512gb-storage-luna-grey/6673554",
-     "verified_sku": "6673554",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 1199,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.9,
+     "reviews": 22,
+     "checked_at": "2026-11-16T01:10:42Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1324.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.9,
+   "reviews": 22,
    "history": [
     [
      "2026-10-31",
@@ -796,6 +837,10 @@
     ],
     [
      "2026-11-01",
+     1324.99
+    ],
+    [
+     "2026-11-16",
      1324.99
     ]
    ]
@@ -867,22 +912,22 @@
      "manual": false,
      "price": 1299.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/gigabyte-gaming-a16-16-165hz-1920x1200-wuxga-intel-core-i7-13620h-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5060-black-steel/J3GWPQC2TJ",
-     "verified_sku": "6632143",
-     "verification_method": "page-reader",
+     "open_box": 1181.99,
+     "rating": 4.5,
+     "reviews": 137,
+     "checked_at": "2026-11-16T01:10:44Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1299.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.5,
+   "reviews": 137,
    "history": [
     [
      "2026-10-31",
@@ -890,6 +935,10 @@
     ],
     [
      "2026-11-01",
+     1299.99
+    ],
+    [
+     "2026-11-16",
      1299.99
     ]
    ]
@@ -954,27 +1003,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6635752",
-     "url": "https://www.bestbuy.com/product/gigabyte-aero-x16-copilot-pc-16-25601600-wqxga-amd-ryzen-al-7-350-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5060-space-gray/6635752",
+     "url": "https://www.bestbuy.com/product/gigabyte-aero-x16-copilot-pc-16-25601600-wqxga-amd-ryzen-al-7-350-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5060-space-gray/J3GWPQCXYT",
      "manual": false,
-     "price": 1224.99,
-     "regular": 1299.99,
+     "price": 1299.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/gigabyte-aero-x16-copilot-pc-16-25601600-wqxga-amd-ryzen-al-7-350-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5060-space-gray/6635752",
-     "verified_sku": "6635752",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 1511.5,
+      "seller": "CompVoy"
+     },
+     "rating": 4.6,
+     "reviews": 255,
+     "checked_at": "2026-11-16T01:10:47Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 1224.99,
+   "price": 1299.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 1299.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.6,
+   "reviews": 255,
    "history": [
     [
      "2026-10-31",
@@ -982,6 +1033,10 @@
     ],
     [
      "2026-11-01",
+     1299.99
+    ],
+    [
+     "2026-11-16",
      1299.99
     ]
    ]
@@ -1059,22 +1114,21 @@
      "manual": false,
      "price": 1649.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-v16-16-2k-gaming-laptop-intel-core-7-processor-240h-with-nvidia-geforce-rtx-5050-8gb-memory-512gb-ssd-black/JJGHGSRLH6",
-     "verified_sku": "6683982",
-     "verification_method": "page-reader",
+     "rating": 3.5,
+     "reviews": 23,
+     "checked_at": "2026-11-16T01:10:49Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1649.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 3.5,
+   "reviews": 23,
    "history": [
     [
      "2026-10-31",
@@ -1083,6 +1137,10 @@
     [
      "2026-11-01",
      1299.99
+    ],
+    [
+     "2026-11-16",
+     1649.99
     ]
    ]
   },
@@ -1152,19 +1210,16 @@
      "manual": false,
      "price": 1399.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/msi-cyborg-15-max-15-6-2k-144hz-fhd-gaming-laptop-intel-i7-13620h-geforce-rtx-5070-16gb-memory-512gb-storage-platinum-gray/J3P7TXWQKL",
-     "verified_sku": "6690923",
-     "verification_method": "page-reader",
+     "checked_at": "2026-11-16T01:10:51Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1399.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -1175,6 +1230,10 @@
     ],
     [
      "2026-11-01",
+     1399.99
+    ],
+    [
+     "2026-11-16",
      1399.99
     ]
    ]
@@ -1242,21 +1301,20 @@
      "sku": "6691123",
      "url": "https://www.bestbuy.com/product/lenovo-loq-essential-15-3-2k-gaming-laptop-intel-core-ultra-x7-358h-2026-16gb-ram-intel-arc-b390-512gb-storage-luna-grey/J3PT7WJ74H",
      "manual": false,
-     "price": 1449.99,
+     "price": 849.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/lenovo-loq-essential-15-3-2k-gaming-laptop-intel-core-ultra-x7-358h-2026-16gb-ram-intel-arc-b390-512gb-storage-luna-grey/J3PT7WJ74H",
-     "verified_sku": "6691123",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "checked_at": "2026-11-16T01:10:52Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:05:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
-   "price": 1449.99,
+   "price": 849.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -1268,6 +1326,10 @@
     [
      "2026-11-01",
      1449.99
+    ],
+    [
+     "2026-11-16",
+     849.99
     ]
    ]
   },
@@ -1335,22 +1397,25 @@
      "manual": false,
      "price": 1499.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/gigabyte-aero-x16-copilot-pc-16-25601600-wqxga-amd-ryzen-al-7-350-1tb-ssd-32gb-ddr5-ram-geforce-rtx-5070-space-gray/J3GWPQCCFK",
-     "verified_sku": "6632266",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 1685.6,
+      "seller": "CompVoy"
+     },
+     "rating": 4.6,
+     "reviews": 352,
+     "checked_at": "2026-11-16T01:10:53Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1499.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.6,
+   "reviews": 352,
    "history": [
     [
      "2026-10-31",
@@ -1358,6 +1423,10 @@
     ],
     [
      "2026-11-01",
+     1499.99
+    ],
+    [
+     "2026-11-16",
      1499.99
     ]
    ]
@@ -1426,23 +1495,23 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6673588",
-     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-f16-16-144hz-fhd-gaming-laptop-intel-core-i7-14650hx-2024-16gb-memory-geforce-rtx-5060-512gb-storage-jaegar-gray/6673588",
+     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-f16-16-144hz-fhd-gaming-laptop-intel-core-i7-14650hx-2024-16gb-memory-geforce-rtx-5060-512gb-storage-jaegar-gray/JJGHGSJ7WR",
      "manual": false,
-     "price": 1989.99,
-     "in_stock": true,
+     "in_stock": false,
      "checked_at": "2026-11-11T16:29:13Z",
      "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-tuf-gaming-f16-16-144hz-fhd-gaming-laptop-intel-core-i7-14650hx-2024-16gb-memory-geforce-rtx-5060-512gb-storage-jaegar-gray/6673588",
-     "verified_sku": "6673588",
      "verification_method": "page-reader",
-     "on_sale": false,
+     "note": "Best Buy has removed this product page (not found)",
      "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "price": 1989.99,
+     "availability_checked_at": "2026-11-16T01:10:45Z",
+     "error": "Page-reader snapshot; the live purchase price has not been confirmed.",
+     "on_sale": false
     }
    ],
    "price": 1989.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "unavailable",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -1523,25 +1592,24 @@
      "price": 1499.99,
      "in_stock": true,
      "marketplace": {
-      "price": 1229,
+      "price": 1299,
       "seller": "PC Heaven"
      },
      "rating": 4.7,
-     "reviews": 64,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "reviews": 71,
+     "checked_at": "2026-11-16T01:10:58Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1499.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": 4.7,
-   "reviews": 64,
+   "reviews": 71,
    "history": [
     [
      "2026-10-31",
@@ -1549,6 +1617,10 @@
     ],
     [
      "2026-11-01",
+     1499.99
+    ],
+    [
+     "2026-11-16",
      1499.99
     ]
    ]
@@ -1617,26 +1689,27 @@
      "sku": "6677954",
      "url": "https://www.bestbuy.com/product/msi-crosshair-a16-hx-16-2-5k-qhd-240hz-gaming-laptop-amd-r9-8940hx-nvidia-geforce-rtx-5060-16gb-memory-1tb-storage-cosmo-gray/J3P7TXHLF6",
      "manual": false,
-     "price": 1574.99,
-     "regular": 1899.99,
+     "price": 1899.99,
      "in_stock": true,
-     "open_box": 1360.99,
-     "rating": 4.8,
-     "reviews": 4,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 1749,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.1,
+     "reviews": 8,
+     "checked_at": "2026-11-16T01:11:00Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 1574.99,
+   "price": 1899.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 1899.99,
-   "rating": 4.8,
-   "reviews": 4,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.1,
+   "reviews": 8,
    "history": [
     [
      "2026-10-31",
@@ -1645,6 +1718,10 @@
     [
      "2026-11-01",
      1574.99
+    ],
+    [
+     "2026-11-16",
+     1899.99
     ]
    ]
   },
@@ -1713,26 +1790,24 @@
      "sku": "6672948",
      "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-7-8745hx-2025-16gb-ram-nvidia-geforce-rtx-5060-512gb-ssd-shadow-black/J3YH84FZT9",
      "manual": false,
-     "price": 1599.99,
-     "regular": 2149.99,
+     "price": 2149.99,
      "in_stock": true,
-     "open_box": 1271.99,
-     "rating": 4.8,
-     "reviews": 40,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "open_box": 1623.99,
+     "rating": 4.7,
+     "reviews": 42,
+     "checked_at": "2026-11-16T01:11:03Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 1599.99,
+   "price": 2149.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 2149.99,
-   "rating": 4.8,
-   "reviews": 40,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.7,
+   "reviews": 42,
    "history": [
     [
      "2026-10-31",
@@ -1741,6 +1816,10 @@
     [
      "2026-11-01",
      1599.99
+    ],
+    [
+     "2026-11-16",
+     2149.99
     ]
    ]
   },
@@ -1806,26 +1885,26 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6673585",
-     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-a16-16-165hz-fhd-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-geforce-rtx-5070-512gb-storage-jaegar-gray/6673585",
+     "url": "https://www.bestbuy.com/product/asus-tuf-gaming-a16-16-165hz-fhd-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-geforce-rtx-5070-512gb-storage-jaegar-gray/JJGHGSXCV8",
      "manual": false,
      "price": 2224.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-tuf-gaming-a16-16-165hz-fhd-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-geforce-rtx-5070-512gb-storage-jaegar-gray/6673585",
-     "verified_sku": "6673585",
-     "verification_method": "page-reader",
+     "open_box": 1781.99,
+     "rating": 4.5,
+     "reviews": 50,
+     "checked_at": "2026-11-16T01:11:06Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2224.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.5,
+   "reviews": 50,
    "history": [
     [
      "2026-10-31",
@@ -1834,6 +1913,10 @@
     [
      "2026-11-01",
      1599.99
+    ],
+    [
+     "2026-11-16",
+     2224.99
     ]
    ]
   },
@@ -1900,26 +1983,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6672942",
-     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/6672942",
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/JJGWKSG2SQ",
      "manual": false,
      "price": 2299.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/6672942",
-     "verified_sku": "6672942",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 1819.99,
+      "seller": "Velztorm"
+     },
+     "rating": 4.7,
+     "reviews": 74,
+     "checked_at": "2026-11-16T01:11:08Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2299.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.7,
+   "reviews": 74,
    "history": [
     [
      "2026-10-31",
@@ -1928,6 +2014,10 @@
     [
      "2026-11-01",
      1649.99
+    ],
+    [
+     "2026-11-16",
+     2299.99
     ]
    ]
   },
@@ -2005,26 +2095,26 @@
      "sku": "6675559",
      "url": "https://www.bestbuy.com/product/alienware-16x-aurora-16-3k-oled-gaming-laptop-intel-core-ultra-7-series-2-2026-16gb-memory-nvidia-geforce-rtx-5060-512gb-storage-blue/J3K4L6QQ9T",
      "manual": false,
-     "price": 1699.99,
-     "regular": 2574.99,
+     "price": 1749.99,
      "in_stock": true,
-     "open_box": 1518.99,
-     "rating": 5.0,
-     "reviews": 2,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "open_box": 1499.99,
+     "rating": 4.6,
+     "reviews": 5,
+     "checked_at": "2026-11-16T01:11:09Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:45:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
-   "price": 1699.99,
+   "price": 1749.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 2574.99,
-   "rating": 5.0,
-   "reviews": 2,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.6,
+   "reviews": 5,
    "history": [
     [
      "2026-10-31",
@@ -2033,6 +2123,10 @@
     [
      "2026-11-01",
      1699.99
+    ],
+    [
+     "2026-11-16",
+     1749.99
     ]
    ]
   },
@@ -2109,21 +2203,20 @@
      "in_stock": true,
      "open_box": 1635.99,
      "rating": 4.5,
-     "reviews": 35,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "reviews": 38,
+     "checked_at": "2026-11-16T01:11:11Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1799.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": 4.5,
-   "reviews": 35,
+   "reviews": 38,
    "history": [
     [
      "2026-10-31",
@@ -2131,6 +2224,10 @@
     ],
     [
      "2026-11-01",
+     1799.99
+    ],
+    [
+     "2026-11-16",
      1799.99
     ]
    ]
@@ -2202,22 +2299,22 @@
      "manual": false,
      "price": 2499.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/hp-omen-transcend-14-120hz-3k-oled-gaming-laptop-intel-core-ultra-7-2025-16gb-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/J3YH845WJT",
-     "verified_sku": "6672941",
-     "verification_method": "page-reader",
+     "open_box": 1565.99,
+     "rating": 4.8,
+     "reviews": 37,
+     "checked_at": "2026-11-16T01:11:14Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2499.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.8,
+   "reviews": 37,
    "history": [
     [
      "2026-10-31",
@@ -2226,6 +2323,10 @@
     [
      "2026-11-01",
      1849.99
+    ],
+    [
+     "2026-11-16",
+     2499.99
     ]
    ]
   },
@@ -2295,25 +2396,24 @@
      "price": 1849.99,
      "in_stock": true,
      "marketplace": {
-      "price": 1369.0,
+      "price": 1369,
       "seller": "PC Heaven"
      },
-     "rating": 4.6,
-     "reviews": 37,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "rating": 4.5,
+     "reviews": 45,
+     "checked_at": "2026-11-16T01:11:15Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1849.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": 4.6,
-   "reviews": 37,
+   "rating": 4.5,
+   "reviews": 45,
    "history": [
     [
      "2026-10-31",
@@ -2321,6 +2421,10 @@
     ],
     [
      "2026-11-01",
+     1849.99
+    ],
+    [
+     "2026-11-16",
      1849.99
     ]
    ]
@@ -2392,17 +2496,16 @@
      "manual": false,
      "price": 1889.99,
      "in_stock": true,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "checked_at": "2026-11-16T01:11:18Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 1889.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -2413,6 +2516,10 @@
     ],
     [
      "2026-11-01",
+     1889.99
+    ],
+    [
+     "2026-11-16",
      1889.99
     ]
    ]
@@ -2481,27 +2588,26 @@
      "sku": "6635275",
      "url": "https://www.bestbuy.com/product/asus-rog-strix-g16-16-fhd-165hz-gaming-laptop-intel-core-i9-hx-16gb-ram-nvidia-geforce-rtx-5060-1tb-ssd-eclipse-gray/JJGGLHJPZS",
      "manual": false,
-     "price": 1914.99,
+     "price": 2199.99,
      "in_stock": true,
      "marketplace": {
       "price": 1899.99,
       "seller": "Electronic Express"
      },
-     "rating": 5.0,
+     "rating": 5,
      "reviews": 6,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "checked_at": "2026-11-16T01:11:20Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 1914.99,
+   "price": 2199.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": 5.0,
+   "rating": 5,
    "reviews": 6,
    "history": [
     [
@@ -2511,6 +2617,10 @@
     [
      "2026-11-01",
      1914.99
+    ],
+    [
+     "2026-11-16",
+     2199.99
     ]
    ]
   },
@@ -2588,26 +2698,24 @@
      "sku": "6678048",
      "url": "https://www.bestbuy.com/product/alienware-16x-aurora-16-3k-oled-gaming-laptop-intel-core-ultra-9-series-2-2026-16gb-memory-nvidia-geforce-rtx-5070-1tb-storage-blue/J3K4L6QQ97",
      "manual": false,
-     "price": 1949.99,
-     "regular": 2899.99,
-     "in_stock": false,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "evidence_url": "https://www.bestbuy.com/product/alienware-16x-aurora-16-3k-oled-gaming-laptop-intel-core-ultra-9-series-2-2026-16gb-memory-nvidia-geforce-rtx-5070-1tb-storage-blue/J3K4L6QQ97",
-     "verified_sku": "6678048",
-     "availability_checked_at": "2026-11-11T16:29:13Z",
-     "verification_method": "page-reader",
+     "price": 2899.99,
+     "in_stock": true,
+     "open_box": 2414.99,
+     "rating": 5,
+     "reviews": 15,
+     "checked_at": "2026-11-16T01:11:23Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 1949.99,
+   "price": 2899.99,
    "price_retailer": "Best Buy",
-   "price_status": "unavailable",
-   "regular": 2899.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 5,
+   "reviews": 15,
    "history": [
     [
      "2026-10-31",
@@ -2616,6 +2724,10 @@
     [
      "2026-11-01",
      1949.99
+    ],
+    [
+     "2026-11-16",
+     2899.99
     ]
    ]
   },
@@ -2684,26 +2796,27 @@
      "sku": "6675843",
      "url": "https://www.bestbuy.com/product/acer-predator-triton-14-5-3k-oled-gaming-laptop-intel-core-ultra-9-288v-2024-rtx-5070-32gb-memory-1tb-storage-charcoal-black/JJ8V8HGJPC",
      "manual": false,
-     "price": 1999.99,
-     "regular": 2799.99,
+     "price": 3099.99,
      "in_stock": true,
-     "open_box": 1711.99,
-     "rating": 4.7,
-     "reviews": 12,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 2679,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.6,
+     "reviews": 14,
+     "checked_at": "2026-11-16T01:11:26Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 1999.99,
+   "price": 3099.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 2799.99,
-   "rating": 4.7,
-   "reviews": 12,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.6,
+   "reviews": 14,
    "history": [
     [
      "2026-10-31",
@@ -2712,6 +2825,10 @@
     [
      "2026-11-01",
      1999.99
+    ],
+    [
+     "2026-11-16",
+     3099.99
     ]
    ]
   },
@@ -2778,26 +2895,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6672947",
-     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2k-gaming-laptop-intel-core-ultra-7-356h-2026-16gb-memory-nvidia-geforce-rtx-5060-512gb-ssd-shadow-black/6672947",
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2k-gaming-laptop-intel-core-ultra-7-356h-2026-16gb-memory-nvidia-geforce-rtx-5060-512gb-ssd-shadow-black/JJGWKS75YF",
      "manual": false,
      "price": 2099.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2k-gaming-laptop-intel-core-ultra-7-356h-2026-16gb-memory-nvidia-geforce-rtx-5060-512gb-ssd-shadow-black/6672947",
-     "verified_sku": "6672947",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 1599,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.5,
+     "reviews": 31,
+     "checked_at": "2026-11-16T01:11:28Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2099.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.5,
+   "reviews": 31,
    "history": [
     [
      "2026-10-31",
@@ -2805,6 +2925,10 @@
     ],
     [
      "2026-11-01",
+     2099.99
+    ],
+    [
+     "2026-11-16",
      2099.99
     ]
    ]
@@ -2872,30 +2996,31 @@
      "sku": "6619034",
      "url": "https://www.bestbuy.com/product/asus-rog-flow-z13-13-4-2-5k-180hz-touch-screen-gaming-laptop-copilot-pc-amd-ryzen-ai-max-395-32gb-ram-1tb-ssd-off-black/JJGGLHJ9PJ",
      "manual": false,
-     "price": 2030.99,
-     "regular": 2399.99,
-     "in_stock": true,
-     "open_box": 1563.99,
+     "in_stock": false,
      "marketplace": {
       "price": 2299.99,
       "seller": "Velztorm"
      },
      "rating": 4.8,
-     "reviews": 28,
+     "reviews": 30,
      "checked_at": "2026-11-01T14:28:48Z",
      "source": "Best Buy product page (browser check)",
      "verification_method": "page-reader",
-     "on_sale": false,
+     "note": "No new unit sold by Best Buy itself; only marketplace sellers",
      "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "price": 2030.99,
+     "regular": 2399.99,
+     "availability_checked_at": "2026-11-16T01:11:32Z",
+     "error": "Page-reader snapshot; the live purchase price has not been confirmed.",
+     "on_sale": false
     }
    ],
    "price": 2030.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "unavailable",
    "regular": 2399.99,
    "rating": 4.8,
-   "reviews": 28,
+   "reviews": 30,
    "history": [
     [
      "2026-10-31",
@@ -2976,21 +3101,20 @@
      "in_stock": true,
      "open_box": 1908.99,
      "rating": 4.8,
-     "reviews": 10,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "reviews": 11,
+     "checked_at": "2026-11-16T01:11:35Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2099.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": 4.8,
-   "reviews": 10,
+   "reviews": 11,
    "history": [
     [
      "2026-10-31",
@@ -2998,6 +3122,10 @@
     ],
     [
      "2026-11-01",
+     2099.99
+    ],
+    [
+     "2026-11-16",
      2099.99
     ]
    ]
@@ -3069,22 +3197,22 @@
      "manual": false,
      "price": 2149.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-2-5k-oled-240hz-gaming-laptop-intel-core-ultra-9-285h-16gb-memory-rtx-5070-1tb-storage-eclipse-gray/JJGGLHJXQK",
-     "verified_sku": "6613961",
-     "verification_method": "page-reader",
+     "open_box": 1366.99,
+     "rating": 4.6,
+     "reviews": 324,
+     "checked_at": "2026-11-16T01:11:39Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2149.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.6,
+   "reviews": 324,
    "history": [
     [
      "2026-10-31",
@@ -3092,6 +3220,10 @@
     ],
     [
      "2026-11-01",
+     2149.99
+    ],
+    [
+     "2026-11-16",
      2149.99
     ]
    ]
@@ -3161,21 +3293,23 @@
      "sku": "6691126",
      "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-3k-gaming-laptop-intel-core-ultra-7-251hx-2026-24gb-ram-nvidia-geforce-rtx-5070-512gb-storage-eclipse-black/J3PTJ57X2K",
      "manual": false,
-     "price": 2199.99,
-     "regular": 2539.99,
+     "price": 2539.99,
      "in_stock": true,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 2349,
+      "seller": "PC Heaven"
+     },
+     "checked_at": "2026-11-16T01:11:41Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 2199.99,
+   "price": 2539.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 2539.99,
+   "price_status": "live",
+   "regular": null,
    "rating": null,
    "reviews": null,
    "history": [
@@ -3186,6 +3320,10 @@
     [
      "2026-11-01",
      2199.99
+    ],
+    [
+     "2026-11-16",
+     2539.99
     ]
    ]
   },
@@ -3256,19 +3394,17 @@
      "manual": false,
      "price": 2199.99,
      "in_stock": true,
-     "open_box": 2023.99,
      "marketplace": {
-      "price": 2199.99,
-      "seller": "Adorama"
+      "price": 2149,
+      "seller": "Fulfillio"
      },
      "rating": 4.5,
      "reviews": 2,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "checked_at": "2026-11-16T01:11:45Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     },
     {
      "retailer": "asus",
@@ -3278,14 +3414,15 @@
      "manual": false,
      "price": 2199.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:31Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:30:54.022Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 2199.99,
-   "price_retailer": "ASUS Store",
+   "price_retailer": "Best Buy",
    "price_status": "live",
    "regular": null,
    "rating": 4.5,
@@ -3353,6 +3490,10 @@
     ],
     [
      "2026-11-15",
+     2199.99
+    ],
+    [
+     "2026-11-16",
      2199.99
     ]
    ]
@@ -3428,21 +3569,22 @@
       "seller": "Velztorm"
      },
      "rating": 4.6,
-     "reviews": 172,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "reviews": 179,
+     "checked_at": "2026-11-16T01:11:47Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:00:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
    "price": 2249.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": 4.6,
-   "reviews": 172,
+   "reviews": 179,
    "history": [
     [
      "2026-10-31",
@@ -3450,6 +3592,10 @@
     ],
     [
      "2026-11-01",
+     2249.99
+    ],
+    [
+     "2026-11-16",
      2249.99
     ]
    ]
@@ -3516,26 +3662,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6613956",
-     "url": "https://www.bestbuy.com/product/asus-rog-strix-g16-16-fhd-165hz-gaming-laptop-amd-ryzen-9-8940hx-16gb-memory-geforce-rtx-5070-ti-1tb-storage-eclipse-gray/6613956",
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-g16-16-fhd-165hz-gaming-laptop-amd-ryzen-9-8940hx-16gb-memory-geforce-rtx-5070-ti-1tb-storage-eclipse-gray/JJGGLHJLTS",
      "manual": false,
      "price": 2299.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-strix-g16-16-fhd-165hz-gaming-laptop-amd-ryzen-9-8940hx-16gb-memory-geforce-rtx-5070-ti-1tb-storage-eclipse-gray/6613956",
-     "verified_sku": "6613956",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 2209.99,
+      "seller": "Velztorm"
+     },
+     "rating": 4.6,
+     "reviews": 501,
+     "checked_at": "2026-11-16T01:11:51Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2299.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.6,
+   "reviews": 501,
    "history": [
     [
      "2026-10-31",
@@ -3543,6 +3692,10 @@
     ],
     [
      "2026-11-01",
+     2299.99
+    ],
+    [
+     "2026-11-16",
      2299.99
     ]
    ]
@@ -3615,25 +3768,24 @@
      "price": 2299.99,
      "in_stock": true,
      "marketplace": {
-      "price": 2039.0,
+      "price": 2019,
       "seller": "PC Heaven"
      },
      "rating": 4.4,
-     "reviews": 497,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "reviews": 503,
+     "checked_at": "2026-11-16T01:11:54Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2299.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": 4.4,
-   "reviews": 497,
+   "reviews": 503,
    "history": [
     [
      "2026-10-31",
@@ -3641,6 +3793,10 @@
     ],
     [
      "2026-11-01",
+     2299.99
+    ],
+    [
+     "2026-11-16",
      2299.99
     ]
    ]
@@ -3713,25 +3869,24 @@
      "price": 2649.99,
      "in_stock": true,
      "marketplace": {
-      "price": 2349.0,
+      "price": 2349,
       "seller": "PC Heaven"
      },
-     "rating": 5.0,
-     "reviews": 6,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "rating": 5,
+     "reviews": 9,
+     "checked_at": "2026-11-16T01:11:56Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2649.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": 5.0,
-   "reviews": 6,
+   "rating": 5,
+   "reviews": 9,
    "history": [
     [
      "2026-10-31",
@@ -3739,6 +3894,10 @@
     ],
     [
      "2026-11-01",
+     2649.99
+    ],
+    [
+     "2026-11-16",
      2649.99
     ]
    ]
@@ -3804,26 +3963,28 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6619196",
-     "url": "https://www.bestbuy.com/product/asus-rog-flow-z13-13-4-2-5k-180hz-touch-screen-gaming-laptop-copilot-pc-amd-ryzen-ai-max-395-64gb-memory-1tb-storage-off-black/6619196",
+     "url": "https://www.bestbuy.com/product/asus-rog-flow-z13-13-4-2-5k-180hz-touch-screen-gaming-laptop-copilot-pc-amd-ryzen-ai-max-395-64gb-memory-1tb-storage-off-black/JJGGLHG8X9",
      "manual": false,
-     "price": 2999.99,
+     "price": 2419.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-flow-z13-13-4-2-5k-180hz-touch-screen-gaming-laptop-copilot-pc-amd-ryzen-ai-max-395-64gb-memory-1tb-storage-off-black/6619196",
-     "verified_sku": "6619196",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "open_box": 1719.99,
+     "rating": 4.5,
+     "reviews": 289,
+     "checked_at": "2026-11-16T01:11:59Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:00:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
-   "price": 2999.99,
+   "price": 2419.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.5,
+   "reviews": 289,
    "history": [
     [
      "2026-10-31",
@@ -3831,6 +3992,10 @@
     ],
     [
      "2026-11-01",
+     2419.99
+    ],
+    [
+     "2026-11-16",
      2419.99
     ]
    ]
@@ -3899,26 +4064,24 @@
      "sku": "6670610",
      "url": "https://www.bestbuy.com/product/msi-stealth-16-ai-16-2-5k-240hz-oled-gaming-laptop-intel-core-u9-386h-nvidia-geforce-rtx-5060-32gb-memory-1tb-storage-charcoal-black/J3P7TXTXHQ",
      "manual": false,
-     "price": 2449.99,
-     "regular": 2699.99,
+     "price": 2699.99,
      "in_stock": true,
-     "open_box": 2097.99,
-     "rating": 5.0,
-     "reviews": 14,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "open_box": 2134.99,
+     "rating": 5,
+     "reviews": 15,
+     "checked_at": "2026-11-16T01:12:00Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 2449.99,
+   "price": 2699.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 2699.99,
-   "rating": 5.0,
-   "reviews": 14,
+   "price_status": "live",
+   "regular": null,
+   "rating": 5,
+   "reviews": 15,
    "history": [
     [
      "2026-10-31",
@@ -3927,6 +4090,10 @@
     [
      "2026-11-01",
      2449.99
+    ],
+    [
+     "2026-11-16",
+     2699.99
     ]
    ]
   },
@@ -3993,26 +4160,25 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6677630",
-     "url": "https://www.bestbuy.com/product/acer-predator-neo-gaming-laptop-16-oled-intel-core-ultra-9-series-2-2026-2-5k-rtx-5070-ti-32gb-memory-1tb-storage-obsidian-black/6677630",
+     "url": "https://www.bestbuy.com/product/acer-predator-neo-gaming-laptop-16-oled-intel-core-ultra-9-series-2-2026-2-5k-rtx-5070-ti-32gb-memory-1tb-storage-obsidian-black/JJ8V8HPCW6",
      "manual": false,
-     "price": 3199.99,
+     "price": 2459.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/acer-predator-neo-gaming-laptop-16-oled-intel-core-ultra-9-series-2-2026-2-5k-rtx-5070-ti-32gb-memory-1tb-storage-obsidian-black/6677630",
-     "verified_sku": "6677630",
-     "verification_method": "page-reader",
+     "rating": 4.8,
+     "reviews": 5,
+     "checked_at": "2026-11-16T01:12:02Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 3199.99,
+   "price": 2459.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.8,
+   "reviews": 5,
    "history": [
     [
      "2026-10-31",
@@ -4020,6 +4186,10 @@
     ],
     [
      "2026-11-01",
+     2459.99
+    ],
+    [
+     "2026-11-16",
      2459.99
     ]
    ]
@@ -4088,27 +4258,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6673555",
-     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-ryzen-ai-9-hx-470-2026-32gb-ram-nvidia-geforce-rtx-5070-1tb-storage-nebula/6673555",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-ryzen-ai-9-hx-470-2026-32gb-ram-nvidia-geforce-rtx-5070-1tb-storage-nebula/JJGH3KJRH6",
      "manual": false,
-     "price": 2199.99,
-     "regular": 3549.99,
-     "in_stock": false,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-ryzen-ai-9-hx-470-2026-32gb-ram-nvidia-geforce-rtx-5070-1tb-storage-nebula/6673555",
-     "verified_sku": "6673555",
-     "verification_method": "page-reader",
+     "price": 3549.99,
+     "in_stock": true,
+     "marketplace": {
+      "price": 2599,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.8,
+     "reviews": 11,
+     "checked_at": "2026-11-16T01:12:04Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 2199.99,
+   "price": 3549.99,
    "price_retailer": "Best Buy",
-   "price_status": "unavailable",
-   "regular": 3549.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.8,
+   "reviews": 11,
    "history": [
     [
      "2026-10-31",
@@ -4117,6 +4289,10 @@
     [
      "2026-11-01",
      2499.99
+    ],
+    [
+     "2026-11-16",
+     3549.99
     ]
    ]
   },
@@ -4184,28 +4360,24 @@
      "sku": "6631787",
      "url": "https://www.bestbuy.com/product/msi-stealth-16-ai-16-240hz-qhd-oled-gaming-laptop-intel-u9-285h-nvidia-geforce-rtx-5070-32gb-memory-1tb-ssd-core-black/J3P7TXRYYG",
      "manual": false,
-     "price": 2499.99,
-     "in_stock": true,
-     "marketplace": {
-      "price": 2482.99,
-      "seller": "Newegg Official"
-     },
-     "rating": 4.6,
-     "reviews": 24,
+     "in_stock": false,
      "checked_at": "2026-11-01T14:28:48Z",
      "source": "Best Buy product page (browser check)",
      "verification_method": "page-reader",
-     "on_sale": false,
+     "note": "Best Buy's page no longer lists a price or offer",
      "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "price": 2499.99,
+     "availability_checked_at": "2026-11-16T01:12:41Z",
+     "error": "Page-reader snapshot; the live purchase price has not been confirmed.",
+     "on_sale": false
     }
    ],
    "price": 2499.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "unavailable",
    "regular": null,
-   "rating": 4.6,
-   "reviews": 24,
+   "rating": null,
+   "reviews": null,
    "history": [
     [
      "2026-10-31",
@@ -4283,25 +4455,26 @@
      "sku": "6678510",
      "url": "https://www.bestbuy.com/product/lenovo-legion-7a-15-3-3k-oled-gaming-laptop-amd-ryzen-ai-max-388-2026-radeon-8060s-graphics-32gb-memory-1tb-storage-nebula/JJGH3KPF8G",
      "manual": false,
-     "price": 2549.99,
+     "price": 1849.99,
      "in_stock": true,
-     "open_box": 1900.99,
+     "open_box": 1558.99,
      "rating": 4.6,
-     "reviews": 8,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "reviews": 11,
+     "checked_at": "2026-11-16T01:12:08Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:00:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
-   "price": 2549.99,
+   "price": 1849.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": 4.6,
-   "reviews": 8,
+   "reviews": 11,
    "history": [
     [
      "2026-10-31",
@@ -4310,6 +4483,10 @@
     [
      "2026-11-01",
      2549.99
+    ],
+    [
+     "2026-11-16",
+     1849.99
     ]
    ]
   },
@@ -4378,29 +4555,27 @@
      "sku": "6673557",
      "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-3k-oled-gaming-laptop-intel-core-ultra-9-275hx-2025-32gb-ram-nvidia-geforce-rtx-5070ti-1tb-eclipse-black/JJGH3K4WRZ",
      "manual": false,
-     "price": 2594.99,
-     "in_stock": false,
-     "open_box": 2795.99,
+     "price": 3349.99,
+     "in_stock": true,
      "marketplace": {
-      "price": 2779.0,
+      "price": 2899,
       "seller": "PC Heaven"
      },
      "rating": 4.8,
-     "reviews": 18,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "reviews": 21,
+     "checked_at": "2026-11-16T01:12:11Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 2594.99,
+   "price": 3349.99,
    "price_retailer": "Best Buy",
-   "price_status": "unavailable",
+   "price_status": "live",
    "regular": null,
    "rating": 4.8,
-   "reviews": 18,
+   "reviews": 21,
    "history": [
     [
      "2026-10-31",
@@ -4409,6 +4584,10 @@
     [
      "2026-11-01",
      2594.99
+    ],
+    [
+     "2026-11-16",
+     3349.99
     ]
    ]
   },
@@ -4479,22 +4658,22 @@
      "manual": false,
      "price": 2599.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-9-8940hx-2025-24gb-memory-nvidia-geforce-rtx-5070-1tb-ssd-shadow-black/JJGWKSG29G",
-     "verified_sku": "6672946",
-     "verification_method": "page-reader",
+     "open_box": 2180.99,
+     "rating": 4.6,
+     "reviews": 17,
+     "checked_at": "2026-11-16T01:12:14Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2599.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.6,
+   "reviews": 17,
    "history": [
     [
      "2026-10-31",
@@ -4502,6 +4681,10 @@
     ],
     [
      "2026-11-01",
+     2599.99
+    ],
+    [
+     "2026-11-16",
      2599.99
     ]
    ]
@@ -4570,23 +4753,23 @@
      "url": "https://www.bestbuy.com/product/gigabyte-aorus-master-16-16-240hz-2560x1600-wqxga-intel-core-ultra-9-275hx-1tb-ssd-32gb-ddr5-ram-geforce-5070ti-dark-tide/J3GWPQCCHP",
      "manual": false,
      "price": 2599.99,
-     "in_stock": false,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/gigabyte-aorus-master-16-16-240hz-2560x1600-wqxga-intel-core-ultra-9-275hx-1tb-ssd-32gb-ddr5-ram-geforce-5070ti-dark-tide/J3GWPQCCHP",
-     "verified_sku": "6623748",
-     "verification_method": "page-reader",
+     "in_stock": true,
+     "open_box": 2287.99,
+     "rating": 2,
+     "reviews": 1,
+     "checked_at": "2026-11-16T01:12:17Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2599.99,
    "price_retailer": "Best Buy",
-   "price_status": "unavailable",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 2,
+   "reviews": 1,
    "history": [
     [
      "2026-10-31",
@@ -4594,6 +4777,10 @@
     ],
     [
      "2026-11-01",
+     2599.99
+    ],
+    [
+     "2026-11-16",
      2599.99
     ]
    ]
@@ -4667,26 +4854,28 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6673587",
-     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g14-14-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-platinum-white/6673587",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g14-14-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-platinum-white/JJGHGSLS24",
      "manual": false,
-     "price": 3199.99,
+     "price": 2749.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g14-14-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-platinum-white/6673587",
-     "verified_sku": "6673587",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "open_box": 2263.99,
+     "rating": 4.8,
+     "reviews": 33,
+     "checked_at": "2026-11-16T01:12:20Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:00:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
-   "price": 3199.99,
+   "price": 2749.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.8,
+   "reviews": 33,
    "history": [
     [
      "2026-10-31",
@@ -4695,6 +4884,10 @@
     [
      "2026-11-01",
      2649.99
+    ],
+    [
+     "2026-11-16",
+     2749.99
     ]
    ]
   },
@@ -4764,20 +4957,21 @@
      "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-3k-oled-gaming-laptop-intel-core-ultra-7-251hx-2026-24gb-ram-nvidia-geforce-rtx-5070ti-512gb-eclipse-black/J3PTJ5YYK7",
      "manual": false,
      "price": 2749.99,
-     "in_stock": false,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-3k-oled-gaming-laptop-intel-core-ultra-7-251hx-2026-24gb-ram-nvidia-geforce-rtx-5070ti-512gb-eclipse-black/J3PTJ5YYK7",
-     "verified_sku": "6691124",
-     "verification_method": "page-reader",
+     "in_stock": true,
+     "marketplace": {
+      "price": 2649,
+      "seller": "PC Heaven"
+     },
+     "checked_at": "2026-11-16T01:12:22Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2749.99,
    "price_retailer": "Best Buy",
-   "price_status": "unavailable",
+   "price_status": "live",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -4788,6 +4982,10 @@
     ],
     [
      "2026-11-01",
+     2749.99
+    ],
+    [
+     "2026-11-16",
      2749.99
     ]
    ]
@@ -4859,22 +5057,25 @@
      "manual": false,
      "price": 2749.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/lenovo-legion-pro-5i-16-2-5k-oled-gaming-laptop-intel-core-ultra-9-275hx-2025-32gb-ram-nvidia-geforce-rtx-5070-1tb-eclipse-black/JJGSHXJRCS",
-     "verified_sku": "6617090",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 2829,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.7,
+     "reviews": 302,
+     "checked_at": "2026-11-16T01:12:25Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2749.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.7,
+   "reviews": 302,
    "history": [
     [
      "2026-10-31",
@@ -4882,6 +5083,10 @@
     ],
     [
      "2026-11-01",
+     2749.99
+    ],
+    [
+     "2026-11-16",
      2749.99
     ]
    ]
@@ -4947,26 +5152,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6672940",
-     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-max-16-2k-oled-gaming-laptop-intel-core-ultra-9-2026-32gb-memory-nvidia-geforce-rtx-5070-ti-1tb-ssd-shadow-black/6672940",
+     "url": "https://www.bestbuy.com/product/hyperx-hp-omen-max-16-2k-oled-gaming-laptop-intel-core-ultra-9-2026-32gb-memory-nvidia-geforce-rtx-5070-ti-1tb-ssd-shadow-black/JJGWKSJTT5",
      "manual": false,
      "price": 3899.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/hyperx-hp-omen-max-16-2k-oled-gaming-laptop-intel-core-ultra-9-2026-32gb-memory-nvidia-geforce-rtx-5070-ti-1tb-ssd-shadow-black/6672940",
-     "verified_sku": "6672940",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 3299.99,
+      "seller": "Velztorm"
+     },
+     "rating": 4.5,
+     "reviews": 54,
+     "checked_at": "2026-11-16T01:12:28Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 3899.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.5,
+   "reviews": 54,
    "history": [
     [
      "2026-10-31",
@@ -4975,6 +5183,10 @@
     [
      "2026-11-01",
      2799.99
+    ],
+    [
+     "2026-11-16",
+     3899.99
     ]
    ]
   },
@@ -5041,15 +5253,16 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6679954",
-     "url": "https://www.bestbuy.com/product/msi-raider-16-hx-16-2-5k-qhd-240hz-gaming-laptop-intel-ultra-9-275hx-2025-geforce-rtx-5070ti-32gb-memory-1tb-storage-core-black/6679954",
+     "url": "https://www.bestbuy.com/product/msi-raider-16-hx-16-2-5k-qhd-240hz-gaming-laptop-intel-ultra-9-275hx-2025-geforce-rtx-5070ti-32gb-memory-1tb-storage-core-black/J3P7TXT4VL",
      "manual": false,
      "price": 2849.99,
-     "regular": 2849.99,
-     "checked_at": "2026-11-11T16:59:03Z",
-     "source": "Current Best Buy price reported by the user; not independently verified",
-     "evidence_url": "https://www.bestbuy.com/product/msi-raider-16-hx-16-2-5k-qhd-240hz-gaming-laptop-intel-ultra-9-275hx-2025-geforce-rtx-5070ti-32gb-memory-1tb-storage-core-black/6679954",
-     "verified_sku": "6679954",
-     "verification_method": "user-report",
+     "in_stock": true,
+     "open_box": 2350.99,
+     "rating": 4.6,
+     "reviews": 7,
+     "checked_at": "2026-11-16T01:12:30Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
      "stale": true,
      "error": "skipped: site kept refusing requests this run"
@@ -5057,10 +5270,10 @@
    ],
    "price": 2849.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 2849.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.6,
+   "reviews": 7,
    "history": [
     [
      "2026-10-31",
@@ -5072,6 +5285,10 @@
     ],
     [
      "2026-11-11",
+     2849.99
+    ],
+    [
+     "2026-11-16",
      2849.99
     ]
    ]
@@ -5140,26 +5357,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6673551",
-     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-amd-ryzen-ai-7-450-2026-32gb-ram-nvidia-geforce-rtx-5060-1tb-storage-glacier-white/6673551",
+     "url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-amd-ryzen-ai-7-450-2026-32gb-ram-nvidia-geforce-rtx-5060-1tb-storage-glacier-white/JJGH3QT2XL",
      "manual": false,
      "price": 2999.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/lenovo-legion-7a-16-2-5k-240hz-oled-gaming-laptop-amd-ryzen-ai-7-450-2026-32gb-ram-nvidia-geforce-rtx-5060-1tb-storage-glacier-white/6673551",
-     "verified_sku": "6673551",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 2899.99,
+      "seller": "Velztorm"
+     },
+     "rating": 4.7,
+     "reviews": 39,
+     "checked_at": "2026-11-16T01:12:33Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2999.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.7,
+   "reviews": 39,
    "history": [
     [
      "2026-10-31",
@@ -5167,6 +5387,10 @@
     ],
     [
      "2026-11-01",
+     2999.99
+    ],
+    [
+     "2026-11-16",
      2999.99
     ]
    ]
@@ -5239,25 +5463,24 @@
      "price": 2999.99,
      "in_stock": true,
      "marketplace": {
-      "price": 2699.99,
+      "price": 2599.99,
       "seller": "Velztorm"
      },
-     "rating": 5.0,
-     "reviews": 8,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "rating": 4.9,
+     "reviews": 9,
+     "checked_at": "2026-11-16T01:12:35Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2999.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": 5.0,
-   "reviews": 8,
+   "rating": 4.9,
+   "reviews": 9,
    "history": [
     [
      "2026-10-31",
@@ -5265,6 +5488,10 @@
     ],
     [
      "2026-11-01",
+     2999.99
+    ],
+    [
+     "2026-11-16",
      2999.99
     ]
    ]
@@ -5336,22 +5563,22 @@
      "manual": false,
      "price": 2999.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/lg-gram-pro-max-17-144hz-touch-screen-gaming-laptop-wqxga-intel-core-ultra-9-processor-386h-rtx-5050-32gb-ram-1tb-ssd-brushed-bronze/JJ8VPZZCVX",
-     "verified_sku": "6670749",
-     "verification_method": "page-reader",
+     "open_box": 1899.99,
+     "rating": 4.9,
+     "reviews": 16,
+     "checked_at": "2026-11-16T01:12:37Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 2999.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.9,
+   "reviews": 16,
    "history": [
     [
      "2026-10-31",
@@ -5359,6 +5586,10 @@
     ],
     [
      "2026-11-01",
+     2999.99
+    ],
+    [
+     "2026-11-16",
      2999.99
     ]
    ]
@@ -5430,22 +5661,25 @@
      "manual": false,
      "price": 3169.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g14-14-3k-oled-120hz-gaming-laptop-copilot-pc-amd-ryzen-ai-9-hx-32gb-memory-rtx-5080-2tb-storage-platinum-white/JJGGLHXFWZ",
-     "verified_sku": "6613953",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 3399.99,
+      "seller": "Velztorm"
+     },
+     "rating": 4.7,
+     "reviews": 175,
+     "checked_at": "2026-11-16T01:12:40Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 3169.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.7,
+   "reviews": 175,
    "history": [
     [
      "2026-10-31",
@@ -5453,6 +5687,10 @@
     ],
     [
      "2026-11-01",
+     3169.99
+    ],
+    [
+     "2026-11-16",
      3169.99
     ]
    ]
@@ -5517,26 +5755,29 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6613958",
-     "url": "https://www.bestbuy.com/product/asus-rog-strix-g18-18-2-5k-240hz-gaming-laptop-intel-core-ultra-9-hx-32gb-memory-geforce-rtx-5080-2tb-storage-eclipse-gray/6613958",
+     "url": "https://www.bestbuy.com/product/asus-rog-strix-g18-18-2-5k-240hz-gaming-laptop-intel-core-ultra-9-hx-32gb-memory-geforce-rtx-5080-2tb-storage-eclipse-gray/JJGGLHXFW8",
      "manual": false,
      "price": 3299.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-strix-g18-18-2-5k-240hz-gaming-laptop-intel-core-ultra-9-hx-32gb-memory-geforce-rtx-5080-2tb-storage-eclipse-gray/6613958",
-     "verified_sku": "6613958",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 3264,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.5,
+     "reviews": 323,
+     "checked_at": "2026-11-16T01:12:43Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 3299.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.5,
+   "reviews": 323,
    "history": [
     [
      "2026-10-31",
@@ -5544,6 +5785,10 @@
     ],
     [
      "2026-11-01",
+     3299.99
+    ],
+    [
+     "2026-11-16",
      3299.99
     ]
    ]
@@ -5616,25 +5861,27 @@
      "sku": "6686857",
      "url": "https://www.bestbuy.com/product/asus-rog-strix-18-18-2-5k-300hz-gaming-laptop-intel-core-ultra-9-hx-plus-32gb-ram-nvidia-geforce-rtx-5070ti-1tb-ssd-eclipse-gray/JJGHGPVZCP",
      "manual": false,
-     "price": 3199.99,
-     "regular": 3299.99,
+     "price": 3299.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-strix-18-18-2-5k-300hz-gaming-laptop-intel-core-ultra-9-hx-plus-32gb-ram-nvidia-geforce-rtx-5070ti-1tb-ssd-eclipse-gray/JJGHGPVZCP",
-     "verified_sku": "6686857",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 3299,
+      "seller": "Mobile Advance"
+     },
+     "rating": 5,
+     "reviews": 1,
+     "checked_at": "2026-11-16T01:12:45Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 3199.99,
+   "price": 3299.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 3299.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 5,
+   "reviews": 1,
    "history": [
     [
      "2026-10-31",
@@ -5643,6 +5890,10 @@
     [
      "2026-11-01",
      3199.99
+    ],
+    [
+     "2026-11-16",
+     3299.99
     ]
    ]
   },
@@ -5710,19 +5961,16 @@
      "manual": false,
      "price": 3699.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/acer-predator-helios-ai-gaming-laptop-18-mini-led-2-5k-intel-ultra-9-290hx-plus-2026-rtx-5080-32gb-memory-1tb-storage-abyssal-black/JJ8V8HPG6R",
-     "verified_sku": "6683796",
-     "verification_method": "page-reader",
+     "checked_at": "2026-11-16T01:12:49Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 3699.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -5734,6 +5982,10 @@
     [
      "2026-11-01",
      3299.99
+    ],
+    [
+     "2026-11-16",
+     3699.99
     ]
    ]
   },
@@ -5812,24 +6064,26 @@
      "url": "https://www.bestbuy.com/product/alienware-area-51-18-3k-gaming-laptop-intel-core-ultra-9-series-2-2025-32gb-memory-nvidia-geforce-rtx-5070ti-2tb-storage-liquid-teal/J3K4L6QTGK",
      "manual": false,
      "price": 3378.99,
-     "regular": 3974.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/alienware-area-51-18-3k-gaming-laptop-intel-core-ultra-9-series-2-2025-32gb-memory-nvidia-geforce-rtx-5070ti-2tb-storage-liquid-teal/J3K4L6QTGK",
-     "verified_sku": "6628371",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 3999,
+      "seller": "PC Heaven"
+     },
+     "rating": 4.7,
+     "reviews": 120,
+     "checked_at": "2026-11-16T01:12:52Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 3378.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 3974.99,
-   "rating": null,
-   "reviews": null,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.7,
+   "reviews": 120,
    "history": [
     [
      "2026-10-31",
@@ -5837,6 +6091,10 @@
     ],
     [
      "2026-11-01",
+     3378.99
+    ],
+    [
+     "2026-11-16",
      3378.99
     ]
    ]
@@ -5908,22 +6166,25 @@
      "manual": false,
      "price": 3399.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-2-5k-240hz-gaming-laptop-intel-core-ultra-9-32gb-memory-geforce-rtx-5080-2tb-storage-eclipse-gray/JJGGLHJLTW",
-     "verified_sku": "6613960",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 3389.99,
+      "seller": "Velztorm"
+     },
+     "rating": 4.4,
+     "reviews": 182,
+     "checked_at": "2026-11-16T01:12:54Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 3399.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.4,
+   "reviews": 182,
    "history": [
     [
      "2026-10-31",
@@ -5931,6 +6192,10 @@
     ],
     [
      "2026-11-01",
+     3399.99
+    ],
+    [
+     "2026-11-16",
      3399.99
     ]
    ]
@@ -5995,26 +6260,26 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6673586",
-     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-eclipse-gray/6673586",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-eclipse-gray/JJGHGSL6G8",
      "manual": false,
      "price": 3399.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-16gb-memory-geforce-rtx-5070ti-1tb-storage-eclipse-gray/6673586",
-     "verified_sku": "6673586",
-     "verification_method": "page-reader",
+     "open_box": 2701.99,
+     "rating": 4.7,
+     "reviews": 33,
+     "checked_at": "2026-11-16T01:12:58Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 3399.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.7,
+   "reviews": 33,
    "history": [
     [
      "2026-10-31",
@@ -6022,6 +6287,10 @@
     ],
     [
      "2026-11-01",
+     3399.99
+    ],
+    [
+     "2026-11-16",
      3399.99
     ]
    ]
@@ -6094,23 +6363,22 @@
      "manual": false,
      "price": 3449.99,
      "in_stock": true,
-     "open_box": 3188.99,
-     "rating": 5.0,
-     "reviews": 1,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "open_box": 3239.99,
+     "rating": 4.3,
+     "reviews": 3,
+     "checked_at": "2026-11-16T01:13:00Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 3449.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": 5.0,
-   "reviews": 1,
+   "rating": 4.3,
+   "reviews": 3,
    "history": [
     [
      "2026-10-31",
@@ -6118,6 +6386,10 @@
     ],
     [
      "2026-11-01",
+     3449.99
+    ],
+    [
+     "2026-11-16",
      3449.99
     ]
    ]
@@ -6186,26 +6458,24 @@
      "sku": "6670611",
      "url": "https://www.bestbuy.com/product/msi-stealth-16-ai-16-2-5k-240hz-oled-gaming-laptop-intel-core-u9-386h-nvidia-geforce-rtx-5080-32gb-memory-2tb-storage-charcoal-black/J3P7TXTXQC",
      "manual": false,
-     "price": 3649.99,
-     "regular": 3999.99,
+     "price": 3999.99,
      "in_stock": true,
-     "open_box": 3426.99,
-     "rating": 4.7,
-     "reviews": 6,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "open_box": 3635.99,
+     "rating": 4.1,
+     "reviews": 7,
+     "checked_at": "2026-11-16T01:13:02Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 3649.99,
+   "price": 3999.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
-   "regular": 3999.99,
-   "rating": 4.7,
-   "reviews": 6,
+   "price_status": "live",
+   "regular": null,
+   "rating": 4.1,
+   "reviews": 7,
    "history": [
     [
      "2026-10-31",
@@ -6214,6 +6484,10 @@
     [
      "2026-11-01",
      3649.99
+    ],
+    [
+     "2026-11-16",
+     3999.99
     ]
    ]
   },
@@ -6279,16 +6553,16 @@
      "sku": "6679860",
      "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-2026-16-oled-3k-240hz-gaming-laptop-intel-core-ultra-9-386h-rtx-5070-ti-32gb-ram-1tb-ssd-platinum-white/JJGHGSGJ7T",
      "manual": false,
-     "price": 3699.99,
      "in_stock": false,
      "checked_at": "2026-11-11T16:29:13Z",
      "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-2026-16-oled-3k-240hz-gaming-laptop-intel-core-ultra-9-386h-rtx-5070-ti-32gb-ram-1tb-ssd-platinum-white/JJGHGSGJ7T",
-     "verified_sku": "6679860",
      "verification_method": "page-reader",
-     "on_sale": false,
+     "note": "Best Buy's page no longer lists a price or offer; still sold by the ASUS Store",
      "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "price": 3699.99,
+     "availability_checked_at": "2026-11-16T01:13:14Z",
+     "error": "Page-reader snapshot; the live purchase price has not been confirmed.",
+     "on_sale": false
     },
     {
      "retailer": "asus",
@@ -6298,10 +6572,11 @@
      "manual": false,
      "price": 3699.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:44Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:30:55.660Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 3699.99,
@@ -6374,6 +6649,10 @@
     [
      "2026-11-15",
      3699.99
+    ],
+    [
+     "2026-11-16",
+     3699.99
     ]
    ]
   },
@@ -6442,22 +6721,21 @@
      "manual": false,
      "price": 3999.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/hyperx-hp-omen-max-16-240hz-2-5k-oled-gaming-laptop-amd-ryzen-ai-9-hx-2026-32gb-ram-nvidia-geforce-rtx-5080-1tb-ssd-shadow-black/JJGWKS75PJ",
-     "verified_sku": "6672945",
-     "verification_method": "page-reader",
+     "rating": 3.5,
+     "reviews": 2,
+     "checked_at": "2026-11-16T01:13:06Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 3999.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 3.5,
+   "reviews": 2,
    "history": [
     [
      "2026-10-31",
@@ -6465,6 +6743,10 @@
     ],
     [
      "2026-11-01",
+     3999.99
+    ],
+    [
+     "2026-11-16",
      3999.99
     ]
    ]
@@ -6543,25 +6825,24 @@
      "sku": "6632697",
      "url": "https://www.bestbuy.com/product/alienware-area-51-16-3k-gaming-laptop-intel-core-ultra-9-series-2-2025-32gb-memory-nvidia-geforce-rtx-5070-ti-2tb-storage-liquid-teal/J3K4L6QTYV",
      "manual": false,
-     "price": 4174.99,
+     "price": 3699.99,
      "in_stock": true,
      "marketplace": {
-      "price": 3699.99,
+      "price": 3499.99,
       "seller": "antonline"
      },
      "rating": 4.7,
      "reviews": 44,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "checked_at": "2026-11-16T01:13:10Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
-   "price": 4174.99,
+   "price": 3699.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": 4.7,
    "reviews": 44,
@@ -6573,6 +6854,10 @@
     [
      "2026-11-01",
      4174.99
+    ],
+    [
+     "2026-11-16",
+     3699.99
     ]
    ]
   },
@@ -6646,14 +6931,15 @@
      "manual": false,
      "price": 4299.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-strix-scar-18-18-4k-240hz-gaming-laptop-intel-core-ultra-9-hx-plus-32gb-ram-nvidia-geforce-rtx-5080-1tb-ssd-off-black/JJGHGPV4J4",
-     "verified_sku": "6686853",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 4299.99,
+      "seller": "Adorama"
+     },
+     "checked_at": "2026-11-16T01:13:12Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     },
     {
      "retailer": "asus",
@@ -6663,17 +6949,16 @@
      "manual": false,
      "price": 4299.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T11:22:51Z",
-     "source": "eshop.asus.com product page",
-     "verification_method": "retailer-html",
+     "checked_at": "2026-11-16T01:30:55.720Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "ValueError: product data does not identify a unique match for the requested SKU"
+     "stale": false
     }
    ],
    "price": 4299.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -6720,6 +7005,10 @@
     ],
     [
      "2026-11-10",
+     4299.99
+    ],
+    [
+     "2026-11-16",
      4299.99
     ]
    ]
@@ -6788,22 +7077,22 @@
      "manual": false,
      "price": 4399.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-3k-gaming-laptop-intel-core-ultra-9-386h-2026-32gb-memory-geforce-rtx-5080-1tb-storage-eclipse-gray/JJGHGSJZR6",
-     "verified_sku": "6673590",
-     "verification_method": "page-reader",
+     "open_box": 3678.99,
+     "rating": 4.6,
+     "reviews": 51,
+     "checked_at": "2026-11-16T01:13:16Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 4399.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 4.6,
+   "reviews": 51,
    "history": [
     [
      "2026-10-31",
@@ -6811,6 +7100,10 @@
     ],
     [
      "2026-11-01",
+     4399.99
+    ],
+    [
+     "2026-11-16",
      4399.99
     ]
    ]
@@ -6880,22 +7173,23 @@
      "sku": "6613959",
      "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-g16-16-oled-2-5k-240hz-gaming-laptop-intel-core-ultra-9-32gb-memory-geforce-rtx-5090-2tb-storage-eclipse-gray/JJGGLHJXH7",
      "manual": false,
-     "price": 4399.99,
+     "price": 3899.99,
      "in_stock": true,
-     "open_box": 3999.99,
+     "open_box": 3357.99,
      "rating": 4.7,
      "reviews": 16,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
-     "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "checked_at": "2026-11-16T01:13:17Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": true,
+     "deal_ends": "2026-11-16T06:30:00Z",
+     "deal_label": "Early Black Friday deal",
+     "stale": false
     }
    ],
-   "price": 4399.99,
+   "price": 3899.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
    "rating": 4.7,
    "reviews": 16,
@@ -6907,6 +7201,10 @@
     [
      "2026-11-01",
      4399.99
+    ],
+    [
+     "2026-11-16",
+     3899.99
     ]
    ]
   },
@@ -6973,22 +7271,21 @@
      "manual": false,
      "price": 4499.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-strix-scar-18-18-2-5k-240hz-gaming-laptop-intel-core-ultra-9-hx-32gb-memory-geforce-rtx-5090-2tb-storage-off-black/JJGGLHXJY3",
-     "verified_sku": "6613957",
-     "verification_method": "page-reader",
+     "rating": 3.8,
+     "reviews": 72,
+     "checked_at": "2026-11-16T01:13:19Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 4499.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 3.8,
+   "reviews": 72,
    "history": [
     [
      "2026-10-31",
@@ -6996,6 +7293,10 @@
     ],
     [
      "2026-11-01",
+     4499.99
+    ],
+    [
+     "2026-11-16",
      4499.99
     ]
    ]
@@ -7063,21 +7364,17 @@
      "url": "https://www.bestbuy.com/product/acer-predator-helios-ai-gaming-laptop-18-mini-led-4k-intel-ultra-9-290hx-plus-2026-rtx-5090-32gb-memory-1tb-storage-abyssal-black/JJ8V8HPG64",
      "manual": false,
      "price": 4499.99,
-     "in_stock": false,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "evidence_url": "https://www.bestbuy.com/product/acer-predator-helios-ai-gaming-laptop-18-mini-led-4k-intel-ultra-9-290hx-plus-2026-rtx-5090-32gb-memory-1tb-storage-abyssal-black/JJ8V8HPG64",
-     "verified_sku": "6681255",
-     "availability_checked_at": "2026-11-11T16:29:13Z",
-     "verification_method": "page-reader",
+     "in_stock": true,
+     "checked_at": "2026-11-16T01:13:22Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 4499.99,
    "price_retailer": "Best Buy",
-   "price_status": "unavailable",
+   "price_status": "live",
    "regular": null,
    "rating": null,
    "reviews": null,
@@ -7088,6 +7385,10 @@
     ],
     [
      "2026-11-01",
+     4499.99
+    ],
+    [
+     "2026-11-16",
      4499.99
     ]
    ]
@@ -7160,19 +7461,21 @@
      "retailer": "bestbuy",
      "retailer_name": "Best Buy",
      "sku": "6680553",
-     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5070-ti-32gb-ram-1tb-ssd-stellar-grey/6680553",
+     "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5070-ti-32gb-ram-1tb-ssd-stellar-grey/JJGHGPV42Q",
      "manual": false,
-     "price": 4199.99,
-     "regular": 4499.99,
+     "price": 4499.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5070-ti-32gb-ram-1tb-ssd-stellar-grey/6680553",
-     "verified_sku": "6680553",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 4199.99,
+      "seller": "antonline"
+     },
+     "rating": 5,
+     "reviews": 3,
+     "checked_at": "2026-11-16T01:13:25Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     },
     {
      "retailer": "asus",
@@ -7182,18 +7485,19 @@
      "manual": false,
      "price": 4499.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:53Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:30:57.287Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 4499.99,
-   "price_retailer": "ASUS Store",
+   "price_retailer": "Best Buy",
    "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 5,
+   "reviews": 3,
    "history": [
     [
      "2026-10-31",
@@ -7221,6 +7525,10 @@
     ],
     [
      "2026-11-15",
+     4499.99
+    ],
+    [
+     "2026-11-16",
      4499.99
     ]
    ]
@@ -7306,10 +7614,11 @@
      "manual": false,
      "price": 4799.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:05Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:30:59.243Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 4799.99,
@@ -7381,6 +7690,10 @@
     ],
     [
      "2026-11-15",
+     4799.99
+    ],
+    [
+     "2026-11-16",
      4799.99
     ]
    ]
@@ -7457,22 +7770,25 @@
      "manual": false,
      "price": 5499.99,
      "in_stock": true,
-     "checked_at": "2026-11-11T16:29:13Z",
-     "source": "Best Buy product page, checked in browser reader",
-     "evidence_url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5090-32gb-ram-1tb-ssd-stellar-grey/JJGHGS84V5",
-     "verified_sku": "6679872",
-     "verification_method": "page-reader",
+     "marketplace": {
+      "price": 5499,
+      "seller": "Mobile Advance"
+     },
+     "rating": 3,
+     "reviews": 2,
+     "checked_at": "2026-11-16T01:13:28Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 5499.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": null,
-   "reviews": null,
+   "rating": 3,
+   "reviews": 2,
    "history": [
     [
      "2026-10-31",
@@ -7480,6 +7796,10 @@
     ],
     [
      "2026-11-01",
+     5499.99
+    ],
+    [
+     "2026-11-16",
      5499.99
     ]
    ]
@@ -7560,22 +7880,21 @@
      "manual": false,
      "price": 5949.99,
      "in_stock": true,
-     "rating": 4.6,
-     "reviews": 26,
-     "checked_at": "2026-11-01T14:28:48Z",
-     "source": "Best Buy product page (browser check)",
-     "verification_method": "page-reader",
+     "rating": 4.5,
+     "reviews": 28,
+     "checked_at": "2026-11-16T01:13:31Z",
+     "source": "Best Buy product page, read live in a web browser",
+     "verification_method": "browser-rendered",
      "on_sale": false,
-     "stale": true,
-     "error": "Page-reader snapshot; the live purchase price has not been confirmed."
+     "stale": false
     }
    ],
    "price": 5949.99,
    "price_retailer": "Best Buy",
-   "price_status": "stale",
+   "price_status": "live",
    "regular": null,
-   "rating": 4.6,
-   "reviews": 26,
+   "rating": 4.5,
+   "reviews": 28,
    "history": [
     [
      "2026-10-31",
@@ -7583,6 +7902,10 @@
     ],
     [
      "2026-11-01",
+     5949.99
+    ],
+    [
+     "2026-11-16",
      5949.99
     ]
    ]
@@ -7657,18 +7980,18 @@
      "url": "https://www.razer.com/gaming-laptops/razer-blade-16/RZ09-05817EN3-R3U1",
      "manual": false,
      "price": 3499.99,
-     "regular": 3499.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:39Z",
-     "source": "www.razer.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-15T18:59:15.685Z",
+     "source": "Razer.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 3499.99,
    "price_retailer": "Razer.com",
    "price_status": "live",
-   "regular": 3499.99,
+   "regular": null,
    "rating": null,
    "reviews": null,
    "history": [
@@ -7734,6 +8057,10 @@
     ],
     [
      "2026-11-15",
+     3499.99
+    ],
+    [
+     "2026-11-16",
      3499.99
     ]
    ]
@@ -7808,18 +8135,18 @@
      "url": "https://www.razer.com/gaming-laptops/razer-blade-16/RZ09-05818EN3-R3U1",
      "manual": false,
      "price": 3999.99,
-     "regular": 3999.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:46Z",
-     "source": "www.razer.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-15T18:59:18.068Z",
+     "source": "Razer.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 3999.99,
    "price_retailer": "Razer.com",
    "price_status": "live",
-   "regular": 3999.99,
+   "regular": null,
    "rating": null,
    "reviews": null,
    "history": [
@@ -7885,6 +8212,10 @@
     ],
     [
      "2026-11-15",
+     3999.99
+    ],
+    [
+     "2026-11-16",
      3999.99
     ]
    ]
@@ -7954,12 +8285,12 @@
      "manual": true,
      "price": 2757.0,
      "in_stock": true,
-     "checked_at": "2026-10-31T15:40:00Z",
-     "source": "Estimate: $2,058 prebuilt (AI 7 350, 32GB, 1TB) + $699 RTX 5070 module, frame.work 2026-10-31",
+     "checked_at": "2026-11-15T19:00:00Z",
+     "source": "frame.work configurator, read in a web browser: Performance Pro system $2,058 (pre-order, ships Dec); RTX 5070 module price not listed (sold out), $699 from Oct 31",
      "verification_method": "unconfirmed",
      "on_sale": false,
-     "stale": true,
-     "error": "Configurator checked; no independently verified total for the exact configuration. Manual estimate retained."
+     "note": "Estimate: $2,058 system confirmed Nov 15 + $699 RTX 5070 module (Oct 31 price; module sold out, pre-order)",
+     "stale": false
     }
    ],
    "price": 2757.0,
@@ -7971,6 +8302,10 @@
    "history": [
     [
      "2026-10-31",
+     2757.0
+    ],
+    [
+     "2026-11-16",
      2757.0
     ]
    ]
@@ -8041,10 +8376,11 @@
      "manual": false,
      "price": 1549.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:01Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:00.882Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 1549.99,
@@ -8112,6 +8448,10 @@
     ],
     [
      "2026-11-15",
+     1549.99
+    ],
+    [
+     "2026-11-16",
      1549.99
     ]
    ]
@@ -8182,10 +8522,11 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:49Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:02.505Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 1799.99,
@@ -8253,6 +8594,10 @@
     ],
     [
      "2026-11-15",
+     1799.99
+    ],
+    [
+     "2026-11-16",
      1799.99
     ]
    ]
@@ -8325,10 +8670,11 @@
      "manual": false,
      "price": 2399.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:28Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:04.058Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 2399.99,
@@ -8396,6 +8742,10 @@
     ],
     [
      "2026-11-15",
+     2399.99
+    ],
+    [
+     "2026-11-16",
      2399.99
     ]
    ]
@@ -8466,10 +8816,11 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:15Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:04.178Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 1799.99,
@@ -8538,6 +8889,10 @@
     [
      "2026-11-15",
      1799.99
+    ],
+    [
+     "2026-11-16",
+     1799.99
     ]
    ]
   },
@@ -8605,10 +8960,11 @@
      "manual": false,
      "price": 2499.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:23Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:04.216Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 2499.99,
@@ -8676,6 +9032,10 @@
     ],
     [
      "2026-11-15",
+     2499.99
+    ],
+    [
+     "2026-11-16",
      2499.99
     ]
    ]
@@ -8747,10 +9107,11 @@
      "manual": false,
      "price": 2499.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:15Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:04.332Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 2499.99,
@@ -8818,6 +9179,10 @@
     ],
     [
      "2026-11-15",
+     2499.99
+    ],
+    [
+     "2026-11-16",
      2499.99
     ]
    ]
@@ -8895,10 +9260,11 @@
      "manual": false,
      "price": 3599.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:46Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:06.194Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 3599.99,
@@ -8966,6 +9332,10 @@
     ],
     [
      "2026-11-15",
+     3599.99
+    ],
+    [
+     "2026-11-16",
      3599.99
     ]
    ]
@@ -9035,10 +9405,11 @@
      "manual": false,
      "price": 3299.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:20Z",
-     "source": "eshop.asus.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:07.735Z",
+     "source": "ASUS Store product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 3299.99,
@@ -9106,6 +9477,10 @@
     ],
     [
      "2026-11-15",
+     3299.99
+    ],
+    [
+     "2026-11-16",
      3299.99
     ]
    ]
@@ -9177,10 +9552,11 @@
      "manual": false,
      "price": 1649.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:21:58Z",
-     "source": "www.lenovo.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:18.221Z",
+     "source": "Lenovo.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 1649.99,
@@ -9248,6 +9624,10 @@
     ],
     [
      "2026-11-15",
+     1649.99
+    ],
+    [
+     "2026-11-16",
      1649.99
     ]
    ]
@@ -9319,10 +9699,11 @@
      "manual": false,
      "price": 1599.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:20Z",
-     "source": "www.lenovo.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:19.121Z",
+     "source": "Lenovo.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 1599.99,
@@ -9390,6 +9771,10 @@
     ],
     [
      "2026-11-15",
+     1599.99
+    ],
+    [
+     "2026-11-16",
      1599.99
     ]
    ]
@@ -9461,10 +9846,11 @@
      "manual": false,
      "price": 2249.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:44Z",
-     "source": "www.lenovo.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:19.292Z",
+     "source": "Lenovo.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 2249.99,
@@ -9532,6 +9918,10 @@
     ],
     [
      "2026-11-15",
+     2249.99
+    ],
+    [
+     "2026-11-16",
      2249.99
     ]
    ]
@@ -9603,10 +9993,11 @@
      "manual": false,
      "price": 2099.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:11Z",
-     "source": "www.lenovo.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:19.799Z",
+     "source": "Lenovo.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 2099.99,
@@ -9670,6 +10061,10 @@
     ],
     [
      "2026-11-15",
+     2099.99
+    ],
+    [
+     "2026-11-16",
      2099.99
     ]
    ]
@@ -9743,10 +10138,11 @@
      "manual": false,
      "price": 1499.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:07Z",
-     "source": "www.lenovo.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:21.249Z",
+     "source": "Lenovo.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 1499.99,
@@ -9814,6 +10210,10 @@
     ],
     [
      "2026-11-15",
+     1499.99
+    ],
+    [
+     "2026-11-16",
      1499.99
     ]
    ]
@@ -9887,10 +10287,11 @@
      "manual": false,
      "price": 1799.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:37Z",
-     "source": "www.lenovo.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:21.874Z",
+     "source": "Lenovo.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 1799.99,
@@ -9958,6 +10359,10 @@
     ],
     [
      "2026-11-15",
+     1799.99
+    ],
+    [
+     "2026-11-16",
      1799.99
     ]
    ]
@@ -10030,10 +10435,12 @@
      "manual": false,
      "price": 5094.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:22:03Z",
-     "source": "www.lenovo.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:22.517Z",
+     "source": "Lenovo.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "note": "Almost gone",
+     "stale": false
     }
    ],
    "price": 5094.99,
@@ -10101,6 +10508,10 @@
     ],
     [
      "2026-11-15",
+     5094.99
+    ],
+    [
+     "2026-11-16",
      5094.99
     ]
    ]
@@ -10173,10 +10584,11 @@
      "manual": false,
      "price": 3999.99,
      "in_stock": true,
-     "checked_at": "2026-11-15T11:21:57Z",
-     "source": "www.lenovo.com product page",
-     "stale": false,
-     "verification_method": "retailer-html"
+     "checked_at": "2026-11-16T01:31:23.075Z",
+     "source": "Lenovo.com product page, read live in a web browser",
+     "verification_method": "browser-rendered",
+     "on_sale": false,
+     "stale": false
     }
    ],
    "price": 3999.99,
@@ -10244,6 +10656,10 @@
     ],
     [
      "2026-11-15",
+     3999.99
+    ],
+    [
+     "2026-11-16",
      3999.99
     ]
    ]

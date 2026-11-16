@@ -447,7 +447,7 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
             po = prev_offers.get(off["retailer"], {})
             o = {"retailer": off["retailer"], "retailer_name": retailers.get(off["retailer"], {}).get("name", off["retailer"]),
                  "sku": off.get("sku"), "url": off.get("url"), "manual": bool(off.get("manual"))}
-            keep = ("price", "regular", "in_stock", "open_box", "marketplace", "rating", "reviews", "checked_at", "source", "seller", "marketplace_only", "evidence_url", "verified_sku", "availability_checked_at", "verification_method", "on_sale")
+            keep = ("price", "regular", "in_stock", "open_box", "marketplace", "rating", "reviews", "checked_at", "source", "seller", "marketplace_only", "evidence_url", "verified_sku", "availability_checked_at", "verification_method", "on_sale", "regular_label", "deal_ends", "deal_label", "note")
             snapshot = ob and (ob.get("verification_method") == "page-reader" or "browser reader" in (ob.get("source") or "").lower())
             if ob and ob.get("ok") and not snapshot:  # refreshed this run
                 o.update({k: ob.get(k) for k in keep if ob.get(k) is not None})
@@ -500,8 +500,8 @@ def merge(catalog: dict, previous: dict | None, observations: list[dict], ref: d
                 history.append([today, best["price"]])
         history = history[-HISTORY_DAYS:]
         status = "unavailable" if best and best.get("in_stock") is False else ("manual" if best and best.get("manual") else ("stale" if best and best.get("stale") else "live"))
-        if best and not best.get("manual") and best.get("checked_at"):
-            shown.append(best["checked_at"])
+        if best and not best.get("manual") and best.get("checked_at") and best.get("in_stock") is not False:
+            shown.append(best["checked_at"])  # sold-out listings don't make the whole site look old
         laptops.append({
             "id": item["id"], "family": item["family"], "brand": fam.get("brand"), "name": fam.get("name"),
             "year": s.get("year") or fam.get("year"), "form": fam.get("form"), "model": s.get("model"),
