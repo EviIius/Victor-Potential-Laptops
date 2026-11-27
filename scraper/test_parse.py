@@ -50,6 +50,16 @@ ok &= check(r["price"] == 1949.99 and r["regular"] == 2399.99 and r["in_stock"] 
 r = parse_product_page(WALMART.replace("Walmart.com", "antonline"), "walmart")
 ok &= check(r.get("marketplace_only") and r["seller"] == "antonline", "Walmart outside seller flagged")
 
+# Razer prints SKU, now and was prices in varying attribute order; Lenovo's inventory=0 means not orderable
+RZ = '<div data-product-sku="RZ09-1" data-product-now-price="3499.99" data-product-was-price="3499.99"></div><div data-product-sku="RZ03-9" data-product-now-price="199.99"></div>"code":"RZ09-1","purchasable":true'
+r = parse_product_page(RZ, "razer", "RZ09-1")
+ok &= check(r["price"] == 3499.99 and r["in_stock"] is True and "regular" not in r, "Razer markup in any attribute order")
+LEN = '<meta name="inventory"  content="0" ><script type="application/ld+json">{"@type":"Product","sku":"83F00005US","offers":{"price":2373.99,"availability":"http://schema.org/InStock","itemCondition":"http://schema.org/NewCondition"}}</script>'
+r = parse_product_page(LEN, "lenovo", "83F00005US")
+ok &= check(r["price"] == 2373.99 and r["in_stock"] is False, "Lenovo inventory=0 overrides InStock")
+ASUSCNF = '<script type="application/ld+json">{"@type":"Product","sku":"35851-US-CNF","offers":{"price":4299.99,"availability":"https://schema.org/InStock"}}</script><p>Product Name: G835LWG-DB96</p>'
+ok &= check(parse_product_page(ASUSCNF, "asus", "G835LWG-DB96")["price"] == 4299.99, "ASUS configurator page matched by printed part number")
+
 # robots.txt: wildcards, longest match, the right group for our agent (excerpt in the shape of Best Buy's file)
 ROBOTS = """User-agent: GPTBot
 Allow: /site/

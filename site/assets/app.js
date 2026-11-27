@@ -13,7 +13,14 @@
   const performanceGap = (a, b) => a > 0 && b > 0 ? Math.sign(a - b) * (Math.max(a, b) / Math.min(a, b) - 1) : 0;
   const available = (l) => bestOffer(l).in_stock === true && !bestOffer(l).marketplace_only;
   const freshPrice = (l) => { const o = bestOffer(l); const age = Date.now() - new Date(o.checked_at).getTime(); return !o.stale && !o.manual && !['page-reader', 'unconfirmed'].includes(o.verification_method) && Number.isFinite(age) && age >= 0 && age <= 48 * 36e5; };
-  const verifiedDiscount = (l) => { const o = bestOffer(l); return freshPrice(l) && available(l) && o.on_sale === true && ['retailer-api', 'browser-rendered'].includes(o.verification_method) && o.regular > l.price ? o.regular - l.price : 0; };
+  // A "Comp. Value" is Best Buy's comparison figure, not a price it actually charged, so it never counts as a saving.
+  const verifiedDiscount = (l) => { const o = bestOffer(l); return freshPrice(l) && available(l) && o.on_sale === true && o.regular_label !== 'Comp. Value' && ['retailer-api', 'browser-rendered'].includes(o.verification_method) && o.regular > l.price ? o.regular - l.price : 0; };
+  // Change against the last price this site itself verified on an earlier day.
+  const priceChange = (l) => {
+    const o = bestOffer(l); if (!freshPrice(l) || !available(l)) return null;
+    const day = (o.checked_at || '').slice(0, 10); const prev = (l.history || []).filter((h) => h[0] < day).pop();
+    return prev && Math.abs(prev[1] - l.price) >= 1 ? { delta: l.price - prev[1], since: prev[0] } : null;
+  };
   const asOfText = (iso) => { const d = new Date(iso); return Number.isFinite(d.getTime()) ? d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : null; };
   const dealEnds = (o) => { const t = new Date(o && o.deal_ends).getTime(); return Number.isFinite(t) && t > Date.now() ? t : null; };
   function asOf(l, cls = '') {
@@ -160,8 +167,10 @@
     }).join('')}</div>`;
   }
   function priceBlock(l, size = '') {
-    const save = verifiedDiscount(l);
-    return `<div class="price-row"><span class="price ${size}">${money2(l.price)}</span>${save >= 1 ? `<span class="was">${money2(l.regular)}</span><span class="save">${money(save)} off (was ${money2(l.regular)})</span>` : ''}${stockChip(l)}</div>${asOf(l)}`;
+    const save = verifiedDiscount(l); const ch = priceChange(l);
+    const since = ch ? new Date(`${ch.since}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+    const chg = ch ? `<span class="${ch.delta < 0 ? 'save' : 'chg-up'}">${ch.delta < 0 ? `${money(-ch.delta)} less` : `${money(ch.delta)} more`} than on ${esc(since)}</span>` : '';
+    return `<div class="price-row"><span class="price ${size}">${money2(l.price)}</span>${save >= 1 ? `<span class="was">${money2(l.regular)}</span><span class="save">${money(save)} off (was ${money2(l.regular)})</span>` : chg}${stockChip(l)}</div>${asOf(l)}`;
   }
   function cmpToggle(l) {
     const a = state.compare.a === l.id; const b = state.compare.b === l.id;

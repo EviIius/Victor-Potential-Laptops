@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-11",
+ "updated": "2026-11-27",
  "_about": "Curated laptops tracked by the scraper. Specs are a baseline captured from retailer product pages; the scraper refreshes prices and availability. Edit 'families' for model-level notes and 'laptops' to add or remove configurations.",
  "retailers": {
   "bestbuy": {
@@ -22,6 +22,12 @@
   "lenovo": {
    "name": "Lenovo.com",
    "home": "https://www.lenovo.com/us/en/"
+  },
+  "microcenter": {
+   "name": "Micro Center",
+   "home": "https://www.microcenter.com",
+   "browser_only": true,
+   "note": "Prices and stock are per store and these laptops are sold in store only. Checked in a browser across all 31 stores; the GitHub scraper is blocked there."
   }
  },
  "families": {
@@ -1123,6 +1129,136 @@
     "tgp",
     "weight"
    ]
+  },
+  "acer-predator-helios-neo-16": {
+   "brand": "Acer",
+   "name": "Predator Helios Neo 16 AI",
+   "year": 2026,
+   "form": "Performance 16\"",
+   "battery_wh": 92,
+   "ram_slots": 2,
+   "pros": [
+    "240Hz 2560x1600 IPS at 500 nits",
+    "Core Ultra 9 290HX Plus is one of the fastest laptop CPUs",
+    "Thunderbolt 4, 2.5Gb Ethernet, RAM upgradeable to 64GB"
+   ],
+   "cons": [
+    "Heavy at about 6 lb",
+    "IPS rather than the OLED on the thinner Neo 16S",
+    "Wi-Fi 6E rather than 7"
+   ],
+   "estimates": [
+    "tgp"
+   ]
+  },
+  "msi-raider-16-max-hx": {
+   "brand": "MSI",
+   "name": "Raider 16 Max HX",
+   "year": 2026,
+   "form": "Desktop replacement 16\"",
+   "battery_wh": 90,
+   "ram_slots": 2,
+   "pros": [
+    "240Hz 2560x1600 OLED",
+    "Core Ultra 9 290HX Plus with full-power graphics",
+    "Two Thunderbolt 4 ports, Wi-Fi 7"
+   ],
+   "cons": [
+    "Heavy at 5.7 lb and over 1\" thick",
+    "Loud under load",
+    "Short battery life when gaming"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "lenovo-legion-pro-7-amd": {
+   "brand": "Lenovo",
+   "name": "Legion Pro 7 Gen 10 (AMD)",
+   "year": 2025,
+   "form": "Performance 16\"",
+   "battery_wh": 99.9,
+   "ram_slots": 2,
+   "pros": [
+    "Ryzen 9 9955HX3D is the fastest gaming CPU in a laptop",
+    "RTX 5080 with heavy-duty cooling",
+    "240Hz 2560x1600 OLED"
+   ],
+   "cons": [
+    "Expensive",
+    "Heavy, around 5.6 lb",
+    "Short battery life when gaming"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "msi-cyborg-15-max-c2": {
+   "brand": "MSI",
+   "name": "Cyborg 15 Max (Core 7)",
+   "year": 2026,
+   "form": "Mainstream 15\"",
+   "battery_wh": 53.5,
+   "ram_slots": 2,
+   "pros": [
+    "Cheapest RTX 5060 in the list",
+    "DDR5 in two slots, Wi-Fi 6E"
+   ],
+   "cons": [
+    "1080p 144Hz screen",
+    "Core 7 240H is a modest CPU for heavy work",
+    "Small battery"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "hp-hyperx-omen-15": {
+   "brand": "HP",
+   "name": "HyperX OMEN 15",
+   "year": 2026,
+   "form": "Mainstream 15\"",
+   "battery_wh": 70,
+   "ram_slots": 2,
+   "pros": [
+    "Bright 500-nit 2560x1600 180Hz screen",
+    "32GB of RAM and Wi-Fi 7",
+    "Ryzen 9 8940HX"
+   ],
+   "cons": [
+    "This RTX 5070 has only 8GB of graphics memory",
+    "No Thunderbolt or USB4",
+    "Heavy for a 15\" at 5.6 lb"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
+  },
+  "msi-crosshair-16-max-hx": {
+   "brand": "MSI",
+   "name": "Crosshair 16 Max HX",
+   "year": 2026,
+   "form": "Performance 16\"",
+   "battery_wh": 75,
+   "ram_slots": 2,
+   "pros": [
+    "Core Ultra 9 290HX Plus and 32GB for about $2,000",
+    "2560x1600 OLED",
+    "Light for its class at 4.85 lb"
+   ],
+   "cons": [
+    "165Hz rather than 240Hz",
+    "Wi-Fi 6E rather than 7",
+    "RTX 5070, not 5070 Ti"
+   ],
+   "estimates": [
+    "tgp",
+    "battery_wh"
+   ]
   }
  },
  "laptops": [
@@ -1827,6 +1963,11 @@
      "retailer": "bestbuy",
      "sku": "6672942",
      "url": "https://www.bestbuy.com/product/hyperx-hp-omen-16-165hz-2-5k-oled-gaming-laptop-amd-ryzen-9-8940hx-2025-16gb-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/JJGWKSG2SQ"
+    },
+    {
+     "retailer": "microcenter",
+     "sku": "083220",
+     "url": "https://www.microcenter.com/product/715154/hp-hyperx-omen-oled-16-gaming-laptop-computer-shadow-black-aluminum"
     }
    ],
    "specs": {
@@ -3281,6 +3422,11 @@
      "retailer": "bestbuy",
      "sku": "6686857",
      "url": "https://www.bestbuy.com/product/asus-rog-strix-18-18-2-5k-300hz-gaming-laptop-intel-core-ultra-9-hx-plus-32gb-ram-nvidia-geforce-rtx-5070ti-1tb-ssd-eclipse-gray/JJGHGPVZCP"
+    },
+    {
+     "retailer": "microcenter",
+     "sku": "080564",
+     "url": "https://www.microcenter.com/product/714876/asus-rog-strix-g18-18-gaming-laptop-computer-eclipse-gray"
     }
    ],
    "specs": {
@@ -3624,6 +3770,11 @@
      "retailer": "bestbuy",
      "sku": "6632697",
      "url": "https://www.bestbuy.com/product/alienware-area-51-16-3k-gaming-laptop-intel-core-ultra-9-series-2-2025-32gb-memory-nvidia-geforce-rtx-5070-ti-2tb-storage-liquid-teal/J3K4L6QTYV"
+    },
+    {
+     "retailer": "microcenter",
+     "sku": "865790",
+     "url": "https://www.microcenter.com/product/695521/alienware-16-area-51-aa16250-16-gaming-laptop-computer-liquid-teal"
     }
    ],
    "specs": {
@@ -3862,6 +4013,11 @@
      "retailer": "asus",
      "sku": "GX651AR-DB96",
      "url": "https://eshop.asus.com/us/rog/90nr0nr2-m003p0-rog-zephyrus-duo-2026.html"
+    },
+    {
+     "retailer": "microcenter",
+     "sku": "014639",
+     "url": "https://www.microcenter.com/product/709141/asus-rog-zephyrus-duo-16-oled-gx651ar-db96-16-gaming-laptop-computer-stellar-gray"
     }
    ],
    "specs": {
@@ -3939,6 +4095,11 @@
      "retailer": "bestbuy",
      "sku": "6679872",
      "url": "https://www.bestbuy.com/product/asus-rog-zephyrus-duo-dual-16-oled-120hz-touch-gaming-laptop-intel-core-ultra-9-nvidia-rtx-5090-32gb-ram-1tb-ssd-stellar-grey/JJGHGS84V5"
+    },
+    {
+     "retailer": "microcenter",
+     "sku": "080572",
+     "url": "https://www.microcenter.com/product/714874/asus-rog-zephyrus-duo-16-oled-16-gaming-laptop-computer-stellar-gray"
     }
    ],
    "specs": {
@@ -4053,6 +4214,11 @@
      "retailer": "razer",
      "url": "https://www.razer.com/gaming-laptops/razer-blade-16/RZ09-05818EN3-R3U1",
      "sku": "RZ09-05818EN3-R3U1"
+    },
+    {
+     "retailer": "microcenter",
+     "sku": "067660",
+     "url": "https://www.microcenter.com/product/713640/razer-blade-16-(2026)-oled-16-gaming-laptop-computer-black"
     }
    ],
    "specs": {
@@ -4745,6 +4911,448 @@
     "tb": 1,
     "usb": "USB-A and USB-C",
     "model": "83F500M2US"
+   }
+  },
+  {
+   "id": "acer-predator-neo-16-6677629",
+   "family": "acer-predator-neo-16",
+   "offers": [
+    {
+     "retailer": "bestbuy",
+     "sku": "6677629",
+     "url": "https://www.bestbuy.com/product/acer-predator-neo-gaming-laptop-16-oled-intel-core-ultra-9-series-2-2026-2-5k-rtx-5070-ti-16gb-memory-1tb-storage-obsidian-black/JJ8V8HPCT4"
+    }
+   ],
+   "specs": {
+    "model": "PHN16S-I71-9451",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 Series 2 290HX Plus",
+    "vram_gb": 12,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "ram_max_gb": 64,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 0.74,
+    "tb": 1,
+    "usb": "3 x USB-A 3.2, 1 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "acer-helios-neo-16-mc710336",
+   "family": "acer-predator-helios-neo-16",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "029017",
+     "url": "https://www.microcenter.com/product/710336/acer-predator-helios-neo-16-ai-phn16-i71-90lv-16-gaming-laptop-computer-abyssal-black"
+    }
+   ],
+   "specs": {
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "ram_max_gb": 64,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.95,
+    "thickness_in": 1.05,
+    "tb": 1,
+    "usb": "2 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "model": "PHN16-I71-90LV",
+    "vram_gb": 12,
+    "ram_gb": 16,
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "acer-helios-neo-16-mc710341",
+   "family": "acer-predator-helios-neo-16",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "029009",
+     "url": "https://www.microcenter.com/product/710341/acer-predator-helios-neo-16-ai-gaming-laptop-computer-abyssal-black"
+    }
+   ],
+   "specs": {
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "ram_max_gb": 64,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.95,
+    "thickness_in": 1.05,
+    "tb": 1,
+    "usb": "2 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "model": "PHN16-I71-93Y2",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "acer-helios-neo-16-mc710342",
+   "family": "acer-predator-helios-neo-16",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "029025",
+     "url": "https://www.microcenter.com/product/710342/acer-predator-helios-neo-16-ai-16-gaming-laptop-computer-abyssal-black"
+    }
+   ],
+   "specs": {
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "ram_type": "DDR5",
+    "ram_speed": 6400,
+    "ram_max_gb": 64,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.95,
+    "thickness_in": 1.05,
+    "tb": 1,
+    "usb": "2 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "model": "PHN16-I71-93EM",
+    "vram_gb": 16,
+    "ram_gb": 32,
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "msi-raider-16-max-hx-mc709074",
+   "family": "msi-raider-16-max-hx",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "010298",
+     "url": "https://www.microcenter.com/product/709074/msi-raider-16-max-hx-b2wh-004us-oled-16-gaming-laptop-computer-platinum-collection-core-black"
+    }
+   ],
+   "specs": {
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "touch": false,
+    "weight_lb": 5.73,
+    "thickness_in": 1.14,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "model": "Raider 16 Max HX B2WH-004US",
+    "vram_gb": 12,
+    "gpu_key": "RTX 5070 Ti"
+   }
+  },
+  {
+   "id": "msi-raider-16-max-hx-mc709072",
+   "family": "msi-raider-16-max-hx",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "010272",
+     "url": "https://www.microcenter.com/product/709072/msi-raider-16-max-hx-b2wi-003us-oled-16-gaming-laptop-computer-platinum-collection-core-black"
+    }
+   ],
+   "specs": {
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "touch": false,
+    "weight_lb": 5.73,
+    "thickness_in": 1.14,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "model": "Raider 16 Max HX B2WI-003US",
+    "vram_gb": 16,
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "msi-raider-16-max-hx-mc708994",
+   "family": "msi-raider-16-max-hx",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "010215",
+     "url": "https://www.microcenter.com/product/708994/msi-raider-16-max-hx-b2wj-002us-oled-16-gaming-laptop-computer-platinum-collection-core-black"
+    }
+   ],
+   "specs": {
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "touch": false,
+    "weight_lb": 5.73,
+    "thickness_in": 1.14,
+    "tb": 2,
+    "usb": "3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "model": "Raider 16 Max HX B2WJ-002US",
+    "vram_gb": 24,
+    "gpu_key": "RTX 5090"
+   }
+  },
+  {
+   "id": "lenovo-legion-pro-7-amd-mc703054",
+   "family": "lenovo-legion-pro-7-amd",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "942607",
+     "url": "https://www.microcenter.com/product/703054/lenovo-legion-7-pro-oled-16-gaming-laptop-computer-eclipse-black"
+    }
+   ],
+   "specs": {
+    "model": "83RU0005US",
+    "year": 2025,
+    "cpu": "AMD Ryzen 9 9955HX3D",
+    "vram_gb": 16,
+    "ram_gb": 64,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 2000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 240,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.63,
+    "thickness_in": 1.05,
+    "tb": 0,
+    "usb": "3 x USB-A 3.2, 2 x USB-C",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Ryzen 9 9955HX3D",
+    "gpu_key": "RTX 5080"
+   }
+  },
+  {
+   "id": "msi-cyborg-15-max-c2-mc712580",
+   "family": "msi-cyborg-15-max-c2",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "054999",
+     "url": "https://www.microcenter.com/product/712580/msi-cyborg-15-max-156-gaming-laptop-computer-platinum-gray"
+    }
+   ],
+   "specs": {
+    "model": "Cyborg 15 Max C2WF-466USY",
+    "year": 2026,
+    "cpu": "Intel Core 7 240H",
+    "vram_gb": 8,
+    "ram_gb": 16,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 512,
+    "size": 15.6,
+    "w": 1920,
+    "h": 1080,
+    "hz": 144,
+    "panel": "IPS",
+    "touch": false,
+    "weight_lb": 5.07,
+    "thickness_in": 0.9,
+    "tb": 0,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core 7 240H",
+    "gpu_key": "RTX 5060"
+   }
+  },
+  {
+   "id": "hp-hyperx-omen-15-mc708511",
+   "family": "hp-hyperx-omen-15",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "003665",
+     "url": "https://www.microcenter.com/product/708511/hp-hyperx-omen-15-15-gb0209nr-153-gaming-laptop-computer-shadow-black"
+    }
+   ],
+   "specs": {
+    "model": "15-gb0209nr/D1KV3UA#ABA",
+    "year": 2026,
+    "cpu": "AMD Ryzen 9 8940HX",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5200,
+    "storage_gb": 1000,
+    "size": 15.3,
+    "w": 2560,
+    "h": 1600,
+    "hz": 180,
+    "panel": "IPS",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 5.56,
+    "thickness_in": 1.06,
+    "tb": 0,
+    "usb": "1 x USB-C 3.2, 2 x USB-A 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Ryzen 9 8940HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "lenovo-legion-5i-gen10-mc692187",
+   "family": "lenovo-legion-5i-gen10",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "825372",
+     "url": "https://www.microcenter.com/product/692187/lenovo-legion-5-15irx10-oled-151-gaming-laptop-computer-eclipse-black"
+    }
+   ],
+   "specs": {
+    "model": "83LY000JUS",
+    "year": 2025,
+    "cpu": "Intel Core i9-14900HX",
+    "vram_gb": 8,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 15.1,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "nits": 500,
+    "touch": false,
+    "weight_lb": 4.19,
+    "thickness_in": 0.85,
+    "tb": 0,
+    "usb": "3 x USB-A 3.2, 2 x USB-C 3.2",
+    "hdmi": 1,
+    "eth": 1,
+    "wifi": "Wi-Fi 7",
+    "cpu_key": "Core i9-14900HX",
+    "gpu_key": "RTX 5070"
+   }
+  },
+  {
+   "id": "msi-crosshair-16-max-hx-mc709576",
+   "family": "msi-crosshair-16-max-hx",
+   "offers": [
+    {
+     "retailer": "microcenter",
+     "sku": "019513",
+     "url": "https://www.microcenter.com/product/709576/msi-crosshair-16-max-hx-oled-16-gaming-laptop-computer-core-black"
+    }
+   ],
+   "specs": {
+    "model": "Crosshair 16 Max HX E2WGXK-028US",
+    "year": 2026,
+    "cpu": "Intel Core Ultra 9 290HX Plus",
+    "vram_gb": 12,
+    "ram_gb": 32,
+    "ram_type": "DDR5",
+    "ram_speed": 5600,
+    "storage_gb": 1000,
+    "size": 16.0,
+    "w": 2560,
+    "h": 1600,
+    "hz": 165,
+    "panel": "OLED",
+    "touch": false,
+    "weight_lb": 4.85,
+    "thickness_in": 0.94,
+    "tb": 1,
+    "usb": "1 x USB-C 3.2, 3 x USB-A 3.2",
+    "hdmi": 1,
+    "wifi": "Wi-Fi 6E",
+    "cpu_key": "Core Ultra 9 290HX Plus",
+    "gpu_key": "RTX 5070"
    }
   }
  ]

@@ -231,11 +231,17 @@ def _avail(o: dict) -> bool | None:
 def parse_fallback(html: str, sku: str | None) -> dict | None:
     """Pages that render their Product data client-side (e.g. Razer) still print the price in markup."""
     if sku:
-        m = re.search(r'data-product-sku="%s"[^>]*?data-product-was-price="([\d.]+)"[^>]*?data-product-now-price="([\d.]+)"' % re.escape(sku), html)
-        if m:
+        # attribute order varies between pages, so read the whole tag that carries this SKU
+        for tag in re.findall(r'<[^>]*data-product-sku="%s"[^>]*>' % re.escape(sku), html):
+            now = re.search(r'data-product-now-price="([\d.]+)"', tag)
+            if not now:
+                continue
+            was = re.search(r'data-product-was-price="([\d.]+)"', tag)
             purchasable = re.search(r'"code":"%s","purchasable":(true|false)' % re.escape(sku), html)
-            return {"price": float(m.group(2)), "regular": float(m.group(1)),
-                    "in_stock": (purchasable.group(1) == "true") if purchasable else None}
+            out = {"price": float(now.group(1)), "in_stock": (purchasable.group(1) == "true") if purchasable else None}
+            if was and float(was.group(1)) > out["price"]:
+                out["regular"] = float(was.group(1))
+            return out
         if re.search(r'data-product-sku=', html):
             raise ValueError("requested SKU not found in product price markup")
     m = re.search(r'data-product-now-price="([\d.]+)"', html)
@@ -322,14 +328,17 @@ def parse_product_page(html: str, retailer: str, sku: str | None = None) -> dict
                 or re.search(r"(?<![\w-])" + re.escape(str(sku)) + r"(?![\w-])", p.get("name") or "", re.I))]
     if len(matching) == 1:
         prod = matching[0]
-    elif len(products) == 1 and (not sku or not identifiers(products[0])):
-        prod = products[0]
+    elif len(products) == 1 and (not sku or not identifiers(products[0])
+                                 or re.search(r"(?<![\w-])" + re.escape(str(sku)) + r"(?![\w-])", html)):
+        prod = products[0]  # e.g. ASUS configurator pages: generic product data, the exact part number printed on the page
     else:
         raise ValueError("product data does not identify a unique match for the requested SKU")
     offers = prod.get("offers") or []
     if isinstance(offers, dict):
         offers = [offers]
     fp = FIRST_PARTY.get(retailer)
+    # Lenovo's product data says InStock even for models shown as "Available Soon"; its inventory meta tag is the tell.
+    not_orderable = retailer == "lenovo" and re.search(r'<meta name="inventory"\s+content="0"', html) is not None
     out: dict = {}
     news, used, mkt = [], [], []
     for o in offers:
@@ -349,7 +358,7 @@ def parse_product_page(html: str, retailer: str, sku: str | None = None) -> dict
     if news:
         available = [o for o in news if o[1] is True]
         price, avail = min(available or news, key=lambda x: x[0])
-        out["price"], out["in_stock"] = price, avail
+        out["price"], out["in_stock"] = price, (False if not_orderable else avail)
     else:
         out["in_stock"] = False
     if used:
@@ -542,7 +551,11 @@ def run_live(catalog: dict, limit: int | None, only: str | None) -> tuple[list[d
     per: dict = {}
     notes: list[str] = []
     market = None
-    todo = [(l, o) for l in catalog["laptops"] for o in l["offers"] if not o.get("manual") and (not only or o["retailer"] == only)]
+    # Stores marked browser_only (Micro Center: per-store, in-store-only stock) are refreshed by hand in a browser;
+    # skipping them here keeps their last checked price and date instead of logging a block as a failure.
+    browser_only = {r for r, v in catalog.get("retailers", {}).items() if v.get("browser_only")}
+    todo = [(l, o) for l in catalog["laptops"] for o in l["offers"]
+            if not o.get("manual") and o["retailer"] not in browser_only and (not only or o["retailer"] == only)]
     random.shuffle(todo)
     if limit:
         todo = todo[:limit]
